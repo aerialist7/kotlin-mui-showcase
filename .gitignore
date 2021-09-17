@@ -5,4 +5,9 @@
 # Gradle
 .gradle
 build/
+webpack.config.d/
 
+# NPM
+*.tgz
+package-lock.json
+node_modules/
