@@ -1,1 +1,1 @@
-rootProject.name = "kotlin-material-ui-sample"
+rootProject.name = "kotlin-material-ui-demo-stand"
