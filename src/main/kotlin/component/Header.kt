@@ -9,8 +9,7 @@ import ringui.Logo
 import styled.css
 import styled.styledDiv
 
-// TODO: Return external interface's after wrappers upgrade
-typealias HeaderProps = Props
+external interface HeaderProps : Props
 
 val Header = fc<HeaderProps> {
     Header {

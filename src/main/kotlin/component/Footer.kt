@@ -6,8 +6,7 @@ import react.fc
 import ringui.Footer
 import ringui.FooterItem
 
-// TODO: Return external interface's after wrappers upgrade
-typealias FooterProps = Props
+external interface FooterProps : Props
 
 val Footer = fc<FooterProps> {
     Footer {
