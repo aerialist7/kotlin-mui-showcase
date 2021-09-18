@@ -3,6 +3,7 @@ import kotlinx.css.*
 import kotlinx.css.Align.initial
 import kotlinx.css.Color.Companion.white
 import kotlinx.css.Display.flex
+import kotlinx.css.UserSelect.none
 import react.dom.render
 import ringui.Header
 import ringui.Heading
@@ -34,6 +35,7 @@ fun main() {
                         css {
                             color = white
                             paddingLeft = 4.px
+                            userSelect = none
                         }
                         +"Showcase"
                     }
