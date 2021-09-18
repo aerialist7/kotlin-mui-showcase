@@ -18,6 +18,8 @@ dependencies {
 
     implementation(kotlinw("ring-ui"))
     implementation(npm("core-js", "3.17.3"))
+
+    implementation(kotlinw("styled"))
 }
 
 kotlin.js {
