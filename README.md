@@ -1,4 +1,4 @@
-# kotlin-material-ui-sample
+# Kotlin MUI Demo Stand
 
 `./gradlew build`
 
