@@ -1,5 +1,6 @@
 # IntelliJ IDEA
 .idea
+!.idea/icon.png
 *.iml
 
 # Gradle
