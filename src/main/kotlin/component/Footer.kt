@@ -12,7 +12,7 @@ val Footer = fc<FooterProps> {
     Footer {
         attrs.left = arrayOf<FooterItem>(
             jso {
-                label = "Material-UI"
+                label = "MUI Docs"
                 url = "https://mui.com/getting-started/usage/"
             },
         )
