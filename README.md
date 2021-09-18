@@ -1,4 +1,4 @@
-# Kotlin MUI Demo Stand
+# Kotlin MUI Showcase
 
 `./gradlew build`
 
