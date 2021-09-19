@@ -1,16 +1,26 @@
 package component
 
 import react.Props
+import react.dom.ReactHTML.div
 import react.fc
+import react.useState
 import ringui.SmartTabs
 import ringui.Tab
+import ringui.TabsProps
+import showcase.AccordionShowcase
 
 external interface ComponentPanelProps : Props
 
 val ComponentPanel = fc<ComponentPanelProps> {
-    SmartTabs {
-        attrs.asDynamic().autoCollapse = true   // TODO: Fix SmartTabs props
+    var showcaseId by useState("Accordion")
 
+    SmartTabs {
+        // TODO: Fix SmartTabs props
+        attrs.unsafeCast<TabsProps>().apply {
+            autoCollapse = true
+            selected = showcaseId
+            onSelect = { showcaseId = it }
+        }
         listOf(
             "Accordion",
             "Alert",
@@ -31,8 +41,16 @@ val ComponentPanel = fc<ComponentPanelProps> {
             "Dialog",
         ).map {
             Tab {
-                attrs.title = it
+                attrs {
+                    title = it
+                    id = it
+                }
             }
         }
+    }
+    // TODO: Use react-router instead
+    when (showcaseId) {
+        "Accordion" -> AccordionShowcase()
+        else -> div { +"TBD" }
     }
 }
