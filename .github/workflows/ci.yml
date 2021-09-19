@@ -15,4 +15,4 @@ jobs:
           java-version: 11
       - name: Build
         run: |
-          ./gradlew build
+          ./gradlew downloadSources unzipSources build
