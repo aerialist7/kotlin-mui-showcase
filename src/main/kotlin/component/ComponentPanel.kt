@@ -8,6 +8,7 @@ import ringui.SmartTabs
 import ringui.Tab
 import ringui.TabsProps
 import showcase.AccordionShowcase
+import showcase.AlertShowcase
 
 external interface ComponentPanelProps : Props
 
@@ -51,6 +52,7 @@ val ComponentPanel = fc<ComponentPanelProps> {
     // TODO: Use react-router instead
     when (showcaseId) {
         "Accordion" -> AccordionShowcase()
+        "Alert" -> AlertShowcase()
         else -> div { +"TBD" }
     }
 }
