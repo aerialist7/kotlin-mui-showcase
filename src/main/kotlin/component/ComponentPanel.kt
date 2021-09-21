@@ -7,10 +7,7 @@ import react.useState
 import ringui.SmartTabs
 import ringui.Tab
 import ringui.TabsProps
-import showcase.AccordionShowcase
-import showcase.AlertShowcase
-import showcase.AppBarShowcase
-import showcase.AutocompleteShowcase
+import showcase.*
 
 external interface ComponentPanelProps : Props
 
@@ -57,6 +54,7 @@ val ComponentPanel = fc<ComponentPanelProps> {
         "Alert" -> AlertShowcase()
         "App Bar" -> AppBarShowcase()
         "Autocomplete" -> AutocompleteShowcase()
+        "Avatar" -> AvatarShowcase()
         else -> div { +"TBD" }
     }
 }
