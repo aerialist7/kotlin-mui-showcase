@@ -1,7 +1,7 @@
 import de.undercouch.gradle.tasks.download.Download
 
 plugins {
-    kotlin("js") version "1.5.30"
+    kotlin("js") version "1.5.31"
     id("com.github.turansky.kfc.webpack") version "4.32.0"
 
     id("de.undercouch.download") version "4.1.2"
@@ -15,7 +15,7 @@ fun kotlinw(target: String): String =
     "org.jetbrains.kotlin-wrappers:kotlin-$target"
 
 dependencies {
-    implementation(enforcedPlatform(kotlinw("wrappers-bom:0.0.1-pre.246-kotlin-1.5.30")))
+    implementation(enforcedPlatform(kotlinw("wrappers-bom:0.0.1-pre.247-kotlin-1.5.31")))
 
     implementation(kotlinw("react"))
     implementation(kotlinw("react-dom"))
