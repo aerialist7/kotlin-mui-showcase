@@ -4,7 +4,7 @@ import mui.material.*
 import react.Props
 import react.fc
 
-val AppBarShowcase = fc<Props> {
+val AppBar = fc<Props> {
     Box {
         // TODO: Unable to use 'sx' [MUI]
         AppBar {

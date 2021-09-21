@@ -6,7 +6,7 @@ import mui.material.AlertTitle
 import react.Props
 import react.fc
 
-val AlertShowcase = fc<Props> {
+val Alert = fc<Props> {
     Alert {
         attrs.severity = error
         AlertTitle { +"Error" }

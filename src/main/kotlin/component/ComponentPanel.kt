@@ -50,12 +50,12 @@ val ComponentPanel = fc<ComponentPanelProps> {
     }
     // TODO: Use react-router instead
     when (showcaseId) {
-        "Accordion" -> AccordionShowcase()
-        "Alert" -> AlertShowcase()
-        "App Bar" -> AppBarShowcase()
-        "Autocomplete" -> AutocompleteShowcase()
-        "Avatar" -> AvatarShowcase()
-        "Backdrop" -> BackdropShowcase()
+        "Accordion" -> Accordion()
+        "Alert" -> Alert()
+        "App Bar" -> AppBar()
+        "Autocomplete" -> Autocomplete()
+        "Avatar" -> Avatar()
+        "Backdrop" -> Backdrop()
         else -> div { +"TBD" }
     }
 }
