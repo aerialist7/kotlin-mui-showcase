@@ -10,6 +10,7 @@ import ringui.TabsProps
 import showcase.AccordionShowcase
 import showcase.AlertShowcase
 import showcase.AppBarShowcase
+import showcase.AutocompleteShowcase
 
 external interface ComponentPanelProps : Props
 
@@ -55,6 +56,7 @@ val ComponentPanel = fc<ComponentPanelProps> {
         "Accordion" -> AccordionShowcase()
         "Alert" -> AlertShowcase()
         "App Bar" -> AppBarShowcase()
+        "Autocomplete" -> AutocompleteShowcase()
         else -> div { +"TBD" }
     }
 }
