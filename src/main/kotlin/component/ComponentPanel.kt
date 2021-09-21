@@ -55,6 +55,7 @@ val ComponentPanel = fc<ComponentPanelProps> {
         "App Bar" -> AppBarShowcase()
         "Autocomplete" -> AutocompleteShowcase()
         "Avatar" -> AvatarShowcase()
+        "Backdrop" -> BackdropShowcase()
         else -> div { +"TBD" }
     }
 }
