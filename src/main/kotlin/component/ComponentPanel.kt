@@ -59,6 +59,7 @@ val ComponentPanel = fc<ComponentPanelProps> {
         "Button" -> Button()
         "Card" -> Card()
         "Checkbox" -> Checkbox()
+        "Chip" -> Chip()
         else -> div { +"TBD" }
     }
 }
