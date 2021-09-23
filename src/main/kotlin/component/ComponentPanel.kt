@@ -56,6 +56,7 @@ val ComponentPanel = fc<ComponentPanelProps> {
         "Autocomplete" -> Autocomplete()
         "Avatar" -> Avatar()
         "Backdrop" -> Backdrop()
+        "Badge" -> Badge()
         else -> div { +"TBD" }
     }
 }
