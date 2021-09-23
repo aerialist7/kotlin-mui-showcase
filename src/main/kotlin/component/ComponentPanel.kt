@@ -57,6 +57,7 @@ val ComponentPanel = fc<ComponentPanelProps> {
         "Avatar" -> Avatar()
         "Backdrop" -> Backdrop()
         "Badge" -> Badge()
+        "Bottom Navigation" -> BottomNavigation()
         else -> div { +"TBD" }
     }
 }
