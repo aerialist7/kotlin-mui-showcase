@@ -11,6 +11,7 @@ import react.fc
 
 // TODO: Unable to use sx at all [MUI]
 val Card = fc<Props> {
+    // TODO: Is fc wrapping required?
     val Bull = fc<Props> {
         Box {
             attrs.component = "span".unsafeCast<ElementType<Props>>() // TODO: Can't set component type [MUI]
