@@ -1,6 +1,11 @@
 package showcase
 
-import mui.material.*
+import mui.material.AppBar
+import mui.material.Box
+import mui.material.Toolbar
+import mui.material.IconButton
+import mui.material.Typography
+import mui.material.Button
 import react.Props
 import react.fc
 

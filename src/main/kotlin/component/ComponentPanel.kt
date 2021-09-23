@@ -30,7 +30,6 @@ val ComponentPanel = fc<ComponentPanelProps> {
             "Backdrop",
             "Badge",
             "Bottom Navigation",
-            "Box",
             "Breadcrumbs",
             "Button",
             "Button Group",
@@ -58,6 +57,7 @@ val ComponentPanel = fc<ComponentPanelProps> {
         "Backdrop" -> Backdrop()
         "Badge" -> Badge()
         "Bottom Navigation" -> BottomNavigation()
+        "Button" -> Button()
         else -> div { +"TBD" }
     }
 }
