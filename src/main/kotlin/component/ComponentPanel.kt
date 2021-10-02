@@ -17,7 +17,6 @@ val ComponentPanel = fc<ComponentPanelProps> {
     SmartTabs {
         // TODO: Fix SmartTabs props
         attrs.unsafeCast<TabsProps>().apply {
-            autoCollapse = true
             selected = showcaseId
             onSelect = { showcaseId = it }
         }
