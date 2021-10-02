@@ -8,7 +8,7 @@ import react.dom.div
 import react.fc
 import react.useState
 
-val Backdrop = fc<Props> {
+val BackdropShowcase = fc<Props> {
     var open by useState(false)
     val handleClose = { open = false }
     val handleToggle = { open = !open }

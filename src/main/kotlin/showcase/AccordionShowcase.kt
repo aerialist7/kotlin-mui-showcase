@@ -7,7 +7,7 @@ import mui.material.Typography
 import react.Props
 import react.fc
 
-val Accordion = fc<Props> {
+val AccordionShowcase = fc<Props> {
     Accordion {
         AccordionSummary {
             // TODO: Unable to add icon

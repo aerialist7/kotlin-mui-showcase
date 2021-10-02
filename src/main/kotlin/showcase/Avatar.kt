@@ -5,7 +5,7 @@ import mui.material.AvatarGroup
 import react.Props
 import react.fc
 
-val Avatar = fc<Props> {
+val AvatarShowcase = fc<Props> {
     AvatarGroup {
         attrs.max = 4
         Avatar {

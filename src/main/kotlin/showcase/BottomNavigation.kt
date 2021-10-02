@@ -7,7 +7,7 @@ import react.ReactNode
 import react.fc
 import react.useState
 
-val BottomNavigation = fc<Props> {
+val BottomNavigationShowcase = fc<Props> {
     var state by useState(0)
     BottomNavigation {
         attrs {

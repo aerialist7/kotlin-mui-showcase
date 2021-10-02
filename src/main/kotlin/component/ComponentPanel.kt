@@ -48,18 +48,18 @@ val ComponentPanel = fc<ComponentPanelProps> {
     }
     // TODO: Use react-router instead
     when (showcaseId) {
-        "Accordion" -> Accordion()
-        "Alert" -> Alert()
-        "App Bar" -> AppBar()
-        "Autocomplete" -> Autocomplete()
-        "Avatar" -> Avatar()
-        "Backdrop" -> Backdrop()
-        "Badge" -> Badge()
-        "Bottom Navigation" -> BottomNavigation()
-        "Button" -> Button()
-        "Card" -> Card()
-        "Checkbox" -> Checkbox()
-        "Chip" -> Chip()
+        "Accordion" -> AccordionShowcase()
+        "Alert" -> AlertShowcase()
+        "App Bar" -> AppBarShowcase()
+        "Autocomplete" -> AutocompleteShowcase()
+        "Avatar" -> AvatarShowcase()
+        "Backdrop" -> BackdropShowcase()
+        "Badge" -> BadgeShowcase()
+        "Bottom Navigation" -> BottomNavigationShowcase()
+        "Button" -> ButtonShowcase()
+        "Card" -> CardShowcase()
+        "Checkbox" -> CheckboxShowcase()
+        "Chip" -> ChipShowcase()
         else -> div { +"TBD" }
     }
 }

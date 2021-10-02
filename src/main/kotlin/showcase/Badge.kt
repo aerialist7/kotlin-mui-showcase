@@ -5,7 +5,7 @@ import mui.material.Button
 import react.Props
 import react.fc
 
-val Badge = fc<Props> {
+val BadgeShowcase = fc<Props> {
     Badge {
         attrs.color = "primary"
         // TODO: Unable to set badge content legally [MUI]

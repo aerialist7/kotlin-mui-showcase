@@ -5,7 +5,7 @@ import react.Props
 import react.ReactNode
 import react.fc
 
-val Chip = fc<Props> {
+val ChipShowcase = fc<Props> {
     Chip {
         attrs.label = "Chip Filled".unsafeCast<ReactNode>() // TODO: [MUI]
     }

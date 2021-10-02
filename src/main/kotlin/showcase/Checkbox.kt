@@ -4,7 +4,7 @@ import mui.material.Checkbox
 import react.Props
 import react.fc
 
-val Checkbox = fc<Props> {
+val CheckboxShowcase = fc<Props> {
     Checkbox {
         attrs.asDynamic().defaultChecked = true // TODO: Unable to use defaultChecked legally [MUI]
     }

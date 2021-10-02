@@ -1,16 +1,12 @@
 package showcase
 
-import mui.material.Box
-import mui.material.CardActions
-import mui.material.CardContent
-import mui.material.Typography
-import mui.material.Button
+import mui.material.*
 import react.ElementType
 import react.Props
 import react.fc
 
 // TODO: Unable to use sx at all [MUI]
-val Card = fc<Props> {
+val CardShowcase = fc<Props> {
     // TODO: Is fc wrapping required?
     val Bull = fc<Props> {
         Box {

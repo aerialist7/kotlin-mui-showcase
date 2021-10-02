@@ -1,15 +1,10 @@
 package showcase
 
-import mui.material.AppBar
-import mui.material.Box
-import mui.material.Toolbar
-import mui.material.IconButton
-import mui.material.Typography
-import mui.material.Button
+import mui.material.*
 import react.Props
 import react.fc
 
-val AppBar = fc<Props> {
+val AppBarShowcase = fc<Props> {
     Box {
         // TODO: Unable to use 'sx' [MUI]
         AppBar {
