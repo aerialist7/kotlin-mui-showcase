@@ -41,6 +41,7 @@ val ComponentPanel = fc<ComponentPanelProps> {
             "Input",
             "Linear Progress",
             "Link",
+            "List",
         ).map {
             Tab {
                 attrs {
@@ -71,6 +72,7 @@ val ComponentPanel = fc<ComponentPanelProps> {
         "Input" -> InputShowcase()
         "Linear Progress" -> LinearProgressShowcase()
         "Link" -> LinkShowcase()
+        "List" -> ListShowcase()
         else -> div { +"TBD" }
     }
 }
