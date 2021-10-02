@@ -35,7 +35,6 @@ val ComponentPanel = fc<ComponentPanelProps> {
             "Card",
             "Checkbox",
             "Chip",
-            "Container",
             "Dialog",
         ).map {
             Tab {
@@ -60,6 +59,7 @@ val ComponentPanel = fc<ComponentPanelProps> {
         "Card" -> CardShowcase()
         "Checkbox" -> CheckboxShowcase()
         "Chip" -> ChipShowcase()
+        "Dialog" -> DialogShowcase()
         else -> div { +"TBD" }
     }
 }
