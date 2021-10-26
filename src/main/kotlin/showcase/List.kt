@@ -2,6 +2,8 @@ package showcase
 
 import kotlinext.js.jso
 import mui.material.*
+import mui.system.SxProps
+import mui.system.Theme
 import react.Props
 import react.fc
 

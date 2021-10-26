@@ -5,8 +5,8 @@ import mui.material.Menu
 import mui.material.MenuItem
 import mui.material.Typography
 import react.Props
-import react.dom.MouseEvent
 import react.dom.div
+import react.dom.events.MouseEvent
 import react.dom.onContextMenu
 import react.fc
 import react.useState

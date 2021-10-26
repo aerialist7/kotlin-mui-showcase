@@ -15,7 +15,7 @@ jobs:
           java-version: 11
       - name: Build
         run: |
-          ./gradlew downloadSources unzipSources build
+          ./gradlew build
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:

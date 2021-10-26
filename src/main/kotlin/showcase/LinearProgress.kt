@@ -1,8 +1,8 @@
 package showcase
 
 import mui.material.LinearProgress
-import mui.material.ResponsiveStyleValue
 import mui.material.Stack
+import mui.system.ResponsiveStyleValue
 import react.Props
 import react.fc
 

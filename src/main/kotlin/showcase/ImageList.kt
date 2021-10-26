@@ -3,8 +3,8 @@ package showcase
 import kotlinext.js.jso
 import mui.material.ImageList
 import mui.material.ImageListItem
-import mui.material.SxProps
-import mui.material.Theme
+import mui.system.SxProps
+import mui.system.Theme
 import react.Props
 import react.dom.img
 import react.fc

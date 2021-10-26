@@ -5,8 +5,8 @@ import csstype.px
 import kotlinext.js.jso
 import mui.material.Button
 import mui.material.MobileStepper
-import mui.material.SxProps
-import mui.material.Theme
+import mui.system.SxProps
+import mui.system.Theme
 import react.*
 
 val MobileStepperShowcase = fc<Props> {

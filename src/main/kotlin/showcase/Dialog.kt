@@ -2,7 +2,7 @@ package showcase
 
 import mui.material.*
 import react.Props
-import react.dom.ReactHTML.div
+import react.dom.div
 import react.fc
 import react.useState
 
