@@ -21,11 +21,11 @@ dependencies {
     implementation(kotlinw("styled"))
 
     implementation(kotlinw("ring-ui"))
-    implementation(npm("core-js", "3.17.3"))
+    implementation(npm("core-js", "3.19.0"))
 
     implementation(npm("@emotion/react", "11.5.0"))
     implementation(npm("@emotion/styled", "11.3.0"))
-    implementation(npm("@mui/material", "5.0.4"))
+    implementation(npm("@mui/material", "5.0.6"))
 }
 
 kotlin.js {
