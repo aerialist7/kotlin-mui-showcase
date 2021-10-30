@@ -25,7 +25,7 @@ dependencies {
 
     implementation(npm("@emotion/react", "11.5.0"))
     implementation(npm("@emotion/styled", "11.3.0"))
-    implementation(npm("@mui/material", "5.0.6"))
+    implementation(npm("@mui/material", "5.0.5"))
 }
 
 kotlin.js {
