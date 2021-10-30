@@ -4,10 +4,8 @@ import csstype.AlignItems
 import csstype.JustifyContent
 import csstype.px
 import kotlinext.js.jso
-import mui.material.Box
-import mui.material.Button
-import mui.material.Grid
-import mui.material.GridDirection
+import mui.core.Popper
+import mui.material.*
 import org.w3c.dom.Element
 import react.Props
 import react.dom.br
@@ -30,24 +28,20 @@ val PopperShowcase = fc<Props> {
         attrs.sx = jso {
             width = 500.px
         }
-        // TODO: Popper component currently doesn't work [MUI]
-//        Popper {
-//            attrs {
-//                open = isOpen
-//                asDynamic().anchorEl = anchorElement
-//                asDynamic().placement = placementPosition
-//                transition = true
-//            }
-        //{
-//    ({ TransitionProps }) => (
-//    <Fade { ...TransitionProps } timeout ={ 350 } >
-//    <Paper >
-//    <Typography sx ={ { p: 2 } } > The content of the Popper.< / Typography >
-//    </Paper>
-//    </Fade>
-//    )
-//}
-//        }
+        Popper {
+            attrs {
+                open = isOpen
+                anchorEl = anchorElement
+                placement = placementPosition
+            }
+            Typography {
+                attrs.sx = jso {
+                    padding = 2.px
+                }
+                +"The content of the Popper."
+            }
+        }
+
         Grid {
             attrs.container = true
             attrs.sx = jso {
