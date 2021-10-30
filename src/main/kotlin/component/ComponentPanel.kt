@@ -47,6 +47,7 @@ val ComponentPanel = fc<ComponentPanelProps> {
             "Pagination",
             "Paper",
             "Popover",
+            "Popper",
         ).map {
             Tab {
                 attrs {
@@ -83,6 +84,7 @@ val ComponentPanel = fc<ComponentPanelProps> {
         "Pagination" -> PaginationShowcase()
         "Paper" -> PaperShowcase()
         "Popover" -> PopoverShowcase()
+        "Popper" -> PopperShowcase()
         else -> div { +"TBD" }
     }
 }
