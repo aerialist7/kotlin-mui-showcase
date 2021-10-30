@@ -8,7 +8,7 @@ import react.fc
 val BadgeShowcase = fc<Props> {
     Badge {
         attrs.color = "primary"
-        // TODO: Unable to set badge content legally [MUI]
+        // TODO: Unable to set badge content correctly [MUI]
         attrs.asDynamic().badgeContent = "4"
         // TODO: Unable to use <MailIcon/> [MUI]
         Button {

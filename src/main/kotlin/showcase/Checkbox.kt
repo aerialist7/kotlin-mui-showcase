@@ -6,7 +6,7 @@ import react.fc
 
 val CheckboxShowcase = fc<Props> {
     Checkbox {
-        attrs.asDynamic().defaultChecked = true // TODO: Unable to use defaultChecked legally [MUI]
+        attrs.defaultChecked = true
     }
     Checkbox {
     }

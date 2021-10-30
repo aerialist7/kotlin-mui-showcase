@@ -8,7 +8,7 @@ import react.fc
 val FabShowcase = fc<Props> {
     Fab {
         attrs.color = "primary"
-        // TODO: No ability to use AddIcon from [MUI]
+        // TODO: No ability to use `AddIcon` from [MUI]
         SpeedDialIcon {}
     }
 }

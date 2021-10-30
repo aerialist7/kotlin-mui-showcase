@@ -6,20 +6,17 @@ import react.fc
 
 val LinkShowcase = fc<Props> {
     Link {
-        // TODO: Unable to set href correctly [MUI]
-        attrs.asDynamic().href = "#"
+        attrs.href = "#"
         attrs.underline = "none"
         +"underline='none'"
     }
     Link {
-        // TODO: Unable to set href correctly [MUI]
-        attrs.asDynamic().href = "#"
+        attrs.href = "#"
         attrs.underline = "hover"
         +"underline='hover'"
     }
     Link {
-        // TODO: Unable to set href correctly [MUI]
-        attrs.asDynamic().href = "#"
+        attrs.href = "#"
         attrs.underline = "always"
         +"underline='always'"
     }

@@ -7,10 +7,10 @@ import react.fc
 
 val ChipShowcase = fc<Props> {
     Chip {
-        attrs.label = "Chip Filled".unsafeCast<ReactNode>() // TODO: [MUI]
+        attrs.label = ReactNode("Chip Filled")
     }
     Chip {
-        attrs.label = "Chip Outlined".unsafeCast<ReactNode>() // TODO: [MUI]
+        attrs.label = ReactNode("Chip Outlined")
         attrs.variant = "outlined"
     }
 }

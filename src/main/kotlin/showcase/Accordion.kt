@@ -5,13 +5,14 @@ import mui.material.AccordionDetails
 import mui.material.AccordionSummary
 import mui.material.Typography
 import react.Props
+import react.ReactNode
 import react.fc
 
 val AccordionShowcase = fc<Props> {
     Accordion {
         AccordionSummary {
-            // TODO: Unable to add icon
-            //  [MUI] attrs.expandIcon
+            // TODO: Unable to add icon [MUI]
+            attrs.expandIcon = ReactNode("🔻")
             Typography { +"Accordion" }
         }
         AccordionDetails {

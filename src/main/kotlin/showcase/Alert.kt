@@ -3,7 +3,10 @@ package showcase
 import mui.material.Alert
 import mui.material.AlertColor.*
 import mui.material.AlertTitle
+import mui.material.Button
 import react.Props
+import react.ReactNode
+import react.createElement
 import react.fc
 
 val AlertShowcase = fc<Props> {
@@ -15,8 +18,6 @@ val AlertShowcase = fc<Props> {
     Alert {
         attrs {
             severity = warning
-            // TODO: Unable to use correct value [MUI]
-            // color = info
         }
         AlertTitle { +"Warning" }
         +"This is an warning alert — check it out!"
@@ -24,8 +25,11 @@ val AlertShowcase = fc<Props> {
     Alert {
         attrs {
             severity = info
-            // TODO: Unable to use [MUI] components here
-            // action = Button()
+            color = "info"
+            action = createElement(
+                type = Button,
+                child = arrayOf(ReactNode("Copy"))
+            )
         }
         AlertTitle { +"Info" }
         +"This is an info alert — check it out!"

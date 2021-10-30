@@ -1,12 +1,17 @@
 package showcase
 
+import csstype.FlexGrow
+import csstype.px
+import kotlinext.js.jso
 import mui.material.*
 import react.Props
 import react.fc
 
 val AppBarShowcase = fc<Props> {
     Box {
-        // TODO: Unable to use 'sx' [MUI]
+        attrs.sx = jso {
+            flexGrow = FlexGrow(1.0)
+        }
         AppBar {
             attrs.position = "static"
             Toolbar {
@@ -15,15 +20,19 @@ val AppBarShowcase = fc<Props> {
                         size = "large"
                         edge = "start"
                         color = "inherit"
-                        // TODO: Unable to use 'aria-label' [MUI]
-                        // TODO: Unable to use 'sx' [MUI]
+                        sx = jso {
+                            marginRight = 2.px
+                        }
+                        // TODO: Unable to use 'aria-label="menu"' [MUI]
                         // TODO: Unable to use MenuIcon [MUI] component
                     }
                     Typography {
                         attrs {
                             variant = "h6"
-                            // TODO: Unable to use 'compoennt' [MUI]
-                            // TODO: Unable to use 'sx' [MUI]
+                            sx = jso {
+                                flexGrow = FlexGrow(1.0)
+                            }
+                            // TODO: Unable to use 'component="div"' [MUI]
                             +"News"
                         }
                     }

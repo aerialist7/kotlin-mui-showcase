@@ -5,9 +5,10 @@ import csstype.px
 import kotlinext.js.jso
 import mui.material.Button
 import mui.material.MobileStepper
-import mui.system.SxProps
-import mui.system.Theme
-import react.*
+import react.Props
+import react.ReactNode
+import react.createElement
+import react.fc
 
 val MobileStepperShowcase = fc<Props> {
     MobileStepper {
@@ -17,10 +18,10 @@ val MobileStepperShowcase = fc<Props> {
             position = "static"
             activeStep = 1
 
-            sx = jso<CSSProperties> {
+            sx = jso {
                 maxWidth = 400.px
                 flexGrow = FlexGrow(1.0)
-            }.unsafeCast<SxProps<Theme>>()
+            }
 
             nextButton = createElement(
                 type = Button,

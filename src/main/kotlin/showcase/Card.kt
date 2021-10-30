@@ -1,29 +1,25 @@
 package showcase
 
+import csstype.Display
+import csstype.px
+import kotlinext.js.jso
 import mui.material.*
 import react.ElementType
 import react.Props
 import react.fc
 
-// TODO: Unable to use sx at all [MUI]
 val CardShowcase = fc<Props> {
-    // TODO: Is fc wrapping required?
-    val Bull = fc<Props> {
-        Box {
-            attrs.component = "span".unsafeCast<ElementType<Props>>() // TODO: Can't set component type [MUI]
-            +"•"
-        }
-    }
-
-    mui.material.Card {
+    Card {
         CardContent {
             Typography {
-                attrs.asDynamic().color = "text.secondary" // TODO: Unable set color legally [MUI]
+                // TODO: Unable set color legally [MUI]
+                attrs.asDynamic().color = "text.secondary"
                 attrs.gutterBottom = true
                 +"Word of the Day"
             }
             Typography {
-                attrs.asDynamic().component = "div" // TODO: Unable set component legally [MUI]
+                // TODO: Unable set component legally [MUI]
+                attrs.asDynamic().component = "div"
                 attrs.variant = "h5"
                 +"be"
                 Bull {}
@@ -40,5 +36,17 @@ val CardShowcase = fc<Props> {
                 +"Learn More"
             }
         }
+    }
+}
+
+private val Bull = fc<Props> {
+    Box {
+        attrs.sx = jso {
+            display = Display.inlineBlock
+            margin = 2.px
+        }
+        // TODO: Can't set component type [MUI]
+        attrs.component = "span".unsafeCast<ElementType<Props>>()
+        +"•"
     }
 }

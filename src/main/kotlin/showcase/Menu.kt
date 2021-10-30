@@ -3,21 +3,23 @@ package showcase
 import kotlinext.js.jso
 import mui.material.Menu
 import mui.material.MenuItem
+import mui.material.PopoverReference
 import mui.material.Typography
 import react.Props
 import react.dom.div
 import react.dom.events.MouseEvent
+import react.dom.events.MouseEventHandler
 import react.dom.onContextMenu
 import react.fc
 import react.useState
 
 val MenuShowcase = fc<Props> {
-    var coordinate by useState<Coordinate?>(null)
+    var point by useState<Point?>(null)
 
     val handleContextMenu = { event: MouseEvent<*, *> ->
         event.preventDefault()
-        coordinate = if (coordinate == null) {
-            Coordinate(
+        point = if (point == null) {
+            Point(
                 x = event.clientX - 2,
                 y = event.clientY - 4,
             )
@@ -26,7 +28,7 @@ val MenuShowcase = fc<Props> {
         }
     }
 
-    val handleClose = { coordinate = null }
+    val handleClose: MouseEventHandler<*> = { point = null }
 
     div {
         attrs.onContextMenu = handleContextMenu
@@ -35,45 +37,40 @@ val MenuShowcase = fc<Props> {
             +"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ipsum purus, bibendum sit amet vulputate eget, porta semper ligula. Donec bibendum vulputate erat, ac fringilla mi finibus nec. Donec ac dolor sed dolor porttitor blandit vel vel purus. Fusce vel malesuada ligula. Nam quis vehicula ante, eu finibus est. Proin ullamcorper fermentum orci, quis finibus massa. Nunc lobortis, massa ut rutrum ultrices, metus metus finibus ex, sit amet facilisis neque enim sed neque. Quisque accumsan metus vel maximus consequat. Suspendisse lacinia tellus a libero volutpat maximus"
         }
         Menu {
-            attrs.open = coordinate != null
+            attrs.open = point != null
             attrs.onClose = handleClose
 
-            // TODO: Unable to use props correctly [MUI]
-            attrs.asDynamic().anchorReference = "anchorPosition"
-            attrs.asDynamic().anchorPosition = if (coordinate != null) {
+            attrs.anchorReference = PopoverReference.anchorPosition
+            attrs.anchorPosition = if (point != null) {
                 jso {
-                    top = coordinate?.y
-                    left = coordinate?.x
+                    top = point!!.y
+                    left = point!!.x
                 }
             } else {
                 undefined
             }
 
             MenuItem {
-                // TODO: Unable to use props correctly [MUI]
-                attrs.asDynamic().onClick = handleClose
+                attrs.onClick = handleClose
                 +"Copy"
             }
             MenuItem {
-                // TODO: Unable to use props correctly [MUI]
-                attrs.asDynamic().onClick = handleClose
+                attrs.onClick = handleClose
                 +"Print"
             }
             MenuItem {
-                // TODO: Unable to use props correctly [MUI]
-                attrs.asDynamic().onClick = handleClose
+                attrs.onClick = handleClose
                 +"Highlight"
             }
             MenuItem {
-                // TODO: Unable to use props correctly [MUI]
-                attrs.asDynamic().onClick = handleClose
+                attrs.onClick = handleClose
                 +"Email"
             }
         }
     }
 }
 
-private data class Coordinate(
+private data class Point(
     val x: Double,
     val y: Double,
 )

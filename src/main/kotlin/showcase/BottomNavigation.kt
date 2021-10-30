@@ -9,6 +9,7 @@ import react.useState
 
 val BottomNavigationShowcase = fc<Props> {
     var state by useState(0)
+
     BottomNavigation {
         attrs {
             showLabels = true
@@ -16,16 +17,16 @@ val BottomNavigationShowcase = fc<Props> {
             onChange = { _, value -> state = value }
         }
         BottomNavigationAction {
-            attrs.label = "Recents".unsafeCast<ReactNode>() // TODO: Unable to use string-labels [MUI]
-            attrs.icon = "1".unsafeCast<ReactNode>() // TODO: Unable to use [MUI] Icons
+            attrs.label = ReactNode("Recents")
+            attrs.icon = ReactNode("1")
         }
         BottomNavigationAction {
-            attrs.label = "Favorites".unsafeCast<ReactNode>()
-            attrs.icon = "2".unsafeCast<ReactNode>()
+            attrs.label = ReactNode("Favorites")
+            attrs.icon = ReactNode("2")
         }
         BottomNavigationAction {
-            attrs.label = "Nearby".unsafeCast<ReactNode>()
-            attrs.icon = "3".unsafeCast<ReactNode>()
+            attrs.label = ReactNode("Nearby")
+            attrs.icon = ReactNode("3")
         }
     }
 }

@@ -9,13 +9,9 @@ import react.useState
 val DrawerShowcase = fc<Props> {
     var open by useState(false)
 
-    val handleOpen = { open = true }
-    val handleClose = { open = false }
-
     Button {
         attrs.variant = "outlined"
-        // TODO: No possibility to legally set 'onClick' props [MUI]
-        attrs.asDynamic().onClick = handleOpen
+        attrs.onClick = { open = true }
         +"Open drawer"
     }
 
@@ -24,8 +20,7 @@ val DrawerShowcase = fc<Props> {
 
         Button {
             attrs.variant = "outlined"
-            // TODO: No possibility to legally set 'onClick' props [MUI]
-            attrs.asDynamic().onClick = handleClose
+            attrs.onClick = { open = false }
             +"Close drawer"
         }
     }
