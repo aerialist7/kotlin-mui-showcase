@@ -1,1 +1,1 @@
-# [Kotlin MUI Showcase](https://aerialist7.github.io/kotlin-mui-showcase/)
+# [Kotlin MUI Showcase](https://garagum.github.io/kotlin-mui-showcase/)
