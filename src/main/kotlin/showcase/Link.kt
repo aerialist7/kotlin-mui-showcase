@@ -1,6 +1,7 @@
 package showcase
 
 import mui.material.Link
+import mui.material.Typography
 import react.Props
 import react.fc
 
@@ -8,16 +9,16 @@ val LinkShowcase = fc<Props> {
     Link {
         attrs.href = "#"
         attrs.underline = "none"
-        +"underline='none'"
+        Typography { +"underline='none'" }
     }
     Link {
         attrs.href = "#"
         attrs.underline = "hover"
-        +"underline='hover'"
+        Typography { +"underline='hover'" }
     }
     Link {
         attrs.href = "#"
         attrs.underline = "always"
-        +"underline='always'"
+        Typography { +"underline='always'" }
     }
 }
