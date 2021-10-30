@@ -63,4 +63,5 @@ private val showcases: Map<String, FunctionComponent<Props>>
         "Popper" to PopperShowcase,
         "Radio" to RadioShowcase,
         "Rating" to RatingShowcase,
+        "Select" to SelectShowcase,
     )
