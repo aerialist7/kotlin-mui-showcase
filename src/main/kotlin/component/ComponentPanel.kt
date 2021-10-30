@@ -45,6 +45,7 @@ val ComponentPanel = fc<ComponentPanelProps> {
             "Menu",
             "Mobile Stepper",
             "Pagination",
+            "Paper",
         ).map {
             Tab {
                 attrs {
@@ -79,6 +80,7 @@ val ComponentPanel = fc<ComponentPanelProps> {
         "Menu" -> MenuShowcase()
         "Mobile Stepper" -> MobileStepperShowcase()
         "Pagination" -> PaginationShowcase()
+        "Paper" -> PaperShowcase()
         else -> div { +"TBD" }
     }
 }
