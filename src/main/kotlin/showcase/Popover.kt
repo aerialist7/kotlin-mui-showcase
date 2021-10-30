@@ -13,7 +13,7 @@ import react.fc
 import react.useState
 
 val PopoverShowcase = fc<Props> {
-    var anchorEl: Element? by useState(null)
+    var anchorEl by useState<Element?>(null)
 
     val handleClick: MouseEventHandler<*> = { anchorEl = it.currentTarget }
 
