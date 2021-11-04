@@ -15,7 +15,7 @@ val Header = fc<HeaderProps> {
         div {
             css {
                 display = Display.flex
-                alignItems = Globals.inherit
+                alignItems = AlignItems.normal
             }
 
             Logo {
