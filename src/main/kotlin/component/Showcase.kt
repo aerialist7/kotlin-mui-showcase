@@ -50,6 +50,7 @@ private val showcases: Map<String, FunctionComponent<Props>>
         "Backdrop" to BackdropShowcase,
         "Badge" to BadgeShowcase,
         "Bottom Navigation" to BottomNavigationShowcase,
+        "Breadcrumbs" to BreadcrumbsShowcase,
         "Button" to ButtonShowcase,
         "Card" to CardShowcase,
         "Checkbox" to CheckboxShowcase,
