@@ -2,6 +2,8 @@ package component
 
 import react.FunctionComponent
 import react.Props
+import react.dom.html.ReactHTML.div
+import react.dom.main
 import react.fc
 import react.useState
 import ringui.SmartTabs
@@ -14,23 +16,28 @@ external interface ComponentPanelProps : Props
 val Showcase = fc<ComponentPanelProps> {
     var activeShowcase by useState("Accordion")
 
-    SmartTabs {
-        // TODO: Fix SmartTabs props
-        attrs.unsafeCast<TabsProps>().apply {
-            selected = activeShowcase
-            onSelect = { activeShowcase = it }
-        }
-        showcases.map { (showcaseName) ->
-            Tab {
-                attrs {
-                    id = showcaseName
-                    title = showcaseName
+    main {
+        SmartTabs {
+            // TODO: Fix SmartTabs props
+            attrs.unsafeCast<TabsProps>().apply {
+                selected = activeShowcase
+                onSelect = { activeShowcase = it }
+            }
+            showcases.map { (showcaseName) ->
+                Tab {
+                    attrs {
+                        id = showcaseName
+                        title = showcaseName
+                    }
                 }
             }
         }
+
+        div {
+            // TODO: Use react-router instead
+            showcases.getValue(activeShowcase)()
+        }
     }
-    // TODO: Use react-router instead
-    showcases.getValue(activeShowcase)()
 }
 
 private val showcases: Map<String, FunctionComponent<Props>>
