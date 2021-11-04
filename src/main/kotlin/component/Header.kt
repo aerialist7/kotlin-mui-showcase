@@ -15,7 +15,7 @@ val Header = fc<HeaderProps> {
         div {
             css {
                 display = Display.flex
-                alignItems = AlignItems.normal
+                alignItems = Globals.inherit
             }
 
             Logo {
@@ -34,7 +34,7 @@ val Header = fc<HeaderProps> {
                 attrs.level = 2
                 div {
                     css {
-                        color = Color("#FFFFFF")
+                        color = NamedColor.white
                         paddingLeft = 4.px
                         userSelect = UserSelect.none
                     }
