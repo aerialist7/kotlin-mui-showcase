@@ -1,25 +1,21 @@
 package component
 
-import kotlinx.css.*
-import kotlinx.css.Align.initial
-import kotlinx.css.Color.Companion.white
-import kotlinx.css.Display.flex
-import kotlinx.css.UserSelect.none
+import csstype.*
 import react.Props
+import react.css.css
+import react.dom.a
+import react.dom.html.ReactHTML.div
 import react.fc
 import ringui.*
-import styled.css
-import styled.styledA
-import styled.styledDiv
 
 external interface HeaderProps : Props
 
 val Header = fc<HeaderProps> {
     Header {
-        styledDiv {
+        div {
             css {
-                display = flex
-                alignItems = initial
+                display = Display.flex
+                alignItems = AlignItems.normal
             }
 
             Logo {
@@ -36,11 +32,11 @@ val Header = fc<HeaderProps> {
 
             Heading {
                 attrs.level = 2
-                styledDiv {
+                div {
                     css {
-                        color = white
+                        color = Color("#FFFFFF")
                         paddingLeft = 4.px
-                        userSelect = none
+                        userSelect = UserSelect.none
                     }
                     +"Showcase"
                 }
@@ -48,7 +44,7 @@ val Header = fc<HeaderProps> {
         }
 
         Tray {
-            styledA {
+            a {
                 attrs.href = "https://github.com/aerialist7/kotlin-mui-showcase"
 
                 TrayIcon {

@@ -15,10 +15,9 @@ dependencies {
 
     implementation(kotlinw("react"))
     implementation(kotlinw("react-dom"))
+    implementation(kotlinw("react-css"))
 
     implementation(kotlinw("mui"))
-
-    implementation(kotlinw("styled"))
 
     implementation(kotlinw("ring-ui"))
     implementation(npm("core-js", "3.19.0"))
