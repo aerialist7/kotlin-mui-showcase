@@ -78,4 +78,5 @@ private val showcases: Map<String, FunctionComponent<Props>>
         "Switch" to SwitchShowcase,
         "Tabs" to TabsShowcase,
         "Text Field" to TextFieldShowcase,
+        "Toggle Button" to ToggleButtonShowcase,
     )
