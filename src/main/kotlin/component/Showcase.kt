@@ -76,4 +76,5 @@ private val showcases: Map<String, FunctionComponent<Props>>
         "Snackbar" to SnackbarShowcase,
         "Stepper" to StepperShowcase,
         "Switch" to SwitchShowcase,
+        "Tabs" to TabsShowcase,
     )
