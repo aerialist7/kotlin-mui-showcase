@@ -26,12 +26,12 @@ val MobileStepperShowcase = fc<Props> {
             nextButton = createElement(
                 type = Button,
                 props = jso { size = "small" },
-                child = arrayOf(ReactNode("Next"))
+                children = arrayOf(ReactNode("Next"))
             )
             backButton = createElement(
                 type = Button,
                 props = jso { size = "small" },
-                child = arrayOf(ReactNode("Back"))
+                children = arrayOf(ReactNode("Back"))
             )
         }
     }

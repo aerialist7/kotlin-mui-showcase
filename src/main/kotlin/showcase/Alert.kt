@@ -28,7 +28,7 @@ val AlertShowcase = fc<Props> {
             color = "info"
             action = createElement(
                 type = Button,
-                child = arrayOf(ReactNode("Copy"))
+                children = arrayOf(ReactNode("Copy"))
             )
         }
         AlertTitle { +"Info" }

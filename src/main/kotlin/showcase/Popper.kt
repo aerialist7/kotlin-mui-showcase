@@ -4,7 +4,6 @@ import csstype.AlignItems
 import csstype.JustifyContent
 import csstype.px
 import kotlinext.js.jso
-import mui.core.Popper
 import mui.material.*
 import org.w3c.dom.Element
 import react.Props
@@ -29,7 +28,8 @@ val PopperShowcase = fc<Props> {
             width = 500.px
         }
         Popper {
-            attrs {
+            // TODO: Remove `asDynamic` after [MUI] update
+            with(attrs.asDynamic()) {
                 open = isOpen
                 anchorEl = anchorElement
                 placement = placementPosition
