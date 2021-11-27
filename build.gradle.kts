@@ -11,7 +11,7 @@ fun kotlinw(target: String): String =
     "org.jetbrains.kotlin-wrappers:kotlin-$target"
 
 dependencies {
-    implementation(enforcedPlatform(kotlinw("wrappers-bom:0.0.1-pre.268-kotlin-1.6.0")))
+    implementation(enforcedPlatform(kotlinw("wrappers-bom:0.0.1-pre.272-kotlin-1.6.0")))
 
     implementation(kotlinw("react"))
     implementation(kotlinw("react-dom"))
