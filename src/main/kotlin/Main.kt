@@ -5,7 +5,11 @@ import kotlinx.browser.document
 import react.dom.render
 
 fun main() {
-    render(document.getElementById("root")) {
+    val container = with(document) {
+        createElement("div").also { body!!.append(it) }
+    }
+
+    render(container) {
         Header()
         Showcase()
         Footer()
