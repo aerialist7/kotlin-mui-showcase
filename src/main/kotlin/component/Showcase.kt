@@ -1,9 +1,13 @@
 package component
 
+import csstype.Flex
+import csstype.Margin
+import csstype.px
 import react.FC
 import react.Props
+import react.css.css
 import react.dom.html.ReactHTML.div
-import react.dom.main
+import react.dom.html.ReactHTML.main
 import react.fc
 import react.useState
 import ringui.SmartTabs
@@ -17,6 +21,11 @@ val Showcase = fc<ComponentPanelProps> {
     var activeShowcase by useState("Accordion")
 
     main {
+        css {
+            flex = Flex.auto
+            margin = Margin(0.px, 32.px)
+        }
+
         SmartTabs {
             // TODO: Fix SmartTabs props
             attrs.unsafeCast<TabsProps>().apply {
