@@ -1,6 +1,5 @@
 package showcase
 
-import mui.material.BaseTextFieldProps
 import mui.material.Box
 import mui.material.TextField
 import react.Props
@@ -18,7 +17,6 @@ val TextFieldShowcase = fc<Props> {
         }
         TextField {
             attrs {
-                this as BaseTextFieldProps
                 id = "outlined-basic"
                 label = ReactNode("Outlined")
                 variant = "outlined"
@@ -26,7 +24,6 @@ val TextFieldShowcase = fc<Props> {
         }
         TextField {
             attrs {
-                this as BaseTextFieldProps
                 id = "filled-basic"
                 label = ReactNode("Filled")
                 variant = "filled"
@@ -34,7 +31,6 @@ val TextFieldShowcase = fc<Props> {
         }
         TextField {
             attrs {
-                this as BaseTextFieldProps
                 id = "standard-basic"
                 label = ReactNode("Standard")
                 variant = "standard"

@@ -1,6 +1,6 @@
 package component
 
-import react.FunctionComponent
+import react.FC
 import react.Props
 import react.dom.html.ReactHTML.div
 import react.dom.main
@@ -40,7 +40,7 @@ val Showcase = fc<ComponentPanelProps> {
     }
 }
 
-private val showcases: Map<String, FunctionComponent<Props>>
+private val showcases: Map<String, FC<Props>>
     get() = mapOf(
         "Accordion" to AccordionShowcase,
         "Alert" to AlertShowcase,
