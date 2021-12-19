@@ -21,9 +21,6 @@ dependencies {
 
     implementation(npm("@emotion/react", "11.7.0"))
     implementation(npm("@emotion/styled", "11.6.0"))
-
-    implementation(kotlinw("ring-ui"))
-    implementation(npm("core-js", "3.19.3"))
 }
 
 kotlin.js {
@@ -32,16 +29,6 @@ kotlin.js {
 }
 
 tasks {
-    patchWebpackConfig {
-        patch(
-            """
-            config.module.rules.push(
-                ...require('@jetbrains/ring-ui/webpack.config').config.module.rules
-            )
-        """
-        )
-    }
-
     wrapper {
         gradleVersion = "7.3.1"
     }
