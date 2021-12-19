@@ -1,3 +1,4 @@
+import component.*
 import csstype.*
 import kotlinext.js.jso
 import kotlinx.browser.document
@@ -8,7 +9,6 @@ import react.*
 import react.dom.html.ReactHTML
 import react.dom.html.ReactHTML.div
 import react.dom.render
-import showcase.*
 
 fun main() {
     val container = with(document) {
@@ -22,75 +22,71 @@ fun main() {
             .also { body!!.append(it) }
     }
 
-    render(container) {
+    val application = Fragment.create {
         Showcase()
     }
+
+    render(application, container)
 }
 
 private val drawerWidth = 185.px
 
-private val Showcase = fc<Props> {
+private val Showcase = FC<Props> {
     var activeShowcase by useState("Accordion")
 
     Box {
-        attrs {
-            sx = jso {
-                display = Display.flex
-            }
+        sx = jso {
+            display = Display.flex
         }
+
         AppBar {
-            attrs {
-                position = "fixed"
-                sx = jso {
-                    width = 100.pct - drawerWidth
-                    marginLeft = drawerWidth
-                }
+            position = "fixed"
+            sx = jso {
+                width = 100.pct - drawerWidth
+                marginLeft = drawerWidth
             }
+
             Toolbar {
                 Typography {
-                    attrs {
-                        variant = "h6"
-                        noWrap = true
-                        asDynamic().component = div
-                    }
+                    variant = "h6"
+                    noWrap = true
+                    asDynamic().component = ReactHTML.div
+
                     +"Kotlin MUI Showcase"
                 }
             }
         }
         Box {
-            attrs {
-                component = ReactHTML.nav
-                sx = jso {
-                    width = drawerWidth
-                    flexShrink = FlexShrink(0.0)
-                }
+            component = ReactHTML.nav
+            sx = jso {
+                width = drawerWidth
+                flexShrink = FlexShrink(0.0)
             }
+
             Drawer {
-                attrs {
-                    sx = jso {
-                        width = drawerWidth // todo check this props seems they don t work
-                        boxSizing = BoxSizing.borderBox
-                        flexShrink = FlexShrink(0.0)
-                        variant = "permanent"
-                        anchor = "left"
-                        open = true
-                    }
+                sx = jso {
+                    width = drawerWidth // todo check this props seems they don t work
+                    boxSizing = BoxSizing.borderBox
+                    flexShrink = FlexShrink(0.0)
+                    variant = "permanent"
+                    anchor = "left"
+                    open = true
                 }
+
                 // TODO: DrawerHeader
                 Divider {}
 
                 List {
                     showcases.map { (showcaseName) ->
                         ListItemButton {
-                            attrs {
-                                this as ListItemButtonBaseProps
-                                selected = activeShowcase == showcaseName
-                                onClick = { activeShowcase = showcaseName }
-                            }
+                            // TODO: Needs an ability to set generic type to `ListItemButton` component [MUI]
+                            this as ListItemButtonBaseProps
+
+                            selected = activeShowcase == showcaseName
+                            onClick = { activeShowcase = showcaseName }
+
                             ListItemText {
-                                attrs {
-                                    primary = ReactNode(showcaseName)
-                                }
+                                primary = ReactNode(showcaseName)
                             }
                         }
                     }
@@ -98,11 +94,10 @@ private val Showcase = fc<Props> {
             }
         }
         Box {
-            attrs {
-                component = ReactHTML.main
-//                sx = { { flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } } }
-            }
-            Toolbar { }
+            component = ReactHTML.main
+            // TODO: Set `sx`
+            // sx = { { flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } } }
+            Toolbar {}
 
             div {
                 // TODO: Use react-router instead
