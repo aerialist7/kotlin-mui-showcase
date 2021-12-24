@@ -9,6 +9,6 @@ val FabShowcase = FC<Props> {
     Fab {
         color = "primary"
         // TODO: No ability to use `AddIcon` from [MUI]
-        SpeedDialIcon {}
+        SpeedDialIcon()
     }
 }

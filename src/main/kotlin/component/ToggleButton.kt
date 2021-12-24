@@ -24,20 +24,20 @@ val ToggleButtonShowcase = FC<Props> {
             value = "center"
             ariaLabel = "centered"
 
-            SpeedDialIcon {}
+            SpeedDialIcon()
         }
         ToggleButton {
             value = "right"
             ariaLabel = "right aligned"
 
-            ListItemIcon {}
+            ListItemIcon()
         }
         ToggleButton {
             value = "justify"
             ariaLabel = "justified"
             disabled = true
 
-            SvgIcon {}
+            SvgIcon()
         }
     }
 }

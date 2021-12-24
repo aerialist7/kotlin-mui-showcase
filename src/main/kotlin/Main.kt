@@ -50,7 +50,7 @@ private val Showcase = FC<Props> {
                 Typography {
                     variant = "h6"
                     noWrap = true
-                    asDynamic().component = ReactHTML.div
+                    asDynamic().component = div
 
                     +"Kotlin MUI Showcase"
                 }
@@ -74,7 +74,7 @@ private val Showcase = FC<Props> {
                 }
 
                 // TODO: DrawerHeader
-                Divider {}
+                Divider()
 
                 List {
                     showcases.map { (showcaseName) ->
@@ -97,7 +97,7 @@ private val Showcase = FC<Props> {
             component = ReactHTML.main
             // TODO: Set `sx`
             // sx = { { flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } } }
-            Toolbar {}
+            Toolbar()
 
             div {
                 // TODO: Use react-router instead

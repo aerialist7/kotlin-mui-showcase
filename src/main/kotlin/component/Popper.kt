@@ -80,13 +80,13 @@ val PopperShowcase = FC<Props> {
                     onClick = { it.handleClick(newPlacement) }
                     +newPlacement
                 }
-                br {}
+                br()
                 Button {
                     val newPlacement = "left"
                     onClick = { it.handleClick(newPlacement) }
                     +newPlacement
                 }
-                br {}
+                br()
                 Button {
                     val newPlacement = "left-end"
                     onClick = { it.handleClick(newPlacement) }

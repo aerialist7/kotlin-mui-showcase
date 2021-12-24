@@ -23,11 +23,11 @@ val CardShowcase = FC<Props> {
                 variant = "h5"
 
                 +"be"
-                Bull {}
+                Bull()
                 +"nev"
-                Bull {}
+                Bull()
                 +"o"
-                Bull {}
+                Bull()
                 +"lent"
             }
         }

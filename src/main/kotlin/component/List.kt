@@ -19,7 +19,7 @@ val ListShowcase = FC<Props> {
             ListItemButton {
                 ListItemIcon {
                     // TODO: Unable to use `StarIcon` [MUI]
-                    SpeedDialIcon {}
+                    SpeedDialIcon()
                 }
                 ListItemText {
                     +"Chelsea Otakan"

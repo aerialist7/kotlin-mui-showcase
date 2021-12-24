@@ -12,7 +12,7 @@ val TooltipShowcase = FC<Props> {
         title = ReactNode("Speed Dial")
 
         IconButton {
-            SpeedDialIcon {}
+            SpeedDialIcon()
         }
     }
 }
