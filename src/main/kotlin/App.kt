@@ -1,4 +1,3 @@
-import component.*
 import csstype.Display
 import csstype.px
 import kotlinext.js.jso
@@ -7,6 +6,7 @@ import mui.system.Box
 import org.w3c.dom.HTMLDivElement
 import react.*
 import react.dom.render
+import showcase.*
 
 private val App = FC<Props> {
     val components = useMemo {
