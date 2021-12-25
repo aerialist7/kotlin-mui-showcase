@@ -7,8 +7,7 @@ import mui.material.Button
 import mui.material.MobileStepper
 import react.FC
 import react.Props
-import react.ReactNode
-import react.createElement
+import react.create
 
 val MobileStepperShowcase = FC<Props> {
     MobileStepper {
@@ -22,15 +21,13 @@ val MobileStepperShowcase = FC<Props> {
             flexGrow = FlexGrow(1.0)
         }
 
-        nextButton = createElement(
-            type = Button,
-            props = jso { size = "small" },
-            children = arrayOf(ReactNode("Next"))
-        )
-        backButton = createElement(
-            type = Button,
-            props = jso { size = "small" },
-            children = arrayOf(ReactNode("Back"))
-        )
+        nextButton = Button.create {
+            size = "small"
+            +"Next"
+        }
+        backButton = Button.create {
+            size = "small"
+            +"Back"
+        }
     }
 }

@@ -6,8 +6,7 @@ import mui.material.AlertTitle
 import mui.material.Button
 import react.FC
 import react.Props
-import react.ReactNode
-import react.createElement
+import react.create
 
 val AlertShowcase = FC<Props> {
     Alert {
@@ -25,10 +24,7 @@ val AlertShowcase = FC<Props> {
     Alert {
         severity = info
         color = "info"
-        action = createElement(
-            type = Button,
-            children = arrayOf(ReactNode("Copy"))
-        )
+        action = Button.create { +"Copy" }
 
         AlertTitle { +"Info" }
         +"This is an info alert — check it out!"

@@ -4,7 +4,7 @@ import mui.material.*
 import react.FC
 import react.Props
 import react.ReactNode
-import react.createElement
+import react.create
 import react.dom.aria.ariaLabel
 
 val RadioShowcase = FC<Props> {
@@ -22,17 +22,17 @@ val RadioShowcase = FC<Props> {
 
             FormControlLabel {
                 value = "female"
-                control = createElement(Radio)
+                control = Radio.create()
                 label = ReactNode("Female")
             }
             FormControlLabel {
                 value = "male"
-                control = createElement(Radio)
+                control = Radio.create()
                 label = ReactNode("Male")
             }
             FormControlLabel {
                 value = "other"
-                control = createElement(Radio)
+                control = Radio.create()
                 label = ReactNode("Other")
             }
         }
