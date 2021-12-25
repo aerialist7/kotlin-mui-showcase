@@ -36,7 +36,7 @@ fun main() {
 }
 
 private val headerHeight = 64.px
-private val drawerWidth = 185.px
+private val drawerWidth = 168.px
 
 private val Showcase = FC<Props> {
     var activeShowcase by useState("Accordion")
@@ -82,23 +82,14 @@ private val Showcase = FC<Props> {
 
         Box {
             component = nav
-            sx = jso {
-                width = drawerWidth
-                flexShrink = FlexShrink(0.0)
-            }
 
             Drawer {
                 sx = jso {
-                    width = drawerWidth // todo check this props seems they don t work
-                    boxSizing = BoxSizing.borderBox
-                    flexShrink = FlexShrink(0.0)
+                    width = drawerWidth
                     variant = "permanent"
                     anchor = "left"
                     open = true
                 }
-
-                // TODO: DrawerHeader
-                Divider()
 
                 List {
                     showcases.map { (showcaseName) ->
