@@ -3,41 +3,42 @@ package showcase
 import csstype.FlexGrow
 import csstype.px
 import kotlinext.js.jso
+import mui.icons.material.Menu
 import mui.material.*
 import react.FC
 import react.Props
+import react.dom.aria.ariaLabel
 
 val AppBarShowcase = FC<Props> {
     Box {
-        sx = jso {
-            flexGrow = FlexGrow(1.0)
-        }
+        sx = jso { flexGrow = FlexGrow(1.0) }
+
         AppBar {
             position = "static"
 
             Toolbar {
                 IconButton {
-                    size = "large"
+                    sx = jso { marginRight = 2.px }
                     edge = "start"
+                    size = "large"
                     color = "inherit"
-                    sx = jso {
-                        marginRight = 2.px
-                    }
-                    // TODO: Unable to use 'aria-label="menu"' [MUI]
-                    // TODO: Unable to use MenuIcon [MUI] component
+                    ariaLabel = "menu"
 
-                    Typography {
-                        variant = "h6"
-                        sx = jso {
-                            flexGrow = FlexGrow(1.0)
-                        }
-                        // TODO: Unable to use 'component="div"' [MUI]
-                        +"News"
-                    }
-                    Button {
-                        color = "inherit"
-                        +"Login"
-                    }
+                    Menu()
+                }
+
+                Typography {
+                    sx = jso { flexGrow = FlexGrow(1.0) }
+                    variant = "h6"
+                    // TODO: Unable to use 'component="div"' [MUI]
+
+                    +"News"
+                }
+
+                Button {
+                    color = "inherit"
+
+                    +"Login"
                 }
             }
         }
