@@ -25,18 +25,6 @@ val AutocompleteShowcase = FC<Props> {
     }
 }
 
-external interface Movie {
-    var label: String
-    var year: Int
-}
-
-fun Movie(label: String, year: Int): Movie {
-    return jso {
-        this.label = label
-        this.year = year
-    }
-}
-
 private val top100Films = arrayOf(
     Movie("The Shawshank Redemption", 1994),
     Movie("The Godfather", 1972),
@@ -139,3 +127,13 @@ private val top100Films = arrayOf(
     Movie("3 Idiots", 2009),
     Movie("Monty Python and the Holy Grail", 1975),
 )
+
+private external interface Movie {
+    var label: String
+    var year: Int
+}
+
+private fun Movie(label: String, year: Int): Movie = jso {
+    this.label = label
+    this.year = year
+}
