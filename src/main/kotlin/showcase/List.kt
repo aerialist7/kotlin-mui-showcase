@@ -3,6 +3,7 @@ package showcase
 import csstype.pct
 import csstype.px
 import kotlinext.js.jso
+import mui.icons.material.Star
 import mui.material.*
 import react.FC
 import react.Props
@@ -13,13 +14,14 @@ val ListShowcase = FC<Props> {
             width = 100.pct
             maxWidth = 360.px
         }
+
         ListItem {
             // TODO: Unable to use `disablePadding` prop correctly  [MUI]
             asDynamic().disablePadding = true
+
             ListItemButton {
                 ListItemIcon {
-                    // TODO: Unable to use `StarIcon` [MUI]
-                    SpeedDialIcon()
+                    Star()
                 }
                 ListItemText {
                     +"Chelsea Otakan"
@@ -29,6 +31,7 @@ val ListShowcase = FC<Props> {
         ListItem {
             // TODO: Unable to use `disablePadding` prop correctly  [MUI]
             asDynamic().disablePadding = true
+
             ListItemButton {
                 ListItemText {
                     +"Eric Hoffman"
