@@ -1,30 +1,61 @@
 package showcase
 
+import mui.icons.material.ExpandMore
 import mui.material.Accordion
 import mui.material.AccordionDetails
 import mui.material.AccordionSummary
 import mui.material.Typography
 import react.FC
 import react.Props
-import react.ReactNode
+import react.create
+import react.dom.aria.ariaControls
 
 val AccordionShowcase = FC<Props> {
     Accordion {
         AccordionSummary {
-            // TODO: Unable to add icon [MUI]
-            expandIcon = ReactNode("🔻")
+            id = "panel1a-header"
+            ariaControls = "panel1a-content"
+            expandIcon = ExpandMore.create()
 
-            Typography { +"Accordion" }
+            Typography {
+                +"Accordion 1"
+            }
         }
         AccordionDetails {
-            Typography { +"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget." }
+            Typography {
+                +"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget."
+            }
         }
     }
+
+    Accordion {
+        AccordionSummary {
+            id = "panel2a-header"
+            ariaControls = "panel2a-content"
+            expandIcon = ExpandMore.create()
+
+            Typography {
+                +"Accordion 2"
+            }
+        }
+        AccordionDetails {
+            Typography {
+                +"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit leo lobortis eget."
+            }
+        }
+    }
+
     Accordion {
         disabled = true
 
         AccordionSummary {
-            Typography { +"Disabled Accordion" }
+            id = "panel3a-header"
+            ariaControls = "panel3a-content"
+            expandIcon = ExpandMore.create()
+
+            Typography {
+                +"Disabled Accordion"
+            }
         }
     }
 }
