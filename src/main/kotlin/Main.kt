@@ -2,10 +2,15 @@ import component.*
 import csstype.*
 import kotlinext.js.jso
 import kotlinx.browser.document
+import kotlinx.browser.window
+import mui.icons.material.GitHub
 import mui.material.*
 import mui.system.Box
 import org.w3c.dom.HTMLDivElement
 import react.*
+import react.dom.aria.AriaHasPopup.`false`
+import react.dom.aria.ariaHasPopup
+import react.dom.aria.ariaLabel
 import react.dom.html.ReactHTML
 import react.dom.html.ReactHTML.div
 import react.dom.render
@@ -48,11 +53,26 @@ private val Showcase = FC<Props> {
 
             Toolbar {
                 Typography {
+                    sx = jso {
+                        flexGrow = FlexGrow(1.0)
+                    }
                     variant = "h6"
                     noWrap = true
                     asDynamic().component = div
 
                     +"Kotlin MUI Showcase"
+                }
+
+                IconButton {
+                    size = "large"
+                    color = "inherit"
+                    title = "Author Account"
+                    onClick = { window.location.href = "https://github.com/aerialist7/" }
+
+                    ariaLabel = "author account"
+                    ariaHasPopup = `false`
+
+                    GitHub()
                 }
             }
         }
