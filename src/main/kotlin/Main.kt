@@ -11,8 +11,9 @@ import react.*
 import react.dom.aria.AriaHasPopup.`false`
 import react.dom.aria.ariaHasPopup
 import react.dom.aria.ariaLabel
-import react.dom.html.ReactHTML
 import react.dom.html.ReactHTML.div
+import react.dom.html.ReactHTML.main
+import react.dom.html.ReactHTML.nav
 import react.dom.render
 
 fun main() {
@@ -34,6 +35,7 @@ fun main() {
     render(application, container)
 }
 
+private val headerHeight = 64.px
 private val drawerWidth = 185.px
 
 private val Showcase = FC<Props> {
@@ -48,6 +50,7 @@ private val Showcase = FC<Props> {
             position = "fixed"
             sx = jso {
                 width = 100.pct - drawerWidth
+                height = headerHeight
                 marginLeft = drawerWidth
             }
 
@@ -76,8 +79,9 @@ private val Showcase = FC<Props> {
                 }
             }
         }
+
         Box {
-            component = ReactHTML.nav
+            component = nav
             sx = jso {
                 width = drawerWidth
                 flexShrink = FlexShrink(0.0)
@@ -113,16 +117,17 @@ private val Showcase = FC<Props> {
                 }
             }
         }
-        Box {
-            component = ReactHTML.main
-            // TODO: Set `sx`
-            // sx = { { flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } } }
-            Toolbar()
 
-            div {
-                // TODO: Use react-router instead
-                showcases.getValue(activeShowcase)()
+        Box {
+            component = main
+            sx = jso {
+                flexGrow = FlexGrow(1.0)
+                marginTop = headerHeight
+                padding = 30.px
             }
+
+            // TODO: Use react-router instead
+            showcases.getValue(activeShowcase)()
         }
     }
 }
