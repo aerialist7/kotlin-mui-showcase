@@ -1,43 +1,49 @@
 package showcase
 
-import mui.material.*
+import mui.icons.material.FormatAlignCenter
+import mui.icons.material.FormatAlignJustify
+import mui.icons.material.FormatAlignLeft
+import mui.icons.material.FormatAlignRight
+import mui.material.ToggleButton
+import mui.material.ToggleButtonGroup
 import react.FC
 import react.Props
 import react.dom.aria.ariaLabel
 import react.useState
 
-// TODO: Unable to use [MUI] icon components
 val ToggleButtonShowcase = FC<Props> {
     var alignment by useState("left")
 
     ToggleButtonGroup {
-        value = alignment
         exclusive = true
+        value = alignment
         onChange = { _, newAlignment -> alignment = newAlignment }
         ariaLabel = "text alignment"
 
         ToggleButton {
             value = "left"
             ariaLabel = "left aligned"
+
+            FormatAlignLeft()
         }
         ToggleButton {
             value = "center"
             ariaLabel = "centered"
 
-            SpeedDialIcon()
+            FormatAlignCenter()
         }
         ToggleButton {
             value = "right"
             ariaLabel = "right aligned"
 
-            ListItemIcon()
+            FormatAlignRight()
         }
         ToggleButton {
+            disabled = true
             value = "justify"
             ariaLabel = "justified"
-            disabled = true
 
-            SvgIcon()
+            FormatAlignJustify()
         }
     }
 }
