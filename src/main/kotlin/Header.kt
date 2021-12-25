@@ -6,6 +6,7 @@ import csstype.pct
 import kotlinext.js.jso
 import kotlinx.browser.window
 import mui.icons.material.GitHub
+import mui.icons.material.MenuBook
 import mui.material.AppBar
 import mui.material.IconButton
 import mui.material.Toolbar
@@ -38,8 +39,17 @@ val Header = FC<Props> {
                 +"Kotlin MUI Showcase"
             }
 
-            // TODO: Add IconButton with a link to https://mui.com/getting-started/usage/
+            IconButton {
+                size = "large"
+                color = "inherit"
+                title = "MUI Documentation"
+                onClick = { window.location.href = "https://mui.com/getting-started/usage/" }
 
+                ariaLabel = "mui documentation"
+                ariaHasPopup = `false`
+
+                MenuBook()
+            }
             IconButton {
                 size = "large"
                 color = "inherit"
