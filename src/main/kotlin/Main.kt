@@ -66,6 +66,8 @@ private val Showcase = FC<Props> {
                     +"Kotlin MUI Showcase"
                 }
 
+                // TODO: Add IconButton with a link to https://mui.com/getting-started/usage/
+
                 IconButton {
                     size = "large"
                     color = "inherit"
