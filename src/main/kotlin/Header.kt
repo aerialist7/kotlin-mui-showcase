@@ -18,7 +18,11 @@ import react.dom.aria.ariaHasPopup
 import react.dom.aria.ariaLabel
 import react.dom.html.ReactHTML.div
 
-val Header = FC<Props> {
+external interface HeaderProps : Props {
+    var sourceCodeKey: String
+}
+
+val Header = FC<HeaderProps> { props ->
     AppBar {
         position = "fixed"
         sx = jso {
@@ -42,21 +46,32 @@ val Header = FC<Props> {
             IconButton {
                 size = "large"
                 color = "inherit"
-                title = "MUI Documentation"
-                onClick = { window.location.href = "https://mui.com/getting-started/usage/" }
+                title = "Read Documentation"
+                onClick = {
+                    window.location.href = "https://mui.com/components/${props.sourceCodeKey}/"
+                }
 
-                ariaLabel = "mui documentation"
+                ariaLabel = "official documentation"
                 ariaHasPopup = `false`
 
                 MenuBook()
             }
+
             IconButton {
                 size = "large"
                 color = "inherit"
-                title = "Author Account"
-                onClick = { window.location.href = "https://github.com/aerialist7/" }
+                title = "View Sources"
+                onClick = {
+                    val name = props.sourceCodeKey
+                        .split("-")
+                        .asSequence()
+                        .map { it.replaceFirstChar { it.titlecase() } }
+                        .reduce { accumulator, word -> accumulator.plus(word) }
 
-                ariaLabel = "author account"
+                    window.location.href = "https://github.com/karakum-team/kotlin-mui-showcase/blob/main/src/main/kotlin/showcase/$name.kt"
+                }
+
+                ariaLabel = "source code"
                 ariaHasPopup = `false`
 
                 GitHub()

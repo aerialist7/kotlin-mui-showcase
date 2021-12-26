@@ -7,10 +7,10 @@ import react.ReactNode
 import react.dom.html.ReactHTML.nav
 
 external interface SidebarProps : Props {
-    var items: Iterable<String>
+    var value: Iterable<String>
 
-    var selectedItem: String
-    var onSelectedItemChange: (String) -> Unit
+    var selected: String
+    var onSelectedChange: (String) -> Unit
 }
 
 val Sidebar = FC<SidebarProps> { props ->
@@ -26,13 +26,13 @@ val Sidebar = FC<SidebarProps> { props ->
             }
 
             List {
-                props.items.map { showcaseName ->
+                props.value.map { showcaseName ->
                     ListItemButton {
                         // TODO: Needs an ability to set generic type to `ListItemButton` component [MUI]
                         this as ListItemButtonBaseProps
 
-                        selected = props.selectedItem == showcaseName
-                        onClick = { props.onSelectedItemChange(showcaseName) }
+                        selected = props.selected == showcaseName
+                        onClick = { props.onSelectedChange(showcaseName) }
 
                         ListItemText {
                             primary = ReactNode(showcaseName)
