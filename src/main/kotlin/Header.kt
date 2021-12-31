@@ -18,7 +18,7 @@ import react.dom.html.ReactHTML.div
 import react.router.useLocation
 
 val Header = FC<Props> {
-    val routeKey = useLocation().pathname.removePrefix("/")
+    val lastPathname = useLocation().pathname.substringAfterLast("/")
 
     AppBar {
         sx = jso {
@@ -49,7 +49,7 @@ val Header = FC<Props> {
                     size = "large"
                     color = "inherit"
                     onClick = {
-                        window.location.href = "https://mui.com/components/$routeKey/"
+                        window.location.href = "https://mui.com/components/$lastPathname/"
                     }
 
                     MenuBook()
@@ -65,13 +65,17 @@ val Header = FC<Props> {
                     size = "large"
                     color = "inherit"
                     onClick = {
-                        val name = routeKey
+                        var name = lastPathname
                             .split("-")
                             .asSequence()
                             .map { it.replaceFirstChar { it.titlecase() } }
                             .reduce { accumulator, word -> accumulator.plus(word) }
 
-                        window.location.href = "https://github.com/karakum-team/kotlin-mui-showcase/blob/main/src/main/kotlin/showcase/$name.kt"
+                        if (name.isNotEmpty()) {
+                            name += ".kt"
+                        }
+
+                        window.location.href = "https://github.com/karakum-team/kotlin-mui-showcase/blob/main/src/main/kotlin/showcase/$name"
                     }
 
                     GitHub()
