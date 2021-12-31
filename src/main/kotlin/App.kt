@@ -27,7 +27,7 @@ fun main() {
 }
 
 private val App = FC<Props> {
-    val basePath = useMemo { window.location.pathname }
+    val basePathname = useMemo { window.location.pathname }
     val showcases = useMemo {
         listOf(
             ShowcaseInfo("accordion", "Accordion", AccordionShowcase),
@@ -84,21 +84,22 @@ private val App = FC<Props> {
 
             Sidebar {
                 value = showcases
+                basePath = basePathname
             }
 
             Routes {
                 Route {
-                    path = basePath
+                    path = basePathname
                     element = Showcase.create()
 
                     Route {
-                        path = basePath
+                        path = basePathname
                         element = Placeholder.create()
                     }
 
                     showcases.map { (key, _, component) ->
                         Route {
-                            path = "$basePath$key"
+                            path = "$basePathname$key"
                             element = component.create()
                         }
                     }

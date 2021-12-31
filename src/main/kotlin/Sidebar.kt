@@ -10,16 +10,14 @@ import react.css.css
 import react.dom.html.ReactHTML.nav
 import react.router.dom.NavLink
 import react.router.useLocation
-import react.router.useResolvedPath
 
 external interface SidebarProps : Props {
     var value: Iterable<ShowcaseInfo>
+    var basePath: String
 }
 
 val Sidebar = FC<SidebarProps> { props ->
-    val routeKey = useLocation().pathname.removePrefix("/")
-    console.log("routeKey", routeKey)
-    console.log("routeKey", useResolvedPath("alert"))
+    val lastPathname = useLocation().pathname.substringAfterLast("/")
 
     Box {
         component = nav
@@ -35,7 +33,7 @@ val Sidebar = FC<SidebarProps> { props ->
             List {
                 props.value.map { (key, name) ->
                     NavLink {
-                        to = key
+                        to = "${props.basePath}$key"
 
                         css {
                             textDecoration = TextDecoration.none
@@ -46,7 +44,7 @@ val Sidebar = FC<SidebarProps> { props ->
                             // TODO: Needs an ability to set generic type to `ListItemButton` component [MUI]
                             this as ListItemButtonBaseProps
 
-                            selected = routeKey == key
+                            selected = lastPathname == key
 
                             ListItemText {
                                 primary = ReactNode(name)
