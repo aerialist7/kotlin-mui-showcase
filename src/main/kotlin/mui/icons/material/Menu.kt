@@ -1,7 +1,0 @@
-@file:JsModule("@mui/icons-material/Menu")
-@file:JsNonModule
-
-package mui.icons.material
-
-@JsName("default")
-external val Menu: SvgIconComponent
