@@ -89,6 +89,11 @@ private val App = FC<Props> {
                     path = "/"
                     element = Showcase.create()
 
+                    Route {
+                        path = ""
+                        element = Placeholder.create()
+                    }
+
                     showcases.map { (key, _, component) ->
                         Route {
                             path = key
