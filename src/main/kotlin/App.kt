@@ -4,8 +4,14 @@ import kotlinext.js.jso
 import kotlinx.browser.document
 import mui.system.Box
 import org.w3c.dom.HTMLDivElement
-import react.*
+import react.FC
+import react.Props
+import react.create
 import react.dom.render
+import react.router.Route
+import react.router.Routes
+import react.router.dom.BrowserRouter
+import react.useMemo
 import showcase.*
 
 fun main() {
@@ -64,38 +70,41 @@ private val App = FC<Props> {
             ShowcaseInfo("tooltip", "Tooltip", TooltipShowcase),
         )
     }
-    var selectedShowcase by useState(showcases.first())
 
-    Box {
-        sx = jso {
-            display = Display.flex
-        }
+    BrowserRouter {
 
-        Header {
-            sourceCodeKey = selectedShowcase.key
-        }
-
-        Sidebar {
-            value = showcases.map { it.name }
-            selected = selectedShowcase.name
-            onSelectedChange = { newSelected ->
-                selectedShowcase = showcases
-                    .find { it.name == newSelected }
-                    ?: throw IllegalStateException()
+        Box {
+            sx = jso {
+                display = Display.flex
             }
-        }
 
-        Showcase {
-            // TODO: Use react-router instead
-            selectedShowcase.showcase()
+            Header()
+
+            Sidebar {
+                value = showcases
+            }
+
+            Routes {
+                Route {
+                    path = "/"
+                    element = Showcase.create()
+
+                    showcases.map { (key, _, component) ->
+                        Route {
+                            path = key
+                            element = component.create()
+                        }
+                    }
+                }
+            }
         }
     }
 }
 
-private data class ShowcaseInfo(
+data class ShowcaseInfo(
     val key: String,
     val name: String,
-    val showcase: FC<Props>,
+    val component: FC<Props>,
 )
 
 object Sizes {

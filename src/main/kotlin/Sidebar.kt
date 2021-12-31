@@ -1,19 +1,23 @@
+import csstype.Color
+import csstype.TextDecoration
 import kotlinext.js.jso
 import mui.material.*
 import mui.system.Box
 import react.FC
 import react.Props
 import react.ReactNode
+import react.css.css
 import react.dom.html.ReactHTML.nav
+import react.router.dom.NavLink
+import react.router.useLocation
 
 external interface SidebarProps : Props {
-    var value: Iterable<String>
-
-    var selected: String
-    var onSelectedChange: (String) -> Unit
+    var value: Iterable<ShowcaseInfo>
 }
 
 val Sidebar = FC<SidebarProps> { props ->
+    val routeKey = useLocation().pathname.removePrefix("/")
+
     Box {
         component = nav
 
@@ -26,16 +30,24 @@ val Sidebar = FC<SidebarProps> { props ->
             }
 
             List {
-                props.value.map { showcaseName ->
-                    ListItemButton {
-                        // TODO: Needs an ability to set generic type to `ListItemButton` component [MUI]
-                        this as ListItemButtonBaseProps
+                props.value.map { (key, name) ->
+                    NavLink {
+                        to = key
 
-                        selected = props.selected == showcaseName
-                        onClick = { props.onSelectedChange(showcaseName) }
+                        css {
+                            textDecoration = TextDecoration.none
+                            color = Color.currentcolor
+                        }
 
-                        ListItemText {
-                            primary = ReactNode(showcaseName)
+                        ListItemButton {
+                            // TODO: Needs an ability to set generic type to `ListItemButton` component [MUI]
+                            this as ListItemButtonBaseProps
+
+                            selected = routeKey == key
+
+                            ListItemText {
+                                primary = ReactNode(name)
+                            }
                         }
                     }
                 }

@@ -15,12 +15,11 @@ import react.dom.aria.AriaHasPopup.`false`
 import react.dom.aria.ariaHasPopup
 import react.dom.aria.ariaLabel
 import react.dom.html.ReactHTML.div
+import react.router.useLocation
 
-external interface HeaderProps : Props {
-    var sourceCodeKey: String
-}
+val Header = FC<Props> {
+    val routeKey = useLocation().pathname.removePrefix("/")
 
-val Header = FC<HeaderProps> { props ->
     AppBar {
         sx = jso {
             width = 100.pct - Sidebar.Width
@@ -50,7 +49,7 @@ val Header = FC<HeaderProps> { props ->
                     size = "large"
                     color = "inherit"
                     onClick = {
-                        window.location.href = "https://mui.com/components/${props.sourceCodeKey}/"
+                        window.location.href = "https://mui.com/components/$routeKey/"
                     }
 
                     MenuBook()
@@ -66,7 +65,7 @@ val Header = FC<HeaderProps> { props ->
                     size = "large"
                     color = "inherit"
                     onClick = {
-                        val name = props.sourceCodeKey
+                        val name = routeKey
                             .split("-")
                             .asSequence()
                             .map { it.replaceFirstChar { it.titlecase() } }

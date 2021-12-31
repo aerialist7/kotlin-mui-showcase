@@ -4,10 +4,11 @@ import csstype.px
 import kotlinext.js.jso
 import mui.system.Box
 import react.FC
-import react.PropsWithChildren
+import react.Props
 import react.dom.html.ReactHTML.main
+import react.router.Outlet
 
-val Showcase = FC<PropsWithChildren> {
+val Showcase = FC<Props> {
     Box {
         component = main
         sx = jso {
@@ -16,6 +17,6 @@ val Showcase = FC<PropsWithChildren> {
             padding = 30.px
         }
 
-        it.children()
+        Outlet()
     }
 }

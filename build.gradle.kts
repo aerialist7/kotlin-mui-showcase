@@ -16,6 +16,7 @@ dependencies {
     implementation(kotlinw("react"))
     implementation(kotlinw("react-dom"))
     implementation(kotlinw("react-css"))
+    implementation(kotlinw("react-router-dom"))
 
     implementation(kotlinw("mui"))
     // TODO: Use `kotlinw("mui-icons")` when it will not break compilation
