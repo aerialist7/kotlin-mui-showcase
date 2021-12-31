@@ -2,6 +2,7 @@ import csstype.Display
 import csstype.px
 import kotlinext.js.jso
 import kotlinx.browser.document
+import kotlinx.browser.window
 import mui.system.Box
 import org.w3c.dom.HTMLDivElement
 import react.FC
@@ -26,6 +27,7 @@ fun main() {
 }
 
 private val App = FC<Props> {
+    val basePath = useMemo { window.location.pathname }
     val showcases = useMemo {
         listOf(
             ShowcaseInfo("accordion", "Accordion", AccordionShowcase),
@@ -86,17 +88,20 @@ private val App = FC<Props> {
 
             Routes {
                 Route {
-                    path = "/"
+                    path = basePath
+                    console.log(path)
                     element = Showcase.create()
 
                     Route {
-                        path = ""
+                        path = basePath
+                        console.log(path)
                         element = Placeholder.create()
                     }
 
                     showcases.map { (key, _, component) ->
                         Route {
-                            path = key
+                            path = "$basePath/$key"
+                            console.log(path)
                             element = component.create()
                         }
                     }
