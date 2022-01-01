@@ -20,8 +20,6 @@ dependencies {
 
     implementation(kotlinw("mui"))
     implementation(kotlinw("mui-icons"))
-    // TODO: Use `kotlinw("mui-icons")` when it will not break compilation
-    // implementation(npm("@mui/icons-material", "5.2.5"))
 
     implementation(npm("@emotion/react", "11.7.1"))
     implementation(npm("@emotion/styled", "11.6.0"))
