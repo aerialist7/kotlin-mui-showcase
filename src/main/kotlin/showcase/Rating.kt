@@ -5,6 +5,7 @@ import mui.material.Rating
 import mui.material.Typography
 import react.FC
 import react.Props
+import react.dom.html.ReactHTML
 import react.useState
 
 val RatingShowcase = FC<Props> {
@@ -12,8 +13,8 @@ val RatingShowcase = FC<Props> {
 
     Box {
         Typography {
-            // TODO: Need `component` attribute support [MUI]
-            asDynamic().component = "legend"
+            // TODO: Need `component` attribute support - whole file [MUI]
+            asDynamic().component = ReactHTML.legend
             +"Controlled"
         }
         Rating {
@@ -22,8 +23,7 @@ val RatingShowcase = FC<Props> {
             onChange = { _, newValue -> rating = newValue }
 
             Typography {
-                // TODO: Need `component` attribute support [MUI]
-                asDynamic().component = "legend"
+                asDynamic().component = ReactHTML.legend
                 +"Read only"
             }
             Rating {
@@ -32,8 +32,7 @@ val RatingShowcase = FC<Props> {
                 readOnly = true
             }
             Typography {
-                // TODO: Need `component` attribute support [MUI]
-                asDynamic().component = "legend"
+                asDynamic().component = ReactHTML.legend
                 +"Disabled"
             }
             Rating {
@@ -42,8 +41,7 @@ val RatingShowcase = FC<Props> {
                 disabled
             }
             Typography {
-                // TODO: Need `component` attribute support [MUI]
-                asDynamic().component = "legend"
+                asDynamic().component = ReactHTML.legend
                 +"No rating given"
             }
             Rating {

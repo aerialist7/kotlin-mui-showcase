@@ -3,17 +3,14 @@ package showcase
 import csstype.px
 import kotlinext.js.jso
 import mui.material.*
-import react.ElementType
-import react.FC
-import react.Props
+import react.*
 import react.dom.aria.ariaLabel
 import react.dom.html.ReactHTML
-import react.key
 
 val TableShowcase = FC<Props> {
     TableContainer {
         // TODO: Unable to use `component` prop [MUI]
-        //  attrs.component = createElement(Paper)
+        asDynamic().component = Paper.create().type
 
         Table {
             sx = jso {

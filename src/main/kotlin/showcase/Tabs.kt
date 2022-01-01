@@ -22,7 +22,7 @@ val TabsShowcase = FC<Props> {
             value = activeTab
             onChange = { _, newValue -> activeTab = newValue }
             // TODO: Unable to set `ariaLabel` prop [MUI]
-            //  attrs.ariaLabel = "wrapped label tabs example"
+            asDynamic()["aria-label"] = "wrapped label tabs example"
 
             Tab {
                 value = "one"

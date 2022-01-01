@@ -12,7 +12,8 @@ val BottomNavigationShowcase = FC<Props> {
 
     BottomNavigation {
         showLabels = true
-        value = state // TODO: value shouldn't be Any [MUI]
+        // TODO: `value` shouldn't be `Any` [MUI]
+        value = state
         onChange = { _, value -> state = value }
 
         BottomNavigationAction {

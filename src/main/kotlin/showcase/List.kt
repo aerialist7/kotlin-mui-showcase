@@ -16,7 +16,7 @@ val ListShowcase = FC<Props> {
         }
 
         ListItem {
-            // TODO: Unable to use `disablePadding` prop correctly  [MUI]
+            // TODO: Unable to use `disablePadding` prop correctly - whole file  [MUI]
             asDynamic().disablePadding = true
 
             ListItemButton {
@@ -29,7 +29,6 @@ val ListShowcase = FC<Props> {
             }
         }
         ListItem {
-            // TODO: Unable to use `disablePadding` prop correctly  [MUI]
             asDynamic().disablePadding = true
 
             ListItemButton {

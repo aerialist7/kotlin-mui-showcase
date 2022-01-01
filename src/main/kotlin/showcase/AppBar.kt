@@ -8,6 +8,7 @@ import mui.material.*
 import react.FC
 import react.Props
 import react.dom.aria.ariaLabel
+import react.dom.html.ReactHTML
 
 val AppBarShowcase = FC<Props> {
     Box {
@@ -30,7 +31,8 @@ val AppBarShowcase = FC<Props> {
                 Typography {
                     sx = jso { flexGrow = FlexGrow(1.0) }
                     variant = "h6"
-                    // TODO: Unable to use 'component="div"' [MUI]
+                    // TODO: Unable to use `component` properly [MUI]
+                    asDynamic().component = ReactHTML.div
 
                     +"News"
                 }
