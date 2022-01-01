@@ -25,8 +25,8 @@ val Sidebar = FC<SidebarProps> { props ->
         Drawer {
             sx = jso {
                 width = Sizes.Sidebar.Width
-                variant = "permanent"
-                anchor = "left"
+                variant = DrawerVariant.permanent
+                anchor = DrawerAnchor.left
                 open = true
             }
 

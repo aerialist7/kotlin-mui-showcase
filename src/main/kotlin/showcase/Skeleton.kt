@@ -1,21 +1,22 @@
 package showcase
 
 import mui.material.Skeleton
+import mui.material.SkeletonVariant
 import react.FC
 import react.Props
 
 val SkeletonShowcase = FC<Props> {
     Skeleton {
-        variant = "text"
+        variant = SkeletonVariant.text
         width = 210
     }
     Skeleton {
-        variant = "circular"
+        variant = SkeletonVariant.circular
         width = 40
         height = 40
     }
     Skeleton {
-        variant = "rectangular"
+        variant = SkeletonVariant.rectangular
         width = 210
         height = 118
     }

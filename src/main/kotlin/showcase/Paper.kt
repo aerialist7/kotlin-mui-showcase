@@ -6,6 +6,7 @@ import csstype.px
 import kotlinext.js.jso
 import mui.material.Box
 import mui.material.Paper
+import mui.material.PaperVariant
 import mui.material.Typography
 import react.FC
 import react.Props
@@ -21,7 +22,7 @@ val PaperShowcase = FC<Props> {
 
         Paper {
             elevation = 3
-            variant = "outlined"
+            variant = PaperVariant.outlined
 
             Typography {
                 +"Outlined Paper Component"

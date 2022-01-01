@@ -1,6 +1,7 @@
 package showcase
 
 import mui.material.Pagination
+import mui.material.PaginationColor
 import react.FC
 import react.Props
 
@@ -11,11 +12,11 @@ val PaginationShowcase = FC<Props> {
     }
     Pagination {
         asDynamic().count = 10
-        color = "primary"
+        color = PaginationColor.primary
     }
     Pagination {
         asDynamic().count = 10
-        color = "secondary"
+        color = PaginationColor.secondary
     }
     Pagination {
         asDynamic().count = 10

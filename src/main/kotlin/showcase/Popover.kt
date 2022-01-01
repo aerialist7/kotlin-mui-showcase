@@ -3,6 +3,7 @@ package showcase
 import csstype.px
 import kotlinext.js.jso
 import mui.material.Button
+import mui.material.ButtonVariant
 import mui.material.Popover
 import mui.material.Typography
 import org.w3c.dom.Element
@@ -24,7 +25,7 @@ val PopoverShowcase = FC<Props> {
 
     Button {
         id?.let { ariaDescribedBy = id }
-        variant = "contained"
+        variant = ButtonVariant.contained
         onClick = handleClick
 
         +"Open Popover"

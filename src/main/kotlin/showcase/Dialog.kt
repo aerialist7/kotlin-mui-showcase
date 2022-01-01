@@ -11,7 +11,7 @@ val DialogShowcase = FC<Props> {
 
     div {
         Button {
-            variant = "outlined"
+            variant = ButtonVariant.outlined
             onClick = { isOpen = true }
             +"Open dialog"
         }

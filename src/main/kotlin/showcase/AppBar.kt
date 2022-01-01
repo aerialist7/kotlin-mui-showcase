@@ -14,14 +14,14 @@ val AppBarShowcase = FC<Props> {
         sx = jso { flexGrow = FlexGrow(1.0) }
 
         AppBar {
-            position = "static"
+            position = AppBarPosition.static
 
             Toolbar {
                 IconButton {
                     sx = jso { marginRight = 2.px }
                     edge = "start"
-                    size = "large"
-                    color = "inherit"
+                    size = Size.large
+                    color = IconButtonColor.inherit
                     ariaLabel = "menu"
 
                     Menu()
@@ -36,8 +36,7 @@ val AppBarShowcase = FC<Props> {
                 }
 
                 Button {
-                    color = "inherit"
-
+                    color = ButtonColor.inherit
                     +"Login"
                 }
             }

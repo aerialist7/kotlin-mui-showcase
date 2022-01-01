@@ -1,6 +1,7 @@
 package showcase
 
 import mui.material.Button
+import mui.material.ButtonVariant
 import mui.material.Drawer
 import react.FC
 import react.Props
@@ -10,7 +11,7 @@ val DrawerShowcase = FC<Props> {
     var isOpen by useState(false)
 
     Button {
-        variant = "outlined"
+        variant = ButtonVariant.outlined
         onClick = { isOpen = true }
         +"Open drawer"
     }
@@ -19,7 +20,7 @@ val DrawerShowcase = FC<Props> {
         open = isOpen
 
         Button {
-            variant = "outlined"
+            variant = ButtonVariant.outlined
             onClick = { isOpen = false }
             +"Close drawer"
         }

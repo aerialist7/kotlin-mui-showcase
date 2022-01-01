@@ -2,6 +2,7 @@ package showcase
 
 import mui.material.Breadcrumbs
 import mui.material.Link
+import mui.material.LinkUnderline
 import mui.material.Typography
 import react.FC
 import react.Props
@@ -12,14 +13,14 @@ val BreadcrumbsShowcase = FC<Props> {
         ariaLabel = "breadcrumb"
 
         Link {
-            underline = "hover"
+            underline = LinkUnderline.hover
             color = "inherit"
             href = "/"
 
             +"MUI"
         }
         Link {
-            underline = "hover"
+            underline = LinkUnderline.hover
             color = "inherit"
             href = "/getting-started/installation/"
 

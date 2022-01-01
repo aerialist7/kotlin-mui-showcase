@@ -1,6 +1,7 @@
 package showcase
 
 import mui.material.Box
+import mui.material.FormControlVariant
 import mui.material.TextField
 import react.FC
 import react.Props
@@ -17,17 +18,17 @@ val TextFieldShowcase = FC<Props> {
         TextField {
             id = "outlined-basic"
             label = ReactNode("Outlined")
-            variant = "outlined"
+            variant = FormControlVariant.outlined
         }
         TextField {
             id = "filled-basic"
             label = ReactNode("Filled")
-            variant = "filled"
+            variant = FormControlVariant.filled
         }
         TextField {
             id = "standard-basic"
             label = ReactNode("Standard")
-            variant = "standard"
+            variant = FormControlVariant.standard
         }
     }
 }

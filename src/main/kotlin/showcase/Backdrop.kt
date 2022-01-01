@@ -6,6 +6,7 @@ import kotlinext.js.jso
 import mui.material.Backdrop
 import mui.material.Button
 import mui.material.CircularProgress
+import mui.material.CircularProgressColor
 import react.FC
 import react.Props
 import react.useState
@@ -27,7 +28,7 @@ val BackdropShowcase = FC<Props> {
         }
 
         CircularProgress {
-            color = "inherit"
+            color = CircularProgressColor.inherit
         }
     }
 }

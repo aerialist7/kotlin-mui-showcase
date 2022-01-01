@@ -3,17 +3,16 @@ package showcase
 import csstype.FlexGrow
 import csstype.px
 import kotlinext.js.jso
-import mui.material.Button
-import mui.material.MobileStepper
+import mui.material.*
 import react.FC
 import react.Props
 import react.create
 
 val MobileStepperShowcase = FC<Props> {
     MobileStepper {
-        variant = "dots"
+        variant = MobileStepperVariant.dots
         steps = 3
-        position = "static"
+        position = MobileStepperPosition.static
         activeStep = 1
 
         sx = jso {
@@ -22,11 +21,11 @@ val MobileStepperShowcase = FC<Props> {
         }
 
         nextButton = Button.create {
-            size = "small"
+            size = Size.small
             +"Next"
         }
         backButton = Button.create {
-            size = "small"
+            size = Size.small
             +"Back"
         }
     }

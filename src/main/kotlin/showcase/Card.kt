@@ -33,7 +33,7 @@ val CardShowcase = FC<Props> {
         }
         CardActions {
             Button {
-                size = "small"
+                size = Size.small
                 +"Learn More"
             }
         }

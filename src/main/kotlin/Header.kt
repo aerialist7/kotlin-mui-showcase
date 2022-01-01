@@ -26,7 +26,7 @@ val Header = FC<Props> {
             height = Header.Height
             marginLeft = Sidebar.Width
         }
-        position = "fixed"
+        position = AppBarPosition.fixed
 
         Toolbar {
             Typography {
@@ -46,8 +46,8 @@ val Header = FC<Props> {
                 IconButton {
                     ariaLabel = "official documentation"
                     ariaHasPopup = `false`
-                    size = "large"
-                    color = "inherit"
+                    size = Size.large
+                    color = IconButtonColor.inherit
                     onClick = {
                         window.location.href = "https://mui.com/components/$lastPathname/"
                     }
@@ -62,8 +62,8 @@ val Header = FC<Props> {
                 IconButton {
                     ariaLabel = "source code"
                     ariaHasPopup = `false`
-                    size = "large"
-                    color = "inherit"
+                    size = Size.large
+                    color = IconButtonColor.inherit
                     onClick = {
                         var name = lastPathname
                             .split("-")

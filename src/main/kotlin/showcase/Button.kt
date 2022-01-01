@@ -1,20 +1,21 @@
 package showcase
 
 import mui.material.Button
+import mui.material.ButtonVariant
 import react.FC
 import react.Props
 
 val ButtonShowcase = FC<Props> {
     Button {
-        variant = "text"
+        variant = ButtonVariant.text
         +"Text"
     }
     Button {
-        variant = "contained"
+        variant = ButtonVariant.contained
         +"Contained"
     }
     Button {
-        variant = "outlined"
+        variant = ButtonVariant.outlined
         +"Outlined"
     }
 }

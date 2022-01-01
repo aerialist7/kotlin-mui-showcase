@@ -27,19 +27,19 @@ val TableShowcase = FC<Props> {
                         +"Dessert (100 g serving)"
                     }
                     TableCell {
-                        align = "right"
+                        align = TableCellAlign.right
                         +"Calories"
                     }
                     TableCell {
-                        align = "right"
+                        align = TableCellAlign.right
                         +"Fat (g)"
                     }
                     TableCell {
-                        align = "right"
+                        align = TableCellAlign.right
                         +"Carbs (g)"
                     }
                     TableCell {
-                        align = "right"
+                        align = TableCellAlign.right
                         +"Protein (g)"
                     }
                 }
@@ -52,23 +52,24 @@ val TableShowcase = FC<Props> {
                         TableCell {
                             // TODO: Remove redundant cast after fix `component` prop type [MUI]
                             component = ReactHTML.th.unsafeCast<ElementType<TableCellBaseProps>>()
+                            // TODO: Should not be dynamic
                             scope = "row"
                             +row.name
                         }
                         TableCell {
-                            align = "right"
+                            align = TableCellAlign.right
                             +row.calories.toString()
                         }
                         TableCell {
-                            align = "right"
+                            align = TableCellAlign.right
                             +row.fat.toString()
                         }
                         TableCell {
-                            align = "right"
+                            align = TableCellAlign.right
                             +row.carbs.toString()
                         }
                         TableCell {
-                            align = "right"
+                            align = TableCellAlign.right
                             +row.protein.toString()
                         }
                     }
