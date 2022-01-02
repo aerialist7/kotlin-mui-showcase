@@ -13,7 +13,6 @@ import react.router.useLocation
 
 external interface SidebarProps : Props {
     var value: Iterable<Showcase>
-    var basePath: String
 }
 
 val Sidebar = FC<SidebarProps> { props ->
@@ -33,7 +32,7 @@ val Sidebar = FC<SidebarProps> { props ->
             List {
                 props.value.map { (key, name) ->
                     NavLink {
-                        to = "${props.basePath}$key"
+                        to = key
 
                         css {
                             textDecoration = TextDecoration.none

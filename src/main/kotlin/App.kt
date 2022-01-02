@@ -3,7 +3,6 @@ import csstype.FlexGrow
 import csstype.px
 import kotlinext.js.jso
 import kotlinx.browser.document
-import kotlinx.browser.window
 import mui.system.Box
 import org.w3c.dom.HTMLDivElement
 import react.*
@@ -30,7 +29,6 @@ fun main() {
 }
 
 private val App = FC<Props> {
-    val basePathname = useMemo { window.location.pathname }
     val showcases = useMemo { SHOWCASES }
 
     Box {
@@ -42,12 +40,11 @@ private val App = FC<Props> {
 
         Sidebar {
             value = showcases
-            basePath = basePathname
         }
 
         Routes {
             Route {
-                path = basePathname
+                path = "/"
                 element = Box.create {
                     component = ReactHTML.main
                     sx = jso {
