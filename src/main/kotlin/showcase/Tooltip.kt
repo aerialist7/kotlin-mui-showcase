@@ -7,7 +7,7 @@ import react.FC
 import react.Props
 import react.ReactNode
 
-val TooltipShowcase = FC<Props> {
+val TooltipsShowcase = FC<Props> {
     Tooltip {
         title = ReactNode("Speed Dial")
 

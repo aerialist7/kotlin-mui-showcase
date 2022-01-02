@@ -5,7 +5,7 @@ import react.FC
 import react.Props
 import react.dom.html.ReactHTML.div
 
-val SwitchShowcase = FC<Props> {
+val SwitchesShowcase = FC<Props> {
     div {
         Switch {
             defaultChecked = true

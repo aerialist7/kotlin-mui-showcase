@@ -7,7 +7,7 @@ import react.*
 import react.dom.aria.ariaLabel
 import react.dom.html.ReactHTML
 
-val TableShowcase = FC<Props> {
+val TablesShowcase = FC<Props> {
     TableContainer {
         // TODO: Unable to use `component` prop [MUI]
         asDynamic().component = Paper.create().type

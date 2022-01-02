@@ -8,7 +8,7 @@ import react.FC
 import react.Props
 import react.dom.html.ReactHTML
 
-val CardShowcase = FC<Props> {
+val CardsShowcase = FC<Props> {
     Card {
         CardContent {
             Typography {

@@ -6,7 +6,7 @@ import mui.material.Typography
 import react.FC
 import react.Props
 
-val LinkShowcase = FC<Props> {
+val LinksShowcase = FC<Props> {
     Link {
         href = "#"
         underline = LinkUnderline.none

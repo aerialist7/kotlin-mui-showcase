@@ -8,9 +8,9 @@ import react.create
 import react.dom.aria.ariaLabel
 import react.dom.html.ReactHTML
 
-val RadioShowcase = FC<Props> {
+val RadioButtonsShowcase = FC<Props> {
     FormControl {
-        // TODO: Unable to se `component` prop correctly [MUI]
+        // TODO: Unable to set `component` prop correctly [MUI]
         asDynamic().component = ReactHTML.fieldset
         FormLabel {
             asDynamic().component = ReactHTML.legend

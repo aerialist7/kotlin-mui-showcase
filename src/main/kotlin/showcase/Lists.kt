@@ -8,7 +8,7 @@ import mui.material.*
 import react.FC
 import react.Props
 
-val ListShowcase = FC<Props> {
+val ListsShowcase = FC<Props> {
     List {
         sx = jso {
             width = 100.pct

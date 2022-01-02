@@ -7,7 +7,8 @@ import mui.system.ResponsiveStyleValue
 import react.FC
 import react.Props
 
-val LinearProgressShowcase = FC<Props> {
+// TODO: Add other progresses
+val ProgressShowcase = FC<Props> {
     Stack {
         // TODO: Unable to set `spacing` prop value correctly [MUI]
         spacing = 2.unsafeCast<ResponsiveStyleValue<Int>>()

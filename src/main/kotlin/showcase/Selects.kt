@@ -8,7 +8,7 @@ import react.Props
 import react.ReactNode
 import react.useState
 
-val SelectShowcase = FC<Props> {
+val SelectsShowcase = FC<Props> {
     var age by useState("10")
 
     Box {

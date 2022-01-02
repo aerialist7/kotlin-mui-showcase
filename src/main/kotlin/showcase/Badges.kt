@@ -6,7 +6,7 @@ import mui.material.BadgeColor
 import react.FC
 import react.Props
 
-val BadgeShowcase = FC<Props> {
+val BadgesShowcase = FC<Props> {
     Badge {
         color = BadgeColor.primary
         // TODO: Unable to set badge content correctly [MUI]

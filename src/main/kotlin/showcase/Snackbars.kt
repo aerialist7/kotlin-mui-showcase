@@ -6,7 +6,7 @@ import react.FC
 import react.Props
 import react.ReactNode
 
-val SnackbarShowcase = FC<Props> {
+val SnackbarsShowcase = FC<Props> {
     Typography {
         +"Find me in a bottom-left corner"
     }

@@ -6,7 +6,7 @@ import react.FC
 import react.Props
 import react.ReactNode
 
-val ChipShowcase = FC<Props> {
+val ChipsShowcase = FC<Props> {
     Chip {
         label = ReactNode("Chip Filled")
     }

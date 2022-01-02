@@ -4,7 +4,7 @@ import mui.material.Checkbox
 import react.FC
 import react.Props
 
-val CheckboxShowcase = FC<Props> {
+val CheckboxesShowcase = FC<Props> {
     Checkbox {
         defaultChecked = true
     }

@@ -5,7 +5,7 @@ import mui.material.ButtonVariant
 import react.FC
 import react.Props
 
-val ButtonShowcase = FC<Props> {
+val ButtonsShowcase = FC<Props> {
     Button {
         variant = ButtonVariant.text
         +"Text"

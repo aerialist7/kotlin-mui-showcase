@@ -6,7 +6,7 @@ import react.Props
 import react.dom.html.ReactHTML.div
 import react.useState
 
-val DialogShowcase = FC<Props> {
+val DialogsShowcase = FC<Props> {
     var isOpen by useState(false)
 
     div {

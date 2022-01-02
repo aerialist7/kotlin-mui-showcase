@@ -7,7 +7,7 @@ import react.FC
 import react.Props
 import react.useState
 
-val DrawerShowcase = FC<Props> {
+val DrawersShowcase = FC<Props> {
     var isOpen by useState(false)
 
     Button {
