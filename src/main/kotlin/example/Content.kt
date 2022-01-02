@@ -5,6 +5,7 @@ import csstype.px
 import example.Sizes.Header
 import kotlinext.js.jso
 import mui.material.Typography
+import mui.system.Box
 import react.FC
 import react.Props
 import react.create
@@ -20,7 +21,7 @@ val Content = FC<Props> {
     Routes {
         Route {
             path = "/"
-            element = mui.system.Box.create {
+            element = Box.create {
                 component = ReactHTML.main
                 sx = jso {
                     flexGrow = FlexGrow(1.0)

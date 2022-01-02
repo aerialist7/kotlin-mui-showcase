@@ -20,12 +20,14 @@ fun main() {
 private val App = FC<Props> {
     HashRouter {
         ShowcasesModule {
-            Box {
-                sx = jso { display = Display.flex }
+            SidebarOpenedModule {
+                Box {
+                    sx = jso { display = Display.flex }
 
-                Header()
-                Sidebar()
-                Content()
+                    Header()
+                    Sidebar()
+                    Content()
+                }
             }
         }
     }

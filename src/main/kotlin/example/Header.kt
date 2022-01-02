@@ -1,15 +1,14 @@
 package example
 
-import csstype.FlexGrow
-import csstype.minus
-import csstype.pct
+import csstype.*
 import example.Sizes.Header
-import example.Sizes.Sidebar
 import kotlinext.js.jso
 import kotlinx.browser.window
 import mui.icons.material.GitHub
+import mui.icons.material.Menu
 import mui.icons.material.MenuBook
 import mui.material.*
+import mui.material.Size
 import react.FC
 import react.Props
 import react.ReactNode
@@ -18,23 +17,39 @@ import react.dom.aria.ariaHasPopup
 import react.dom.aria.ariaLabel
 import react.dom.html.ReactHTML.div
 import react.router.useLocation
+import react.useContext
 
 val Header = FC<Props> {
+    val (sidebarOpened, setSidebarOpened) = useContext(SidebarOpenedContext)
     val lastPathname = useLocation().pathname.substringAfterLast("/")
 
+    val ml = if (sidebarOpened) Sizes.Sidebar.Width else 0.px
+
     AppBar {
-        sx = jso {
-            width = 100.pct - Sidebar.Width
-            height = Header.Height
-            marginLeft = Sidebar.Width
-        }
         position = AppBarPosition.fixed
+        sx = jso {
+            width = 100.pct - ml
+            height = Header.Height
+            marginLeft = ml
+        }
 
         Toolbar {
-            Typography {
+            IconButton {
+                ariaLabel = "open drawer"
+                edge = "start"
+                color = IconButtonColor.inherit
+                onClick = { setSidebarOpened(true) }
                 sx = jso {
-                    flexGrow = FlexGrow(1.0)
+                    marginRight = 16.px
+                    if (sidebarOpened)
+                        display = Display.none
                 }
+
+                Menu()
+            }
+
+            Typography {
+                sx = jso { flexGrow = FlexGrow(1.0) }
                 variant = "h6"
                 noWrap = true
                 asDynamic().component = div
@@ -50,9 +65,7 @@ val Header = FC<Props> {
                     ariaHasPopup = `false`
                     size = Size.large
                     color = IconButtonColor.inherit
-                    onClick = {
-                        window.location.href = "https://mui.com/components/$lastPathname/"
-                    }
+                    onClick = { window.location.href = "https://mui.com/components/$lastPathname" }
 
                     MenuBook()
                 }
