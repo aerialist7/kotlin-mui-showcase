@@ -39,7 +39,7 @@ val Sidebar = FC<Props> {
                 sx = jso { width = Sizes.Sidebar.Width }
 
                 IconButton {
-                    sx = jso { paddingLeft = 16.px }
+                    sx = jso { marginLeft = 8.px }
                     onClick = { setSidebarOpened(false) }
 
                     ChevronLeft()
