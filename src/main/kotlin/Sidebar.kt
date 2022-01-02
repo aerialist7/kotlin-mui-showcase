@@ -12,7 +12,7 @@ import react.router.dom.NavLink
 import react.router.useLocation
 
 external interface SidebarProps : Props {
-    var value: Iterable<ShowcaseInfo>
+    var value: Iterable<Showcase>
     var basePath: String
 }
 
