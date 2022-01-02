@@ -104,13 +104,13 @@ private val App = FC<Props> {
                     }
 
                     Route {
-                        path = basePathname
+                        index = true
                         element = Placeholder.create()
                     }
 
                     showcases.map { (key, _, Component) ->
                         Route {
-                            path = "$basePathname$key"
+                            path = key
                             element = Component.create()
                         }
                     }
