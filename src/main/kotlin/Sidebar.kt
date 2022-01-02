@@ -10,12 +10,10 @@ import react.css.css
 import react.dom.html.ReactHTML.nav
 import react.router.dom.NavLink
 import react.router.useLocation
+import react.useContext
 
-external interface SidebarProps : Props {
-    var value: Iterable<Showcase>
-}
-
-val Sidebar = FC<SidebarProps> { props ->
+val Sidebar = FC<Props> {
+    val showcases = useContext(ShowcasesContext)
     val lastPathname = useLocation().pathname.substringAfterLast("/")
 
     Box {
@@ -30,7 +28,7 @@ val Sidebar = FC<SidebarProps> { props ->
             }
 
             List {
-                props.value.map { (key, name) ->
+                showcases.map { (key, name) ->
                     NavLink {
                         to = key
 
