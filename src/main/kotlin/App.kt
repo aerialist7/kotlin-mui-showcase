@@ -12,12 +12,12 @@ import react.dom.render
 import react.router.Outlet
 import react.router.Route
 import react.router.Routes
-import react.router.dom.BrowserRouter
+import react.router.dom.HashRouter
 import showcase.*
 
 fun main() {
     render(
-        element = BrowserRouter.create {
+        element = HashRouter.create {
             App()
         },
         container = document.createElement("div").unsafeCast<HTMLDivElement>().apply {
