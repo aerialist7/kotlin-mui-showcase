@@ -6,16 +6,13 @@ import kotlinx.browser.document
 import kotlinx.browser.window
 import mui.system.Box
 import org.w3c.dom.HTMLDivElement
-import react.FC
-import react.Props
-import react.create
+import react.*
 import react.dom.html.ReactHTML
 import react.dom.render
 import react.router.Outlet
 import react.router.Route
 import react.router.Routes
 import react.router.dom.BrowserRouter
-import react.useMemo
 import showcase.*
 
 fun main() {
@@ -71,6 +68,11 @@ private val App = FC<Props> {
                         path = key
                         element = Component.create()
                     }
+                }
+
+                Route {
+                    path = "*"
+                    element = ReactNode("404 Page Not Found")
                 }
             }
         }
