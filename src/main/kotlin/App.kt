@@ -19,14 +19,17 @@ import react.useMemo
 import showcase.*
 
 fun main() {
-    val container = document.createElement("div").unsafeCast<HTMLDivElement>().apply {
-        style.minHeight = "100vh"
-        style.display = "flex"
-        style.flexDirection = "column"
-
-        document.body!!.appendChild(this)
-    }
-    render(App.create(), container)
+    render(
+        element = BrowserRouter.create {
+            App()
+        },
+        container = document.createElement("div").unsafeCast<HTMLDivElement>().apply {
+            style.minHeight = "100vh"
+            style.display = "flex"
+            style.flexDirection = "column"
+            document.body!!.appendChild(this)
+        },
+    )
 }
 
 private val App = FC<Props> {
@@ -74,43 +77,40 @@ private val App = FC<Props> {
         )
     }
 
-    BrowserRouter {
+    Box {
+        sx = jso {
+            display = Display.flex
+        }
 
-        Box {
-            sx = jso {
-                display = Display.flex
-            }
+        Header()
 
-            Header()
+        Sidebar {
+            value = showcases
+            basePath = basePathname
+        }
 
-            Sidebar {
-                value = showcases
-                basePath = basePathname
-            }
+        Routes {
+            Route {
+                path = basePathname
+                element = Box.create {
+                    component = ReactHTML.main
+                    sx = jso {
+                        flexGrow = FlexGrow(1.0)
+                        marginTop = Sizes.Header.Height
+                        padding = 30.px
+                    }
+                    Outlet()
+                }
 
-            Routes {
                 Route {
-                    path = basePathname
-                    element = Box.create {
-                        component = ReactHTML.main
-                        sx = jso {
-                            flexGrow = FlexGrow(1.0)
-                            marginTop = Sizes.Header.Height
-                            padding = 30.px
-                        }
-                        Outlet()
-                    }
+                    index = true
+                    element = Placeholder.create()
+                }
 
+                showcases.map { (key, _, Component) ->
                     Route {
-                        index = true
-                        element = Placeholder.create()
-                    }
-
-                    showcases.map { (key, _, Component) ->
-                        Route {
-                            path = key
-                            element = Component.create()
-                        }
+                        path = key
+                        element = Component.create()
                     }
                 }
             }
