@@ -1,8 +1,8 @@
 package example.hook
 
+import example.component.*
 import example.entity.Showcase
 import example.entity.Showcases
-import example.showcase.*
 import react.useMemo
 
 fun useShowcases(): Showcases {
