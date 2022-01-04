@@ -106,12 +106,14 @@ val TablesShowcase = FC<Props> {
                     TableRow {
                         TableCell {
                             align = TableCellAlign.center
+                            // TODO: Remove `asDynamic()` when `colSpan` prop will be supported [MUI]
                             asDynamic().colSpan = 2
 
                             +"Country"
                         }
                         TableCell {
                             align = TableCellAlign.center
+                            // TODO: Remove `asDynamic()` when `colSpan` prop will be supported [MUI]
                             asDynamic().colSpan = 3
 
                             +"Details"
