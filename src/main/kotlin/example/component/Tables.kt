@@ -10,6 +10,13 @@ import react.dom.aria.AriaRole
 import react.dom.aria.ariaLabel
 import react.dom.html.ReactHTML
 
+// TODO: Remove `asDynamic()` when `colSpan` prop will be supported [MUI]
+private var TableCellProps.colSpan: Int
+    get() = asDynamic().colSpan
+    set(value) {
+        asDynamic().colSpan = value
+    }
+
 val TablesShowcase = FC<Props> {
     Divider {
         variant = DividerVariant.fullWidth
@@ -106,15 +113,13 @@ val TablesShowcase = FC<Props> {
                     TableRow {
                         TableCell {
                             align = TableCellAlign.center
-                            // TODO: Remove `asDynamic()` when `colSpan` prop will be supported [MUI]
-                            asDynamic().colSpan = 2
+                            colSpan = 2
 
                             +"Country"
                         }
                         TableCell {
                             align = TableCellAlign.center
-                            // TODO: Remove `asDynamic()` when `colSpan` prop will be supported [MUI]
-                            asDynamic().colSpan = 3
+                            colSpan = 3
 
                             +"Details"
                         }
