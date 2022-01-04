@@ -36,7 +36,7 @@ val Header = FC<Props> {
         Toolbar {
             IconButton {
                 ariaLabel = "open drawer"
-                edge = "start"
+                edge = IconButtonEdge.start
                 color = IconButtonColor.inherit
                 onClick = { setSidebarOpened(true) }
                 sx = jso {

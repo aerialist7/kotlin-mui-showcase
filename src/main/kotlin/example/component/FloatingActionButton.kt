@@ -1,15 +1,14 @@
 package example.component
 
-import csstype.Color
 import mui.icons.material.Add
 import mui.material.Fab
+import mui.material.FabColor
 import react.FC
 import react.Props
 
 val FloatingActionButtonShowcase = FC<Props> {
     Fab {
-        // TODO: Should be union [MUI]
-        color = Color("primary")
+        color = FabColor.primary
 
         Add()
     }

@@ -20,7 +20,7 @@ val AppBarShowcase = FC<Props> {
             Toolbar {
                 IconButton {
                     sx = jso { marginRight = 2.px }
-                    edge = "start"
+                    edge = IconButtonEdge.start
                     size = Size.large
                     color = IconButtonColor.inherit
                     ariaLabel = "menu"
