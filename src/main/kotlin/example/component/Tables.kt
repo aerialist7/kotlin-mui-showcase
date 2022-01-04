@@ -10,7 +10,7 @@ import react.dom.aria.AriaRole
 import react.dom.aria.ariaLabel
 import react.dom.html.ReactHTML
 
-// TODO: Remove `asDynamic()` when `colSpan` prop will be supported [MUI]
+// TODO: Remove when `colSpan` prop will be supported [MUI]
 private var TableCellProps.colSpan: Int
     get() = asDynamic().colSpan
     set(value) {
