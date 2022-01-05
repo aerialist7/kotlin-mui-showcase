@@ -12,12 +12,12 @@ val BottomNavigationShowcase = FC<Props> {
 
     BottomNavigation {
         showLabels = true
-        // TODO: `value` shouldn't be `Any` [MUI]
         value = state
+        // TODO: `value` shouldn't be `dynamic` [MUI]
         onChange = { _, value -> state = value }
 
         BottomNavigationAction {
-            label = ReactNode("Recents")
+            label = ReactNode("Resents")
             icon = ReactNode("1")
         }
         BottomNavigationAction {
