@@ -10,13 +10,6 @@ import react.dom.aria.AriaRole
 import react.dom.aria.ariaLabel
 import react.dom.html.ReactHTML
 
-// TODO: Remove when `colSpan` prop will be supported [MUI]
-private var TableCellProps.colSpan: Int
-    get() = asDynamic().colSpan
-    set(value) {
-        asDynamic().colSpan = value
-    }
-
 val TablesShowcase = FC<Props> {
     Divider {
         variant = DividerVariant.fullWidth
@@ -30,9 +23,7 @@ val TablesShowcase = FC<Props> {
         asDynamic().component = Paper.create().type
 
         Table {
-            sx = jso {
-                minWidth = 650.px
-            }
+            sx = jso { minWidth = 650.px }
             ariaLabel = "simple table"
 
             TableHead {
@@ -42,18 +33,22 @@ val TablesShowcase = FC<Props> {
                     }
                     TableCell {
                         align = TableCellAlign.right
+
                         +"Calories"
                     }
                     TableCell {
                         align = TableCellAlign.right
+
                         +"Fat (g)"
                     }
                     TableCell {
                         align = TableCellAlign.right
+
                         +"Carbs (g)"
                     }
                     TableCell {
                         align = TableCellAlign.right
+
                         +"Protein (g)"
                     }
                 }
@@ -66,25 +61,29 @@ val TablesShowcase = FC<Props> {
                         TableCell {
                             // TODO: Remove redundant cast after fix `component` prop type [MUI]
                             component = ReactHTML.th.unsafeCast<ElementType<TableCellBaseProps>>()
-                            // TODO: Should not be dynamic
                             scope = "row"
+
                             +row.name
                         }
                         TableCell {
                             align = TableCellAlign.right
-                            +row.calories.toString()
+
+                            +"${row.calories}"
                         }
                         TableCell {
                             align = TableCellAlign.right
-                            +row.fat.toString()
+
+                            +"${row.fat}"
                         }
                         TableCell {
                             align = TableCellAlign.right
-                            +row.carbs.toString()
+
+                            +"${row.carbs}"
                         }
                         TableCell {
                             align = TableCellAlign.right
-                            +row.protein.toString()
+
+                            +"${row.protein}"
                         }
                     }
                 }

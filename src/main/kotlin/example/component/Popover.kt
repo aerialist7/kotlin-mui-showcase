@@ -14,13 +14,13 @@ import react.dom.events.MouseEventHandler
 import react.useState
 
 val PopoverShowcase = FC<Props> {
-    var anchorEl by useState<Element?>(null)
+    var anchor by useState<Element?>(null)
 
-    val handleClick: MouseEventHandler<*> = { anchorEl = it.currentTarget }
+    val handleClick: MouseEventHandler<*> = { anchor = it.currentTarget }
 
-    val handleClose = { anchorEl = null }
+    val handleClose = { anchor = null }
 
-    val isOpen = anchorEl != null
+    val isOpen = anchor != null
     val id = if (isOpen) "simple-popover" else undefined
 
     Button {
@@ -34,8 +34,8 @@ val PopoverShowcase = FC<Props> {
     Popover {
         // TODO: Unable to set `id` prop directly [MUI]
         asDynamic().id = id
-        // TODO: Unable to set `anchorEl` prop directly [MUI]
-        asDynamic().anchorEl = anchorEl
+        // TODO: Redundant cast [MUI]
+        anchorEl = anchor.unsafeCast<((Element) -> Element)?>()
         open = isOpen
         onClose = handleClose
         anchorOrigin = jso {
