@@ -96,14 +96,15 @@ val PopperShowcase = FC<Props> {
                 }
             }
             Grid {
+                sx = jso { alignItems = AlignItems.flexEnd }
                 item = true
                 container = true
                 xs = 6
-                sx = jso { alignItems = AlignItems.flexEnd }
-                // TODO: Unable to set `direction` prop correctly
-                direction = GridDirection.column.unsafeCast<ResponsiveStyleValue<GridDirection>?>()
+                direction = ResponsiveStyleValue(GridDirection.column)
+
                 Grid {
                     item = true
+
                     Button {
                         val newPlacement = "right-start"
                         onClick = { it.handleClick(newPlacement) }
@@ -113,6 +114,7 @@ val PopperShowcase = FC<Props> {
                 }
                 Grid {
                     item = true
+
                     Button {
                         val newPlacement = "right"
                         onClick = { it.handleClick(newPlacement) }

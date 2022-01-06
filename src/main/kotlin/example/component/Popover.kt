@@ -31,8 +31,7 @@ val PopoverShowcase = FC<Props> {
         if (isOpen) {
             id = "simple-popover"
         }
-        // TODO: Redundant cast [MUI]
-        anchorEl = anchor.unsafeCast<((Element) -> Element)?>()
+        anchorEl = { anchor!! }
         open = isOpen
         onClose = { _, _ -> anchor = null }
         anchorOrigin = jso {

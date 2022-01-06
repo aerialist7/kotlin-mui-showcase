@@ -10,8 +10,7 @@ import react.Props
 // TODO: Add other progresses
 val ProgressShowcase = FC<Props> {
     Stack {
-        // TODO: Unable to set `spacing` prop value correctly [MUI]
-        spacing = 2.unsafeCast<ResponsiveStyleValue<Int>>()
+        spacing = ResponsiveStyleValue(2)
 
         LinearProgress {
             color = LinearProgressColor.secondary

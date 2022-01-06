@@ -13,7 +13,6 @@ val BottomNavigationShowcase = FC<Props> {
     BottomNavigation {
         showLabels = true
         value = state
-        // TODO: `value` shouldn't be `dynamic` [MUI]
         onChange = { _, value -> state = value }
 
         BottomNavigationAction {

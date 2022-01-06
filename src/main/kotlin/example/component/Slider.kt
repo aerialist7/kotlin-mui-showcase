@@ -8,7 +8,6 @@ import mui.icons.material.VolumeUp
 import mui.material.Slider
 import mui.material.Stack
 import mui.system.ResponsiveStyleValue
-import mui.system.Union
 import react.FC
 import react.Props
 import react.dom.aria.ariaLabel
@@ -22,16 +21,14 @@ val SliderShowcase = FC<Props> {
             marginBottom = 1.px
             alignItems = AlignItems.center
         }
-        // TODO: Unable to use `spacing` prop value correctly [MUI]
-        spacing = 2.unsafeCast<ResponsiveStyleValue<dynamic>>()
-        // TODO: Unable to use `direction` prop value correctly [MUI]
-        direction = "row".unsafeCast<ResponsiveStyleValue<Union>>()
+        spacing = ResponsiveStyleValue(2)
+        // TODO: Value shouldn't be a string
+        direction = ResponsiveStyleValue("row")
 
         VolumeDown()
 
         Slider {
             ariaLabel = "Volume"
-            // TODO: `value` shouldn't be dynamic [MUI]
             value = volume
             onChange = { _, newValue, _ -> volume = newValue }
         }
@@ -42,7 +39,6 @@ val SliderShowcase = FC<Props> {
     Slider {
         ariaLabel = "Disabled slider"
         disabled = true
-        // TODO: `defaultValue` shouldn't be dynamic [MUI]
         defaultValue = 30
     }
 }
