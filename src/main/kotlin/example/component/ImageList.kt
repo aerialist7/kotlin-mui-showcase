@@ -18,12 +18,12 @@ val ImageListShowcase = FC<Props> {
         cols = 3
         rowHeight = 164
 
-        imageSet.map {
+        for (image in imageSet) {
             ImageListItem {
-                key = it.first
+                key = image.first
                 img {
-                    src = "${it.second}?w=164&h=164&fit=crop&auto=format"
-                    alt = it.first
+                    src = "${image.second}?w=164&h=164&fit=crop&auto=format"
+                    alt = image.first
                 }
             }
         }

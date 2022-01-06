@@ -53,7 +53,7 @@ val TablesShowcase = FC<Props> {
                 }
             }
             TableBody {
-                basicTableRows.map { row ->
+                for (row in basicTableRows) {
                     TableRow {
                         key = row.name
 
@@ -124,16 +124,16 @@ val TablesShowcase = FC<Props> {
                     }
 
                     TableRow {
-                        columnGroupingColumns.map {
+                        for (column in columnGroupingColumns) {
                             TableCell {
-                                key = it.id
-                                align = it.align
+                                key = column.id
+                                align = column.align
                                 style = jso {
                                     top = 57.px
-                                    minWidth = it.minWidth
+                                    minWidth = column.minWidth
                                 }
 
-                                +it.label
+                                +column.label
                             }
                         }
                     }
@@ -141,14 +141,14 @@ val TablesShowcase = FC<Props> {
                 }
 
                 TableBody {
-                    columnGroupingRows.map { row ->
+                    for (row in columnGroupingRows) {
                         TableRow {
+                            key = row.code
                             hover = true
                             role = AriaRole.checkbox
                             tabIndex = -1
-                            key = row.code
 
-                            columnGroupingColumns.map { column ->
+                            for (column in columnGroupingColumns) {
                                 val value: String = row.asDynamic()[column.id]
 
                                 TableCell {

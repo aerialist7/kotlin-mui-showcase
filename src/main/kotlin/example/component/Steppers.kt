@@ -18,10 +18,10 @@ val SteppersShowcase = FC<Props> {
             activeStep = 1
             alternativeLabel = true
 
-            steps.map {
+            for (step in steps) {
                 Step {
-                    key = it
-                    StepLabel { +it }
+                    key = step
+                    StepLabel { +step }
                 }
             }
         }

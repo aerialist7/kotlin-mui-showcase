@@ -56,7 +56,7 @@ val TextFieldsShowcase = FC<Props> {
             defaultValue = "Hello World"
         }
         Input {
-            placeholder = "example.getPlaceholder"
+            placeholder = "Placeholder"
         }
         Input {
             defaultValue = "Disabled"

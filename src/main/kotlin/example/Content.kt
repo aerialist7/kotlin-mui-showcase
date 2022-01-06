@@ -36,7 +36,7 @@ val Content = FC<Props> {
                 element = Placeholder.create()
             }
 
-            showcases.map { (key, _, Component) ->
+            for ((key, _, Component) in showcases) {
                 Route {
                     path = key
                     element = Component.create()

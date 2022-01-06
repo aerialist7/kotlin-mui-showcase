@@ -45,7 +45,7 @@ val Sidebar = FC<Props> {
                     ChevronLeft()
                 }
 
-                showcases.map { (key, name) ->
+                for ((key, name) in showcases) {
                     NavLink {
                         to = key
 
