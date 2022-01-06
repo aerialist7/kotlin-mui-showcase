@@ -31,14 +31,14 @@ val AppBarShowcase = FC<Props> {
                 Typography {
                     sx = jso { flexGrow = FlexGrow(1.0) }
                     variant = "h6"
-                    // TODO: Unable to use `component` properly [MUI]
-                    asDynamic().component = ReactHTML.div
+                    component = ReactHTML.div
 
                     +"News"
                 }
 
                 Button {
                     color = ButtonColor.inherit
+
                     +"Login"
                 }
             }

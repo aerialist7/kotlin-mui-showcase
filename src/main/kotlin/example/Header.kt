@@ -15,7 +15,7 @@ import react.ReactNode
 import react.dom.aria.AriaHasPopup.`false`
 import react.dom.aria.ariaHasPopup
 import react.dom.aria.ariaLabel
-import react.dom.html.ReactHTML.div
+import react.dom.html.ReactHTML
 import react.router.useLocation
 import react.useContext
 
@@ -52,7 +52,7 @@ val Header = FC<Props> {
                 sx = jso { flexGrow = FlexGrow(1.0) }
                 variant = "h6"
                 noWrap = true
-                asDynamic().component = div
+                component = ReactHTML.div
 
                 +"Kotlin MUI Showcase"
             }

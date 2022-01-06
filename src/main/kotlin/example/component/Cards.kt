@@ -18,8 +18,7 @@ val CardsShowcase = FC<Props> {
                 +"Word of the Day"
             }
             Typography {
-                // TODO: Unable set component legally [MUI]
-                asDynamic().component = ReactHTML.div
+                component = ReactHTML.div
                 variant = "h5"
 
                 +"be"

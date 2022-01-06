@@ -12,11 +12,10 @@ import mui.system.Union
 import react.FC
 import react.Props
 import react.dom.aria.ariaLabel
-import react.dom.onChange
 import react.useState
 
 val SliderShowcase = FC<Props> {
-    var value by useState(30)
+    var volume by useState(30)
 
     Stack {
         sx = jso {
@@ -32,10 +31,9 @@ val SliderShowcase = FC<Props> {
 
         Slider {
             ariaLabel = "Volume"
-            // TODO: Unable to use `value` prop correctly [MUI]
-            asDynamic().value = value
-            // TODO: Unable to use newValue as second parameter [MUI]
-            onChange = { event -> value = 0 }
+            // TODO: `value` shouldn't be dynamic [MUI]
+            value = volume
+            onChange = { _, newValue, _ -> volume = newValue }
         }
 
         VolumeUp()
@@ -43,9 +41,8 @@ val SliderShowcase = FC<Props> {
 
     Slider {
         ariaLabel = "Disabled slider"
-        // TODO: Unable to use `disabled` prop correctly [MUI]
-        asDynamic().disabled = true
-        // TODO: Need to use number `defaultValue` instead of string [MUI]
-        defaultValue = 30.unsafeCast<String>()
+        disabled = true
+        // TODO: `defaultValue` shouldn't be dynamic [MUI]
+        defaultValue = 30
     }
 }

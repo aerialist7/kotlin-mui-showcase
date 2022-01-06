@@ -25,9 +25,8 @@ val PopperShowcase = FC<Props> {
     }
 
     Box {
-        sx = jso {
-            width = 500.px
-        }
+        sx = jso { width = 500.px }
+
         Popper {
             // TODO: Remove `asDynamic` after [MUI] update
             with(asDynamic()) {
@@ -36,60 +35,63 @@ val PopperShowcase = FC<Props> {
                 placement = placementPosition
             }
             Typography {
-                sx = jso {
-                    padding = 2.px
-                }
+                sx = jso { padding = 2.px }
+
                 +"The content of the Popper."
             }
         }
 
         Grid {
             container = true
-            sx = jso {
-                justifyContent = JustifyContent.center
-            }
+            sx = jso { justifyContent = JustifyContent.center }
+
             Grid {
                 item = true
                 Button {
                     val newPlacement = "top-start"
                     onClick = { it.handleClick(newPlacement) }
+
                     +newPlacement
                 }
                 Button {
                     val newPlacement = "top"
                     onClick = { it.handleClick(newPlacement) }
+
                     +newPlacement
                 }
                 Button {
                     val newPlacement = "top-end"
                     onClick = { it.handleClick(newPlacement) }
+
                     +newPlacement
                 }
             }
         }
         Grid {
             container = true
-            sx = jso {
-                justifyContent = JustifyContent.center
-            }
+            sx = jso { justifyContent = JustifyContent.center }
+
             Grid {
                 item = true
                 xs = 6
                 Button {
                     val newPlacement = "left-start"
                     onClick = { it.handleClick(newPlacement) }
+
                     +newPlacement
                 }
                 br()
                 Button {
                     val newPlacement = "left"
                     onClick = { it.handleClick(newPlacement) }
+
                     +newPlacement
                 }
                 br()
                 Button {
                     val newPlacement = "left-end"
                     onClick = { it.handleClick(newPlacement) }
+
                     +newPlacement
                 }
             }
@@ -97,9 +99,7 @@ val PopperShowcase = FC<Props> {
                 item = true
                 container = true
                 xs = 6
-                sx = jso {
-                    alignItems = AlignItems.flexEnd
-                }
+                sx = jso { alignItems = AlignItems.flexEnd }
                 // TODO: Unable to set `direction` prop correctly
                 direction = GridDirection.column.unsafeCast<ResponsiveStyleValue<GridDirection>?>()
                 Grid {
@@ -107,6 +107,7 @@ val PopperShowcase = FC<Props> {
                     Button {
                         val newPlacement = "right-start"
                         onClick = { it.handleClick(newPlacement) }
+
                         +newPlacement
                     }
                 }
@@ -115,6 +116,7 @@ val PopperShowcase = FC<Props> {
                     Button {
                         val newPlacement = "right"
                         onClick = { it.handleClick(newPlacement) }
+
                         +newPlacement
                     }
                 }
@@ -123,6 +125,7 @@ val PopperShowcase = FC<Props> {
                     Button {
                         val newPlacement = "right-end"
                         onClick = { it.handleClick(newPlacement) }
+
                         +newPlacement
                     }
                 }
@@ -130,24 +133,26 @@ val PopperShowcase = FC<Props> {
         }
         Grid {
             container = true
-            sx = jso {
-                justifyContent = JustifyContent.center
-            }
+            sx = jso { justifyContent = JustifyContent.center }
+
             Grid {
                 item = true
                 Button {
                     val newPlacement = "bottom-start"
                     onClick = { it.handleClick(newPlacement) }
+
                     +newPlacement
                 }
                 Button {
                     val newPlacement = "bottom"
                     onClick = { it.handleClick(newPlacement) }
+
                     +newPlacement
                 }
                 Button {
                     val newPlacement = "bottom-end"
                     onClick = { it.handleClick(newPlacement) }
+
                     +newPlacement
                 }
             }

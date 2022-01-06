@@ -13,8 +13,8 @@ val RatingShowcase = FC<Props> {
 
     Box {
         Typography {
-            // TODO: Need `component` attribute support - whole file [MUI]
-            asDynamic().component = ReactHTML.legend
+            component = ReactHTML.legend
+
             +"Controlled"
         }
         Rating {
@@ -23,7 +23,8 @@ val RatingShowcase = FC<Props> {
             onChange = { _, newValue -> rating = newValue }
 
             Typography {
-                asDynamic().component = ReactHTML.legend
+                component = ReactHTML.legend
+
                 +"Read only"
             }
             Rating {
@@ -32,16 +33,18 @@ val RatingShowcase = FC<Props> {
                 readOnly = true
             }
             Typography {
-                asDynamic().component = ReactHTML.legend
+                component = ReactHTML.legend
+
                 +"Disabled"
             }
             Rating {
                 name = "disabled"
                 value = rating
-                disabled
+                disabled = true
             }
             Typography {
-                asDynamic().component = ReactHTML.legend
+                component = ReactHTML.legend
+
                 +"No rating given"
             }
             Rating {

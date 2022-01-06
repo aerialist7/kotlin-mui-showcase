@@ -10,43 +10,39 @@ import org.w3c.dom.Element
 import react.FC
 import react.Props
 import react.dom.aria.ariaDescribedBy
-import react.dom.events.MouseEventHandler
 import react.useState
 
 val PopoverShowcase = FC<Props> {
     var anchor by useState<Element?>(null)
 
-    val handleClick: MouseEventHandler<*> = { anchor = it.currentTarget }
-
-    val handleClose = { anchor = null }
-
     val isOpen = anchor != null
-    val id = if (isOpen) "simple-popover" else undefined
 
     Button {
-        id?.let { ariaDescribedBy = id }
+        if (isOpen) {
+            ariaDescribedBy = "simple-popover"
+        }
         variant = ButtonVariant.contained
-        onClick = handleClick
+        onClick = { anchor = it.currentTarget }
 
         +"Open Popover"
     }
 
     Popover {
-        // TODO: Unable to set `id` prop directly [MUI]
-        asDynamic().id = id
+        if (isOpen) {
+            id = "simple-popover"
+        }
         // TODO: Redundant cast [MUI]
         anchorEl = anchor.unsafeCast<((Element) -> Element)?>()
         open = isOpen
-        onClose = handleClose
+        onClose = { _, _ -> anchor = null }
         anchorOrigin = jso {
             vertical = "bottom"
             horizontal = "left"
         }
 
         Typography {
-            sx = jso {
-                padding = 2.px
-            }
+            sx = jso { padding = 2.px }
+
             +"The content of the Popover."
         }
     }

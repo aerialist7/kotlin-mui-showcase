@@ -5,12 +5,12 @@ import mui.material.Badge
 import mui.material.BadgeColor
 import react.FC
 import react.Props
+import react.ReactNode
 
 val BadgesShowcase = FC<Props> {
     Badge {
         color = BadgeColor.primary
-        // TODO: Unable to set badge content correctly [MUI]
-        asDynamic().badgeContent = "4"
+        badgeContent = ReactNode("4")
 
         Mail()
     }

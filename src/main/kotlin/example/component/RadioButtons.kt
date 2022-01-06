@@ -10,12 +10,14 @@ import react.dom.html.ReactHTML
 
 val RadioButtonsShowcase = FC<Props> {
     FormControl {
-        // TODO: Unable to set `component` prop correctly [MUI]
-        asDynamic().component = ReactHTML.fieldset
+        component = ReactHTML.fieldset
+
         FormLabel {
-            asDynamic().component = ReactHTML.legend
+            component = ReactHTML.legend
+
             +"Gender"
         }
+
         RadioGroup {
             ariaLabel = "gender"
             defaultValue = "female"

@@ -19,8 +19,7 @@ val TablesShowcase = FC<Props> {
         }
     }
     TableContainer {
-        // TODO: Unable to use `component` prop [MUI]
-        asDynamic().component = Paper.create().type
+        component = Paper.create().type
 
         Table {
             sx = jso { minWidth = 650.px }

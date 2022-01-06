@@ -18,7 +18,7 @@ val DialogsShowcase = FC<Props> {
 
         Dialog {
             open = isOpen
-            onClose = { isOpen = false }
+            onClose = { _, _ -> isOpen = false }
 
             DialogTitle {
                 +"Subscribe"
