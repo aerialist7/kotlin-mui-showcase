@@ -27,10 +27,10 @@ val SelectsShowcase = FC<Props> {
                 // TODO: Needs an ability to set generic type to `Select` component [MUI]
                 value = age.unsafeCast<Nothing?>()
                 label = ReactNode("Age")
-                onChange = {
-                    // TODO: It doesn't work even with asDynamic. See console.log [MUI]
+                val onChangeFunction : (Any?) -> Unit = {
                     age = it.asDynamic().target.value
                 }
+                onChange = onChangeFunction
                 MenuItem {
                     value = "10"
                     +"Ten"
