@@ -15,10 +15,8 @@ import react.useState
 val PopoverShowcase = FC<Props> {
     var anchor by useState<Element?>(null)
 
-    val isOpen = anchor != null
-
     Button {
-        if (isOpen) {
+        if (anchor != null) {
             ariaDescribedBy = "simple-popover"
         }
         variant = ButtonVariant.contained
@@ -28,11 +26,11 @@ val PopoverShowcase = FC<Props> {
     }
 
     Popover {
-        if (isOpen) {
+        if (anchor != null) {
             id = "simple-popover"
+            anchorEl = { anchor as Element }
         }
-        anchorEl = { anchor!! }
-        open = isOpen
+        open = anchor != null
         onClose = { _, _ -> anchor = null }
         anchorOrigin = jso {
             vertical = "bottom"
