@@ -7,6 +7,7 @@ import kotlinext.js.jso
 import mui.material.*
 import mui.system.ResponsiveStyleValue
 import org.w3c.dom.Element
+import popper.core.Placement
 import react.FC
 import react.Props
 import react.dom.events.MouseEvent
@@ -14,26 +15,24 @@ import react.dom.html.ReactHTML.br
 import react.useState
 
 val PopperShowcase = FC<Props> {
-    var anchorElement by useState<Element?>(null)
     var isOpen by useState(false)
-    var placementPosition by useState<String>()
+    var anchor by useState<Element?>(null)
+    var place by useState<Placement>()
 
-    fun MouseEvent<*, *>.handleClick(newPlacement: String) {
-        isOpen = placementPosition != newPlacement || !isOpen
-        placementPosition = newPlacement
-        anchorElement = currentTarget
+    fun MouseEvent<*, *>.handleClick(newPlacement: Placement) {
+        isOpen = place != newPlacement || !isOpen
+        place = newPlacement
+        anchor = currentTarget
     }
 
     Box {
         sx = jso { width = 500.px }
 
         Popper {
-            // TODO: Remove `asDynamic` after [MUI] update
-            with(asDynamic()) {
-                open = isOpen
-                anchorEl = anchorElement
-                placement = placementPosition
-            }
+            open = isOpen
+            anchorEl = anchor
+            placement = place
+
             Typography {
                 sx = jso { padding = 2.px }
 
@@ -48,22 +47,22 @@ val PopperShowcase = FC<Props> {
             Grid {
                 item = true
                 Button {
-                    val newPlacement = "top-start"
+                    val newPlacement = Placement.topStart
                     onClick = { it.handleClick(newPlacement) }
 
-                    +newPlacement
+                    +"$newPlacement"
                 }
                 Button {
-                    val newPlacement = "top"
+                    val newPlacement = Placement.top
                     onClick = { it.handleClick(newPlacement) }
 
-                    +newPlacement
+                    +"$newPlacement"
                 }
                 Button {
-                    val newPlacement = "top-end"
+                    val newPlacement = Placement.topEnd
                     onClick = { it.handleClick(newPlacement) }
 
-                    +newPlacement
+                    +"$newPlacement"
                 }
             }
         }
@@ -75,24 +74,24 @@ val PopperShowcase = FC<Props> {
                 item = true
                 xs = 6
                 Button {
-                    val newPlacement = "left-start"
+                    val newPlacement = Placement.leftStart
                     onClick = { it.handleClick(newPlacement) }
 
-                    +newPlacement
+                    +"$newPlacement"
                 }
                 br()
                 Button {
-                    val newPlacement = "left"
+                    val newPlacement = Placement.left
                     onClick = { it.handleClick(newPlacement) }
 
-                    +newPlacement
+                    +"$newPlacement"
                 }
                 br()
                 Button {
-                    val newPlacement = "left-end"
+                    val newPlacement = Placement.leftEnd
                     onClick = { it.handleClick(newPlacement) }
 
-                    +newPlacement
+                    +"$newPlacement"
                 }
             }
             Grid {
@@ -106,29 +105,29 @@ val PopperShowcase = FC<Props> {
                     item = true
 
                     Button {
-                        val newPlacement = "right-start"
+                        val newPlacement = Placement.rightStart
                         onClick = { it.handleClick(newPlacement) }
 
-                        +newPlacement
+                        +"$newPlacement"
                     }
                 }
                 Grid {
                     item = true
 
                     Button {
-                        val newPlacement = "right"
+                        val newPlacement = Placement.right
                         onClick = { it.handleClick(newPlacement) }
 
-                        +newPlacement
+                        +"$newPlacement"
                     }
                 }
                 Grid {
                     item = true
                     Button {
-                        val newPlacement = "right-end"
+                        val newPlacement = Placement.rightEnd
                         onClick = { it.handleClick(newPlacement) }
 
-                        +newPlacement
+                        +"$newPlacement"
                     }
                 }
             }
@@ -140,22 +139,22 @@ val PopperShowcase = FC<Props> {
             Grid {
                 item = true
                 Button {
-                    val newPlacement = "bottom-start"
+                    val newPlacement = Placement.bottomStart
                     onClick = { it.handleClick(newPlacement) }
 
-                    +newPlacement
+                    +"$newPlacement"
                 }
                 Button {
-                    val newPlacement = "bottom"
+                    val newPlacement = Placement.bottom
                     onClick = { it.handleClick(newPlacement) }
 
-                    +newPlacement
+                    +"$newPlacement"
                 }
                 Button {
-                    val newPlacement = "bottom-end"
+                    val newPlacement = Placement.bottomEnd
                     onClick = { it.handleClick(newPlacement) }
 
-                    +newPlacement
+                    +"$newPlacement"
                 }
             }
         }

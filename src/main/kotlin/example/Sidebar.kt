@@ -55,9 +55,6 @@ val Sidebar = FC<Props> {
                         }
 
                         ListItemButton {
-                            // TODO: Needs an ability to set generic type to `ListItemButton` component [MUI]
-                            this as ListItemButtonBaseProps
-
                             selected = lastPathname == key
 
                             ListItemText {
