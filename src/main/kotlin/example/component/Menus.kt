@@ -13,7 +13,7 @@ import react.dom.html.ReactHTML.div
 import react.useState
 
 val MenusShowcase = FC<Props> {
-    var point by useState<Point?>(null)
+    var point by useState<Point>()
 
     val handleContextMenu = { event: MouseEvent<*, *> ->
         event.preventDefault()

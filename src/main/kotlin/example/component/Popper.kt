@@ -16,7 +16,7 @@ import react.useState
 
 val PopperShowcase = FC<Props> {
     var isOpen by useState(false)
-    var anchor by useState<Element?>(null)
+    var anchor by useState<Element>()
     var place by useState<Placement>()
 
     fun MouseEvent<*, *>.handleClick(newPlacement: Placement) {

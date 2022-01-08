@@ -13,7 +13,7 @@ import react.dom.aria.ariaDescribedBy
 import react.useState
 
 val PopoverShowcase = FC<Props> {
-    var anchor by useState<Element?>(null)
+    var anchor by useState<Element>()
 
     Button {
         if (anchor != null) {

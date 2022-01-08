@@ -9,7 +9,7 @@ import react.dom.html.ReactHTML
 import react.useState
 
 val RatingShowcase = FC<Props> {
-    var rating by useState<Number?>(null)
+    var rating by useState<Number>()
 
     Box {
         Typography {
