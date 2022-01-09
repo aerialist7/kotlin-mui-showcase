@@ -5,11 +5,9 @@ import csstype.pct
 import csstype.px
 import kotlinext.js.jso
 import mui.material.*
-import org.w3c.dom.HTMLTableCellElement
 import react.*
 import react.dom.aria.AriaRole
 import react.dom.aria.ariaLabel
-import react.dom.html.HTMLAttributes
 import react.dom.html.ReactHTML
 
 val TablesShowcase = FC<Props> {
@@ -60,8 +58,7 @@ val TablesShowcase = FC<Props> {
                         key = row.name
 
                         TableCell {
-                            // TODO: Remove redundant cast after fix `component` prop type [MUI]
-                            component = ReactHTML.th.unsafeCast<HTMLAttributes<HTMLTableCellElement>>()
+                            component = ReactHTML.th
                             scope = "row"
 
                             +row.name

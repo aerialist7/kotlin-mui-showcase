@@ -7,6 +7,7 @@ import mui.icons.material.VolumeDown
 import mui.icons.material.VolumeUp
 import mui.material.Slider
 import mui.material.Stack
+import mui.material.StackDirection
 import mui.system.ResponsiveStyleValue
 import react.FC
 import react.Props
@@ -22,8 +23,7 @@ val SliderShowcase = FC<Props> {
             alignItems = AlignItems.center
         }
         spacing = ResponsiveStyleValue(2)
-        // TODO: Value shouldn't be a string
-        direction = ResponsiveStyleValue("row")
+        direction = ResponsiveStyleValue(StackDirection.row)
 
         VolumeDown()
 
