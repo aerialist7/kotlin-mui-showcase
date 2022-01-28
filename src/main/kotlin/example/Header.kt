@@ -4,9 +4,8 @@ import csstype.*
 import example.Sizes.Header
 import kotlinext.js.jso
 import kotlinx.browser.window
-import mui.icons.material.GitHub
+import mui.icons.material.*
 import mui.icons.material.Menu
-import mui.icons.material.MenuBook
 import mui.material.*
 import mui.material.Size
 import react.FC
@@ -20,6 +19,9 @@ import react.router.useLocation
 import react.useContext
 
 val Header = FC<Props> {
+    val sidebarOpenedData = useContext(SidebarOpenedContext)
+    val darkMode = sidebarOpenedData.darkMode
+    val setDarkMode = sidebarOpenedData.setDarkMode
     val (sidebarOpened, setSidebarOpened) = useContext(SidebarOpenedContext)
     val lastPathname = useLocation().pathname.substringAfterLast("/")
 
@@ -55,6 +57,32 @@ val Header = FC<Props> {
                 component = ReactHTML.div
 
                 +"Kotlin MUI Showcase"
+            }
+
+            Tooltip {
+                title = ReactNode(
+                    if (darkMode) {
+                        "Switch to light mode"
+                    } else {
+                        "Switch to dark mode"
+                    }
+                )
+
+                IconButton {
+                    ariaLabel = "dark theme"
+                    ariaHasPopup = `false`
+                    size = Size.large
+                    color = IconButtonColor.inherit
+                    onClick = {
+                        setDarkMode(!darkMode)
+                    }
+
+                    if (darkMode) {
+                        Brightness7()
+                    } else {
+                        Brightness4()
+                    }
+                }
             }
 
             Tooltip {
