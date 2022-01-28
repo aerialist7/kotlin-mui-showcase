@@ -1,4 +1,4 @@
-# [Kotlin MUI Showcase](https://vie10.github.io/kotlin-mui-showcase/)
+# [Kotlin MUI Showcase](https://karakum-team.github.io/kotlin-mui-showcase/)
 
 > ![Accordion](.doc/accordion.jpg)
 > ![Alert](.doc/alert.jpg)
