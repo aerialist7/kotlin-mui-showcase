@@ -8,20 +8,15 @@ import mui.icons.material.*
 import mui.icons.material.Menu
 import mui.material.*
 import mui.material.Size
-import react.FC
-import react.Props
-import react.ReactNode
+import react.*
 import react.dom.aria.AriaHasPopup.`false`
 import react.dom.aria.ariaHasPopup
 import react.dom.aria.ariaLabel
 import react.dom.html.ReactHTML
 import react.router.useLocation
-import react.useContext
 
 val Header = FC<Props> {
-    val sidebarOpenedData = useContext(SidebarOpenedContext)
-    val darkMode = sidebarOpenedData.darkMode
-    val setDarkMode = sidebarOpenedData.setDarkMode
+    val (paletteMode, setPaletteMode) = useContext(ColorModeContext)
     val (sidebarOpened, setSidebarOpened) = useContext(SidebarOpenedContext)
     val lastPathname = useLocation().pathname.substringAfterLast("/")
 
@@ -59,29 +54,17 @@ val Header = FC<Props> {
                 +"Kotlin MUI Showcase"
             }
 
-            Tooltip {
-                title = ReactNode(
-                    if (darkMode) {
-                        "Switch to light mode"
-                    } else {
-                        "Switch to dark mode"
-                    }
-                )
+            Switch {
+                icon = Brightness7.create()
+                checkedIcon = Brightness4.create()
+                checked = paletteMode == PaletteMode.Dark
+                ariaLabel = "dark mode"
 
-                IconButton {
-                    ariaLabel = "dark theme"
-                    ariaHasPopup = `false`
-                    size = Size.large
-                    color = IconButtonColor.inherit
-                    onClick = {
-                        setDarkMode(!darkMode)
-                    }
-
-                    if (darkMode) {
-                        Brightness7()
-                    } else {
-                        Brightness4()
-                    }
+                onChange = { _, value ->
+                    val mode = if (value) {
+                        PaletteMode.Dark
+                    } else PaletteMode.Light
+                    setPaletteMode(mode)
                 }
             }
 
@@ -111,7 +94,7 @@ val Header = FC<Props> {
                         var name = lastPathname
                             .split("-")
                             .asSequence()
-                            .map { it.replaceFirstChar { it.titlecase() } }
+                            .map { it.replaceFirstChar { firstChar -> firstChar.titlecase() } }
                             .reduce { accumulator, word -> accumulator.plus(word) }
 
                         if (name.isNotEmpty()) {

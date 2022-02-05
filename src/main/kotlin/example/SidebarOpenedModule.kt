@@ -1,29 +1,15 @@
 package example
 
-import mui.system.ThemeProvider
 import react.*
 
-data class SidebarOpened(
-    val value: Boolean,
-    val setValue: StateSetter<Boolean>,
-    val darkMode: Boolean,
-    val setDarkMode: StateSetter<Boolean>
-)
+typealias SidebarOpenedState = StateInstance<Boolean>
 
-val SidebarOpenedContext = createContext<SidebarOpened>()
+val SidebarOpenedContext = createContext<SidebarOpenedState>()
 
 val SidebarOpenedModule = FC<PropsWithChildren> { props ->
-    val (darkMode, setDarkMode) = useState(false)
-    val (open, setOpen) = useState(true)
-    val sidebarOpened = useMemo(open, setOpen, darkMode, setDarkMode) {
-        SidebarOpened(open, setOpen, darkMode, setDarkMode)
-    }
+    val isOpen = useState(true)
 
-    SidebarOpenedContext.Provider(sidebarOpened) {
-        val newTheme = if (darkMode) themeDark else themeLight
-        ThemeProvider {
-            theme = newTheme
-            props.children()
-        }
+    SidebarOpenedContext.Provider(isOpen) {
+        props.children()
     }
 }
