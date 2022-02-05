@@ -94,7 +94,7 @@ val Header = FC<Props> {
                         var name = lastPathname
                             .split("-")
                             .asSequence()
-                            .map { it.replaceFirstChar { firstChar -> firstChar.titlecase() } }
+                            .map { it.replaceFirstChar { it.titlecase() } }
                             .reduce { accumulator, word -> accumulator.plus(word) }
 
                         if (name.isNotEmpty()) {
