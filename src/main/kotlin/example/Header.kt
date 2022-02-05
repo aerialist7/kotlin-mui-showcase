@@ -20,7 +20,7 @@ import react.router.useLocation
 import react.useContext
 
 val Header = FC<Props> {
-    val (sidebarOpened, setSidebarOpened) = useContext(SidebarOpenedContext)
+    var sidebarOpened by useContext(SidebarOpenedContext)
     val lastPathname = useLocation().pathname.substringAfterLast("/")
 
     val ml = if (sidebarOpened) Sizes.Sidebar.Width else 0.px
@@ -38,7 +38,7 @@ val Header = FC<Props> {
                 ariaLabel = "open drawer"
                 edge = IconButtonEdge.start
                 color = IconButtonColor.inherit
-                onClick = { setSidebarOpened(true) }
+                onClick = { sidebarOpened = true }
                 sx = jso {
                     marginRight = 16.px
                     if (sidebarOpened)

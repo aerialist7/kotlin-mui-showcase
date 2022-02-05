@@ -19,7 +19,7 @@ import react.useContext
 
 val Sidebar = FC<Props> {
     val showcases = useContext(ShowcasesContext)
-    val (sidebarOpened, setSidebarOpened) = useContext(SidebarOpenedContext)
+    var sidebarOpened by useContext(SidebarOpenedContext)
     val lastPathname = useLocation().pathname.substringAfterLast("/")
 
     Box {
@@ -40,7 +40,7 @@ val Sidebar = FC<Props> {
 
                 IconButton {
                     sx = jso { marginLeft = 8.px }
-                    onClick = { setSidebarOpened(false) }
+                    onClick = { sidebarOpened = false }
 
                     ChevronLeft()
                 }
