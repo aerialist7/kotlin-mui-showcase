@@ -21,7 +21,6 @@ val PaperShowcase = FC<Props> {
         }
 
         Paper {
-            elevation = 3
             variant = PaperVariant.outlined
 
             Typography {
