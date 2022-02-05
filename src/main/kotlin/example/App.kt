@@ -1,6 +1,7 @@
 package example
 
 import csstype.Display
+import example.component.*
 import kotlinext.js.jso
 import kotlinx.browser.document
 import mui.system.Box
