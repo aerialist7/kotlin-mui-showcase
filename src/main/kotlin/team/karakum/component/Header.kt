@@ -1,9 +1,6 @@
-package example.component
+package team.karakum.component
 
 import csstype.*
-import example.common.Sizes
-import example.common.Sizes.Header
-import example.common.Themes
 import kotlinext.js.jso
 import kotlinx.browser.window
 import mui.icons.material.Brightness4
@@ -19,6 +16,9 @@ import react.dom.aria.ariaHasPopup
 import react.dom.aria.ariaLabel
 import react.dom.html.ReactHTML
 import react.router.useLocation
+import team.karakum.common.Sizes
+import team.karakum.common.Sizes.Header
+import team.karakum.common.Themes
 
 val Header = FC<Props> {
     var theme by useContext(ThemeContext)
@@ -108,7 +108,7 @@ val Header = FC<Props> {
                         }
 
                         window.location.href =
-                            "https://github.com/karakum-team/kotlin-mui-showcase/blob/main/src/main/kotlin/example/component/showcase/$name"
+                            "https://github.com/karakum-team/kotlin-mui-showcase/blob/main/src/main/kotlin/team/karakum/component/showcase/$name"
                     }
 
                     GitHub()
