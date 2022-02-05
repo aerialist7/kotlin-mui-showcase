@@ -59,14 +59,18 @@ val Header = FC<Props> {
                 +"Kotlin MUI Showcase"
             }
 
-            Switch {
-                icon = Brightness7.create()
-                checkedIcon = Brightness4.create()
-                checked = theme == Themes.Dark
-                ariaLabel = "dark mode"
+            Tooltip {
+                title = ReactNode("Theme")
 
-                onChange = { _, checked ->
-                    theme = if (checked) Themes.Dark else Themes.Light
+                Switch {
+                    icon = Brightness7.create()
+                    checkedIcon = Brightness4.create()
+                    checked = theme == Themes.Dark
+                    ariaLabel = "theme"
+
+                    onChange = { _, checked ->
+                        theme = if (checked) Themes.Dark else Themes.Light
+                    }
                 }
             }
 
