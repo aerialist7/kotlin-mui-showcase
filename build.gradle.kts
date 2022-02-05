@@ -1,6 +1,6 @@
 plugins {
     kotlin("js") version "1.6.10"
-    id("com.github.turansky.kfc.webpack") version "4.61.0"
+    id("io.github.turansky.kfc.webpack") version "5.0.0"
 }
 
 repositories {
@@ -11,7 +11,7 @@ fun kotlinw(target: String): String =
     "org.jetbrains.kotlin-wrappers:kotlin-$target"
 
 dependencies {
-    implementation(enforcedPlatform(kotlinw("wrappers-bom:0.0.1-pre.291-kotlin-1.6.10")))
+    implementation(enforcedPlatform(kotlinw("wrappers-bom:0.0.1-pre.293-kotlin-1.6.10")))
 
     implementation(kotlinw("react"))
     implementation(kotlinw("react-dom"))
