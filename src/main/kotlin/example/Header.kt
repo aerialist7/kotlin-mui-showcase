@@ -4,22 +4,22 @@ import csstype.*
 import example.Sizes.Header
 import kotlinext.js.jso
 import kotlinx.browser.window
+import mui.icons.material.Brightness4
+import mui.icons.material.Brightness7
 import mui.icons.material.GitHub
 import mui.icons.material.Menu
 import mui.icons.material.MenuBook
 import mui.material.*
 import mui.material.Size
-import react.FC
-import react.Props
-import react.ReactNode
+import react.*
 import react.dom.aria.AriaHasPopup.`false`
 import react.dom.aria.ariaHasPopup
 import react.dom.aria.ariaLabel
 import react.dom.html.ReactHTML
 import react.router.useLocation
-import react.useContext
 
 val Header = FC<Props> {
+    val (theme, setTheme) = useContext(ThemeContext)
     var sidebarOpened by useContext(SidebarOpenedContext)
     val lastPathname = useLocation().pathname.substringAfterLast("/")
 
@@ -55,6 +55,20 @@ val Header = FC<Props> {
                 component = ReactHTML.div
 
                 +"Kotlin MUI Showcase"
+            }
+
+            Switch {
+                icon = Brightness7.create()
+                checkedIcon = Brightness4.create()
+                checked = theme == Themes.Dark
+                ariaLabel = "dark mode"
+
+                onChange = { _, value ->
+                    val newTheme = if (value) {
+                        Themes.Dark
+                    } else Themes.Light
+                    setTheme(newTheme)
+                }
             }
 
             Tooltip {
