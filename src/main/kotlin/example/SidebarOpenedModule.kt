@@ -2,20 +2,14 @@ package example
 
 import react.*
 
-data class SidebarOpened(
-    val value: Boolean,
-    val setValue: StateSetter<Boolean>,
-)
+typealias SidebarOpenedState = StateInstance<Boolean>
 
-val SidebarOpenedContext = createContext<SidebarOpened>()
+val SidebarOpenedContext = createContext<SidebarOpenedState>()
 
 val SidebarOpenedModule = FC<PropsWithChildren> { props ->
-    val (open, setOpen) = useState(true)
-    val sidebarOpened = useMemo(open, setOpen) {
-        SidebarOpened(open, setOpen)
-    }
+    val isOpen = useState(true)
 
-    SidebarOpenedContext.Provider(sidebarOpened) {
+    SidebarOpenedContext.Provider(isOpen) {
         props.children()
     }
 }
