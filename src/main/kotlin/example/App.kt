@@ -21,15 +21,13 @@ private val App = FC<Props> {
     HashRouter {
         ShowcasesModule {
             SidebarOpenedModule {
-                ColorModeModule {
-                    ColorModeThemeProvider {
-                        Box {
-                            sx = jso { display = Display.flex }
+                ThemeModule {
+                    Box {
+                        sx = jso { display = Display.flex }
 
-                            Header()
-                            Sidebar()
-                            Content()
-                        }
+                        Header()
+                        Sidebar()
+                        Content()
                     }
                 }
             }

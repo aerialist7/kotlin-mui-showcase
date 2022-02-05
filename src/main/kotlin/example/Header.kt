@@ -4,8 +4,11 @@ import csstype.*
 import example.Sizes.Header
 import kotlinext.js.jso
 import kotlinx.browser.window
-import mui.icons.material.*
+import mui.icons.material.Brightness4
+import mui.icons.material.Brightness7
+import mui.icons.material.GitHub
 import mui.icons.material.Menu
+import mui.icons.material.MenuBook
 import mui.material.*
 import mui.material.Size
 import react.*
@@ -16,7 +19,7 @@ import react.dom.html.ReactHTML
 import react.router.useLocation
 
 val Header = FC<Props> {
-    val (paletteMode, setPaletteMode) = useContext(ColorModeContext)
+    val (theme, setTheme) = useContext(ThemeContext)
     val (sidebarOpened, setSidebarOpened) = useContext(SidebarOpenedContext)
     val lastPathname = useLocation().pathname.substringAfterLast("/")
 
@@ -57,14 +60,14 @@ val Header = FC<Props> {
             Switch {
                 icon = Brightness7.create()
                 checkedIcon = Brightness4.create()
-                checked = paletteMode == PaletteMode.Dark
+                checked = theme == Themes.Dark
                 ariaLabel = "dark mode"
 
                 onChange = { _, value ->
-                    val mode = if (value) {
-                        PaletteMode.Dark
-                    } else PaletteMode.Light
-                    setPaletteMode(mode)
+                    val newTheme = if (value) {
+                        Themes.Dark
+                    } else Themes.Light
+                    setTheme(newTheme)
                 }
             }
 
