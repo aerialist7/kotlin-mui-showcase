@@ -103,7 +103,8 @@ val Header = FC<Props> {
                             name += ".kt"
                         }
 
-                        window.location.href = "https://github.com/karakum-team/kotlin-mui-showcase/blob/main/src/main/kotlin/example/component/$name"
+                        window.location.href =
+                            "https://github.com/karakum-team/kotlin-mui-showcase/blob/main/src/main/kotlin/example/component/showcase/$name"
                     }
 
                     GitHub()
