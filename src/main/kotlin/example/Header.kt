@@ -19,15 +19,15 @@ import react.dom.html.ReactHTML
 import react.router.useLocation
 
 val Header = FC<Props> {
-    val (theme, setTheme) = useContext(ThemeContext)
+    var theme by useContext(ThemeContext)
     var sidebarOpened by useContext(SidebarOpenedContext)
     val lastPathname = useLocation().pathname.substringAfterLast("/")
-
-    val ml = if (sidebarOpened) Sizes.Sidebar.Width else 0.px
 
     AppBar {
         position = AppBarPosition.fixed
         sx = jso {
+            val ml = if (sidebarOpened) Sizes.Sidebar.Width else 0.px
+
             width = 100.pct - ml
             height = Header.Height
             marginLeft = ml
@@ -63,11 +63,8 @@ val Header = FC<Props> {
                 checked = theme == Themes.Dark
                 ariaLabel = "dark mode"
 
-                onChange = { _, value ->
-                    val newTheme = if (value) {
-                        Themes.Dark
-                    } else Themes.Light
-                    setTheme(newTheme)
+                onChange = { _, checked ->
+                    theme = if (checked) Themes.Dark else Themes.Light
                 }
             }
 
