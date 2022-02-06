@@ -14,7 +14,7 @@ val Placeholder = FC<Props> {
         sx = jso {
             display = Display.grid
             justifyContent = JustifyContent.center
-            gridTemplateRows = "repeat(2, 0fr)".unsafeCast<GridTemplateRows>()
+            gridTemplateRows = GridTemplateRows(0.fr, 0.fr)
         }
 
         Typography {
