@@ -3,6 +3,8 @@ package team.karakum.component
 import csstype.FlexGrow
 import csstype.px
 import kotlinext.js.jso
+import mui.material.Paper
+import mui.material.PaperVariant
 import mui.material.Typography
 import mui.system.Box
 import react.FC
@@ -28,7 +30,13 @@ val Content = FC<Props> {
                     marginTop = Header.Height
                     padding = 30.px
                 }
-                Outlet()
+
+                Paper {
+                    variant = PaperVariant.elevation
+                    elevation = 0
+
+                    Outlet()
+                }
             }
 
             Route {
