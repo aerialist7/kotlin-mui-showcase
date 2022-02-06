@@ -1,8 +1,11 @@
 package team.karakum.component
 
 import csstype.FlexGrow
+import csstype.Length
+import csstype.minus
 import csstype.px
 import kotlinext.js.jso
+import kotlinx.browser.document
 import mui.material.Paper
 import mui.material.PaperVariant
 import mui.material.Typography
@@ -16,6 +19,7 @@ import react.router.Route
 import react.router.Routes
 import react.useContext
 import team.karakum.common.Sizes.Header
+import team.karakum.common.Sizes.Padding
 
 val Content = FC<Props> {
     val showcases = useContext(ShowcasesContext)
@@ -28,10 +32,14 @@ val Content = FC<Props> {
                 sx = jso {
                     flexGrow = FlexGrow(1.0)
                     marginTop = Header.Height
-                    padding = 30.px
+                    padding = Padding.Graceful
                 }
 
                 Paper {
+                    sx = jso {
+                        minHeight = visibleHeight - Header.Height - Padding.Graceful - Padding.Graceful
+                        padding = Padding.Graceful
+                    }
                     variant = PaperVariant.elevation
                     elevation = 0
 
@@ -58,3 +66,15 @@ val Content = FC<Props> {
         }
     }
 }
+
+private val visibleHeight: Length
+    get() {
+        val body = document.body!!
+        val html = document.documentElement!!
+        return maxOf(
+            body.offsetHeight,
+            body.scrollHeight,
+            html.clientHeight,
+            html.scrollHeight
+        ).px
+    }

@@ -10,4 +10,8 @@ object Sizes {
     object Sidebar {
         val Width = 135.px
     }
+
+    object Padding {
+        val Graceful = 30.px
+    }
 }
