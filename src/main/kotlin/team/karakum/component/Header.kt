@@ -1,55 +1,36 @@
 package team.karakum.component
 
-import csstype.*
+import csstype.FlexGrow
+import csstype.GridArea
+import csstype.ZIndex
 import kotlinext.js.jso
 import kotlinx.browser.window
 import mui.icons.material.Brightness4
 import mui.icons.material.Brightness7
 import mui.icons.material.GitHub
-import mui.icons.material.Menu
 import mui.icons.material.MenuBook
 import mui.material.*
-import mui.material.Size
 import react.*
 import react.dom.aria.AriaHasPopup.`false`
 import react.dom.aria.ariaHasPopup
 import react.dom.aria.ariaLabel
 import react.dom.html.ReactHTML
 import react.router.useLocation
-import team.karakum.common.Sizes
-import team.karakum.common.Sizes.Header
+import team.karakum.common.GridAreas
 import team.karakum.common.Themes
 
 val Header = FC<Props> {
     var theme by useContext(ThemeContext)
-    var sidebarOpened by useContext(SidebarOpenedContext)
     val lastPathname = useLocation().pathname.substringAfterLast("/")
 
     AppBar {
         position = AppBarPosition.fixed
         sx = jso {
-            val ml = if (sidebarOpened) Sizes.Sidebar.Width else 0.px
-
-            width = 100.pct - ml
-            height = Header.Height
-            marginLeft = ml
+            gridArea = GridArea(GridAreas.Header)
+            zIndex = ZIndex(1_500)
         }
 
         Toolbar {
-            IconButton {
-                ariaLabel = "open drawer"
-                edge = IconButtonEdge.start
-                color = IconButtonColor.inherit
-                onClick = { sidebarOpened = true }
-                sx = jso {
-                    marginRight = 16.px
-                    if (sidebarOpened)
-                        display = Display.none
-                }
-
-                Menu()
-            }
-
             Typography {
                 sx = jso { flexGrow = FlexGrow(1.0) }
                 variant = "h6"
