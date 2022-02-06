@@ -1,6 +1,6 @@
 package team.karakum.component
 
-import csstype.FlexGrow
+import csstype.GridArea
 import csstype.px
 import kotlinext.js.jso
 import mui.material.Paper
@@ -15,7 +15,7 @@ import react.router.Outlet
 import react.router.Route
 import react.router.Routes
 import react.useContext
-import team.karakum.common.Sizes.Header
+import team.karakum.common.GridAreas
 
 val Content = FC<Props> {
     val showcases = useContext(ShowcasesContext)
@@ -26,8 +26,7 @@ val Content = FC<Props> {
             element = Box.create {
                 component = ReactHTML.main
                 sx = jso {
-                    flexGrow = FlexGrow(1.0)
-                    marginTop = Header.Height
+                    gridArea = GridArea(GridAreas.Content)
                     padding = 30.px
                 }
 
