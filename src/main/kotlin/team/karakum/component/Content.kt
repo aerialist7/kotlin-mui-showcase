@@ -1,6 +1,7 @@
 package team.karakum.component
 
 import csstype.GridArea
+import csstype.px
 import kotlinext.js.jso
 import mui.material.Paper
 import mui.material.PaperVariant
@@ -15,7 +16,8 @@ import react.router.Route
 import react.router.Routes
 import react.useContext
 import team.karakum.common.GridAreas
-import team.karakum.common.Sizes.Padding
+
+private val PADDING_DEFAULT = 30.px
 
 val Content = FC<Props> {
     val showcases = useContext(ShowcasesContext)
@@ -27,12 +29,12 @@ val Content = FC<Props> {
                 component = ReactHTML.main
                 sx = jso {
                     gridArea = GridArea(GridAreas.Content)
-                    padding = Padding.Graceful
+                    padding = PADDING_DEFAULT
                 }
 
                 Paper {
                     sx = jso {
-                        padding = Padding.Graceful
+                        padding = PADDING_DEFAULT
                     }
                     variant = PaperVariant.elevation
                     elevation = 0
