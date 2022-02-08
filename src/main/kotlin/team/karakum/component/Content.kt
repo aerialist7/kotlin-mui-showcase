@@ -17,6 +17,8 @@ import react.router.Routes
 import react.useContext
 import team.karakum.common.GridAreas
 
+private val PADDING_DEFAULT = 30.px
+
 val Content = FC<Props> {
     val showcases = useContext(ShowcasesContext)
 
@@ -27,10 +29,13 @@ val Content = FC<Props> {
                 component = ReactHTML.main
                 sx = jso {
                     gridArea = GridArea(GridAreas.Content)
-                    padding = 30.px
+                    padding = PADDING_DEFAULT
                 }
 
                 Paper {
+                    sx = jso {
+                        padding = PADDING_DEFAULT
+                    }
                     variant = PaperVariant.elevation
                     elevation = 0
 
