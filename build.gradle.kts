@@ -1,3 +1,6 @@
+import org.jetbrains.kotlin.gradle.targets.js.nodejs.NodeJsRootExtension
+import org.jetbrains.kotlin.gradle.targets.js.nodejs.NodeJsRootPlugin
+
 plugins {
     kotlin("js") version "1.6.10"
 }
@@ -33,4 +36,8 @@ tasks {
     wrapper {
         gradleVersion = "7.4"
     }
+}
+
+rootProject.plugins.withType<NodeJsRootPlugin> {
+    rootProject.the<NodeJsRootExtension>().nodeVersion = "16.14.0"
 }
