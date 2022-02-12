@@ -3,7 +3,7 @@ package team.karakum.component.showcase
 import csstype.Length
 import csstype.pct
 import csstype.px
-import kotlinext.js.jso
+import kotlinx.js.jso
 import mui.material.*
 import react.*
 import react.dom.aria.AriaRole

@@ -1,7 +1,7 @@
 package team.karakum.component.showcase
 
 import csstype.pct
-import kotlinext.js.jso
+import kotlinx.js.jso
 import mui.material.Box
 import mui.material.Tab
 import mui.material.Tabs

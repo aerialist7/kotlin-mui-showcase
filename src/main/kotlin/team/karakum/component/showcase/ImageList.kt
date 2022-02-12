@@ -1,7 +1,7 @@
 package team.karakum.component.showcase
 
 import csstype.px
-import kotlinext.js.jso
+import kotlinx.js.jso
 import mui.material.ImageList
 import mui.material.ImageListItem
 import react.FC

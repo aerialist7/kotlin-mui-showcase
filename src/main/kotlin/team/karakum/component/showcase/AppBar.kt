@@ -2,7 +2,7 @@ package team.karakum.component.showcase
 
 import csstype.FlexGrow
 import csstype.px
-import kotlinext.js.jso
+import kotlinx.js.jso
 import mui.icons.material.Menu
 import mui.material.*
 import react.FC

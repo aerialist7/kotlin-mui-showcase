@@ -2,7 +2,7 @@ package team.karakum.component.showcase
 
 import csstype.AlignItems
 import csstype.px
-import kotlinext.js.jso
+import kotlinx.js.jso
 import mui.icons.material.VolumeDown
 import mui.icons.material.VolumeUp
 import mui.material.Slider

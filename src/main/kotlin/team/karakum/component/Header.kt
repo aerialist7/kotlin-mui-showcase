@@ -3,8 +3,8 @@ package team.karakum.component
 import csstype.FlexGrow
 import csstype.GridArea
 import csstype.ZIndex
-import kotlinext.js.jso
 import kotlinx.browser.window
+import kotlinx.js.jso
 import mui.icons.material.Brightness4
 import mui.icons.material.Brightness7
 import mui.icons.material.GitHub

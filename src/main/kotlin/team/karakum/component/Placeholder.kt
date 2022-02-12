@@ -1,7 +1,7 @@
 package team.karakum.component
 
 import csstype.*
-import kotlinext.js.jso
+import kotlinx.js.jso
 import mui.material.Box
 import mui.material.Typography
 import react.FC
@@ -26,7 +26,7 @@ val Placeholder = FC<Props> {
         img {
             css {
                 width = 450.px
-                transform = "scale(1, -1)".unsafeCast<Transform>()
+                transform = scale(1, -1)
             }
 
             src = "arrow.png"

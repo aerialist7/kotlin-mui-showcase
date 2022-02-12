@@ -2,7 +2,7 @@ package team.karakum.component
 
 import csstype.GridArea
 import csstype.px
-import kotlinext.js.jso
+import kotlinx.js.jso
 import mui.material.Paper
 import mui.material.PaperVariant
 import mui.material.Typography

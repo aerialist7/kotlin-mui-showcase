@@ -3,7 +3,7 @@ package team.karakum.component.showcase
 import csstype.Display
 import csstype.FlexWrap.Companion.wrap
 import csstype.px
-import kotlinext.js.jso
+import kotlinx.js.jso
 import mui.material.Box
 import mui.material.Paper
 import mui.material.PaperVariant

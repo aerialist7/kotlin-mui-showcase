@@ -3,7 +3,7 @@ package team.karakum.component.showcase
 import csstype.AlignItems
 import csstype.JustifyContent
 import csstype.px
-import kotlinext.js.jso
+import kotlinx.js.jso
 import mui.material.*
 import mui.system.ResponsiveStyleValue
 import org.w3c.dom.Element

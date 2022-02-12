@@ -3,7 +3,7 @@ package team.karakum.component
 import csstype.Color
 import csstype.GridArea
 import csstype.TextDecoration
-import kotlinext.js.jso
+import kotlinx.js.jso
 import mui.material.*
 import mui.system.Box
 import react.FC

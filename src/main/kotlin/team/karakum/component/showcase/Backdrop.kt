@@ -2,7 +2,7 @@ package team.karakum.component.showcase
 
 import csstype.Color
 import csstype.ZIndex
-import kotlinext.js.jso
+import kotlinx.js.jso
 import mui.material.Backdrop
 import mui.material.Button
 import mui.material.CircularProgress

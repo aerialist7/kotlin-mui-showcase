@@ -2,7 +2,7 @@ package team.karakum.component.showcase
 
 import csstype.Display
 import csstype.px
-import kotlinext.js.jso
+import kotlinx.js.jso
 import mui.material.*
 import react.FC
 import react.Props

@@ -3,7 +3,7 @@ package team.karakum.component.showcase
 import csstype.FlexGrow
 import csstype.pct
 import csstype.px
-import kotlinext.js.jso
+import kotlinx.js.jso
 import mui.material.*
 import react.FC
 import react.Props
