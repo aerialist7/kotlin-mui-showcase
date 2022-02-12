@@ -1,7 +1,7 @@
 package team.karakum.common
 
 object GridAreas {
-    val Header = "header"
-    val Sidebar = "sidebar"
-    val Content = "content"
+    const val Header = "header"
+    const val Sidebar = "sidebar"
+    const val Content = "content"
 }
