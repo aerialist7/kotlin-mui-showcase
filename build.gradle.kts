@@ -1,6 +1,5 @@
 plugins {
     kotlin("js") version "1.6.10"
-    id("io.github.turansky.kfc.webpack") version "5.0.0"
 }
 
 repositories {
