@@ -3,8 +3,6 @@ package team.karakum.component
 import csstype.GridArea
 import csstype.px
 import kotlinx.js.jso
-import mui.material.Paper
-import mui.material.PaperVariant
 import mui.material.Typography
 import mui.system.Box
 import react.FC
@@ -32,15 +30,7 @@ val Content = FC<Props> {
                     padding = DEFAULT_PADDING
                 }
 
-                Paper {
-                    sx = jso {
-                        padding = DEFAULT_PADDING
-                    }
-                    variant = PaperVariant.elevation
-                    elevation = 0
-
-                    Outlet()
-                }
+                Outlet()
             }
 
             Route {
