@@ -1,6 +1,10 @@
 package team.karakum
 
-import csstype.*
+import csstype.Auto.auto
+import csstype.Display
+import csstype.GridArea
+import csstype.GridTemplateAreas
+import csstype.array
 import kotlinx.browser.document
 import kotlinx.js.jso
 import mui.system.Box
@@ -28,12 +32,12 @@ private val App = FC<Props> {
                 Box {
                     sx = jso {
                         display = Display.grid
-                        gridTemplateRows = GridTemplateRows(
+                        gridTemplateRows = array(
                             Header.Height,
-                            Length.auto,
+                            auto,
                         )
-                        gridTemplateColumns = GridTemplateColumns(
-                            Sidebar.Width, Length.auto,
+                        gridTemplateColumns = array(
+                            Sidebar.Width, auto,
                         )
                         gridTemplateAreas = GridTemplateAreas(
                             GridArea("${GridAreas.Header} ${GridAreas.Header}"),

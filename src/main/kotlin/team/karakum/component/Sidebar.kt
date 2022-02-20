@@ -2,7 +2,7 @@ package team.karakum.component
 
 import csstype.Color
 import csstype.GridArea
-import csstype.TextDecoration
+import csstype.None.none
 import kotlinx.js.jso
 import mui.material.*
 import mui.system.Box
@@ -41,7 +41,7 @@ val Sidebar = FC<Props> {
                         to = key
 
                         css {
-                            textDecoration = TextDecoration.none
+                            textDecoration = none
                             color = Color.currentcolor
                         }
 
