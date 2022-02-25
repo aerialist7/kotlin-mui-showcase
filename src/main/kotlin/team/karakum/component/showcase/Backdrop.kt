@@ -1,7 +1,7 @@
 package team.karakum.component.showcase
 
 import csstype.Color
-import csstype.ZIndex
+import csstype.integer
 import kotlinx.js.jso
 import mui.material.Backdrop
 import mui.material.Button
@@ -24,7 +24,7 @@ val BackdropShowcase = FC<Props> {
         onClick = { isOpen = false }
         sx = jso {
             color = Color("#FFFFFF")
-            zIndex = ZIndex(1000)
+            zIndex = integer(1000)
         }
 
         CircularProgress {

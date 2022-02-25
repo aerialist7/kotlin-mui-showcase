@@ -1,6 +1,6 @@
 package team.karakum.component.showcase
 
-import csstype.FlexGrow
+import csstype.number
 import csstype.pct
 import csstype.px
 import kotlinx.js.jso
@@ -34,7 +34,7 @@ val SteppersShowcase = FC<Props> {
 
             sx = jso {
                 maxWidth = 400.px
-                flexGrow = FlexGrow(1.0)
+                flexGrow = number(1.0)
             }
 
             nextButton = Button.create {

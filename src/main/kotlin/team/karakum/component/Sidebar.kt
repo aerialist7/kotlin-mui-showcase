@@ -1,8 +1,8 @@
 package team.karakum.component
 
 import csstype.Color
-import csstype.GridArea
 import csstype.None.none
+import csstype.ident
 import kotlinx.js.jso
 import mui.material.*
 import mui.system.Box
@@ -24,7 +24,7 @@ val Sidebar = FC<Props> {
     Box {
         component = ReactHTML.nav
         sx = jso {
-            gridArea = GridArea(GridAreas.Sidebar)
+            gridArea = ident(GridAreas.Sidebar)
         }
 
         Drawer {

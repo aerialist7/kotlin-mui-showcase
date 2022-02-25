@@ -1,6 +1,6 @@
 package team.karakum.component.showcase
 
-import csstype.FlexGrow
+import csstype.number
 import csstype.px
 import kotlinx.js.jso
 import mui.icons.material.Menu
@@ -12,7 +12,7 @@ import react.dom.html.ReactHTML
 
 val AppBarShowcase = FC<Props> {
     Box {
-        sx = jso { flexGrow = FlexGrow(1.0) }
+        sx = jso { flexGrow = number(1.0) }
 
         AppBar {
             position = AppBarPosition.static
@@ -29,7 +29,7 @@ val AppBarShowcase = FC<Props> {
                 }
 
                 Typography {
-                    sx = jso { flexGrow = FlexGrow(1.0) }
+                    sx = jso { flexGrow = number(1.0) }
                     variant = "h6"
                     component = ReactHTML.div
 

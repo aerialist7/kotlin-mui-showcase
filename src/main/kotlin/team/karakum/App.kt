@@ -2,9 +2,9 @@ package team.karakum
 
 import csstype.Auto.auto
 import csstype.Display
-import csstype.GridArea
 import csstype.GridTemplateAreas
 import csstype.array
+import csstype.ident
 import kotlinx.browser.document
 import kotlinx.js.jso
 import mui.system.Box
@@ -40,8 +40,8 @@ private val App = FC<Props> {
                             Sidebar.Width, auto,
                         )
                         gridTemplateAreas = GridTemplateAreas(
-                            GridArea("${GridAreas.Header} ${GridAreas.Header}"),
-                            GridArea("${GridAreas.Sidebar} ${GridAreas.Content}"),
+                            ident("${GridAreas.Header} ${GridAreas.Header}"),
+                            ident("${GridAreas.Sidebar} ${GridAreas.Content}"),
                         )
                     }
 

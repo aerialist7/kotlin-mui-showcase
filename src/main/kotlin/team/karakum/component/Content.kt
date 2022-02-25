@@ -1,6 +1,6 @@
 package team.karakum.component
 
-import csstype.GridArea
+import csstype.ident
 import csstype.px
 import kotlinx.js.jso
 import mui.material.Typography
@@ -26,7 +26,7 @@ val Content = FC<Props> {
             element = Box.create {
                 component = ReactHTML.main
                 sx = jso {
-                    gridArea = GridArea(GridAreas.Content)
+                    gridArea = ident(GridAreas.Content)
                     padding = DEFAULT_PADDING
                 }
 

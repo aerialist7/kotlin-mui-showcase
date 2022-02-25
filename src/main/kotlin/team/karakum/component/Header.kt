@@ -1,8 +1,8 @@
 package team.karakum.component
 
-import csstype.FlexGrow
-import csstype.GridArea
-import csstype.ZIndex
+import csstype.ident
+import csstype.integer
+import csstype.number
 import kotlinx.browser.window
 import kotlinx.js.jso
 import mui.icons.material.Brightness4
@@ -26,13 +26,13 @@ val Header = FC<Props> {
     AppBar {
         position = AppBarPosition.fixed
         sx = jso {
-            gridArea = GridArea(GridAreas.Header)
-            zIndex = ZIndex(1_500)
+            gridArea = ident(GridAreas.Header)
+            zIndex = integer(1_500)
         }
 
         Toolbar {
             Typography {
-                sx = jso { flexGrow = FlexGrow(1.0) }
+                sx = jso { flexGrow = number(1.0) }
                 variant = "h6"
                 noWrap = true
                 component = ReactHTML.div
