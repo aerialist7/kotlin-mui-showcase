@@ -10,7 +10,7 @@ fun kotlinw(target: String): String =
     "org.jetbrains.kotlin-wrappers:kotlin-$target"
 
 dependencies {
-    implementation(enforcedPlatform(kotlinw("wrappers-bom:0.0.1-pre.310-kotlin-1.6.10")))
+    implementation(enforcedPlatform(kotlinw("wrappers-bom:0.0.1-pre.312-kotlin-1.6.10")))
 
     implementation(kotlinw("react"))
     implementation(kotlinw("react-dom"))
@@ -20,8 +20,8 @@ dependencies {
     implementation(kotlinw("mui"))
     implementation(kotlinw("mui-icons"))
 
-    implementation(npm("@emotion/react", "11.7.1"))
-    implementation(npm("@emotion/styled", "11.6.0"))
+    implementation(npm("@emotion/react", "11.8.1"))
+    implementation(npm("@emotion/styled", "11.8.1"))
 }
 
 kotlin.js {
