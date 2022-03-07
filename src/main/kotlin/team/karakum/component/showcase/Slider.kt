@@ -2,13 +2,13 @@ package team.karakum.component.showcase
 
 import csstype.AlignItems
 import csstype.px
-import kotlinx.js.jso
 import mui.icons.material.VolumeDown
 import mui.icons.material.VolumeUp
 import mui.material.Slider
 import mui.material.Stack
 import mui.material.StackDirection
 import mui.system.ResponsiveStyleValue
+import mui.system.sx
 import react.FC
 import react.Props
 import react.dom.aria.ariaLabel
@@ -18,7 +18,7 @@ val SliderShowcase = FC<Props> {
     var volume by useState(30)
 
     Stack {
-        sx = jso {
+        sx {
             marginBottom = 1.px
             alignItems = AlignItems.center
         }

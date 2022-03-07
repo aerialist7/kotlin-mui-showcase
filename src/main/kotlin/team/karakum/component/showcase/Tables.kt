@@ -5,6 +5,7 @@ import csstype.pct
 import csstype.px
 import kotlinx.js.jso
 import mui.material.*
+import mui.system.sx
 import react.*
 import react.dom.aria.AriaRole
 import react.dom.aria.ariaLabel
@@ -22,7 +23,7 @@ val TablesShowcase = FC<Props> {
         component = Paper.create().type
 
         Table {
-            sx = jso { minWidth = 650.px }
+            sx { minWidth = 650.px }
             ariaLabel = "simple table"
 
             TableHead {
@@ -97,10 +98,10 @@ val TablesShowcase = FC<Props> {
         }
     }
     Paper {
-        sx = jso { width = 100.pct }
+        sx { width = 100.pct }
 
         TableContainer {
-            sx = jso { maxHeight = 440.px }
+            sx { maxHeight = 440.px }
 
             Table {
                 stickyHeader = true

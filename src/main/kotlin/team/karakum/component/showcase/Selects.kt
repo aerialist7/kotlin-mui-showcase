@@ -1,8 +1,8 @@
 package team.karakum.component.showcase
 
 import csstype.px
-import kotlinx.js.jso
 import mui.material.*
+import mui.system.sx
 import react.FC
 import react.Props
 import react.ReactNode
@@ -12,7 +12,7 @@ val SelectsShowcase = FC<Props> {
     var age by useState("10")
 
     Box {
-        sx = jso {
+        sx {
             minWidth = 120.px
         }
         FormControl {

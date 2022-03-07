@@ -4,16 +4,15 @@ import csstype.Auto.auto
 import csstype.Display
 import csstype.GridTemplateAreas
 import csstype.array
-import csstype.ident
 import kotlinx.browser.document
-import kotlinx.js.jso
 import mui.system.Box
+import mui.system.sx
 import react.FC
 import react.Props
 import react.create
 import react.dom.render
 import react.router.dom.HashRouter
-import team.karakum.common.GridAreas
+import team.karakum.common.Area
 import team.karakum.common.Sizes.Header
 import team.karakum.common.Sizes.Sidebar
 import team.karakum.component.*
@@ -30,7 +29,7 @@ private val App = FC<Props> {
         ShowcasesModule {
             ThemeModule {
                 Box {
-                    sx = jso {
+                    sx {
                         display = Display.grid
                         gridTemplateRows = array(
                             Header.Height,
@@ -40,8 +39,8 @@ private val App = FC<Props> {
                             Sidebar.Width, auto,
                         )
                         gridTemplateAreas = GridTemplateAreas(
-                            ident("${GridAreas.Header} ${GridAreas.Header}"),
-                            ident("${GridAreas.Sidebar} ${GridAreas.Content}"),
+                            arrayOf(Area.Header, Area.Header),
+                            arrayOf(Area.Sidebar, Area.Content),
                         )
                     }
 

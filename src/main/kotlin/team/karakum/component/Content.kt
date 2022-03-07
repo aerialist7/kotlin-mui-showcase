@@ -1,10 +1,9 @@
 package team.karakum.component
 
-import csstype.ident
 import csstype.px
-import kotlinx.js.jso
 import mui.material.Typography
 import mui.system.Box
+import mui.system.sx
 import react.FC
 import react.Props
 import react.create
@@ -13,7 +12,7 @@ import react.router.Outlet
 import react.router.Route
 import react.router.Routes
 import react.useContext
-import team.karakum.common.GridAreas
+import team.karakum.common.Area
 
 private val DEFAULT_PADDING = 30.px
 
@@ -25,8 +24,8 @@ val Content = FC<Props> {
             path = "/"
             element = Box.create {
                 component = ReactHTML.main
-                sx = jso {
-                    gridArea = ident(GridAreas.Content)
+                sx {
+                    gridArea = Area.Content
                     padding = DEFAULT_PADDING
                 }
 

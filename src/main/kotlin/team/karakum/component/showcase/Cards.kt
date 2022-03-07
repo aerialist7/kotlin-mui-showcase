@@ -2,8 +2,8 @@ package team.karakum.component.showcase
 
 import csstype.Display
 import csstype.px
-import kotlinx.js.jso
 import mui.material.*
+import mui.system.sx
 import react.FC
 import react.Props
 import react.dom.html.ReactHTML
@@ -42,7 +42,7 @@ val CardsShowcase = FC<Props> {
 private val Bull = FC<Props> {
     Box {
         component = ReactHTML.span
-        sx = jso {
+        sx {
             display = Display.inlineBlock
             margin = 2.px
         }

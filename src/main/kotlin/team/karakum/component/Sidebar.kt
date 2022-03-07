@@ -2,10 +2,9 @@ package team.karakum.component
 
 import csstype.Color
 import csstype.None.none
-import csstype.ident
-import kotlinx.js.jso
 import mui.material.*
 import mui.system.Box
+import mui.system.sx
 import react.FC
 import react.Props
 import react.ReactNode
@@ -14,7 +13,7 @@ import react.dom.html.ReactHTML
 import react.router.dom.NavLink
 import react.router.useLocation
 import react.useContext
-import team.karakum.common.GridAreas
+import team.karakum.common.Area
 import team.karakum.common.Sizes
 
 val Sidebar = FC<Props> {
@@ -23,8 +22,8 @@ val Sidebar = FC<Props> {
 
     Box {
         component = ReactHTML.nav
-        sx = jso {
-            gridArea = ident(GridAreas.Sidebar)
+        sx {
+            gridArea = Area.Sidebar
         }
 
         Drawer {
@@ -34,7 +33,7 @@ val Sidebar = FC<Props> {
             Toolbar()
 
             List {
-                sx = jso { width = Sizes.Sidebar.Width }
+                sx { width = Sizes.Sidebar.Width }
 
                 for ((key, name) in showcases) {
                     NavLink {

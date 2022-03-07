@@ -1,10 +1,10 @@
 package team.karakum.component.showcase
 
 import csstype.pct
-import kotlinx.js.jso
 import mui.material.Box
 import mui.material.Tab
 import mui.material.Tabs
+import mui.system.sx
 import react.FC
 import react.Props
 import react.ReactNode
@@ -14,7 +14,7 @@ val TabsShowcase = FC<Props> {
     var activeTab by useState("one")
 
     Box {
-        sx = jso {
+        sx {
             width = 100.pct
         }
 
