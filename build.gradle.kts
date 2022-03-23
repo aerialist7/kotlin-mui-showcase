@@ -10,7 +10,7 @@ fun kotlinw(target: String): String =
     "org.jetbrains.kotlin-wrappers:kotlin-$target"
 
 dependencies {
-    implementation(enforcedPlatform(kotlinw("wrappers-bom:0.0.1-pre.314-kotlin-1.6.10")))
+    implementation(enforcedPlatform(kotlinw("wrappers-bom:0.0.1-pre.322-kotlin-1.6.10")))
 
     implementation(kotlinw("react"))
     implementation(kotlinw("react-dom"))
@@ -20,7 +20,7 @@ dependencies {
     implementation(kotlinw("mui"))
     implementation(kotlinw("mui-icons"))
 
-    implementation(npm("@emotion/react", "11.8.1"))
+    implementation(npm("@emotion/react", "11.8.2"))
     implementation(npm("@emotion/styled", "11.8.1"))
 }
 
@@ -31,6 +31,6 @@ kotlin.js {
 
 tasks {
     wrapper {
-        gradleVersion = "7.4"
+        gradleVersion = "7.4.1"
     }
 }
