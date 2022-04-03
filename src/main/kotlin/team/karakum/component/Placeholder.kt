@@ -1,12 +1,12 @@
 package team.karakum.component
 
 import csstype.*
+import emotion.react.css
 import mui.material.Box
 import mui.material.Typography
 import mui.system.sx
 import react.FC
 import react.Props
-import react.css.css
 import react.dom.html.ReactHTML.img
 
 val Placeholder = FC<Props> {

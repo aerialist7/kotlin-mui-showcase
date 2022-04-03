@@ -2,13 +2,13 @@ package team.karakum.component
 
 import csstype.Color
 import csstype.None.none
+import emotion.react.css
 import mui.material.*
 import mui.system.Box
 import mui.system.sx
 import react.FC
 import react.Props
 import react.ReactNode
-import react.css.css
 import react.dom.html.ReactHTML
 import react.router.dom.NavLink
 import react.router.useLocation
