@@ -17,11 +17,9 @@ dependencies {
     implementation(kotlinw("react-css"))
     implementation(kotlinw("react-router-dom"))
 
+    implementation(kotlinw("emotion"))
     implementation(kotlinw("mui"))
     implementation(kotlinw("mui-icons"))
-
-    implementation(npm("@emotion/react", "11.8.2"))
-    implementation(npm("@emotion/styled", "11.8.1"))
 }
 
 kotlin.js {
