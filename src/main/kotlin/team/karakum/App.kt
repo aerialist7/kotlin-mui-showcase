@@ -10,7 +10,7 @@ import mui.system.sx
 import react.FC
 import react.Props
 import react.create
-import react.dom.render
+import react.dom.client.createRoot
 import react.router.dom.HashRouter
 import team.karakum.common.Area
 import team.karakum.common.Sizes.Header
@@ -18,10 +18,8 @@ import team.karakum.common.Sizes.Sidebar
 import team.karakum.component.*
 
 fun main() {
-    render(
-        element = App.create(),
-        container = document.createElement("div").also { document.body!!.appendChild(it) },
-    )
+    createRoot(document.createElement("div").also { document.body!!.appendChild(it) })
+        .render(App.create())
 }
 
 private val App = FC<Props> {
