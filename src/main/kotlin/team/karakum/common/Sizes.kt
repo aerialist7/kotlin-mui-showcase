@@ -10,8 +10,4 @@ object Sizes {
     object Sidebar {
         val Width = 135.px
     }
-
-    object Mobile {
-        const val MaxWidth = 960
-    }
 }

@@ -5,6 +5,7 @@ import csstype.Display
 import csstype.GridTemplateAreas
 import csstype.array
 import kotlinx.browser.document
+import mui.material.useMediaQuery
 import mui.system.Box
 import mui.system.sx
 import react.FC
@@ -12,9 +13,7 @@ import react.Props
 import react.create
 import react.dom.client.createRoot
 import react.router.dom.HashRouter
-import react.useContext
-import team.karakum.common.GridAreas
-import team.karakum.common.Sizes
+import team.karakum.common.Area
 import team.karakum.common.Sizes.Header
 import team.karakum.common.Sizes.Sidebar
 import team.karakum.component.*
@@ -25,52 +24,35 @@ fun main() {
 }
 
 private val App = FC<Props> {
+    val mobileMode = useMediaQuery("(max-width:960px)")
+
     HashRouter {
-        AdaptiveModule {
-            ShowcasesModule {
-                SidebarModule {
-                    ThemeModule {
-                        AdaptiveAppView()
+        ShowcasesModule {
+            ThemeModule {
+                Box {
+                    sx {
+                        display = Display.grid
+                        gridTemplateRows = array(
+                            Header.Height,
+                            auto,
+                        )
+                        gridTemplateColumns = array(
+                            Sidebar.Width, auto,
+                        )
+                        gridTemplateAreas = GridTemplateAreas(
+                            arrayOf(Area.Header, Area.Header),
+                            if (mobileMode)
+                                arrayOf(Area.Content, Area.Content)
+                            else
+                                arrayOf(Area.Sidebar, Area.Content),
+                        )
                     }
+
+                    Header()
+                    if (mobileMode) Menu() else Sidebar()
+                    Content()
                 }
             }
         }
     }
-}
-
-private val AdaptiveAppView = FC<Props> {
-    val width by useContext(AdaptiveContext)
-    val isMobileViewRequired = width <= Sizes.Mobile.MaxWidth
-
-    Box {
-        sx = jso {
-            display = Display.grid
-            gridTemplateRows = GridTemplateRows(
-                Header.Height,
-                Length.auto,
-            )
-            gridTemplateColumns = GridTemplateColumns(
-                Sidebar.Width, Length.auto,
-            )
-            gridTemplateAreas = if (isMobileViewRequired) mobileTemplateAreas else defaultTemplateAreas
-        }
-
-        Header()
-        AdaptiveSidebar()
-        Content()
-    }
-}
-
-private val mobileTemplateAreas: GridTemplateAreas by lazy(LazyThreadSafetyMode.NONE) {
-    GridTemplateAreas(
-        GridArea("${GridAreas.Header} ${GridAreas.Header}"),
-        GridArea("${GridAreas.Content} ${GridAreas.Content}")
-    )
-}
-
-private val defaultTemplateAreas: GridTemplateAreas by lazy(LazyThreadSafetyMode.NONE) {
-    GridTemplateAreas(
-        GridArea("${GridAreas.Header} ${GridAreas.Header}"),
-        GridArea("${GridAreas.Sidebar} ${GridAreas.Content}")
-    )
 }
