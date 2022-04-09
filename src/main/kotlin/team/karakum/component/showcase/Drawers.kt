@@ -3,6 +3,7 @@ package team.karakum.component.showcase
 import mui.material.Button
 import mui.material.ButtonVariant
 import mui.material.Drawer
+import mui.material.Toolbar
 import react.FC
 import react.Props
 import react.useState
@@ -18,6 +19,8 @@ val DrawersShowcase = FC<Props> {
 
     Drawer {
         open = isOpen
+
+        Toolbar()
 
         Button {
             variant = ButtonVariant.outlined
