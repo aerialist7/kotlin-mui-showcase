@@ -19,7 +19,7 @@ val ThemeModule = FC<PropsWithChildren> { props ->
             this.theme = theme
 
             CssBaseline()
-            props.children()
+            +props.children
         }
     }
 }

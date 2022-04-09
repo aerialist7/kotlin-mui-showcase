@@ -2,15 +2,15 @@ package team.karakum.component.showcase
 
 import csstype.pct
 import csstype.px
-import kotlinx.js.jso
 import mui.icons.material.Star
 import mui.material.*
+import mui.system.sx
 import react.FC
 import react.Props
 
 val ListsShowcase = FC<Props> {
     List {
-        sx = jso {
+        sx {
             width = 100.pct
             maxWidth = 360.px
         }

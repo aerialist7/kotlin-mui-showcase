@@ -1,20 +1,20 @@
 package team.karakum.component
 
 import csstype.*
-import kotlinx.js.jso
+import emotion.react.css
 import mui.material.Box
 import mui.material.Typography
+import mui.system.sx
 import react.FC
 import react.Props
-import react.css.css
 import react.dom.html.ReactHTML.img
 
 val Placeholder = FC<Props> {
     Box {
-        sx = jso {
+        sx {
             display = Display.grid
             justifyContent = JustifyContent.center
-            gridTemplateRows = GridTemplateRows(0.fr, 0.fr)
+            gridTemplateRows = array(0.fr, 0.fr)
         }
 
         Typography {

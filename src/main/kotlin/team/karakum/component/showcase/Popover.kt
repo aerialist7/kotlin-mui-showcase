@@ -6,6 +6,7 @@ import mui.material.Button
 import mui.material.ButtonVariant
 import mui.material.Popover
 import mui.material.Typography
+import mui.system.sx
 import org.w3c.dom.Element
 import react.FC
 import react.Props
@@ -38,7 +39,7 @@ val PopoverShowcase = FC<Props> {
         }
 
         Typography {
-            sx = jso { padding = 2.px }
+            sx { padding = 2.px }
 
             +"The content of the Popover."
         }

@@ -2,8 +2,8 @@ package team.karakum.component.showcase
 
 import csstype.Display
 import csstype.JustifyContent
-import kotlinx.js.jso
 import mui.material.*
+import mui.system.sx
 import react.FC
 import react.Props
 import react.ReactNode
@@ -11,7 +11,7 @@ import react.dom.html.ReactHTML
 
 val TextFieldsShowcase = FC<Props> {
     Box {
-        sx = jso {
+        sx {
             display = Display.grid
             justifyContent = JustifyContent.left
         }

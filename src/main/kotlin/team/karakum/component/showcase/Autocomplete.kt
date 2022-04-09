@@ -5,6 +5,7 @@ import kotlinx.js.jso
 import mui.material.Autocomplete
 import mui.material.AutocompleteProps
 import mui.material.TextField
+import mui.system.sx
 import react.FC
 import react.Props
 import react.ReactNode
@@ -13,7 +14,7 @@ import react.create
 val AutocompleteShowcase = FC<Props> {
     @Suppress("UPPER_BOUND_VIOLATED")
     Autocomplete<AutocompleteProps<Movie>> {
-        sx = jso { width = 300.px }
+        sx { width = 300.px }
         options = top100Films
         disablePortal = true
         renderInput = { params ->

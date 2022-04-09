@@ -3,9 +3,9 @@ package team.karakum.component.showcase
 import csstype.AlignItems
 import csstype.JustifyContent
 import csstype.px
-import kotlinx.js.jso
 import mui.material.*
 import mui.system.ResponsiveStyleValue
+import mui.system.sx
 import org.w3c.dom.Element
 import popper.core.Placement
 import react.FC
@@ -26,7 +26,7 @@ val PopperShowcase = FC<Props> {
     }
 
     Box {
-        sx = jso { width = 500.px }
+        sx { width = 500.px }
 
         Popper {
             open = isOpen
@@ -34,7 +34,7 @@ val PopperShowcase = FC<Props> {
             placement = place
 
             Typography {
-                sx = jso { padding = 2.px }
+                sx { padding = 2.px }
 
                 +"The content of the Popper."
             }
@@ -42,7 +42,7 @@ val PopperShowcase = FC<Props> {
 
         Grid {
             container = true
-            sx = jso { justifyContent = JustifyContent.center }
+            sx { justifyContent = JustifyContent.center }
 
             Grid {
                 item = true
@@ -68,7 +68,7 @@ val PopperShowcase = FC<Props> {
         }
         Grid {
             container = true
-            sx = jso { justifyContent = JustifyContent.center }
+            sx { justifyContent = JustifyContent.center }
 
             Grid {
                 item = true
@@ -95,7 +95,7 @@ val PopperShowcase = FC<Props> {
                 }
             }
             Grid {
-                sx = jso { alignItems = AlignItems.flexEnd }
+                sx { alignItems = AlignItems.flexEnd }
                 item = true
                 container = true
                 xs = 6
@@ -134,7 +134,7 @@ val PopperShowcase = FC<Props> {
         }
         Grid {
             container = true
-            sx = jso { justifyContent = JustifyContent.center }
+            sx { justifyContent = JustifyContent.center }
 
             Grid {
                 item = true

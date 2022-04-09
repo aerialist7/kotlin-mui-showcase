@@ -1,9 +1,9 @@
 package team.karakum.component.showcase
 
 import csstype.px
-import kotlinx.js.jso
 import mui.material.ImageList
 import mui.material.ImageListItem
+import mui.system.sx
 import react.FC
 import react.Props
 import react.dom.html.ReactHTML.img
@@ -11,7 +11,7 @@ import react.key
 
 val ImageListShowcase = FC<Props> {
     ImageList {
-        sx = jso {
+        sx {
             width = 500.px
             height = 450.px
         }

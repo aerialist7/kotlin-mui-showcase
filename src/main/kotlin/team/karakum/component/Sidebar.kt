@@ -10,6 +10,20 @@ import react.dom.html.ReactHTML
 import react.router.dom.NavLink
 import react.router.useLocation
 import team.karakum.common.GridAreas
+import csstype.Color
+import csstype.None.none
+import emotion.react.css
+import mui.material.*
+import mui.system.Box
+import mui.system.sx
+import react.FC
+import react.Props
+import react.ReactNode
+import react.dom.html.ReactHTML
+import react.router.dom.NavLink
+import react.router.useLocation
+import react.useContext
+import team.karakum.common.Area
 import team.karakum.common.Sizes
 import team.karakum.common.Sizes.Mobile
 import mui.icons.material.Menu as MenuIcon
@@ -74,8 +88,8 @@ val MobileSidebar = FC<Props> {
 val Sidebar = FC<Props> {
     Box {
         component = ReactHTML.nav
-        sx = jso {
-            gridArea = GridArea(GridAreas.Sidebar)
+        sx {
+            gridArea = Area.Sidebar
         }
 
         Drawer {
@@ -94,7 +108,7 @@ val SidebarContent = FC<Props> {
     Toolbar()
 
     List {
-        sx = jso { width = Sizes.Sidebar.Width }
+        sx { width = Sizes.Sidebar.Width }
 
         for ((key, name) in showcases) {
             NavLink {

@@ -1,5 +1,5 @@
 plugins {
-    kotlin("js") version "1.6.20-M1"
+    kotlin("js") version "1.6.20"
 }
 
 repositories {
@@ -10,18 +10,16 @@ fun kotlinw(target: String): String =
     "org.jetbrains.kotlin-wrappers:kotlin-$target"
 
 dependencies {
-    implementation(enforcedPlatform(kotlinw("wrappers-bom:0.0.1-pre.298-kotlin-1.6.10")))
+    implementation(enforcedPlatform(kotlinw("wrappers-bom:0.0.1-pre.329-kotlin-1.6.20")))
 
     implementation(kotlinw("react"))
     implementation(kotlinw("react-dom"))
     implementation(kotlinw("react-css"))
     implementation(kotlinw("react-router-dom"))
 
+    implementation(kotlinw("emotion"))
     implementation(kotlinw("mui"))
     implementation(kotlinw("mui-icons"))
-
-    implementation(npm("@emotion/react", "11.7.1"))
-    implementation(npm("@emotion/styled", "11.6.0"))
 }
 
 kotlin.js {
@@ -31,6 +29,6 @@ kotlin.js {
 
 tasks {
     wrapper {
-        gradleVersion = "7.4"
+        gradleVersion = "7.4.2"
     }
 }

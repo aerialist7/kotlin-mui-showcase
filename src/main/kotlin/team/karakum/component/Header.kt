@@ -1,22 +1,21 @@
 package team.karakum.component
 
-import csstype.FlexGrow
-import csstype.GridArea
-import csstype.ZIndex
+import csstype.integer
+import csstype.number
 import kotlinx.browser.window
-import kotlinx.js.jso
 import mui.icons.material.Brightness4
 import mui.icons.material.Brightness7
 import mui.icons.material.GitHub
 import mui.icons.material.MenuBook
 import mui.material.*
+import mui.system.sx
 import react.*
 import react.dom.aria.AriaHasPopup.`false`
 import react.dom.aria.ariaHasPopup
 import react.dom.aria.ariaLabel
 import react.dom.html.ReactHTML
 import react.router.useLocation
-import team.karakum.common.GridAreas
+import team.karakum.common.Area
 import team.karakum.common.Themes
 
 val Header = FC<Props> {
@@ -25,14 +24,14 @@ val Header = FC<Props> {
 
     AppBar {
         position = AppBarPosition.fixed
-        sx = jso {
-            gridArea = GridArea(GridAreas.Header)
-            zIndex = ZIndex(1_500)
+        sx {
+            gridArea = Area.Header
+            zIndex = integer(1_500)
         }
 
         Toolbar {
             Typography {
-                sx = jso { flexGrow = FlexGrow(1.0) }
+                sx { flexGrow = number(1.0) }
                 variant = "h6"
                 noWrap = true
                 component = ReactHTML.div

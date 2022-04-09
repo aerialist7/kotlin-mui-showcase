@@ -1,10 +1,10 @@
 package team.karakum.component.showcase
 
-import csstype.FlexGrow
+import csstype.number
 import csstype.pct
 import csstype.px
-import kotlinx.js.jso
 import mui.material.*
+import mui.system.sx
 import react.FC
 import react.Props
 import react.create
@@ -12,7 +12,7 @@ import react.key
 
 val SteppersShowcase = FC<Props> {
     Box {
-        sx = jso { width = 100.pct }
+        sx { width = 100.pct }
 
         Stepper {
             activeStep = 1
@@ -32,9 +32,9 @@ val SteppersShowcase = FC<Props> {
             position = MobileStepperPosition.static
             activeStep = 1
 
-            sx = jso {
+            sx {
                 maxWidth = 400.px
-                flexGrow = FlexGrow(1.0)
+                flexGrow = number(1.0)
             }
 
             nextButton = Button.create {
