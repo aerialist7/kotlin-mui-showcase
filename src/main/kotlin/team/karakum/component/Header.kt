@@ -2,7 +2,6 @@ package team.karakum.component
 
 import csstype.integer
 import csstype.number
-import kotlinx.browser.window
 import mui.icons.material.Brightness4
 import mui.icons.material.Brightness7
 import mui.icons.material.GitHub
@@ -15,12 +14,14 @@ import react.dom.aria.ariaHasPopup
 import react.dom.aria.ariaLabel
 import react.dom.html.ReactHTML
 import react.router.useLocation
+import react.router.useNavigate
 import team.karakum.common.Area
 import team.karakum.common.Themes
 
 val Header = FC<Props> {
     var theme by useContext(ThemeContext)
     val lastPathname = useLocation().pathname.substringAfterLast("/")
+    val navigate = useNavigate()
 
     AppBar {
         position = AppBarPosition.fixed
@@ -62,7 +63,7 @@ val Header = FC<Props> {
                     ariaHasPopup = `false`
                     size = Size.large
                     color = IconButtonColor.inherit
-                    onClick = { window.location.href = "https://mui.com/components/$lastPathname" }
+                    onClick = { navigate("https://mui.com/material-ui/$lastPathname") }
 
                     MenuBook()
                 }
@@ -87,8 +88,7 @@ val Header = FC<Props> {
                             name += ".kt"
                         }
 
-                        window.location.href =
-                            "https://github.com/karakum-team/kotlin-mui-showcase/blob/main/src/main/kotlin/team/karakum/component/showcase/$name"
+                        navigate("https://github.com/karakum-team/kotlin-mui-showcase/blob/main/src/main/kotlin/team/karakum/component/showcase/$name")
                     }
 
                     GitHub()
