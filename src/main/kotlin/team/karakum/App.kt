@@ -16,7 +16,7 @@ import react.router.dom.HashRouter
 import team.karakum.common.Area
 import team.karakum.common.Sizes.Header
 import team.karakum.common.Sizes.Sidebar
-import team.karakum.component.*
+import team.karakum.components.*
 
 fun main() {
     createRoot(document.createElement("div").also { document.body!!.appendChild(it) })
