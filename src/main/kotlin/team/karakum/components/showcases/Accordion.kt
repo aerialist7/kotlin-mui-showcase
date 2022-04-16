@@ -29,6 +29,7 @@ val AccordionShowcase = FC<Props> {
     }
 
     Accordion {
+        expanded = true
         AccordionSummary {
             id = "panel2a-header"
             ariaControls = "panel2a-content"

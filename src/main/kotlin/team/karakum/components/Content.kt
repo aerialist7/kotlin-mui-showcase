@@ -32,13 +32,9 @@ val Content = FC<Props> {
                 Outlet()
             }
 
-            Route {
-                index = true
-                element = Placeholder.create()
-            }
-
-            for ((key, _, Component) in showcases) {
+            showcases.forEachIndexed { i, (key, _, Component) ->
                 Route {
+                    index = i == 0
                     path = key
                     element = Component.create()
                 }
