@@ -3,7 +3,7 @@ package team.karakum.components.showcases
 import csstype.px
 import kotlinx.js.jso
 import mui.material.Button
-import mui.material.ButtonVariant
+import mui.material.ButtonVariant.contained
 import mui.material.Popover
 import mui.material.Typography
 import mui.system.sx
@@ -20,7 +20,7 @@ val PopoverShowcase = FC<Props> {
         if (anchor != null) {
             ariaDescribedBy = "simple-popover"
         }
-        variant = ButtonVariant.contained
+        variant = contained
         onClick = { anchor = it.currentTarget }
 
         +"Open Popover"

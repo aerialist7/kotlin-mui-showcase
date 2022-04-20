@@ -5,7 +5,7 @@ import mui.material.Rating
 import mui.material.Typography
 import react.FC
 import react.Props
-import react.dom.html.ReactHTML
+import react.dom.html.ReactHTML.legend
 import react.useState
 
 val RatingShowcase = FC<Props> {
@@ -13,7 +13,7 @@ val RatingShowcase = FC<Props> {
 
     Box {
         Typography {
-            component = ReactHTML.legend
+            component = legend
 
             +"Controlled"
         }
@@ -23,7 +23,7 @@ val RatingShowcase = FC<Props> {
             onChange = { _, newValue -> rating = newValue }
 
             Typography {
-                component = ReactHTML.legend
+                component = legend
 
                 +"Read only"
             }
@@ -33,7 +33,7 @@ val RatingShowcase = FC<Props> {
                 readOnly = true
             }
             Typography {
-                component = ReactHTML.legend
+                component = legend
 
                 +"Disabled"
             }
@@ -43,7 +43,7 @@ val RatingShowcase = FC<Props> {
                 disabled = true
             }
             Typography {
-                component = ReactHTML.legend
+                component = legend
 
                 +"No rating given"
             }

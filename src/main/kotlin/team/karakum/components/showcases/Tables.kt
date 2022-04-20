@@ -5,15 +5,16 @@ import csstype.pct
 import csstype.px
 import kotlinx.js.jso
 import mui.material.*
+import mui.material.DividerVariant.fullWidth
 import mui.system.sx
 import react.*
 import react.dom.aria.AriaRole
 import react.dom.aria.ariaLabel
-import react.dom.html.ReactHTML
+import react.dom.html.ReactHTML.th
 
 val TablesShowcase = FC<Props> {
     Divider {
-        variant = DividerVariant.fullWidth
+        variant = fullWidth
 
         Chip {
             label = ReactNode("Basic table")
@@ -59,7 +60,7 @@ val TablesShowcase = FC<Props> {
                         key = row.name
 
                         TableCell {
-                            component = ReactHTML.th
+                            component = th
                             scope = "row"
 
                             +row.name
@@ -91,7 +92,7 @@ val TablesShowcase = FC<Props> {
     }
 
     Divider {
-        variant = DividerVariant.fullWidth
+        variant = fullWidth
 
         Chip {
             label = ReactNode("Column grouping")

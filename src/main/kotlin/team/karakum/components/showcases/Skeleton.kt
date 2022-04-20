@@ -1,22 +1,22 @@
 package team.karakum.components.showcases
 
 import mui.material.Skeleton
-import mui.material.SkeletonVariant
+import mui.material.SkeletonVariant.*
 import react.FC
 import react.Props
 
 val SkeletonShowcase = FC<Props> {
     Skeleton {
-        variant = SkeletonVariant.text
+        variant = text
         width = 210
     }
     Skeleton {
-        variant = SkeletonVariant.circular
+        variant = circular
         width = 40
         height = 40
     }
     Skeleton {
-        variant = SkeletonVariant.rectangular
+        variant = rectangular
         width = 210
         height = 118
     }

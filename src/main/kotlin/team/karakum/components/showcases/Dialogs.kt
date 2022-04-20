@@ -1,6 +1,7 @@
 package team.karakum.components.showcases
 
 import mui.material.*
+import mui.material.ButtonVariant.outlined
 import react.FC
 import react.Props
 import react.dom.html.ReactHTML.div
@@ -11,7 +12,7 @@ val DialogsShowcase = FC<Props> {
 
     div {
         Button {
-            variant = ButtonVariant.outlined
+            variant = outlined
             onClick = { isOpen = true }
             +"Open dialog"
         }

@@ -8,12 +8,13 @@ import mui.icons.material.Brightness7
 import mui.icons.material.GitHub
 import mui.icons.material.MenuBook
 import mui.material.*
+import mui.material.styles.TypographyVariant.h6
 import mui.system.sx
 import react.*
 import react.dom.aria.AriaHasPopup.`false`
 import react.dom.aria.ariaHasPopup
 import react.dom.aria.ariaLabel
-import react.dom.html.ReactHTML
+import react.dom.html.ReactHTML.div
 import react.router.useLocation
 import team.karakum.common.Area
 import team.karakum.common.Themes
@@ -32,9 +33,9 @@ val Header = FC<Props> {
         Toolbar {
             Typography {
                 sx { flexGrow = number(1.0) }
-                variant = "h6"
+                variant = h6
                 noWrap = true
-                component = ReactHTML.div
+                component = div
 
                 +"Kotlin MUI Showcase"
             }

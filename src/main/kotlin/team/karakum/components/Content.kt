@@ -7,7 +7,7 @@ import mui.system.sx
 import react.FC
 import react.Props
 import react.create
-import react.dom.html.ReactHTML
+import react.dom.html.ReactHTML.main
 import react.router.Outlet
 import react.router.Route
 import react.router.Routes
@@ -23,7 +23,7 @@ val Content = FC<Props> {
         Route {
             path = "/"
             element = Box.create {
-                component = ReactHTML.main
+                component = main
                 sx {
                     gridArea = Area.Content
                     padding = DEFAULT_PADDING

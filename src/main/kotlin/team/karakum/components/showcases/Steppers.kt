@@ -4,6 +4,8 @@ import csstype.number
 import csstype.pct
 import csstype.px
 import mui.material.*
+import mui.material.MobileStepperPosition.static
+import mui.material.MobileStepperVariant.dots
 import mui.system.sx
 import react.FC
 import react.Props
@@ -27,9 +29,9 @@ val SteppersShowcase = FC<Props> {
         }
 
         MobileStepper {
-            variant = MobileStepperVariant.dots
+            variant = dots
             steps = 3
-            position = MobileStepperPosition.static
+            position = static
             activeStep = 1
 
             sx {

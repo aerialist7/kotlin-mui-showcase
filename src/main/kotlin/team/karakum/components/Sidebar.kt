@@ -5,6 +5,7 @@ import csstype.None.none
 import emotion.react.css
 import mui.material.*
 import mui.material.DrawerAnchor.left
+import mui.material.DrawerVariant.permanent
 import mui.system.Box
 import mui.system.sx
 import react.FC
@@ -26,7 +27,7 @@ val Sidebar = FC<Props> {
         sx { gridArea = Area.Sidebar }
 
         Drawer {
-            variant = DrawerVariant.permanent
+            variant = permanent
             anchor = left
 
             Box {

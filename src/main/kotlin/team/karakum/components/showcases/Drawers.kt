@@ -1,7 +1,7 @@
 package team.karakum.components.showcases
 
 import mui.material.Button
-import mui.material.ButtonVariant
+import mui.material.ButtonVariant.outlined
 import mui.material.Drawer
 import mui.material.Toolbar
 import react.FC
@@ -12,7 +12,7 @@ val DrawersShowcase = FC<Props> {
     var isOpen by useState(false)
 
     Button {
-        variant = ButtonVariant.outlined
+        variant = outlined
         onClick = { isOpen = true }
         +"Open drawer"
     }
@@ -23,7 +23,7 @@ val DrawersShowcase = FC<Props> {
         Toolbar()
 
         Button {
-            variant = ButtonVariant.outlined
+            variant = outlined
             onClick = { isOpen = false }
             +"Close drawer"
         }

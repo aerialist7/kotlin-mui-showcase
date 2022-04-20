@@ -1,12 +1,14 @@
 package team.karakum.components.showcases
 
-import csstype.Display
+import csstype.Display.Companion.inlineBlock
 import csstype.px
 import mui.material.*
+import mui.material.styles.TypographyVariant.h5
 import mui.system.sx
 import react.FC
 import react.Props
-import react.dom.html.ReactHTML
+import react.dom.html.ReactHTML.div
+import react.dom.html.ReactHTML.span
 
 val CardsShowcase = FC<Props> {
     Card {
@@ -18,8 +20,8 @@ val CardsShowcase = FC<Props> {
                 +"Word of the Day"
             }
             Typography {
-                component = ReactHTML.div
-                variant = "h5"
+                component = div
+                variant = h5
 
                 +"be"
                 Bull()
@@ -41,9 +43,9 @@ val CardsShowcase = FC<Props> {
 
 private val Bull = FC<Props> {
     Box {
-        component = ReactHTML.span
+        component = span
         sx {
-            display = Display.inlineBlock
+            display = inlineBlock
             margin = 2.px
         }
 

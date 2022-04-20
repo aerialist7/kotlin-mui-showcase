@@ -1,21 +1,21 @@
 package team.karakum.components.showcases
 
 import mui.material.Button
-import mui.material.ButtonVariant
+import mui.material.ButtonVariant.*
 import react.FC
 import react.Props
 
 val ButtonsShowcase = FC<Props> {
     Button {
-        variant = ButtonVariant.text
+        variant = text
         +"Text"
     }
     Button {
-        variant = ButtonVariant.contained
+        variant = contained
         +"Contained"
     }
     Button {
-        variant = ButtonVariant.outlined
+        variant = outlined
         +"Outlined"
     }
 }

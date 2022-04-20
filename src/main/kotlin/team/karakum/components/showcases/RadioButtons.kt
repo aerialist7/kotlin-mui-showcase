@@ -6,14 +6,15 @@ import react.Props
 import react.ReactNode
 import react.create
 import react.dom.aria.ariaLabel
-import react.dom.html.ReactHTML
+import react.dom.html.ReactHTML.fieldset
+import react.dom.html.ReactHTML.legend
 
 val RadioButtonsShowcase = FC<Props> {
     FormControl {
-        component = ReactHTML.fieldset
+        component = fieldset
 
         FormLabel {
-            component = ReactHTML.legend
+            component = legend
 
             +"Gender"
         }

@@ -4,11 +4,12 @@ import csstype.number
 import csstype.px
 import mui.icons.material.Menu
 import mui.material.*
+import mui.material.styles.TypographyVariant.h6
 import mui.system.sx
 import react.FC
 import react.Props
 import react.dom.aria.ariaLabel
-import react.dom.html.ReactHTML
+import react.dom.html.ReactHTML.div
 
 val AppBarShowcase = FC<Props> {
     Box {
@@ -30,8 +31,8 @@ val AppBarShowcase = FC<Props> {
 
                 Typography {
                     sx { flexGrow = number(1.0) }
-                    variant = "h6"
-                    component = ReactHTML.div
+                    variant = h6
+                    component = div
 
                     +"News"
                 }

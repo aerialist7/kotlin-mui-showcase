@@ -5,7 +5,7 @@ import csstype.FlexWrap.Companion.wrap
 import csstype.px
 import mui.material.Box
 import mui.material.Paper
-import mui.material.PaperVariant
+import mui.material.PaperVariant.outlined
 import mui.material.Typography
 import mui.system.sx
 import react.FC
@@ -21,7 +21,7 @@ val PaperShowcase = FC<Props> {
         }
 
         Paper {
-            variant = PaperVariant.outlined
+            variant = outlined
 
             Typography {
                 +"Outlined Paper Component"
