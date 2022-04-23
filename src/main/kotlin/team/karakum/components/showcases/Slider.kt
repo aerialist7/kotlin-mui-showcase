@@ -1,13 +1,13 @@
 package team.karakum.components.showcases
 
-import csstype.AlignItems
+import csstype.AlignItems.Companion.center
 import csstype.px
 import mui.icons.material.VolumeDown
 import mui.icons.material.VolumeUp
 import mui.material.Slider
 import mui.material.Stack
-import mui.material.StackDirection
-import mui.system.ResponsiveStyleValue
+import mui.material.StackDirection.row
+import mui.system.responsive
 import mui.system.sx
 import react.FC
 import react.Props
@@ -20,10 +20,10 @@ val SliderShowcase = FC<Props> {
     Stack {
         sx {
             marginBottom = 1.px
-            alignItems = AlignItems.center
+            alignItems = center
         }
-        spacing = ResponsiveStyleValue(2)
-        direction = ResponsiveStyleValue(StackDirection.row)
+        spacing = responsive(2)
+        direction = responsive(row)
 
         VolumeDown()
 

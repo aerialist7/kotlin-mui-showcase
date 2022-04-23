@@ -1,13 +1,15 @@
 package team.karakum.components.showcases
 
-import csstype.AlignItems
-import csstype.JustifyContent
+import csstype.AlignItems.Companion.flexEnd
+import csstype.JustifyContent.Companion.center
 import csstype.px
 import mui.material.*
-import mui.system.ResponsiveStyleValue
+import mui.material.GridDirection.column
+import mui.system.responsive
 import mui.system.sx
 import org.w3c.dom.Element
 import popper.core.Placement
+import popper.core.Placement.*
 import react.FC
 import react.Props
 import react.dom.events.MouseEvent
@@ -42,119 +44,107 @@ val PopperShowcase = FC<Props> {
 
         Grid {
             container = true
-            sx { justifyContent = JustifyContent.center }
+            sx { justifyContent = center }
 
             Grid {
                 item = true
                 Button {
-                    val newPlacement = Placement.topStart
-                    onClick = { it.handleClick(newPlacement) }
+                    onClick = { it.handleClick(topStart) }
 
-                    +"$newPlacement"
+                    +"$topStart"
                 }
                 Button {
-                    val newPlacement = Placement.top
-                    onClick = { it.handleClick(newPlacement) }
+                    onClick = { it.handleClick(top) }
 
-                    +"$newPlacement"
+                    +"$top"
                 }
                 Button {
-                    val newPlacement = Placement.topEnd
-                    onClick = { it.handleClick(newPlacement) }
+                    onClick = { it.handleClick(topEnd) }
 
-                    +"$newPlacement"
+                    +"$topEnd"
                 }
             }
         }
         Grid {
             container = true
-            sx { justifyContent = JustifyContent.center }
+            sx { justifyContent = center }
 
             Grid {
                 item = true
                 xs = 6
                 Button {
-                    val newPlacement = Placement.leftStart
-                    onClick = { it.handleClick(newPlacement) }
+                    onClick = { it.handleClick(leftStart) }
 
-                    +"$newPlacement"
+                    +"$leftStart"
                 }
                 br()
                 Button {
-                    val newPlacement = Placement.left
-                    onClick = { it.handleClick(newPlacement) }
+                    onClick = { it.handleClick(left) }
 
-                    +"$newPlacement"
+                    +"$left"
                 }
                 br()
                 Button {
-                    val newPlacement = Placement.leftEnd
-                    onClick = { it.handleClick(newPlacement) }
+                    onClick = { it.handleClick(leftEnd) }
 
-                    +"$newPlacement"
+                    +"$leftEnd"
                 }
             }
             Grid {
-                sx { alignItems = AlignItems.flexEnd }
+                sx { alignItems = flexEnd }
                 item = true
                 container = true
                 xs = 6
-                direction = ResponsiveStyleValue(GridDirection.column)
+                direction = responsive(column)
 
                 Grid {
                     item = true
 
                     Button {
-                        val newPlacement = Placement.rightStart
-                        onClick = { it.handleClick(newPlacement) }
+                        onClick = { it.handleClick(rightStart) }
 
-                        +"$newPlacement"
+                        +"$rightStart"
                     }
                 }
                 Grid {
                     item = true
 
                     Button {
-                        val newPlacement = Placement.right
-                        onClick = { it.handleClick(newPlacement) }
+                        onClick = { it.handleClick(right) }
 
-                        +"$newPlacement"
+                        +"$right"
                     }
                 }
                 Grid {
                     item = true
                     Button {
-                        val newPlacement = Placement.rightEnd
-                        onClick = { it.handleClick(newPlacement) }
+                        onClick = { it.handleClick(rightEnd) }
 
-                        +"$newPlacement"
+                        +"$rightEnd"
                     }
                 }
             }
         }
         Grid {
             container = true
-            sx { justifyContent = JustifyContent.center }
+            sx { justifyContent = center }
 
             Grid {
                 item = true
                 Button {
-                    val newPlacement = Placement.bottomStart
-                    onClick = { it.handleClick(newPlacement) }
+                    onClick = { it.handleClick(bottomStart) }
 
-                    +"$newPlacement"
+                    +"$bottomStart"
                 }
                 Button {
-                    val newPlacement = Placement.bottom
-                    onClick = { it.handleClick(newPlacement) }
+                    onClick = { it.handleClick(bottom) }
 
-                    +"$newPlacement"
+                    +"$bottom"
                 }
                 Button {
-                    val newPlacement = Placement.bottomEnd
-                    onClick = { it.handleClick(newPlacement) }
+                    onClick = { it.handleClick(bottomEnd) }
 
-                    +"$newPlacement"
+                    +"$bottomEnd"
                 }
             }
         }
