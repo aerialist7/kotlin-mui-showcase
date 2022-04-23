@@ -1,9 +1,5 @@
 plugins {
-    kotlin("js") version "1.6.20"
-}
-
-repositories {
-    mavenCentral()
+    kotlin("js")
 }
 
 fun kotlinw(target: String): String =
