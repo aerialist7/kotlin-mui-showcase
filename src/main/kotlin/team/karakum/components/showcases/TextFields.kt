@@ -2,6 +2,7 @@ package team.karakum.components.showcases
 
 import csstype.Display
 import csstype.JustifyContent
+import kotlinx.js.jso
 import mui.material.*
 import mui.material.DividerVariant.fullWidth
 import mui.material.FormControlVariant.*
@@ -9,6 +10,7 @@ import mui.system.sx
 import react.FC
 import react.Props
 import react.ReactNode
+import react.create
 import react.dom.html.ReactHTML.form
 
 val TextFieldsShowcase = FC<Props> {
@@ -67,6 +69,25 @@ val TextFieldsShowcase = FC<Props> {
         Input {
             defaultValue = "Error"
             error = true
+        }
+
+        Divider {
+            variant = fullWidth
+
+            Chip {
+                label = ReactNode("Input Adornments")
+            }
+        }
+
+        TextField {
+            id = "outlined-start-adornment"
+            label = ReactNode("With normal TextField")
+            asDynamic().InputProps = jso<InputBaseProps> {
+                startAdornment = InputAdornment.create {
+                    position = InputAdornmentPosition.start
+                    +"kg"
+                }
+            }
         }
     }
 }
