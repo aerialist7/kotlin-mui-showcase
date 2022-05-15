@@ -11,7 +11,7 @@ val ShowcasesContext = createContext<Showcases>()
 val ShowcasesModule = FC<PropsWithChildren> { props ->
     val users = useShowcases()
 
-    ShowcasesContext.Provider(users) {
+    ShowcasesContext(users) {
         +props.children
     }
 }
