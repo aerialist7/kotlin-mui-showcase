@@ -30,6 +30,7 @@ fun useShowcases(): Showcases {
             Showcase("menus", "Menus", MenusShowcase),
             Showcase("pagination", "Pagination", PaginationShowcase),
             Showcase("paper", "Paper", PaperShowcase),
+            Showcase("pickers", "Pickers", PickersShowcase),
             Showcase("popover", "Popover", PopoverShowcase),
             Showcase("popper", "Popper", PopperShowcase),
             Showcase("progress", "Progress", ProgressShowcase),

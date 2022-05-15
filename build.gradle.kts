@@ -15,6 +15,9 @@ dependencies {
     implementation(kotlinw("emotion"))
     implementation(kotlinw("mui"))
     implementation(kotlinw("mui-icons"))
+
+    implementation(npm("date-fns", "2.28.0"))
+    implementation(npm("@date-io/date-fns", "2.14.0"))
 }
 
 kotlin.js {
