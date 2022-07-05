@@ -15,6 +15,7 @@ import react.Props
 import react.dom.events.MouseEvent
 import react.dom.html.ReactHTML.br
 import react.useState
+import team.karakum.common.xs
 
 val PopperShowcase = FC<Props> {
     var isOpen by useState(false)
