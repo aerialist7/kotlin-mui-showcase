@@ -29,7 +29,7 @@ val PopoverShowcase = FC<Props> {
     Popover {
         if (anchor != null) {
             id = "simple-popover"
-            anchorEl = { anchor as Element }
+            anchorEl = anchor
         }
         open = anchor != null
         onClose = { _, _ -> anchor = null }

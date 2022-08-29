@@ -6,7 +6,7 @@ fun kotlinw(target: String): String =
     "org.jetbrains.kotlin-wrappers:kotlin-$target"
 
 dependencies {
-    implementation(enforcedPlatform(kotlinw("wrappers-bom:1.0.0-pre.359")))
+    implementation(enforcedPlatform(kotlinw("wrappers-bom:1.0.0-pre.380")))
 
     implementation(kotlinw("react"))
     implementation(kotlinw("react-dom"))

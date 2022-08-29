@@ -10,7 +10,6 @@ import mui.system.sx
 import react.FC
 import react.Props
 import react.create
-import react.key
 
 val SteppersShowcase = FC<Props> {
     Box {

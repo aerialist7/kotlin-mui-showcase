@@ -7,7 +7,6 @@ import mui.system.sx
 import react.FC
 import react.Props
 import react.dom.html.ReactHTML.img
-import react.key
 
 val ImageListShowcase = FC<Props> {
     ImageList {
