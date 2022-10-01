@@ -7,6 +7,7 @@ import mui.material.Typography
 import react.FC
 import react.Props
 import react.dom.aria.ariaLabel
+import team.karakum.common.color
 
 val BreadcrumbsShowcase = FC<Props> {
     Breadcrumbs {
@@ -27,8 +28,7 @@ val BreadcrumbsShowcase = FC<Props> {
             +"Core"
         }
         Typography {
-            // TODO: Unable to set `color` prop correctly [MUI]
-            asDynamic().color = "text.primary"
+            color = "text.primary"
 
             +"Breadcrumbs"
         }

@@ -24,8 +24,7 @@ val SelectsShowcase = FC<Props> {
             Select {
                 labelId = "demo-simple-select-label"
                 id = "demo-simple-select"
-                // TODO: Needs an ability to set generic type to `Select` component [MUI]
-                value = age.unsafeCast<Nothing?>()
+                value = age
                 label = ReactNode("Age")
                 onChange = { event, _ ->
                     age = event.target.value

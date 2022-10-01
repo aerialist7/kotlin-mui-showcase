@@ -39,8 +39,6 @@ val SliderShowcase = FC<Props> {
     Slider {
         ariaLabel = "Disabled slider"
         disabled = true
-        // TODO: Because `HTMLAttributes` are higher priority then `SliderUnstyledOwnProps`
-        //  Details: Need a fix in wrappers
-        asDynamic().defaultValue = 30
+        defaultValue = 30
     }
 }

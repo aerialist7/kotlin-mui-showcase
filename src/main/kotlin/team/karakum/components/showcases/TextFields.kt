@@ -12,6 +12,8 @@ import react.Props
 import react.ReactNode
 import react.create
 import react.dom.html.ReactHTML.form
+import team.karakum.common.autoComplete
+import team.karakum.common.noValidate
 
 val TextFieldsShowcase = FC<Props> {
     Box {
@@ -20,9 +22,8 @@ val TextFieldsShowcase = FC<Props> {
             justifyContent = JustifyContent.left
         }
         component = form
-        // TODO: Unable to set `noValidate` & `autoComplete` props correctly [MUI]
-        asDynamic().noValidate = true
-        asDynamic().autoComplete = "off"
+        noValidate = true
+        autoComplete = "off"
 
         Divider {
             variant = fullWidth

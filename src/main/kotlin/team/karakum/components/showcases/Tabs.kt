@@ -9,6 +9,7 @@ import react.FC
 import react.Props
 import react.ReactNode
 import react.useState
+import team.karakum.common.ariaLabel
 
 val TabsShowcase = FC<Props> {
     var activeTab by useState("one")
@@ -21,8 +22,7 @@ val TabsShowcase = FC<Props> {
         Tabs {
             value = activeTab
             onChange = { _, newValue -> activeTab = newValue }
-            // TODO: Unable to set `ariaLabel` prop [MUI]
-            asDynamic()["aria-label"] = "wrapped label tabs example"
+            ariaLabel = "wrapped label tabs example"
 
             Tab {
                 value = "one"

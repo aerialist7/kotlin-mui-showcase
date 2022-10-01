@@ -9,13 +9,13 @@ import react.FC
 import react.Props
 import react.dom.html.ReactHTML.div
 import react.dom.html.ReactHTML.span
+import team.karakum.common.color
 
 val CardsShowcase = FC<Props> {
     Card {
         CardContent {
             Typography {
-                // TODO: Unable set color legally [MUI]
-                asDynamic().color = "text.secondary"
+                color = "text.secondary"
                 gutterBottom = true
                 +"Word of the Day"
             }
