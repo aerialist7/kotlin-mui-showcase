@@ -1,13 +1,13 @@
 package team.karakum.components.showcases
 
 import csstype.px
+import dom.Element
 import kotlinx.js.jso
 import mui.material.Button
 import mui.material.ButtonVariant.contained
 import mui.material.Popover
 import mui.material.Typography
 import mui.system.sx
-import org.w3c.dom.Element
 import react.FC
 import react.Props
 import react.dom.aria.ariaDescribedBy

@@ -3,11 +3,11 @@ package team.karakum.components.showcases
 import csstype.AlignItems.Companion.flexEnd
 import csstype.JustifyContent.Companion.center
 import csstype.px
+import dom.Element
 import mui.material.*
 import mui.material.GridDirection.column
 import mui.system.responsive
 import mui.system.sx
-import org.w3c.dom.Element
 import popper.core.Placement
 import popper.core.Placement.*
 import react.FC

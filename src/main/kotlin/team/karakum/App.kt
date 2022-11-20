@@ -1,10 +1,10 @@
 package team.karakum
 
+import browser.document
 import csstype.Auto.auto
 import csstype.Display
 import csstype.GridTemplateAreas
 import csstype.array
-import kotlinx.browser.document
 import mui.material.useMediaQuery
 import mui.system.Box
 import mui.system.sx
@@ -19,7 +19,7 @@ import team.karakum.common.Sizes.Sidebar
 import team.karakum.components.*
 
 fun main() {
-    createRoot(document.createElement("div").also { document.body!!.appendChild(it) })
+    createRoot(document.createElement("div").also { document.body.appendChild(it) })
         .render(App.create())
 }
 
