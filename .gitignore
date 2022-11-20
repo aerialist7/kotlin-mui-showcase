@@ -1,6 +1,7 @@
 # IntelliJ IDEA
 .idea
 !.idea/icon.png
+!.idea/codeInsightSettings.xml
 *.iml
 
 # Gradle
