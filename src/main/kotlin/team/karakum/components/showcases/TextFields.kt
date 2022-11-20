@@ -11,6 +11,7 @@ import react.FC
 import react.Props
 import react.ReactNode
 import react.create
+import react.dom.html.InputType
 import react.dom.html.ReactHTML.form
 import team.karakum.common.autoComplete
 import team.karakum.common.noValidate
@@ -47,6 +48,12 @@ val TextFieldsShowcase = FC<Props> {
             id = "standard-basic"
             label = ReactNode("Standard")
             variant = standard
+        }
+        TextField {
+            id = "type-date"
+            label = ReactNode("Start Day")
+            variant = outlined
+            type = InputType.date
         }
 
         Divider {
