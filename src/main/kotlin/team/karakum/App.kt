@@ -5,6 +5,8 @@ import csstype.Auto.auto
 import csstype.Display
 import csstype.GridTemplateAreas
 import csstype.array
+import dom.html.HTML.div
+import dom.html.createElement
 import mui.material.useMediaQuery
 import mui.system.Box
 import mui.system.sx
@@ -19,7 +21,10 @@ import team.karakum.common.Sizes.Sidebar
 import team.karakum.components.*
 
 fun main() {
-    createRoot(document.createElement("div").also { document.body.appendChild(it) })
+    val root = document.createElement(div)
+        .also { document.body.appendChild(it) }
+
+    createRoot(root)
         .render(App.create())
 }
 
