@@ -2,7 +2,7 @@ package team.karakum.components.showcases
 
 import csstype.Display
 import csstype.JustifyContent
-import kotlinx.js.jso
+import js.core.jso
 import mui.material.*
 import mui.material.DividerVariant.fullWidth
 import mui.material.FormControlVariant.*

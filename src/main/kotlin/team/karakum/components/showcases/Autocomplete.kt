@@ -1,7 +1,7 @@
 package team.karakum.components.showcases
 
 import csstype.px
-import kotlinx.js.jso
+import js.core.jso
 import mui.material.Autocomplete
 import mui.material.AutocompleteProps
 import mui.material.TextField

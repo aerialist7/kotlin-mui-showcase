@@ -3,11 +3,14 @@ package team.karakum.components.showcases
 import csstype.Length
 import csstype.pct
 import csstype.px
-import kotlinx.js.jso
+import js.core.jso
 import mui.material.*
 import mui.material.DividerVariant.fullWidth
 import mui.system.sx
-import react.*
+import react.FC
+import react.Props
+import react.ReactNode
+import react.create
 import react.dom.aria.AriaRole
 import react.dom.aria.ariaLabel
 import react.dom.html.ReactHTML.th

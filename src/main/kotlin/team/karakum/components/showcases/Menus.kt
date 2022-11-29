@@ -1,6 +1,6 @@
 package team.karakum.components.showcases
 
-import kotlinx.js.jso
+import js.core.jso
 import mui.material.Menu
 import mui.material.MenuItem
 import mui.material.PopoverReference

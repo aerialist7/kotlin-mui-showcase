@@ -1,6 +1,6 @@
 package team.karakum.common
 
-import kotlinx.js.jso
+import js.core.jso
 import mui.material.PaletteMode.dark
 import mui.material.PaletteMode.light
 import mui.material.styles.createTheme

@@ -2,7 +2,7 @@ package team.karakum.components.showcases
 
 import csstype.px
 import dom.Element
-import kotlinx.js.jso
+import js.core.jso
 import mui.material.Button
 import mui.material.ButtonVariant.contained
 import mui.material.Popover
