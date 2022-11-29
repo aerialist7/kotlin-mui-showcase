@@ -1,9 +1,6 @@
 package team.karakum.common
 
-import mui.material.BoxProps
-import mui.material.GridProps
-import mui.material.TabsProps
-import mui.material.TypographyProps
+import mui.material.*
 
 // TODO: Remove when it will be implemented in MUI wrappers
 inline var GridProps.xs: Int
@@ -34,4 +31,10 @@ inline var TabsProps.ariaLabel: String
     get() = TODO("Prop is write-only!")
     set(value) {
         asDynamic()["aria-label"] = value
+    }
+
+inline var TextFieldProps.InputProps: InputBaseProps
+    get() = TODO("Prop is write-only!")
+    set(value) {
+        asDynamic().InputProps = value
     }

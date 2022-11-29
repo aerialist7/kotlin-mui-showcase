@@ -13,6 +13,7 @@ import react.ReactNode
 import react.create
 import react.dom.html.InputType
 import react.dom.html.ReactHTML.form
+import team.karakum.common.InputProps
 import team.karakum.common.autoComplete
 import team.karakum.common.noValidate
 
@@ -90,7 +91,7 @@ val TextFieldsShowcase = FC<Props> {
         TextField {
             id = "outlined-start-adornment"
             label = ReactNode("With normal TextField")
-            asDynamic().InputProps = jso<InputBaseProps> {
+            InputProps = jso {
                 startAdornment = InputAdornment.create {
                     position = InputAdornmentPosition.start
                     +"kg"
