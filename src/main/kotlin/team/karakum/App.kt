@@ -6,7 +6,6 @@ import csstype.Display
 import csstype.GridTemplateAreas
 import csstype.array
 import dom.html.HTML.div
-import dom.html.createElement
 import mui.material.useMediaQuery
 import mui.system.Box
 import mui.system.sx
