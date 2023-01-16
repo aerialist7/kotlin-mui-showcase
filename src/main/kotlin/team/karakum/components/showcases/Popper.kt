@@ -3,7 +3,6 @@ package team.karakum.components.showcases
 import csstype.AlignItems.Companion.flexEnd
 import csstype.JustifyContent.Companion.center
 import csstype.px
-import dom.Element
 import mui.material.*
 import mui.material.GridDirection.column
 import mui.system.responsive
@@ -16,6 +15,7 @@ import react.dom.events.MouseEvent
 import react.dom.html.ReactHTML.br
 import react.useState
 import team.karakum.common.xs
+import web.dom.Element
 
 val PopperShowcase = FC<Props> {
     var isOpen by useState(false)

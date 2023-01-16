@@ -1,11 +1,9 @@
 package team.karakum
 
-import browser.document
 import csstype.Auto.auto
 import csstype.Display
 import csstype.GridTemplateAreas
 import csstype.array
-import dom.html.HTML.div
 import mui.material.useMediaQuery
 import mui.system.Box
 import mui.system.sx
@@ -18,6 +16,8 @@ import team.karakum.common.Area
 import team.karakum.common.Sizes.Header
 import team.karakum.common.Sizes.Sidebar
 import team.karakum.components.*
+import web.dom.document
+import web.html.HTML.div
 
 fun main() {
     val root = document.createElement(div)
