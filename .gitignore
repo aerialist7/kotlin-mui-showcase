@@ -13,6 +13,3 @@ webpack.config.d/
 *.tgz
 package-lock.json
 node_modules/
-
-# Kotlin/JS
-kotlin-js-store/
