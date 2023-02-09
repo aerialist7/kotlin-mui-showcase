@@ -11,11 +11,11 @@ import react.FC
 import react.Props
 import react.ReactNode
 import react.create
-import react.dom.html.InputType
 import react.dom.html.ReactHTML.form
 import team.karakum.common.InputProps
 import team.karakum.common.autoComplete
 import team.karakum.common.noValidate
+import web.html.InputType
 
 val TextFieldsShowcase = FC<Props> {
     Box {
