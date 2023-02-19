@@ -12,14 +12,16 @@ import mui.system.sx
 import react.*
 import react.dom.html.ReactHTML.nav
 import react.router.dom.NavLink
+import react.router.useLoaderData
 import react.router.useLocation
 import team.karakum.common.Sizes
+import team.karakum.entities.Showcases
 import mui.icons.material.Menu as MenuIcon
 
 val Menu = FC<Props> {
     var isOpen by useState(false)
 
-    val showcases = useContext(ShowcasesContext)
+    val showcases = useLoaderData().unsafeCast<Showcases>()
     val lastPathname = useLocation().pathname.substringAfterLast("/")
 
     Box {

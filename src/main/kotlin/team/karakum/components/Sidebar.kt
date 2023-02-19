@@ -13,13 +13,14 @@ import react.Props
 import react.ReactNode
 import react.dom.html.ReactHTML.nav
 import react.router.dom.NavLink
+import react.router.useLoaderData
 import react.router.useLocation
-import react.useContext
 import team.karakum.common.Area
 import team.karakum.common.Sizes
+import team.karakum.entities.Showcases
 
 val Sidebar = FC<Props> {
-    val showcases = useContext(ShowcasesContext)
+    val showcases = useLoaderData().unsafeCast<Showcases>()
     val lastPathname = useLocation().pathname.substringAfterLast("/")
 
     Box {

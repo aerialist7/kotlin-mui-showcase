@@ -1,21 +1,20 @@
 package team.karakum
 
-import csstype.Auto.auto
-import csstype.Display
-import csstype.GridTemplateAreas
-import csstype.array
-import mui.material.useMediaQuery
-import mui.system.Box
-import mui.system.sx
+import js.core.ReadonlyArray
+import js.core.jso
+import mui.material.Typography
 import react.FC
 import react.Props
+import react.ReactNode
 import react.create
 import react.dom.client.createRoot
-import react.router.dom.HashRouter
-import team.karakum.common.Area
-import team.karakum.common.Sizes.Header
-import team.karakum.common.Sizes.Sidebar
-import team.karakum.components.*
+import react.router.RouteObject
+import react.router.RouterProvider
+import react.router.dom.createHashRouter
+import team.karakum.components.Showcase
+import team.karakum.components.Showcases
+import team.karakum.components.ThemeModule
+import team.karakum.components.showcasesLoader
 import web.dom.document
 import web.html.HTML.div
 
@@ -28,35 +27,62 @@ fun main() {
 }
 
 private val App = FC<Props> {
-    val mobileMode = useMediaQuery("(max-width:960px)")
-
-    HashRouter {
-        ShowcasesModule {
-            ThemeModule {
-                Box {
-                    sx {
-                        display = Display.grid
-                        gridTemplateRows = array(
-                            Header.Height,
-                            auto,
-                        )
-                        gridTemplateColumns = array(
-                            Sidebar.Width, auto,
-                        )
-                        gridTemplateAreas = GridTemplateAreas(
-                            arrayOf(Area.Header, Area.Header),
-                            if (mobileMode)
-                                arrayOf(Area.Content, Area.Content)
-                            else
-                                arrayOf(Area.Sidebar, Area.Content),
-                        )
+    val hashRouter = createHashRouter(
+        routes = arrayOf(
+            jso {
+                path = "/"
+                loader = ::showcasesLoader
+                element = Showcases.create()
+                errorElement = Typography.create { +"Error while Showcases Loading" }
+                children = arrayOf(
+                    jso {
+                        path = ":showcaseId"
+                        element = Showcase.create()
+                    },
+                    jso {
+                        path = "*"
+                        element = Typography.create { +"404 Page Not Found" }
                     }
+                )
+            },
+        ),
+    )
 
-                    Header()
-                    if (mobileMode) Menu() else Sidebar()
-                    Content()
-                }
-            }
+
+    ThemeModule {
+        RouterProvider {
+            router = hashRouter
         }
     }
 }
+
+// TODO: Remove when declarations will be updated
+private var RouteObject.loader: () -> Any?
+    get() = asDynamic().loader
+    set(value) {
+        asDynamic().loader = value
+    }
+
+private var RouteObject.element: ReactNode
+    get() = asDynamic().element
+    set(value) {
+        asDynamic().element = value
+    }
+
+private var RouteObject.errorElement: ReactNode
+    get() = asDynamic().errorElement
+    set(value) {
+        asDynamic().errorElement = value
+    }
+
+private var RouteObject.path: String
+    get() = asDynamic().path
+    set(value) {
+        asDynamic().path = value
+    }
+
+private var RouteObject.children: ReadonlyArray<RouteObject>
+    get() = asDynamic().children
+    set(value) {
+        asDynamic().children = value
+    }
