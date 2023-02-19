@@ -2,7 +2,6 @@ package team.karakum
 
 import js.core.ReadonlyArray
 import js.core.jso
-import mui.material.Typography
 import react.FC
 import react.Props
 import react.ReactNode
@@ -11,10 +10,7 @@ import react.dom.client.createRoot
 import react.router.RouteObject
 import react.router.RouterProvider
 import react.router.dom.createHashRouter
-import team.karakum.components.Showcase
-import team.karakum.components.Showcases
-import team.karakum.components.ThemeModule
-import team.karakum.components.showcasesLoader
+import team.karakum.components.*
 import web.dom.document
 import web.html.HTML.div
 
@@ -33,7 +29,7 @@ private val App = FC<Props> {
                 path = "/"
                 loader = ::showcasesLoader
                 element = Showcases.create()
-                errorElement = Typography.create { +"Error while Showcases Loading" }
+                errorElement = Error.create()
                 children = arrayOf(
                     jso {
                         path = ":showcaseId"
@@ -41,7 +37,7 @@ private val App = FC<Props> {
                     },
                     jso {
                         path = "*"
-                        element = Typography.create { +"404 Page Not Found" }
+                        element = Error.create()
                     }
                 )
             },
