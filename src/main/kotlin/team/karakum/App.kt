@@ -10,6 +10,7 @@ import react.dom.client.createRoot
 import react.router.RouteObject
 import react.router.RouterProvider
 import react.router.dom.createHashRouter
+import remix.run.router.LoaderFunction
 import team.karakum.components.*
 import web.dom.document
 import web.html.HTML.div
@@ -27,12 +28,13 @@ private val App = FC<Props> {
         routes = arrayOf(
             jso {
                 path = "/"
-                loader = ::showcasesLoader
+                loader = showcasesLoader
                 element = Showcases.create()
                 errorElement = Error.create()
                 children = arrayOf(
                     jso {
                         path = ":showcaseId"
+                        loader = showcaseLoader
                         element = Showcase.create()
                     },
                     jso {
@@ -53,7 +55,7 @@ private val App = FC<Props> {
 }
 
 // TODO: Remove when declarations will be updated
-private var RouteObject.loader: () -> Any?
+private var RouteObject.loader: LoaderFunction
     get() = asDynamic().loader
     set(value) {
         asDynamic().loader = value

@@ -9,11 +9,10 @@ import mui.system.Box
 import mui.system.sx
 import react.FC
 import react.Props
+import remix.run.router.LoaderFunction
 import team.karakum.common.Area
 import team.karakum.common.Sizes
 import team.karakum.entities.SHOWCASES
-import team.karakum.entities.Showcases
-import kotlin.js.Promise
 import kotlin.js.Promise.Companion.resolve
 
 val Showcases = FC<Props> {
@@ -44,5 +43,6 @@ val Showcases = FC<Props> {
     }
 }
 
-fun showcasesLoader(): Promise<Showcases> =
+val showcasesLoader: LoaderFunction = {
     resolve(SHOWCASES)
+}

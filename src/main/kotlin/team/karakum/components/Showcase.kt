@@ -3,15 +3,16 @@ package team.karakum.components
 import js.core.get
 import react.FC
 import react.Props
-import react.router.useParams
-import react.useMemo
+import react.router.useLoaderData
+import remix.run.router.LoaderFunction
 import team.karakum.entities.SHOWCASES
+import team.karakum.entities.Showcase
+import kotlin.js.Promise.Companion.resolve
 
 val Showcase = FC<Props> {
-    val showcaseId = useParams()["showcaseId"]
-    val (_, _, Component) = useMemo(showcaseId) {
-        SHOWCASES.single { it.key == showcaseId }
-    }
+    useLoaderData().unsafeCast<Showcase>().Component()
+}
 
-    Component()
+val showcaseLoader: LoaderFunction = { args ->
+    resolve(SHOWCASES.single { it.key == args.params["showcaseId"] })
 }
