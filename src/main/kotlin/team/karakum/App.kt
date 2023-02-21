@@ -5,7 +5,6 @@ import react.FC
 import react.Props
 import react.create
 import react.dom.client.createRoot
-import react.router.NonIndexRouteObject
 import react.router.RouterProvider
 import react.router.dom.createHashRouter
 import team.karakum.components.*
@@ -22,17 +21,18 @@ fun main() {
 
 private val App = FC<Props> {
     val hashRouter = createHashRouter(
-        routes = arrayOf<NonIndexRouteObject>(
+        routes = arrayOf(
             jso {
                 path = "/"
                 loader = showcasesLoader
                 element = Showcases.create()
                 errorElement = Error.create()
-                children = arrayOf<NonIndexRouteObject>(
+                children = arrayOf(
                     jso {
                         path = ":showcaseId"
                         loader = showcaseLoader
                         element = Showcase.create()
+                        errorElement = Error.create()
                     },
                     jso {
                         path = "*"
