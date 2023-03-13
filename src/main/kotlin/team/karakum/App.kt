@@ -19,31 +19,30 @@ fun main() {
         .render(App.create())
 }
 
+private val hashRouter = createHashRouter(
+    routes = arrayOf(
+        jso {
+            path = "/"
+            loader = showcasesLoader
+            element = Showcases.create()
+            errorElement = Error.create()
+            children = arrayOf(
+                jso {
+                    path = ":showcaseId"
+                    loader = showcaseLoader
+                    element = Showcase.create()
+                    errorElement = Error.create()
+                },
+                jso {
+                    path = "*"
+                    element = Error.create()
+                }
+            )
+        },
+    ),
+)
+
 private val App = FC<Props> {
-    val hashRouter = createHashRouter(
-        routes = arrayOf(
-            jso {
-                path = "/"
-                loader = showcasesLoader
-                element = Showcases.create()
-                errorElement = Error.create()
-                children = arrayOf(
-                    jso {
-                        path = ":showcaseId"
-                        loader = showcaseLoader
-                        element = Showcase.create()
-                        errorElement = Error.create()
-                    },
-                    jso {
-                        path = "*"
-                        element = Error.create()
-                    }
-                )
-            },
-        ),
-    )
-
-
     ThemeModule {
         RouterProvider {
             router = hashRouter
