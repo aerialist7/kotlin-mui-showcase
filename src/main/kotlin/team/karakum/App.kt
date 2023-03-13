@@ -24,18 +24,18 @@ private val hashRouter = createHashRouter(
         jso {
             path = "/"
             loader = showcasesLoader
-            element = Showcases.create()
-            errorElement = Error.create()
+            Component = Showcases
+            ErrorBoundary = Error
             children = arrayOf(
                 jso {
                     path = ":showcaseId"
                     loader = showcaseLoader
-                    element = Showcase.create()
-                    errorElement = Error.create()
+                    Component = Showcase
+                    ErrorBoundary = Error
                 },
                 jso {
                     path = "*"
-                    element = Error.create()
+                    Component = Error
                 }
             )
         },
