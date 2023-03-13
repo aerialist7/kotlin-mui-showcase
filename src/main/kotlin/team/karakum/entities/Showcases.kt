@@ -1,7 +1,6 @@
 package team.karakum.entities
 
-import react.FC
-import react.Props
+import react.VFC
 import team.karakum.components.showcases.*
 
 val SHOWCASES: Iterable<Showcase> = setOf(
@@ -49,7 +48,7 @@ val SHOWCASES: Iterable<Showcase> = setOf(
 data class Showcase(
     val key: String,
     val name: String,
-    val Component: FC<Props>,
+    val Component: VFC,
 )
 
 typealias Showcases = Iterable<Showcase>
