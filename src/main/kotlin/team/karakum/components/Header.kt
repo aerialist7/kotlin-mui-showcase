@@ -20,7 +20,7 @@ import team.karakum.common.Area
 import team.karakum.common.Themes
 
 val Header = FC<Props> {
-    var theme by useContext(ThemeContext)
+    var theme by useRequiredContext(ThemeContext)
     val lastPathname = useLocation().pathname.substringAfterLast("/")
 
     AppBar {
