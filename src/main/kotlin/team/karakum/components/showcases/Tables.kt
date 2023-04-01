@@ -5,7 +5,7 @@ import csstype.pct
 import csstype.px
 import js.core.jso
 import mui.material.*
-import mui.material.DividerVariant.fullWidth
+import mui.material.DividerVariant.Companion.fullWidth
 import mui.system.sx
 import react.FC
 import react.Props

@@ -1,7 +1,7 @@
 package team.karakum.components.showcases
 
 import mui.material.Chip
-import mui.material.ChipVariant.outlined
+import mui.material.ChipVariant.Companion.outlined
 import react.FC
 import react.Props
 import react.ReactNode

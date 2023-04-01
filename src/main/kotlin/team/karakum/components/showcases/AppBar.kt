@@ -4,7 +4,7 @@ import csstype.number
 import csstype.px
 import mui.icons.material.Menu
 import mui.material.*
-import mui.material.styles.TypographyVariant.h6
+import mui.material.styles.TypographyVariant.Companion.h6
 import mui.system.sx
 import react.FC
 import react.Props

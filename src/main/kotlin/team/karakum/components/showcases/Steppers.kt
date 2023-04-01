@@ -4,8 +4,8 @@ import csstype.number
 import csstype.pct
 import csstype.px
 import mui.material.*
-import mui.material.MobileStepperPosition.static
-import mui.material.MobileStepperVariant.dots
+import mui.material.MobileStepperPosition.Companion.static
+import mui.material.MobileStepperVariant.Companion.dots
 import mui.system.sx
 import react.FC
 import react.Props

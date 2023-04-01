@@ -1,6 +1,5 @@
 package team.karakum.components
 
-import js.core.get
 import react.FC
 import react.Props
 import react.router.useLoaderData

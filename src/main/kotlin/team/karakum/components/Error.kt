@@ -8,6 +8,7 @@ import react.router.useRouteError
 
 val Error = FC<Props> {
     val error = useRouteError().unsafeCast<JsError>()
+//    val error = useRouteError() ?: error("")
 
     Typography {
         +error.message

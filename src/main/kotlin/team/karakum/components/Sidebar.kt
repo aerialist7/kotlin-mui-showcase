@@ -1,11 +1,11 @@
 package team.karakum.components
 
 import csstype.Color
-import csstype.None.none
+import csstype.None.Companion.none
 import emotion.react.css
 import mui.material.*
-import mui.material.DrawerAnchor.left
-import mui.material.DrawerVariant.permanent
+import mui.material.DrawerAnchor.Companion.left
+import mui.material.DrawerVariant.Companion.permanent
 import mui.system.Box
 import mui.system.sx
 import react.FC

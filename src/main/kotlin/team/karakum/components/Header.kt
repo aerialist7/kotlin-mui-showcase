@@ -8,10 +8,10 @@ import mui.icons.material.Brightness7
 import mui.icons.material.GitHub
 import mui.icons.material.MenuBook
 import mui.material.*
-import mui.material.styles.TypographyVariant.h6
+import mui.material.styles.TypographyVariant.Companion.h6
 import mui.system.sx
 import react.*
-import react.dom.aria.AriaHasPopup.`false`
+import react.dom.aria.AriaHasPopup.Companion.`false`
 import react.dom.aria.ariaHasPopup
 import react.dom.aria.ariaLabel
 import react.dom.html.ReactHTML.div

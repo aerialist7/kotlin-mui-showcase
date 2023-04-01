@@ -1,7 +1,7 @@
 package team.karakum.components.showcases
 
 import mui.material.Button
-import mui.material.ButtonVariant.outlined
+import mui.material.ButtonVariant.Companion.outlined
 import mui.material.Drawer
 import mui.material.Toolbar
 import react.FC

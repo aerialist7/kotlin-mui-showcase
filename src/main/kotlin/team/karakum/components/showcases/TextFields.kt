@@ -4,8 +4,10 @@ import csstype.Display
 import csstype.JustifyContent
 import js.core.jso
 import mui.material.*
-import mui.material.DividerVariant.fullWidth
-import mui.material.FormControlVariant.*
+import mui.material.DividerVariant.Companion.fullWidth
+import mui.material.FormControlVariant.Companion.filled
+import mui.material.FormControlVariant.Companion.outlined
+import mui.material.FormControlVariant.Companion.standard
 import mui.system.sx
 import react.FC
 import react.Props

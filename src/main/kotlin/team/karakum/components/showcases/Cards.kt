@@ -3,7 +3,7 @@ package team.karakum.components.showcases
 import csstype.Display.Companion.inlineBlock
 import csstype.px
 import mui.material.*
-import mui.material.styles.TypographyVariant.h5
+import mui.material.styles.TypographyVariant.Companion.h5
 import mui.system.sx
 import react.FC
 import react.Props

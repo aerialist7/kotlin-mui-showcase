@@ -1,7 +1,9 @@
 package team.karakum.components.showcases
 
 import mui.material.Skeleton
-import mui.material.SkeletonVariant.*
+import mui.material.SkeletonVariant.Companion.circular
+import mui.material.SkeletonVariant.Companion.rectangular
+import mui.material.SkeletonVariant.Companion.text
 import react.FC
 import react.Props
 

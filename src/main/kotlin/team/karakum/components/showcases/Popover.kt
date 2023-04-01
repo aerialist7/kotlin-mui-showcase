@@ -3,7 +3,7 @@ package team.karakum.components.showcases
 import csstype.px
 import js.core.jso
 import mui.material.Button
-import mui.material.ButtonVariant.contained
+import mui.material.ButtonVariant.Companion.contained
 import mui.material.Popover
 import mui.material.Typography
 import mui.system.sx

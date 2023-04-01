@@ -6,7 +6,7 @@ import mui.icons.material.VolumeDown
 import mui.icons.material.VolumeUp
 import mui.material.Slider
 import mui.material.Stack
-import mui.material.StackDirection.row
+import mui.material.StackDirection.Companion.row
 import mui.system.responsive
 import mui.system.sx
 import react.FC
