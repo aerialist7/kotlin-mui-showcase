@@ -1,9 +1,5 @@
 package team.karakum.components
 
-import csstype.Auto
-import csstype.Display
-import csstype.GridTemplateAreas
-import csstype.array
 import mui.material.useMediaQuery
 import mui.system.Box
 import mui.system.sx
@@ -13,6 +9,10 @@ import remix.run.router.LoaderFunction
 import team.karakum.common.Area
 import team.karakum.common.Sizes
 import team.karakum.entities.SHOWCASES
+import web.cssom.Auto
+import web.cssom.Display
+import web.cssom.GridTemplateAreas
+import web.cssom.array
 import kotlin.js.Promise.Companion.resolve
 
 val Showcases = FC<Props> {

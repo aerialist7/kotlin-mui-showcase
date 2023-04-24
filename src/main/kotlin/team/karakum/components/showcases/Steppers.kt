@@ -1,8 +1,5 @@
 package team.karakum.components.showcases
 
-import csstype.number
-import csstype.pct
-import csstype.px
 import mui.material.*
 import mui.material.MobileStepperPosition.Companion.static
 import mui.material.MobileStepperVariant.Companion.dots
@@ -10,6 +7,9 @@ import mui.system.sx
 import react.FC
 import react.Props
 import react.create
+import web.cssom.number
+import web.cssom.pct
+import web.cssom.px
 
 val SteppersShowcase = FC<Props> {
     Box {

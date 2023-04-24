@@ -1,8 +1,5 @@
 package team.karakum.components.showcases
 
-import csstype.Display
-import csstype.FlexWrap.Companion.wrap
-import csstype.px
 import mui.material.Box
 import mui.material.Paper
 import mui.material.PaperVariant.Companion.outlined
@@ -10,6 +7,9 @@ import mui.material.Typography
 import mui.system.sx
 import react.FC
 import react.Props
+import web.cssom.Display
+import web.cssom.FlexWrap.Companion.wrap
+import web.cssom.px
 
 val PaperShowcase = FC<Props> {
     Box {

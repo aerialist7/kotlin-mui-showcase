@@ -1,7 +1,5 @@
 package team.karakum.components.showcases
 
-import csstype.Display
-import csstype.JustifyContent
 import js.core.jso
 import mui.material.*
 import mui.material.DividerVariant.Companion.fullWidth
@@ -17,6 +15,8 @@ import react.dom.html.ReactHTML.form
 import team.karakum.common.InputProps
 import team.karakum.common.autoComplete
 import team.karakum.common.noValidate
+import web.cssom.Display
+import web.cssom.JustifyContent
 import web.html.InputType
 
 val TextFieldsShowcase = FC<Props> {

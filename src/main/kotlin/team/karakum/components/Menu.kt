@@ -1,9 +1,5 @@
 package team.karakum.components
 
-import csstype.Color
-import csstype.None.Companion.none
-import csstype.Position.Companion.absolute
-import csstype.px
 import emotion.react.css
 import mui.material.*
 import mui.material.DrawerAnchor.Companion.left
@@ -16,6 +12,10 @@ import react.router.useLoaderData
 import react.router.useLocation
 import team.karakum.common.Sizes
 import team.karakum.entities.Showcases
+import web.cssom.Color
+import web.cssom.None.Companion.none
+import web.cssom.Position.Companion.absolute
+import web.cssom.px
 import mui.icons.material.Menu as MenuIcon
 
 val Menu = FC<Props> {

@@ -1,7 +1,5 @@
 package team.karakum.components.showcases
 
-import csstype.Display.Companion.inlineBlock
-import csstype.px
 import mui.material.*
 import mui.material.styles.TypographyVariant.Companion.h5
 import mui.system.sx
@@ -10,6 +8,8 @@ import react.Props
 import react.dom.html.ReactHTML.div
 import react.dom.html.ReactHTML.span
 import team.karakum.common.color
+import web.cssom.Display.Companion.inlineBlock
+import web.cssom.px
 
 val CardsShowcase = FC<Props> {
     Card {

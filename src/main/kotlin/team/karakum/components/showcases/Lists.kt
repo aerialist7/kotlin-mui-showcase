@@ -1,12 +1,12 @@
 package team.karakum.components.showcases
 
-import csstype.pct
-import csstype.px
 import mui.icons.material.Star
 import mui.material.*
 import mui.system.sx
 import react.FC
 import react.Props
+import web.cssom.pct
+import web.cssom.px
 
 val ListsShowcase = FC<Props> {
     List {

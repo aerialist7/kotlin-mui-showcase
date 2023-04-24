@@ -1,7 +1,5 @@
 package team.karakum.components
 
-import csstype.Color
-import csstype.None.Companion.none
 import emotion.react.css
 import mui.material.*
 import mui.material.DrawerAnchor.Companion.left
@@ -18,6 +16,8 @@ import react.router.useLocation
 import team.karakum.common.Area
 import team.karakum.common.Sizes
 import team.karakum.entities.Showcases
+import web.cssom.Color
+import web.cssom.None.Companion.none
 
 val Sidebar = FC<Props> {
     val showcases = useLoaderData().unsafeCast<Showcases>()

@@ -1,6 +1,5 @@
 package team.karakum.components.showcases
 
-import csstype.pct
 import mui.material.Box
 import mui.material.Tab
 import mui.material.Tabs
@@ -10,6 +9,7 @@ import react.Props
 import react.ReactNode
 import react.useState
 import team.karakum.common.ariaLabel
+import web.cssom.pct
 
 val TabsShowcase = FC<Props> {
     var activeTab by useState("one")

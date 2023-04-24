@@ -1,8 +1,5 @@
 package team.karakum.components.showcases
 
-import csstype.Length
-import csstype.pct
-import csstype.px
 import js.core.jso
 import mui.material.*
 import mui.material.DividerVariant.Companion.fullWidth
@@ -14,6 +11,9 @@ import react.create
 import react.dom.aria.AriaRole
 import react.dom.aria.ariaLabel
 import react.dom.html.ReactHTML.th
+import web.cssom.Length
+import web.cssom.pct
+import web.cssom.px
 
 val TablesShowcase = FC<Props> {
     Divider {

@@ -1,7 +1,5 @@
 package team.karakum.components.showcases
 
-import csstype.AlignItems.Companion.center
-import csstype.px
 import mui.icons.material.VolumeDown
 import mui.icons.material.VolumeUp
 import mui.material.Slider
@@ -13,6 +11,8 @@ import react.FC
 import react.Props
 import react.dom.aria.ariaLabel
 import react.useState
+import web.cssom.AlignItems.Companion.center
+import web.cssom.px
 
 val SliderShowcase = FC<Props> {
     var volume by useState(30)

@@ -1,7 +1,5 @@
 package team.karakum.components
 
-import csstype.integer
-import csstype.number
 import kotlinx.browser.window
 import mui.icons.material.Brightness4
 import mui.icons.material.Brightness7
@@ -18,6 +16,8 @@ import react.dom.html.ReactHTML.div
 import react.router.useLocation
 import team.karakum.common.Area
 import team.karakum.common.Themes
+import web.cssom.integer
+import web.cssom.number
 
 val Header = FC<Props> {
     var theme by useRequiredContext(ThemeContext)

@@ -1,6 +1,5 @@
 package team.karakum.components.showcases
 
-import csstype.px
 import js.core.jso
 import mui.material.Button
 import mui.material.ButtonVariant.Companion.contained
@@ -11,6 +10,7 @@ import react.FC
 import react.Props
 import react.dom.aria.ariaDescribedBy
 import react.useState
+import web.cssom.px
 import web.dom.Element
 
 val PopoverShowcase = FC<Props> {

@@ -1,12 +1,12 @@
 package team.karakum.components.showcases
 
-import csstype.px
 import mui.material.ImageList
 import mui.material.ImageListItem
 import mui.system.sx
 import react.FC
 import react.Props
 import react.dom.html.ReactHTML.img
+import web.cssom.px
 
 val ImageListShowcase = FC<Props> {
     ImageList {

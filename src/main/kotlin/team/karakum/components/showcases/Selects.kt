@@ -1,12 +1,12 @@
 package team.karakum.components.showcases
 
-import csstype.px
 import mui.material.*
 import mui.system.sx
 import react.FC
 import react.Props
 import react.ReactNode
 import react.useState
+import web.cssom.px
 
 val SelectsShowcase = FC<Props> {
     var age by useState("10")

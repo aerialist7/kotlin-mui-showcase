@@ -1,6 +1,5 @@
 package team.karakum.components.showcases
 
-import csstype.px
 import js.core.jso
 import mui.material.Autocomplete
 import mui.material.AutocompleteProps
@@ -10,6 +9,7 @@ import react.FC
 import react.Props
 import react.ReactNode
 import react.create
+import web.cssom.px
 
 val AutocompleteShowcase = FC<Props> {
     @Suppress("UPPER_BOUND_VIOLATED")

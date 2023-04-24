@@ -1,7 +1,5 @@
 package team.karakum.components.showcases
 
-import csstype.Color
-import csstype.integer
 import mui.material.Backdrop
 import mui.material.Button
 import mui.material.CircularProgress
@@ -10,6 +8,8 @@ import mui.system.sx
 import react.FC
 import react.Props
 import react.useState
+import web.cssom.Color
+import web.cssom.integer
 
 val BackdropShowcase = FC<Props> {
     var isOpen by useState(false)

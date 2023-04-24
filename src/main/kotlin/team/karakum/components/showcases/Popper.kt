@@ -1,8 +1,6 @@
 package team.karakum.components.showcases
 
-import csstype.AlignItems.Companion.flexEnd
-import csstype.JustifyContent.Companion.center
-import csstype.px
+import emotion.react.css
 import mui.material.*
 import mui.material.GridDirection.Companion.column
 import mui.system.responsive
@@ -26,6 +24,9 @@ import react.dom.events.MouseEvent
 import react.dom.html.ReactHTML.br
 import react.useState
 import team.karakum.common.xs
+import web.cssom.AlignItems.Companion.flexEnd
+import web.cssom.JustifyContent.Companion.center
+import web.cssom.px
 import web.dom.Element
 
 val PopperShowcase = FC<Props> {
@@ -40,6 +41,9 @@ val PopperShowcase = FC<Props> {
     }
 
     Box {
+        css {
+
+        }
         sx { width = 500.px }
 
         Popper {
