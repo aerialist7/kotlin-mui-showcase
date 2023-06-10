@@ -1,6 +1,7 @@
 package team.karakum.common
 
 import mui.material.*
+import mui.system.BoxProps
 
 // TODO: Remove when it will be implemented in MUI wrappers
 inline var GridProps.xs: Int
@@ -28,6 +29,11 @@ inline var BoxProps.autoComplete: String
     }
 
 inline var TabsProps.ariaLabel: String
+    get() = TODO("Prop is write-only!")
+    set(value) {
+        asDynamic()["aria-label"] = value
+    }
+inline var SliderProps.ariaLabel: String
     get() = TODO("Prop is write-only!")
     set(value) {
         asDynamic()["aria-label"] = value

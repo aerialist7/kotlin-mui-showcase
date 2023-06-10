@@ -9,8 +9,8 @@ import mui.system.responsive
 import mui.system.sx
 import react.FC
 import react.Props
-import react.dom.aria.ariaLabel
 import react.useState
+import team.karakum.common.ariaLabel
 import web.cssom.AlignItems.Companion.center
 import web.cssom.px
 
