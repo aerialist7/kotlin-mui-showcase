@@ -25,8 +25,6 @@ kotlin.js {
     binaries.executable()
 }
 
-tasks {
-    wrapper {
-        gradleVersion = "8.1"
-    }
+tasks.wrapper {
+    gradleVersion = "8.1.1"
 }
