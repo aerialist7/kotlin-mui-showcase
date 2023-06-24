@@ -1,28 +1,34 @@
 plugins {
-    kotlin("js")
+    kotlin("multiplatform")
 }
 
 fun kotlinw(target: String): String =
     "org.jetbrains.kotlin-wrappers:kotlin-$target"
 
-dependencies {
-    implementation(enforcedPlatform(kotlinw("wrappers-bom:1.0.0-pre.565")))
+kotlin {
+    js {
+        browser()
+        binaries.executable()
+    }
 
-    implementation(kotlinw("react"))
-    implementation(kotlinw("react-dom"))
-    implementation(kotlinw("react-router-dom"))
+    sourceSets {
+        val jsMain by getting {
+            dependencies {
+                implementation(enforcedPlatform(kotlinw("wrappers-bom:1.0.0-pre.565")))
 
-    implementation(kotlinw("emotion"))
-    implementation(kotlinw("mui"))
-    implementation(kotlinw("mui-icons"))
+                implementation(kotlinw("react"))
+                implementation(kotlinw("react-dom"))
+                implementation(kotlinw("react-router-dom"))
 
-    implementation(npm("date-fns", "2.30.0"))
-    implementation(npm("@date-io/date-fns", "2.16.0"))
-}
+                implementation(kotlinw("emotion"))
+                implementation(kotlinw("mui"))
+                implementation(kotlinw("mui-icons"))
 
-kotlin.js {
-    browser()
-    binaries.executable()
+                implementation(npm("date-fns", "2.30.0"))
+                implementation(npm("@date-io/date-fns", "2.16.0"))
+            }
+        }
+    }
 }
 
 tasks.wrapper {
