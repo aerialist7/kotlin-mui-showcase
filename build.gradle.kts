@@ -14,7 +14,7 @@ kotlin {
     sourceSets {
         val jsMain by getting {
             dependencies {
-                implementation(enforcedPlatform(kotlinw("wrappers-bom:1.0.0-pre.565")))
+                implementation(enforcedPlatform(kotlinw("wrappers-bom:1.0.0-pre.573")))
 
                 implementation(kotlinw("react"))
                 implementation(kotlinw("react-dom"))
