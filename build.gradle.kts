@@ -13,8 +13,10 @@ kotlin {
 
     sourceSets {
         val jsMain by getting {
+            val wrappersVersion = extra["kotlin.wrappers.version"]
+
             dependencies {
-                implementation(enforcedPlatform(kotlinw("wrappers-bom:1.0.0-pre.573")))
+                implementation(enforcedPlatform(kotlinw("wrappers-bom:$wrappersVersion")))
 
                 implementation(kotlinw("react"))
                 implementation(kotlinw("react-dom"))
