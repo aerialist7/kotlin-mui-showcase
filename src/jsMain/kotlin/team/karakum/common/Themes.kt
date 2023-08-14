@@ -6,8 +6,8 @@ import mui.material.PaletteMode.Companion.light
 import mui.material.styles.TypographyOptions
 import mui.material.styles.TypographyVariant.Companion.h6
 import mui.material.styles.createTheme
+import web.cssom.atrule.maxWidth
 import web.cssom.integer
-import web.cssom.media.maxWidth
 import web.cssom.px
 import web.cssom.rem
 
