@@ -7,7 +7,11 @@ fun kotlinw(target: String): String =
 
 kotlin {
     js {
-        browser()
+        browser {
+            commonWebpackConfig(Action {
+                outputFileName = "index.js"
+            })
+        }
         binaries.executable()
     }
 
