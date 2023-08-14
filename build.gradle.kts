@@ -27,7 +27,7 @@ kotlin {
                 implementation(kotlinw("mui-icons"))
 
                 implementation(npm("date-fns", "2.30.0"))
-                implementation(npm("@date-io/date-fns", "2.16.0"))
+                implementation(npm("@date-io/date-fns", "2.17.0"))
             }
         }
     }
