@@ -12,6 +12,6 @@ val Showcase = FC<Props> {
     useLoaderData().unsafeCast<Showcase>().Component()
 }
 
-val showcaseLoader: LoaderFunction = { args ->
+val showcaseLoader: LoaderFunction<*> = { args ->
     resolve(SHOWCASES.single { it.key == args.params["showcaseId"] })
 }

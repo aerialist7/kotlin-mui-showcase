@@ -43,6 +43,6 @@ val Showcases = FC<Props> {
     }
 }
 
-val showcasesLoader: LoaderFunction = {
+val showcasesLoader: LoaderFunction<*> = {
     resolve(SHOWCASES)
 }
