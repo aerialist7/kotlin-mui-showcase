@@ -29,6 +29,7 @@ kotlin {
                 implementation(kotlinw("emotion"))
                 implementation(kotlinw("mui"))
                 implementation(kotlinw("mui-icons"))
+                implementation(kotlinw("muix-date-pickers"))
 
                 implementation(npm("date-fns", "2.30.0"))
                 implementation(npm("@date-io/date-fns", "2.17.0"))
