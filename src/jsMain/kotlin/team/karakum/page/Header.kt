@@ -1,5 +1,6 @@
 package team.karakum.page
 
+import js.uri.decodeURIComponent
 import kotlinx.browser.window
 import mui.icons.material.Brightness4
 import mui.icons.material.Brightness7
@@ -15,7 +16,7 @@ import react.dom.aria.AriaHasPopup.Companion.`false`
 import react.dom.aria.ariaHasPopup
 import react.dom.aria.ariaLabel
 import react.dom.html.ReactHTML
-import react.router.useLocation
+import team.karakum.showcase.useCurrentShowcaseKey
 import team.karakum.theme.Themes
 import team.karakum.theme.useSetTheme
 import team.karakum.theme.useTheme
@@ -25,7 +26,7 @@ import web.cssom.number
 val Header = FC {
     val theme = useTheme()
     val setTheme = useSetTheme()
-    val lastPathname = useLocation().pathname.substringAfterLast("/")
+    val showcaseKey = useCurrentShowcaseKey()
 
     AppBar {
         sx {
@@ -74,7 +75,7 @@ val Header = FC {
                     size = Size.large
                     color = IconButtonColor.inherit
                     onClick = {
-                        window.location.href = "https://mui.com/components/$lastPathname"
+                        window.location.href = "https://mui.com/${decodeURIComponent(showcaseKey)}/"
                     }
 
                     MenuBook()
@@ -91,7 +92,7 @@ val Header = FC {
                     size = Size.large
                     color = IconButtonColor.inherit
                     onClick = {
-                        var name = lastPathname
+                        var name = showcaseKey
                             .split("-")
                             .asSequence()
                             .map { it.replaceFirstChar(Char::titlecase) }
@@ -100,6 +101,9 @@ val Header = FC {
                         if (name.isNotEmpty()) {
                             name += ".kt"
                         }
+
+                        // TODO: Remove it after storing selected showcase
+                        name = ""
 
                         window.location.href =
                             "https://github.com/karakum-team/kotlin-mui-showcase/blob/main/src/jsMain/kotlin/team/karakum/showcase/material/$name"

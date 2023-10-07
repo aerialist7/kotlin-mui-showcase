@@ -8,49 +8,105 @@ import team.karakum.error.ErrorPage
 import team.karakum.page.Page
 import team.karakum.showcase.Showcase
 import team.karakum.showcase.ShowcaseMaterial
-import team.karakum.showcase.material.*
+import team.karakum.showcase.material.ProgressShowcase
+import team.karakum.showcase.material.data.*
+import team.karakum.showcase.material.feedback.*
+import team.karakum.showcase.material.inputs.*
+import team.karakum.showcase.material.lab.MasonryShowcase
+import team.karakum.showcase.material.lab.TimelineShowcase
+import team.karakum.showcase.material.layout.*
+import team.karakum.showcase.material.muix.ChartsShowcase
+import team.karakum.showcase.material.muix.DataGridShowcase
+import team.karakum.showcase.material.muix.DateAndTimePickersShowcase
+import team.karakum.showcase.material.muix.TreeViewShowcase
+import team.karakum.showcase.material.navigation.*
+import team.karakum.showcase.material.surfaces.AccordionShowcase
+import team.karakum.showcase.material.surfaces.AppBarShowcase
+import team.karakum.showcase.material.surfaces.CardShowcase
+import team.karakum.showcase.material.surfaces.PaperShowcase
+import team.karakum.showcase.material.utils.*
 import kotlin.js.Promise.Companion.resolve
 
 private val MATERIAL_SHOWCASES: Array<out Showcase> = arrayOf(
-    Showcase("accordion", "Accordion", AccordionShowcase),
-    Showcase("alert", "Alert", AlertShowcase),
-    Showcase("app-bar", "App Bar", AppBarShowcase),
-    Showcase("autocomplete", "Autocomplete", AutocompleteShowcase),
-    Showcase("avatars", "Avatars", AvatarsShowcase),
-    Showcase("backdrop", "Backdrop", BackdropShowcase),
-    Showcase("badges", "Badges", BadgesShowcase),
-    Showcase("bottom-navigation", "Bottom Navigation", BottomNavigationShowcase),
-    Showcase("breadcrumbs", "Breadcrumbs", BreadcrumbsShowcase),
-    Showcase("buttons", "Buttons", ButtonsShowcase),
-    Showcase("cards", "Cards", CardsShowcase),
-    Showcase("checkboxes", "Checkboxes", CheckboxesShowcase),
-    Showcase("chips", "Chips", ChipsShowcase),
-    Showcase("dialogs", "Dialogs", DialogsShowcase),
-    Showcase("drawers", "Drawers", DrawersShowcase),
-    Showcase("floating-action-button", "Floating Action Button", FloatingActionButtonShowcase),
-    Showcase("image-list", "Image List", ImageListShowcase),
-    Showcase("links", "Links", LinksShowcase),
-    Showcase("lists", "Lists", ListsShowcase),
-    Showcase("menus", "Menus", MenusShowcase),
-    Showcase("pagination", "Pagination", PaginationShowcase),
-    Showcase("paper", "Paper", PaperShowcase),
-    Showcase("pickers", "Pickers", PickersShowcase),
-    Showcase("popover", "Popover", PopoverShowcase),
-    Showcase("popper", "Popper", PopperShowcase),
-    Showcase("progress", "Progress", ProgressShowcase),
-    Showcase("radio-buttons", "Radio Buttons", RadioButtonsShowcase),
-    Showcase("rating", "Rating", RatingShowcase),
-    Showcase("selects", "Selects", SelectsShowcase),
-    Showcase("skeleton", "Skeleton", SkeletonShowcase),
-    Showcase("slider", "Slider", SliderShowcase),
-    Showcase("snackbars", "Snackbars", SnackbarsShowcase),
-    Showcase("steppers", "Steppers", SteppersShowcase),
-    Showcase("switches", "Switches", SwitchesShowcase),
-    Showcase("tables", "Tables", TablesShowcase),
-    Showcase("tabs", "Tabs", TabsShowcase),
-    Showcase("text-fields", "Text Fields", TextFieldsShowcase),
-    Showcase("toggle-button", "Toggle Button", ToggleButtonShowcase),
-    Showcase("tooltips", "Tooltips", TooltipsShowcase),
+    // inputs
+    Showcase("material-ui/react-autocomplete", "Autocomplete", AutocompleteShowcase),
+    Showcase("material-ui/react-button", "Button", ButtonShowcase),
+    Showcase("material-ui/react-button-group", "Button Group", ButtonGroupShowcase),
+    Showcase("material-ui/react-checkbox", "Checkbox", CheckboxShowcase),
+    Showcase("material-ui/react-floating-action-button", "Floating Action Button", FloatingActionButtonShowcase),
+    Showcase("material-ui/react-radio-button", "Radio Group", RadioGroupShowcase),
+    Showcase("material-ui/react-rating", "Rating", RatingShowcase),
+    Showcase("material-ui/react-select", "Select", SelectShowcase),
+    Showcase("material-ui/react-slider", "Slider", SliderShowcase),
+    Showcase("material-ui/react-switch", "Switch", SwitchShowcase),
+    Showcase("material-ui/react-text-field", "Text Field", TextFieldShowcase),
+    Showcase("material-ui/react-transfer-list", "Transfer List", TransferListShowcase),
+    Showcase("material-ui/react-toggle-button", "Toggle Button", ToggleButtonShowcase),
+
+    // data display
+    Showcase("material-ui/react-avatar", "Avatar", AvatarShowcase),
+    Showcase("material-ui/react-badge", "Badge", BadgeShowcase),
+    Showcase("material-ui/react-chip", "Chip", ChipShowcase),
+    Showcase("material-ui/react-divider", "Divider", DividerShowcase),
+    Showcase("material-ui/icons", "Divider", IconsShowcase),
+    Showcase("material-ui/react-list", "List", ListShowcase),
+    Showcase("material-ui/react-table", "Table", TableShowcase),
+    Showcase("material-ui/react-tooltip", "Tooltip", TooltipShowcase),
+    Showcase("material-ui/react-typography", "Typography", TypographyShowcase),
+
+    // feedback
+    Showcase("material-ui/react-alert", "Alert", AlertShowcase),
+    Showcase("material-ui/react-backdrop", "Backdrop", BackdropShowcase),
+    Showcase("material-ui/react-dialog", "Dialog", DialogShowcase),
+    Showcase("material-ui/react-progress", "Progress", ProgressShowcase),
+    Showcase("material-ui/react-skeleton", "Skeleton", SkeletonShowcase),
+    Showcase("material-ui/react-snackbar", "Snackbar", SnackbarShowcase),
+
+    // surfaces
+    Showcase("material-ui/react-accordion", "Accordion", AccordionShowcase),
+    Showcase("material-ui/react-app-bar", "App Bar", AppBarShowcase),
+    Showcase("material-ui/react-card", "Card", CardShowcase),
+    Showcase("material-ui/react-paper", "Paper", PaperShowcase),
+
+    // navigation
+    Showcase("material-ui/react-bottom-navigation", "Bottom Navigation", BottomNavigationShowcase),
+    Showcase("material-ui/react-breadcrumbs", "Breadcrumbs", BreadcrumbsShowcase),
+    Showcase("material-ui/react-drawer", "Drawer", DrawerShowcase),
+    Showcase("material-ui/react-link", "Link", LinkShowcase),
+    Showcase("material-ui/react-menu", "Menu", MenuShowcase),
+    Showcase("material-ui/react-pagination", "Pagination", PaginationShowcase),
+    Showcase("material-ui/react-speed-dial", "Speed Dial", SpeedDialShowcase),
+    Showcase("material-ui/react-stepper", "Stepper", StepperShowcase),
+    Showcase("material-ui/react-tabs", "Tab", TabsShowcase),
+
+    // layout
+    Showcase("material-ui/react-box", "Box", BoxShowcase),
+    Showcase("material-ui/react-container", "Container", ContainerShowcase),
+    Showcase("material-ui/react-grid", "Grid", GridShowcase),
+    Showcase("material-ui/react-grid2", "Grid v2", Grid2Showcase),
+    Showcase("material-ui/react-stack", "Stack", StackShowcase),
+    Showcase("material-ui/react-image-list", "Image List", ImageListShowcase),
+    Showcase("material-ui/react-hidden", "Hidden", HiddenShowcase),
+
+    // utils
+    Showcase("material-ui/react-click-away-listener", "Click-Away Listener", ClickAwayListenerShowcase),
+    Showcase("material-ui/react-css-baseline", "CSS Baseline", CssBaselineShowcase),
+    Showcase("material-ui/react-modal", "Modal", ModalShowcase),
+    Showcase("material-ui/react-popover", "Popover", PopoverShowcase),
+    Showcase("material-ui/react-popper", "Popper", PopperShowcase),
+    Showcase("material-ui/react-portal", "Portal", PortalShowcase),
+    Showcase("material-ui/transitions", "Transitions", TransitionsShowcase),
+    Showcase("material-ui/react-use-media-query", "useMediaQuery", UseMediaQueryShowcase),
+
+    // labs
+    Showcase("material-ui/react-masonry", "Masonry", MasonryShowcase),
+    Showcase("material-ui/react-timeline", "Timeline", TimelineShowcase),
+
+    // muix
+    Showcase("x/react-data-grid", "Data Grid", DataGridShowcase),
+    Showcase("x/react-date-pickers", "Date and Time Pickers", DateAndTimePickersShowcase),
+    Showcase("x/react-charts", "Charts", ChartsShowcase),
+    Showcase("x/react-tree-view", "Tree View", TreeViewShowcase),
 )
 
 private val PageLoader: LoaderFunction<*> = {
