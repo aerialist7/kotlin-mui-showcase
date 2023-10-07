@@ -82,7 +82,6 @@ private val MATERIAL_SHOWCASES: Array<out Showcase> = arrayOf(
     Showcase("material-ui/react-box", "Box", BoxShowcase),
     Showcase("material-ui/react-container", "Container", ContainerShowcase),
     Showcase("material-ui/react-grid", "Grid", GridShowcase),
-    Showcase("material-ui/react-grid2", "Grid v2", Grid2Showcase),
     Showcase("material-ui/react-stack", "Stack", StackShowcase),
     Showcase("material-ui/react-image-list", "Image List", ImageListShowcase),
     Showcase("material-ui/react-hidden", "Hidden", HiddenShowcase),
