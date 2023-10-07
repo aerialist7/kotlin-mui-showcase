@@ -86,7 +86,6 @@ private val MATERIAL_SHOWCASES: Array<out Showcase> = arrayOf(
     Showcase("material-ui/react-image-list", "Image List", ImageListShowcase),
 
     // utils
-    Showcase("material-ui/react-click-away-listener", "Click-Away Listener", ClickAwayListenerShowcase),
     Showcase("material-ui/react-css-baseline", "CSS Baseline", CssBaselineShowcase),
     Showcase("material-ui/react-modal", "Modal", ModalShowcase),
     Showcase("material-ui/react-popover", "Popover", PopoverShowcase),
