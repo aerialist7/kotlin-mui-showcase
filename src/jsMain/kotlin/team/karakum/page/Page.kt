@@ -3,10 +3,7 @@ package team.karakum.page
 import mui.system.Box
 import mui.system.sx
 import react.FC
-import web.cssom.Auto
-import web.cssom.Display
-import web.cssom.GridTemplateAreas
-import web.cssom.array
+import web.cssom.*
 
 val Page = FC {
     val isMobile = useIsMobile()
@@ -14,24 +11,25 @@ val Page = FC {
     Box {
         sx {
             display = Display.grid
+            height = 100.pct
             gridTemplateRows = array(
                 Sizes.Header.Height,
                 Auto.auto,
+                Length.maxContent,
             )
             gridTemplateColumns = array(
                 Sizes.Sidebar.Width, Auto.auto,
             )
             gridTemplateAreas = GridTemplateAreas(
                 arrayOf(Area.Header, Area.Header),
-                if (isMobile)
-                    arrayOf(Area.Content, Area.Content)
-                else
-                    arrayOf(Area.Sidebar, Area.Content),
+                arrayOf(if (isMobile) Area.Content else Area.Sidebar, Area.Content),
+                arrayOf(Area.Footer, Area.Footer),
             )
         }
 
         Header()
         Sidebar()
         Content()
+        Footer()
     }
 }

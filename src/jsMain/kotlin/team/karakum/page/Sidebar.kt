@@ -21,9 +21,10 @@ val Sidebar = FC<Props> {
     var isOpen by useState(false)
 
     Box {
-        sx {
-            gridArea = Area.Sidebar
-                .takeIf { !isMobile }
+        if (!isMobile) {
+            sx {
+                gridArea = Area.Sidebar
+            }
         }
 
         component = ReactHTML.nav
@@ -41,7 +42,7 @@ val Sidebar = FC<Props> {
             SpeedDial {
                 sx {
                     position = Position.absolute
-                    bottom = 16.px
+                    bottom = 80.px
                     left = 16.px
                 }
 
