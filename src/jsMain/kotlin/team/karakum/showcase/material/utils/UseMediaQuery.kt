@@ -1,8 +1,14 @@
 package team.karakum.showcase.material.utils
 
+import mui.material.useMediaQuery
 import react.FC
 import react.Props
+import react.dom.html.ReactHTML.span
 
 val UseMediaQueryShowcase = FC<Props> {
-    +"Not implemented"
+    val matches = useMediaQuery("(min-width:600px)")
+
+    span {
+        +"(min-width:600px) matches: $matches"
+    }
 }
