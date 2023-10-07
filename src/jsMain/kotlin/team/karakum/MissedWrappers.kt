@@ -44,3 +44,15 @@ inline var TextFieldProps.InputProps: InputBaseProps
     set(value) {
         asDynamic().InputProps = value
     }
+
+inline var ListItemProps.button: Boolean
+    get() = TODO("Prop is write-only!")
+    set(value) {
+        asDynamic().button = value
+    }
+
+inline var ListItemProps.divider: Boolean
+    get() = TODO("Prop is write-only!")
+    set(value) {
+        asDynamic().divider = value
+    }
