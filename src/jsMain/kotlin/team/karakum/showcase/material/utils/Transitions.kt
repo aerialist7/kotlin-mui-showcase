@@ -1,8 +1,42 @@
 package team.karakum.showcase.material.utils
 
-import react.FC
-import react.Props
+import mui.material.Box
+import mui.material.Fade
+import mui.material.FormControlLabel
+import mui.material.Switch
+import mui.system.sx
+import react.*
+import web.cssom.Display
+import web.cssom.px
+import mui.icons.material.WarningAmber as WarningAmberIcon
 
 val TransitionsShowcase = FC<Props> {
-    +"Not implemented"
+    var isChecked by useState(false)
+
+    Box {
+        sx {
+            height = 180.px
+        }
+
+        FormControlLabel {
+            control = Switch.create {
+                checked = isChecked
+                onChange = { _, _ -> isChecked = !isChecked }
+            }
+            label = ReactNode("Show")
+
+            Box {
+                sx {
+                    display = Display.flex
+                }
+
+                Fade {
+                    `in` = isChecked
+
+                    // TODO: Check why don't shows
+                    WarningAmberIcon()
+                }
+            }
+        }
+    }
 }
