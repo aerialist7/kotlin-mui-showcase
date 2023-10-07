@@ -2,6 +2,7 @@ package team.karakum
 
 import mui.material.*
 import mui.system.BoxProps
+import web.cssom.Display
 
 // TODO: Remove when it will be implemented in MUI wrappers
 inline var GridProps.xs: Int
@@ -51,8 +52,8 @@ inline var ListItemProps.button: Boolean
         asDynamic().button = value
     }
 
-inline var ListItemProps.divider: Boolean
+inline var TypographyProps.display: Display
     get() = TODO("Prop is write-only!")
     set(value) {
-        asDynamic().divider = value
+        asDynamic().display = value
     }
