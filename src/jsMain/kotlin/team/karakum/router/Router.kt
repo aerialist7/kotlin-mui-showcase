@@ -90,7 +90,6 @@ private val MATERIAL_SHOWCASES: Array<out Showcase> = arrayOf(
     Showcase("material-ui/react-modal", "Modal", ModalShowcase),
     Showcase("material-ui/react-popover", "Popover", PopoverShowcase),
     Showcase("material-ui/react-popper", "Popper", PopperShowcase),
-    Showcase("material-ui/react-portal", "Portal", PortalShowcase),
     Showcase("material-ui/transitions", "Transitions", TransitionsShowcase),
     Showcase("material-ui/react-use-media-query", "useMediaQuery", UseMediaQueryShowcase),
 
