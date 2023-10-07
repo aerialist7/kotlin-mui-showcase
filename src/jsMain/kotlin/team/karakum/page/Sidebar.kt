@@ -9,8 +9,6 @@ import react.dom.html.ReactHTML
 import react.router.dom.NavLink
 import react.router.useLoaderData
 import react.router.useLocation
-import team.karakum.common.Area
-import team.karakum.common.Sizes
 import team.karakum.showcase.Showcase
 import web.cssom.Color
 import web.cssom.None

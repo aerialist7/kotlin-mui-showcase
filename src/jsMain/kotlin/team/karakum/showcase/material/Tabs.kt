@@ -8,7 +8,7 @@ import react.FC
 import react.Props
 import react.ReactNode
 import react.useState
-import team.karakum.common.ariaLabel
+import team.karakum.ariaLabel
 import web.cssom.pct
 
 val TabsShowcase = FC<Props> {

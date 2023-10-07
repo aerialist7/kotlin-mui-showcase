@@ -6,7 +6,6 @@ import react.FC
 import react.Props
 import react.dom.html.ReactHTML
 import react.router.Outlet
-import team.karakum.common.Area
 import web.cssom.px
 
 val Content = FC<Props> {

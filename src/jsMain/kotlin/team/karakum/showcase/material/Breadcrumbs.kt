@@ -7,7 +7,7 @@ import mui.material.Typography
 import react.FC
 import react.Props
 import react.dom.aria.ariaLabel
-import team.karakum.common.color
+import team.karakum.color
 
 val BreadcrumbsShowcase = FC<Props> {
     Breadcrumbs {

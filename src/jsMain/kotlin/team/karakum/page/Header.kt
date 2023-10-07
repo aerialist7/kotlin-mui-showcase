@@ -16,8 +16,7 @@ import react.dom.aria.ariaHasPopup
 import react.dom.aria.ariaLabel
 import react.dom.html.ReactHTML
 import react.router.useLocation
-import team.karakum.common.Area
-import team.karakum.common.Themes
+import team.karakum.theme.Themes
 import team.karakum.theme.useSetTheme
 import team.karakum.theme.useTheme
 import web.cssom.integer

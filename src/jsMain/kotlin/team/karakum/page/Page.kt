@@ -3,8 +3,6 @@ package team.karakum.page
 import mui.system.Box
 import mui.system.sx
 import react.FC
-import team.karakum.common.Area
-import team.karakum.common.Sizes
 import web.cssom.Auto
 import web.cssom.Display
 import web.cssom.GridTemplateAreas

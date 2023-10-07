@@ -12,9 +12,9 @@ import react.Props
 import react.ReactNode
 import react.create
 import react.dom.html.ReactHTML.form
-import team.karakum.common.InputProps
-import team.karakum.common.autoComplete
-import team.karakum.common.noValidate
+import team.karakum.InputProps
+import team.karakum.autoComplete
+import team.karakum.noValidate
 import web.cssom.Display
 import web.cssom.JustifyContent
 import web.html.InputType

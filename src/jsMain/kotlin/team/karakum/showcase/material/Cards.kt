@@ -7,7 +7,7 @@ import react.FC
 import react.Props
 import react.dom.html.ReactHTML.div
 import react.dom.html.ReactHTML.span
-import team.karakum.common.color
+import team.karakum.color
 import web.cssom.Display.Companion.inlineBlock
 import web.cssom.px
 

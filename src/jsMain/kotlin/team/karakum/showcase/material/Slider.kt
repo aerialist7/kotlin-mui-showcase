@@ -10,7 +10,7 @@ import mui.system.sx
 import react.FC
 import react.Props
 import react.useState
-import team.karakum.common.ariaLabel
+import team.karakum.ariaLabel
 import web.cssom.AlignItems.Companion.center
 import web.cssom.px
 

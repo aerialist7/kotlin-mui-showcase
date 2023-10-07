@@ -1,4 +1,4 @@
-package team.karakum.common
+package team.karakum
 
 import mui.material.*
 import mui.system.BoxProps

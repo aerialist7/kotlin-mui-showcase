@@ -1,10 +1,9 @@
-package team.karakum.common
+package team.karakum.theme
 
 import js.core.jso
-import mui.material.PaletteMode.Companion.dark
-import mui.material.PaletteMode.Companion.light
+import mui.material.PaletteMode
 import mui.material.styles.TypographyOptions
-import mui.material.styles.TypographyVariant.Companion.h6
+import mui.material.styles.TypographyVariant
 import mui.material.styles.createTheme
 import web.cssom.atrule.maxWidth
 import web.cssom.integer
@@ -14,7 +13,7 @@ import web.cssom.rem
 private val TYPOGRAPHY_OPTIONS = TypographyOptions {
     fontWeight = integer(500)
 
-    h6 {
+    TypographyVariant.h6 {
         fontSize = 1.5.rem
 
         media(maxWidth(599.px)) {
@@ -26,14 +25,14 @@ private val TYPOGRAPHY_OPTIONS = TypographyOptions {
 object Themes {
     val Light = createTheme(
         jso {
-            palette = jso { mode = light }
+            palette = jso { mode = PaletteMode.light }
             typography = TYPOGRAPHY_OPTIONS
         }
     )
 
     val Dark = createTheme(
         jso {
-            palette = jso { mode = dark }
+            palette = jso { mode = PaletteMode.dark }
             typography = TYPOGRAPHY_OPTIONS
         }
     )

@@ -1,4 +1,4 @@
-package team.karakum.common
+package team.karakum.page
 
 import web.cssom.px
 

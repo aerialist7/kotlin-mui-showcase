@@ -23,7 +23,7 @@ import react.Props
 import react.dom.events.MouseEvent
 import react.dom.html.ReactHTML.br
 import react.useState
-import team.karakum.common.xs
+import team.karakum.xs
 import web.cssom.AlignItems.Companion.flexEnd
 import web.cssom.JustifyContent.Companion.center
 import web.cssom.px
