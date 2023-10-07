@@ -16,7 +16,7 @@ import react.dom.aria.AriaHasPopup.Companion.`false`
 import react.dom.aria.ariaHasPopup
 import react.dom.aria.ariaLabel
 import react.dom.html.ReactHTML
-import team.karakum.showcase.useCurrentShowcaseKey
+import team.karakum.router.useShowcaseIdParam
 import team.karakum.theme.Themes
 import team.karakum.theme.useSetTheme
 import team.karakum.theme.useTheme
@@ -26,7 +26,7 @@ import web.cssom.number
 val Header = FC {
     val theme = useTheme()
     val setTheme = useSetTheme()
-    val showcaseKey = useCurrentShowcaseKey()
+    val showcaseId = useShowcaseIdParam()
 
     AppBar {
         sx {
@@ -75,7 +75,7 @@ val Header = FC {
                     size = Size.large
                     color = IconButtonColor.inherit
                     onClick = {
-                        window.location.href = "https://mui.com/${decodeURIComponent(showcaseKey)}/"
+                        window.location.href = "https://mui.com/${decodeURIComponent(showcaseId)}/"
                     }
 
                     MenuBook()
@@ -92,7 +92,7 @@ val Header = FC {
                     size = Size.large
                     color = IconButtonColor.inherit
                     onClick = {
-                        var name = showcaseKey
+                        var name = showcaseId
                             .split("-")
                             .asSequence()
                             .map { it.replaceFirstChar(Char::titlecase) }

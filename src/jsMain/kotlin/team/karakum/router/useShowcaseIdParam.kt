@@ -1,6 +1,6 @@
-package team.karakum.showcase
+package team.karakum.router
 
 import react.router.useLocation
 
-fun useCurrentShowcaseKey(): String =
+fun useShowcaseIdParam(): String =
     useLocation().pathname.substringAfterLast("/")

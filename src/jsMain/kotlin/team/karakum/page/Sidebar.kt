@@ -1,6 +1,7 @@
 package team.karakum.page
 
 import emotion.styled.styled
+import js.uri.decodeURIComponent
 import js.uri.encodeURIComponent
 import mui.material.*
 import mui.system.Box
@@ -9,8 +10,8 @@ import react.*
 import react.dom.html.ReactHTML
 import react.router.dom.NavLink
 import react.router.useLoaderData
+import team.karakum.router.useShowcaseIdParam
 import team.karakum.showcase.Showcase
-import team.karakum.showcase.useCurrentShowcaseKey
 import web.cssom.Color
 import web.cssom.None
 import web.cssom.Position
@@ -65,7 +66,7 @@ val Sidebar = FC<Props> {
 
 private val ShowcaseList = FC {
     val showcases = useLoaderData().unsafeCast<Array<out Showcase>>()
-    val showcaseKey = useCurrentShowcaseKey()
+    val showcaseId = useShowcaseIdParam()
 
     Box {
         Toolbar()
@@ -80,7 +81,7 @@ private val ShowcaseList = FC {
                     to = encodeURIComponent(key)
 
                     ListItemButton {
-                        selected = showcaseKey == key
+                        selected = decodeURIComponent(showcaseId) == key
 
                         ListItemText {
                             primary = ReactNode(name)

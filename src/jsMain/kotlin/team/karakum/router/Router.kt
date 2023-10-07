@@ -1,4 +1,4 @@
-package team.karakum
+package team.karakum.router
 
 import js.core.jso
 import react.router.dom.createHashRouter
@@ -8,7 +8,6 @@ import team.karakum.error.ErrorPage
 import team.karakum.page.Page
 import team.karakum.showcase.Showcase
 import team.karakum.showcase.ShowcaseMaterial
-import team.karakum.showcase.material.ProgressShowcase
 import team.karakum.showcase.material.data.*
 import team.karakum.showcase.material.feedback.*
 import team.karakum.showcase.material.inputs.*

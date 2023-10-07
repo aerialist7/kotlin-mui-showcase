@@ -6,6 +6,7 @@ import react.Props
 import react.create
 import react.dom.client.createRoot
 import react.router.RouterProvider
+import team.karakum.router.Router
 import team.karakum.theme.ThemeModule
 import web.cssom.pct
 import web.dom.document
