@@ -1,6 +1,6 @@
 package team.karakum.theme
 
-import js.core.jso
+import js.objects.jso
 import mui.material.PaletteMode
 import mui.material.styles.TypographyOptions
 import mui.material.styles.TypographyVariant

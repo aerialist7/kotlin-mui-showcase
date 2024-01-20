@@ -1,6 +1,6 @@
 package team.karakum.showcase.material.navigation
 
-import js.core.jso
+import js.objects.jso
 import mui.material.Menu
 import mui.material.MenuItem
 import mui.material.PopoverReference

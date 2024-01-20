@@ -1,6 +1,6 @@
 package team.karakum.showcase.material.utils
 
-import js.core.jso
+import js.objects.jso
 import mui.material.Button
 import mui.material.ButtonVariant.Companion.contained
 import mui.material.Popover

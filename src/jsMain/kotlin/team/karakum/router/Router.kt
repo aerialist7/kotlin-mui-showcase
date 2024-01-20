@@ -1,6 +1,6 @@
 package team.karakum.router
 
-import js.core.jso
+import js.objects.jso
 import react.router.dom.createHashRouter
 import remix.run.router.LoaderFunction
 import remix.run.router.Router

@@ -8,9 +8,9 @@ fun kotlinw(target: String): String =
 kotlin {
     js {
         browser {
-            commonWebpackConfig(Action {
+            commonWebpackConfig {
                 outputFileName = "index.js"
-            })
+            }
         }
         binaries.executable()
     }
@@ -27,8 +27,8 @@ kotlin {
                 implementation(kotlinw("react-router-dom"))
 
                 implementation(kotlinw("emotion"))
-                implementation(kotlinw("mui"))
-                implementation(kotlinw("mui-icons"))
+                implementation(kotlinw("mui-material"))
+                implementation(kotlinw("mui-icons-material"))
                 implementation(kotlinw("muix-date-pickers"))
 
                 implementation(npm("date-fns", "2.30.0"))

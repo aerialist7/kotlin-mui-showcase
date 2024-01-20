@@ -1,6 +1,6 @@
 package team.karakum.showcase.material.inputs
 
-import js.core.jso
+import js.objects.jso
 import mui.material.Autocomplete
 import mui.material.AutocompleteProps
 import mui.material.TextField
@@ -12,7 +12,6 @@ import react.create
 import web.cssom.px
 
 val AutocompleteShowcase = FC<Props> {
-    @Suppress("UPPER_BOUND_VIOLATED")
     Autocomplete<AutocompleteProps<Movie>> {
         sx { width = 300.px }
         options = top100Films

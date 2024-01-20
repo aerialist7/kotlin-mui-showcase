@@ -1,6 +1,6 @@
 package team.karakum.showcase.material.inputs
 
-import js.core.jso
+import js.objects.jso
 import mui.material.*
 import mui.material.DividerVariant.Companion.fullWidth
 import mui.material.FormControlVariant.Companion.filled
