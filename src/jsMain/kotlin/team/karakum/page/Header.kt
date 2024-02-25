@@ -1,7 +1,6 @@
 package team.karakum.page
 
 import js.uri.decodeURIComponent
-import kotlinx.browser.window
 import mui.icons.material.Brightness4
 import mui.icons.material.Brightness7
 import mui.icons.material.GitHub
@@ -22,6 +21,7 @@ import team.karakum.theme.useSetTheme
 import team.karakum.theme.useTheme
 import web.cssom.integer
 import web.cssom.number
+import web.location.location
 
 val Header = FC {
     val theme = useTheme()
@@ -75,7 +75,7 @@ val Header = FC {
                     size = Size.large
                     color = IconButtonColor.inherit
                     onClick = {
-                        window.location.href = "https://mui.com/${decodeURIComponent(showcaseId)}/"
+                        location.href = "https://mui.com/${decodeURIComponent(showcaseId)}/"
                     }
 
                     MenuBook()
@@ -105,7 +105,7 @@ val Header = FC {
                         // TODO: Remove it after storing selected showcase
                         name = ""
 
-                        window.location.href =
+                        location.href =
                             "https://github.com/karakum-team/kotlin-mui-showcase/blob/main/src/jsMain/kotlin/team/karakum/showcase/material/$name"
                     }
 

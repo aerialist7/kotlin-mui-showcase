@@ -10,7 +10,7 @@ import react.create
 
 val AlertShowcase = FC<Props> {
     Alert {
-        severity = AlertColor.error
+        color = AlertColor.error
 
         AlertTitle {
             +"Error"
@@ -18,7 +18,7 @@ val AlertShowcase = FC<Props> {
         +"This is an error alert — check it out!"
     }
     Alert {
-        severity = AlertColor.warning
+        color = AlertColor.warning
 
         AlertTitle {
             +"Warning"
@@ -26,7 +26,6 @@ val AlertShowcase = FC<Props> {
         +"This is an warning alert — check it out!"
     }
     Alert {
-        severity = AlertColor.info
         color = AlertColor.info
         action = Button.create { +"Copy" }
 
@@ -36,7 +35,7 @@ val AlertShowcase = FC<Props> {
         +"This is an info alert — check it out!"
     }
     Alert {
-        severity = AlertColor.success
+        color = AlertColor.success
         onClose = {}
 
         AlertTitle {

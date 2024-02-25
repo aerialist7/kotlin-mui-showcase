@@ -3,6 +3,7 @@ package team.karakum.router
 import js.objects.jso
 import react.router.dom.createHashRouter
 import remix.run.router.LoaderFunction
+import remix.run.router.LoaderFunctionArgs
 import remix.run.router.Router
 import team.karakum.error.ErrorPage
 import team.karakum.page.Page
@@ -104,13 +105,13 @@ private val MATERIAL_SHOWCASES: Array<out Showcase> = arrayOf(
     Showcase("x/react-tree-view", "Tree View", TreeViewShowcase),
 )
 
-private val PageLoader: LoaderFunction<*> = {
+private val PageLoader: LoaderFunction<Any?> = {
     resolve(MATERIAL_SHOWCASES)
-}
+}.unsafeCast<LoaderFunction<Any?>>()
 
-private val ShowcaseMaterialLoader: LoaderFunction<*> = { args ->
+private val ShowcaseMaterialLoader: LoaderFunction<Any?> = { args: LoaderFunctionArgs<Any?> ->
     resolve(MATERIAL_SHOWCASES.single { it.key == args.params["showcaseId"] })
-}
+}.unsafeCast<LoaderFunction<Any?>>()
 
 val Router: Router = createHashRouter(
     routes = arrayOf(
