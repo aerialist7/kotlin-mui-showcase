@@ -15,13 +15,14 @@ import react.dom.html.ReactHTML.form
 import team.karakum.InputProps
 import team.karakum.autoComplete
 import team.karakum.noValidate
+import team.karakum.showcase.material.utils.ShowcaseContainer
 import web.cssom.Display
 import web.cssom.JustifyContent
 import web.cssom.px
 import web.html.InputType
 
 val TextFieldShowcase = FC<Props> {
-    Box {
+    ShowcaseContainer {
         sx {
             display = Display.grid
             justifyContent = JustifyContent.left
