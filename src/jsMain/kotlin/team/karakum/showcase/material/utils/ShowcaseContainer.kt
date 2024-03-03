@@ -10,12 +10,13 @@ import web.cssom.px
 
 val ShowcaseContainer = FC<BoxProps> { props ->
     Box {
+        +props
+
         sx {
             display = Display.flex
             justifyContent = JustifyContent.left
             gap = 8.px
+            +props.sx
         }
-
-        +props
     }
 }

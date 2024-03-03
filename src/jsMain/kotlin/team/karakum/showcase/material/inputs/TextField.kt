@@ -17,16 +17,12 @@ import team.karakum.autoComplete
 import team.karakum.noValidate
 import team.karakum.showcase.material.utils.ShowcaseContainer
 import web.cssom.Display
-import web.cssom.JustifyContent
-import web.cssom.px
 import web.html.InputType
 
 val TextFieldShowcase = FC<Props> {
     ShowcaseContainer {
         sx {
             display = Display.grid
-            justifyContent = JustifyContent.left
-            gap = 8.px
         }
         component = form
         noValidate = true
