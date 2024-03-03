@@ -57,6 +57,10 @@ val TextFieldShowcase = FC<Props> {
             label = ReactNode("Start Day")
             variant = outlined
             type = InputType.date
+
+            InputLabelProps = jso {
+                shrink = true
+            }
         }
 
         Divider {
