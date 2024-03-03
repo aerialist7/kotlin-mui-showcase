@@ -5,10 +5,10 @@ import mui.material.ChipVariant.Companion.outlined
 import react.FC
 import react.Props
 import react.ReactNode
-import team.karakum.showcase.material.utils.ShowcaseBox
+import team.karakum.showcase.material.utils.ShowcaseContainer
 
 val ChipShowcase = FC<Props> {
-    ShowcaseBox {
+    ShowcaseContainer {
         Chip {
             label = ReactNode("Chip Filled")
         }

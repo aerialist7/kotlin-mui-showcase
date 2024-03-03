@@ -8,7 +8,7 @@ import web.cssom.Display
 import web.cssom.JustifyContent
 import web.cssom.em
 
-val ShowcaseBox = FC<PropsWithChildren> { props ->
+val ShowcaseContainer = FC<PropsWithChildren> { props ->
     Box {
         sx {
             display = Display.flex
