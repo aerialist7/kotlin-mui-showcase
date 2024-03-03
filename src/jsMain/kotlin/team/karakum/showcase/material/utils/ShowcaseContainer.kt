@@ -1,14 +1,14 @@
 package team.karakum.showcase.material.utils
 
 import mui.material.Box
+import mui.system.BoxProps
 import mui.system.sx
 import react.FC
-import react.PropsWithChildren
 import web.cssom.Display
 import web.cssom.JustifyContent
 import web.cssom.px
 
-val ShowcaseContainer = FC<PropsWithChildren> { props ->
+val ShowcaseContainer = FC<BoxProps> { props ->
     Box {
         sx {
             display = Display.flex
@@ -16,6 +16,6 @@ val ShowcaseContainer = FC<PropsWithChildren> { props ->
             gap = 8.px
         }
 
-        +props.children
+        +props
     }
 }
