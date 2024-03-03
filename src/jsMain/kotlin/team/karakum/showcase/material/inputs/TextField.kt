@@ -17,7 +17,7 @@ import team.karakum.autoComplete
 import team.karakum.noValidate
 import web.cssom.Display
 import web.cssom.JustifyContent
-import web.cssom.em
+import web.cssom.px
 import web.html.InputType
 
 val TextFieldShowcase = FC<Props> {
@@ -25,7 +25,7 @@ val TextFieldShowcase = FC<Props> {
         sx {
             display = Display.grid
             justifyContent = JustifyContent.left
-            gap = 1.em
+            gap = 8.px
         }
         component = form
         noValidate = true
