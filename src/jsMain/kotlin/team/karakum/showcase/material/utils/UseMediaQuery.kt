@@ -1,6 +1,6 @@
 package team.karakum.showcase.material.utils
 
-import mui.material.useMediaQuery
+import mui.system.useMediaQuery
 import react.FC
 import react.Props
 import react.dom.html.ReactHTML.span
