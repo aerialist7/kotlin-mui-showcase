@@ -6,14 +6,14 @@ import react.FC
 import react.PropsWithChildren
 import web.cssom.Display
 import web.cssom.JustifyContent
-import web.cssom.em
+import web.cssom.px
 
 val ShowcaseContainer = FC<PropsWithChildren> { props ->
     Box {
         sx {
             display = Display.flex
             justifyContent = JustifyContent.left
-            gap = 1.em
+            gap = 8.px
         }
 
         +props.children
