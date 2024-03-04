@@ -13,8 +13,6 @@ import react.ReactNode
 import react.create
 import react.dom.html.ReactHTML.form
 import team.karakum.InputProps
-import team.karakum.autoComplete
-import team.karakum.noValidate
 import team.karakum.showcase.material.utils.ShowcaseContainer
 import web.cssom.Display
 import web.html.InputType
@@ -25,8 +23,6 @@ val TextFieldShowcase = FC<Props> {
             display = Display.grid
         }
         component = form
-        noValidate = true
-        autoComplete = "off"
 
         Divider {
             variant = fullWidth
