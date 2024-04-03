@@ -1,14 +1,24 @@
 package team.karakum.showcase.material.data
 
+import mui.material.Box
 import mui.material.Chip
 import mui.material.ChipVariant.Companion.outlined
+import mui.system.sx
 import react.FC
 import react.Props
 import react.ReactNode
-import team.karakum.showcase.material.utils.ShowcaseContainer
+import web.cssom.Display
+import web.cssom.JustifyContent
+import web.cssom.px
 
 val ChipShowcase = FC<Props> {
-    ShowcaseContainer {
+    Box {
+        sx {
+            display = Display.flex
+            justifyContent = JustifyContent.left
+            gap = 8.px
+        }
+
         Chip {
             label = ReactNode("Chip Filled")
         }
