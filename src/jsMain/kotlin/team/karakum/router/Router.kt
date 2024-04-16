@@ -1,5 +1,6 @@
 package team.karakum.router
 
+import js.array.ReadonlyArray
 import js.objects.jso
 import react.router.dom.createHashRouter
 import remix.run.router.LoaderFunction
@@ -27,7 +28,7 @@ import team.karakum.showcase.material.surfaces.PaperShowcase
 import team.karakum.showcase.material.utils.*
 import kotlin.js.Promise.Companion.resolve
 
-private val MATERIAL_SHOWCASES: Array<out Showcase> = arrayOf(
+private val MATERIAL_SHOWCASES: ReadonlyArray<Showcase> = arrayOf(
     // inputs
     Showcase("material-ui/react-autocomplete", "Autocomplete", AutocompleteShowcase),
     Showcase("material-ui/react-button", "Button", ButtonShowcase),

@@ -1,6 +1,7 @@
 package team.karakum.page
 
 import emotion.styled.styled
+import js.array.ReadonlyArray
 import js.uri.decodeURIComponent
 import js.uri.encodeURIComponent
 import mui.material.*
@@ -65,7 +66,7 @@ val Sidebar = FC<Props> {
 }
 
 private val ShowcaseList = FC {
-    val showcases = useLoaderData().unsafeCast<Array<out Showcase>>()
+    val showcases = useLoaderData().unsafeCast<ReadonlyArray<Showcase>>()
     val showcaseId = useShowcaseIdParam()
 
     Box {
