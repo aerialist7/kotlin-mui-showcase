@@ -2,13 +2,7 @@
 .idea
 !.idea/icon.png
 !.idea/codeInsightSettings.xml
-*.iml
 
 # Gradle
 .gradle
 build/
-
-# NPM
-*.tgz
-package-lock.json
-node_modules/
