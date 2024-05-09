@@ -1,4 +1,4 @@
-import org.jetbrains.kotlin.gradle.tasks.Kotlin2JsCompile
+import org.jetbrains.kotlin.gradle.dsl.KotlinJsCompile
 
 plugins {
     kotlin("multiplatform")
@@ -41,9 +41,10 @@ kotlin {
     }
 }
 
-tasks.withType<Kotlin2JsCompile>().configureEach {
-    compilerOptions {
-        useEsClasses.set(true)
+// From https://kotlinlang.org/docs/whatsnew19.html#experimental-support-for-es2015-classes-and-modules
+tasks.withType<KotlinJsCompile>().configureEach {
+    kotlinOptions {
+        useEsClasses = true
     }
 }
 
