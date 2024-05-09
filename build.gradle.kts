@@ -23,7 +23,7 @@ kotlin {
             val wrappersVersion = extra["kotlin.wrappers.version"]
 
             dependencies {
-                implementation(enforcedPlatform(kotlinw("wrappers-bom:$wrappersVersion")))
+                implementation(project.dependencies.enforcedPlatform(kotlinw("wrappers-bom:$wrappersVersion")))
 
                 implementation(kotlinw("react"))
                 implementation(kotlinw("react-dom"))
