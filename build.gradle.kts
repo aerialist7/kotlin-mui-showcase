@@ -7,6 +7,7 @@ fun kotlinw(target: String): String =
 
 kotlin {
     js {
+        useEsModules()
         browser {
             commonWebpackConfig {
                 outputFileName = "index.js"

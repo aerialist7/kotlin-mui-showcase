@@ -7,7 +7,6 @@
 # Gradle
 .gradle
 build/
-webpack.config.d/
 
 # NPM
 *.tgz
