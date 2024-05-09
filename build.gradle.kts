@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.tasks.Kotlin2JsCompile
+
 plugins {
     kotlin("multiplatform")
 }
@@ -36,6 +38,12 @@ kotlin {
                 implementation(npm("@date-io/date-fns", "2.17.0"))
             }
         }
+    }
+}
+
+tasks.withType<Kotlin2JsCompile>().configureEach {
+    compilerOptions {
+        useEsClasses.set(true)
     }
 }
 
