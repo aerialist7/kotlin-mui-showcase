@@ -2,9 +2,9 @@ package team.karakum.router
 
 import js.array.ReadonlyArray
 import js.objects.jso
+import js.promise.PromiseResult
 import react.router.dom.createHashRouter
 import remix.run.router.LoaderFunction
-import remix.run.router.LoaderFunctionArgs
 import remix.run.router.Router
 import team.karakum.error.ErrorPage
 import team.karakum.page.Page
@@ -26,7 +26,6 @@ import team.karakum.showcase.material.surfaces.AppBarShowcase
 import team.karakum.showcase.material.surfaces.CardShowcase
 import team.karakum.showcase.material.surfaces.PaperShowcase
 import team.karakum.showcase.material.utils.*
-import kotlin.js.Promise.Companion.resolve
 
 private val MATERIAL_SHOWCASES: ReadonlyArray<Showcase> = arrayOf(
     // inputs
@@ -106,13 +105,14 @@ private val MATERIAL_SHOWCASES: ReadonlyArray<Showcase> = arrayOf(
     Showcase("x/react-tree-view", "Tree View", TreeViewShowcase),
 )
 
-private val PageLoader: LoaderFunction<Any?> = {
-    resolve(MATERIAL_SHOWCASES)
-}.unsafeCast<LoaderFunction<Any?>>()
+private val PageLoader = LoaderFunction<ReadonlyArray<Showcase>> { _, _ ->
+    PromiseResult(MATERIAL_SHOWCASES)
+}
 
-private val ShowcaseMaterialLoader: LoaderFunction<Any?> = { args: LoaderFunctionArgs<Any?> ->
-    resolve(MATERIAL_SHOWCASES.single { it.key == args.params["showcaseId"] })
-}.unsafeCast<LoaderFunction<Any?>>()
+private val ShowcaseMaterialLoader = LoaderFunction<Showcase> { args, _ ->
+    val showcase = MATERIAL_SHOWCASES.single { it.key == args.params["showcaseId"] }
+    PromiseResult(showcase)
+}
 
 val Router: Router = createHashRouter(
     routes = arrayOf(
