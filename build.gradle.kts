@@ -9,7 +9,6 @@ fun kotlinw(target: String): String =
 
 kotlin {
     js {
-        useEsModules()
         browser {
             commonWebpackConfig {
                 outputFileName = "index.js"
@@ -41,12 +40,9 @@ kotlin {
     }
 }
 
-// TODO: Migrate to `compilerOptions { target.set("es2015") }` after Kotlin `2.0.0`
-//  Details: https://kotlinlang.org/docs/whatsnew-eap.html#new-compilation-target
-// From https://kotlinlang.org/docs/whatsnew19.html#experimental-support-for-es2015-classes-and-modules
 tasks.withType<KotlinJsCompile>().configureEach {
-    kotlinOptions {
-        useEsClasses = true
+    compilerOptions {
+        target.set("es2015")
     }
 }
 
