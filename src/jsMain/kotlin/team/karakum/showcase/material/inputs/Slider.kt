@@ -15,7 +15,7 @@ import web.cssom.AlignItems.Companion.center
 import web.cssom.px
 
 val SliderShowcase = FC<Props> {
-    var volume by useState(30)
+    var volume by useState<Number>(30)
 
     Stack {
         sx {
@@ -30,7 +30,7 @@ val SliderShowcase = FC<Props> {
         Slider {
             ariaLabel = "Volume"
             value = volume
-            onChange = { _, newValue, _ -> volume = newValue }
+            onChange = { _, newValue, _ -> volume = newValue.unsafeCast<Number>() }
         }
 
         VolumeUp()
