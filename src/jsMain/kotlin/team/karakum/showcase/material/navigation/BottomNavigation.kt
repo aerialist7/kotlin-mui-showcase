@@ -13,7 +13,7 @@ val BottomNavigationShowcase = FC<Props> {
     BottomNavigation {
         showLabels = true
         value = state
-        onChange = { _, value -> state = value }
+        onChange = { _, value -> state = value.toString().toInt() }
 
         BottomNavigationAction {
             label = ReactNode("Resents")

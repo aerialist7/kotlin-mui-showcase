@@ -17,7 +17,7 @@ val ToggleButtonShowcase = FC<Props> {
     ToggleButtonGroup {
         exclusive = true
         value = alignment
-        onChange = { _, newAlignment -> alignment = newAlignment }
+        onChange = { _, newAlignment -> alignment = newAlignment.toString() }
         ariaLabel = "text alignment"
 
         ToggleButton {

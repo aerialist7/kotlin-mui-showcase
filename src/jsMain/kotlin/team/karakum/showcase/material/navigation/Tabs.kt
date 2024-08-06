@@ -21,7 +21,7 @@ val TabsShowcase = FC<Props> {
 
         Tabs {
             value = activeTab
-            onChange = { _, newValue -> activeTab = newValue }
+            onChange = { _, newValue -> activeTab = newValue.toString() }
             ariaLabel = "wrapped label tabs example"
 
             Tab {
