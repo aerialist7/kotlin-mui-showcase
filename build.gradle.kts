@@ -4,9 +4,6 @@ plugins {
     kotlin("multiplatform")
 }
 
-fun kotlinw(target: String): String =
-    "org.jetbrains.kotlin-wrappers:kotlin-$target"
-
 kotlin {
     js {
         browser {
@@ -19,19 +16,15 @@ kotlin {
 
     sourceSets {
         val jsMain by getting {
-            val wrappersVersion = extra["kotlin.wrappers.version"]
-
             dependencies {
-                implementation(project.dependencies.enforcedPlatform(kotlinw("wrappers-bom:$wrappersVersion")))
+                implementation(libs.wrappers.react)
+                implementation(libs.wrappers.react.dom)
+                implementation(libs.wrappers.react.router.dom)
 
-                implementation(kotlinw("react"))
-                implementation(kotlinw("react-dom"))
-                implementation(kotlinw("react-router-dom"))
-
-                implementation(kotlinw("emotion"))
-                implementation(kotlinw("mui-material"))
-                implementation(kotlinw("mui-icons-material"))
-                implementation(kotlinw("muix-date-pickers"))
+                implementation(libs.wrappers.emotion)
+                implementation(libs.wrappers.mui.material)
+                implementation(libs.wrappers.mui.icons.material)
+                implementation(libs.wrappers.muix.date.pickers)
 
                 implementation(npm("date-fns", "2.30.0"))
                 implementation(npm("@date-io/date-fns", "2.17.0"))

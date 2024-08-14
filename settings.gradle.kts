@@ -11,4 +11,11 @@ dependencyResolutionManagement {
     repositories {
         mavenCentral()
     }
+
+    versionCatalogs {
+        create("libs") {
+            val wrappersVersion = extra["kotlin.wrappers.version"]
+            from("org.jetbrains.kotlin-wrappers:kotlin-wrappers-catalog:$wrappersVersion")
+        }
+    }
 }
