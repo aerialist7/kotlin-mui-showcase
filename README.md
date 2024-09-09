@@ -1,4 +1,4 @@
-# [Kotlin MUI Showcase](https://karakum-team.github.io/kotlin-mui-showcase/)
+# Kotlin MUI Showcase
 
 ### Demo Stand of Kotlin/JS Material-UI
 
@@ -15,3 +15,32 @@ This project uses official Kotlin MUI Wrappers:
 > ![Image List](.doc/image-list.jpg)
 > ![Menu](.doc/menu.jpg)
 > ![Table](.doc/table.jpg)
+
+----
+
+## Useful commands
+
+### Clean
+
+```sh
+./gradlew clean
+./gradlew --stop
+```
+
+### Build
+
+```sh
+./gradlew build
+```
+
+### Run
+
+```sh
+./gradlew jsRun -t
+```
+
+### Gradle Wrapper update
+
+```sh
+./gradlew wrapper
+```
