@@ -18,13 +18,13 @@ kotlin {
         val jsMain by getting {
             dependencies {
                 implementation(libs.wrappers.react)
-                implementation(libs.wrappers.react.dom)
-                implementation(libs.wrappers.react.router.dom)
+                implementation(libs.wrappers.reactDom)
+                implementation(libs.wrappers.reactRouterDom)
 
                 implementation(libs.wrappers.emotion)
                 implementation(libs.wrappers.mui.material)
-                implementation(libs.wrappers.mui.icons.material)
-                implementation(libs.wrappers.muix.date.pickers)
+                implementation(libs.wrappers.mui.iconsMaterial)
+                implementation(libs.wrappers.muix.datePickers)
 
                 implementation(npm("date-fns", "2.30.0"))
                 implementation(npm("@date-io/date-fns", "2.17.0"))
