@@ -19,7 +19,7 @@ kotlin {
             dependencies {
                 implementation(kotlinWrappers.react)
                 implementation(kotlinWrappers.reactDom)
-                implementation(kotlinWrappers.reactRouterDom)
+                implementation(kotlinWrappers.reactRouter)
 
                 implementation(kotlinWrappers.emotion)
                 implementation(kotlinWrappers.mui.material)
@@ -40,5 +40,5 @@ tasks.withType<KotlinJsCompile>().configureEach {
 }
 
 tasks.wrapper {
-    gradleVersion = "8.12"
+    gradleVersion = "8.13"
 }
