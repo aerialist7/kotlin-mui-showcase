@@ -1,5 +1,7 @@
 # Kotlin MUI Showcase
 
+>>>>> For a simple and quick start of a Kotlin/JS project, feel free to check out another project of mine – [Kotlin React Table Sample](https://github.com/aerialist7/kotlin-react-table-sample)
+
 ### Demo Stand of Kotlin/JS Material-UI
 
 This project uses official Kotlin MUI Wrappers:
