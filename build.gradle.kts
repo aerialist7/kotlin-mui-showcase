@@ -21,7 +21,7 @@ kotlin {
                 implementation(kotlinWrappers.reactDom)
                 implementation(kotlinWrappers.reactRouter)
 
-                implementation(kotlinWrappers.emotion)
+                implementation(kotlinWrappers.emotion.styled)
                 implementation(kotlinWrappers.mui.material)
                 implementation(kotlinWrappers.mui.iconsMaterial)
                 implementation(kotlinWrappers.muix.datePickers)

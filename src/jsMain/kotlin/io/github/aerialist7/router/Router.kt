@@ -21,7 +21,7 @@ import io.github.aerialist7.showcase.material.surfaces.CardShowcase
 import io.github.aerialist7.showcase.material.surfaces.PaperShowcase
 import io.github.aerialist7.showcase.material.utils.*
 import js.array.ReadonlyArray
-import js.objects.jso
+import js.objects.unsafeJso
 import js.promise.PromiseResult
 import react.router.dom.createHashRouter
 import remix.run.router.LoaderFunction
@@ -116,19 +116,19 @@ private val ShowcaseMaterialLoader = LoaderFunction<Showcase> { args, _ ->
 
 val Router: Router = createHashRouter(
     routes = arrayOf(
-        jso {
+        unsafeJso {
             path = "/"
             loader = PageLoader
             Component = Page
             ErrorBoundary = ErrorPage
             children = arrayOf(
-                jso {
+                unsafeJso {
                     path = ":showcaseId"
                     loader = ShowcaseMaterialLoader
                     Component = ShowcaseMaterial
                     ErrorBoundary = ErrorPage
                 },
-                jso {
+                unsafeJso {
                     path = "*"
                     Component = ErrorPage
                 }

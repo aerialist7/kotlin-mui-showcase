@@ -8,12 +8,13 @@ import mui.material.Typography
 import react.FC
 import react.Props
 import react.create
+import web.dom.ElementId
 
 val AccordionShowcase = FC<Props> {
     Accordion {
         AccordionSummary {
-            id = "panel1a-header"
-            ariaControls = "panel1a-content"
+            id = ElementId("panel1a-header")
+            ariaControls = ElementId("panel1a-content")
             expandIcon = ExpandMore.create()
 
             Typography {
@@ -30,8 +31,8 @@ val AccordionShowcase = FC<Props> {
     Accordion {
         expanded = true
         AccordionSummary {
-            id = "panel2a-header"
-            ariaControls = "panel2a-content"
+            id = ElementId("panel2a-header")
+            ariaControls = ElementId("panel2a-content")
             expandIcon = ExpandMore.create()
 
             Typography {
@@ -49,8 +50,8 @@ val AccordionShowcase = FC<Props> {
         disabled = true
 
         AccordionSummary {
-            id = "panel3a-header"
-            ariaControls = "panel3a-content"
+            id = ElementId("panel3a-header")
+            ariaControls = ElementId("panel3a-content")
             expandIcon = ExpandMore.create()
 
             Typography {

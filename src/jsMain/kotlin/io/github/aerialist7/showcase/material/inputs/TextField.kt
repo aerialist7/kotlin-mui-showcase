@@ -3,7 +3,7 @@ package io.github.aerialist7.showcase.material.inputs
 import io.github.aerialist7.InputProps
 import io.github.aerialist7.autoComplete
 import io.github.aerialist7.noValidate
-import js.objects.jso
+import js.objects.unsafeJso
 import mui.material.*
 import mui.material.DividerVariant.Companion.fullWidth
 import mui.material.FormControlVariant.Companion.filled
@@ -18,6 +18,7 @@ import react.dom.html.ReactHTML.form
 import web.cssom.Display
 import web.cssom.JustifyContent
 import web.cssom.px
+import web.dom.ElementId
 import web.html.InputType
 
 val TextFieldShowcase = FC<Props> {
@@ -40,29 +41,27 @@ val TextFieldShowcase = FC<Props> {
         }
 
         TextField {
-            id = "outlined-basic"
+            id = ElementId("outlined-basic")
             label = ReactNode("Outlined")
             variant = outlined
         }
         TextField {
-            id = "filled-basic"
+            id = ElementId("filled-basic")
             label = ReactNode("Filled")
             variant = filled
         }
         TextField {
-            id = "standard-basic"
+            id = ElementId("standard-basic")
             label = ReactNode("Standard")
             variant = standard
         }
         TextField {
-            id = "type-date"
+            id = ElementId("type-date")
             label = ReactNode("Start Day")
             variant = outlined
             type = InputType.date
 
-            InputLabelProps = jso {
-                shrink = true
-            }
+            InputLabelProps = unsafeJso { shrink = true }
         }
 
         Divider {
@@ -97,9 +96,9 @@ val TextFieldShowcase = FC<Props> {
         }
 
         TextField {
-            id = "outlined-start-adornment"
+            id = ElementId("outlined-start-adornment")
             label = ReactNode("With normal TextField")
-            InputProps = jso {
+            InputProps = unsafeJso {
                 startAdornment = InputAdornment.create {
                     position = InputAdornmentPosition.start
                     +"kg"

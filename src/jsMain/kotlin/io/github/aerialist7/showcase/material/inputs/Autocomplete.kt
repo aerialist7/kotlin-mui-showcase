@@ -1,6 +1,6 @@
 package io.github.aerialist7.showcase.material.inputs
 
-import js.objects.jso
+import js.objects.unsafeJso
 import mui.material.Autocomplete
 import mui.material.AutocompleteProps
 import mui.material.TextField
@@ -133,7 +133,7 @@ private external interface Movie {
     var year: Int
 }
 
-private fun Movie(label: String, year: Int): Movie = jso {
+private fun Movie(label: String, year: Int): Movie = unsafeJso {
     this.label = label
     this.year = year
 }

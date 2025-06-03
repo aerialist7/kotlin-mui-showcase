@@ -13,6 +13,7 @@ import react.dom.html.ReactHTML.div
 import react.useState
 import web.cssom.*
 import web.cssom.LineStyle.Companion.solid
+import web.dom.ElementId
 
 val ModalShowcase = FC<Props> {
     var isOpen by useState(false)
@@ -29,8 +30,8 @@ val ModalShowcase = FC<Props> {
             open = isOpen
             onClose = { _, _ -> isOpen = false }
 
-            ariaLabelledBy = "keep-mounted-modal-title"
-            ariaDescribedBy = "keep-mounted-modal-description"
+            ariaLabelledBy = ElementId("keep-mounted-modal-title")
+            ariaDescribedBy = ElementId("keep-mounted-modal-description")
 
             Box {
                 sx {
@@ -46,7 +47,7 @@ val ModalShowcase = FC<Props> {
                 }
 
                 Typography {
-                    id = "keep-mounted-modal-title"
+                    id = ElementId("keep-mounted-modal-title")
                     variant = TypographyVariant.h6
                     component = ReactHTML.h2
 
@@ -54,7 +55,7 @@ val ModalShowcase = FC<Props> {
                 }
 
                 Typography {
-                    id = "keep-mounted-modal-description"
+                    id = ElementId("keep-mounted-modal-description")
                     sx {
                         marginTop = 2.px
                     }

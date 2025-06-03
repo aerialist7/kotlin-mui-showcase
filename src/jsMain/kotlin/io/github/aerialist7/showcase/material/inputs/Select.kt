@@ -7,6 +7,7 @@ import react.Props
 import react.ReactNode
 import react.useState
 import web.cssom.px
+import web.dom.ElementId
 
 val SelectShowcase = FC<Props> {
     var age by useState("10")
@@ -18,12 +19,12 @@ val SelectShowcase = FC<Props> {
         FormControl {
             fullWidth = true
             InputLabel {
-                id = "demo-simple-select-label"
+                id = ElementId("demo-simple-select-label")
                 +"Age"
             }
             Select {
                 labelId = "demo-simple-select-label"
-                id = "demo-simple-select"
+                id = ElementId("demo-simple-select")
                 value = age
                 label = ReactNode("Age")
                 onChange = { event, _ ->

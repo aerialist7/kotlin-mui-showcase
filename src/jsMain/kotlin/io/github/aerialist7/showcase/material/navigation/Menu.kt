@@ -1,6 +1,6 @@
 package io.github.aerialist7.showcase.material.navigation
 
-import js.objects.jso
+import js.objects.unsafeJso
 import mui.material.Menu
 import mui.material.MenuItem
 import mui.material.PopoverReference
@@ -41,7 +41,7 @@ val MenuShowcase = FC<Props> {
 
             anchorReference = PopoverReference.anchorPosition
             anchorPosition = if (point != null) {
-                jso {
+                unsafeJso {
                     top = point!!.y
                     left = point!!.x
                 }

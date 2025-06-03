@@ -1,6 +1,6 @@
 package io.github.aerialist7.showcase.material.utils
 
-import js.objects.jso
+import js.objects.unsafeJso
 import mui.material.Button
 import mui.material.ButtonVariant.Companion.contained
 import mui.material.Popover
@@ -11,13 +11,14 @@ import react.Props
 import react.useState
 import web.cssom.px
 import web.dom.Element
+import web.dom.ElementId
 
 val PopoverShowcase = FC<Props> {
     var anchor by useState<Element>()
 
     Button {
         if (anchor != null) {
-            ariaDescribedBy = "simple-popover"
+            ariaDescribedBy = ElementId("simple-popover")
         }
         variant = contained
         onClick = { anchor = it.currentTarget }
@@ -27,12 +28,12 @@ val PopoverShowcase = FC<Props> {
 
     Popover {
         if (anchor != null) {
-            id = "simple-popover"
+            id = ElementId("simple-popover")
             anchorEl = anchor
         }
         open = anchor != null
         onClose = { _, _ -> anchor = null }
-        anchorOrigin = jso {
+        anchorOrigin = unsafeJso {
             vertical = "bottom"
             horizontal = "left"
         }

@@ -1,6 +1,6 @@
 package io.github.aerialist7.showcase.material.data
 
-import js.objects.jso
+import js.objects.unsafeJso
 import mui.material.*
 import mui.material.DividerVariant.Companion.fullWidth
 import mui.system.sx
@@ -131,7 +131,7 @@ val TableShowcase = FC<Props> {
                             TableCell {
                                 key = column.id
                                 align = column.align
-                                style = jso {
+                                style = unsafeJso {
                                     top = 57.px
                                     minWidth = column.minWidth
                                 }
@@ -231,7 +231,7 @@ private fun ColumnGroupingColumn(
     label: String,
     minWidth: Length,
     align: TableCellAlign,
-): ColumnGroupingColumn = jso {
+): ColumnGroupingColumn = unsafeJso {
     this.id = id
     this.label = label
     this.minWidth = minWidth
@@ -244,7 +244,7 @@ private fun ColumnGroupingRow(
     population: String,
     size: String,
     density: String,
-): ColumnGroupingRow = jso {
+): ColumnGroupingRow = unsafeJso {
     this.name = name
     this.code = code
     this.population = population
