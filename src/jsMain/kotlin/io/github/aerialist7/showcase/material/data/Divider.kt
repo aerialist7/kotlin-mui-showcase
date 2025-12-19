@@ -35,7 +35,7 @@ val DividerShowcase = FC<Props> {
         }
 
         ListItem {
-            asDynamic().button = true
+            button = true
 
             ListItemText {
                 primary = ReactNode("Trash")
@@ -47,7 +47,7 @@ val DividerShowcase = FC<Props> {
         }
 
         ListItem {
-            asDynamic().button = true
+            button = true
 
             ListItemText {
                 primary = ReactNode("Spam")

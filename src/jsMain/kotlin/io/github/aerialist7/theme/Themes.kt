@@ -16,7 +16,7 @@ private val TYPOGRAPHY_OPTIONS = TypographyOptions {
     TypographyVariant.h6 {
         fontSize = 1.5.rem
 
-        media(maxWidth(599.px)) {
+        `@media`(maxWidth(599.px)) {
             fontSize = 1.25.rem
         }
     }

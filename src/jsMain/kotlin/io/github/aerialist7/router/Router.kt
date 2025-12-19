@@ -21,10 +21,11 @@ import io.github.aerialist7.showcase.material.surfaces.CardShowcase
 import io.github.aerialist7.showcase.material.surfaces.PaperShowcase
 import io.github.aerialist7.showcase.material.utils.*
 import js.array.ReadonlyArray
-import js.objects.unsafeJso
 import js.promise.PromiseResult
+import js.reflect.unsafeCast
+import react.router.RouteObject
 import react.router.dom.createHashRouter
-import remix.run.router.LoaderFunction
+import remix.run.router.LoaderFunctionAsync
 import remix.run.router.Router
 
 private val MATERIAL_SHOWCASES: ReadonlyArray<Showcase> = arrayOf(
@@ -105,34 +106,34 @@ private val MATERIAL_SHOWCASES: ReadonlyArray<Showcase> = arrayOf(
     Showcase("x/react-tree-view", "Tree View", TreeViewShowcase),
 )
 
-private val PageLoader = LoaderFunction<ReadonlyArray<Showcase>> { _, _ ->
-    PromiseResult(MATERIAL_SHOWCASES)
+private val PageLoader = LoaderFunctionAsync<ReadonlyArray<Showcase>> { _, _ ->
+    PromiseResult(unsafeCast(MATERIAL_SHOWCASES))
 }
 
-private val ShowcaseMaterialLoader = LoaderFunction<Showcase> { args, _ ->
+private val ShowcaseMaterialLoader = LoaderFunctionAsync<Showcase> { args, _ ->
     val showcase = MATERIAL_SHOWCASES.single { it.key == args.params["showcaseId"] }
-    PromiseResult(showcase)
+    PromiseResult(unsafeCast(showcase))
 }
 
 val Router: Router = createHashRouter(
     routes = arrayOf(
-        unsafeJso {
-            path = "/"
-            loader = PageLoader
-            Component = Page
-            ErrorBoundary = ErrorPage
+        RouteObject(
+            path = "/",
+            loader = PageLoader,
+            Component = Page,
+            ErrorBoundary = ErrorPage,
             children = arrayOf(
-                unsafeJso {
-                    path = ":showcaseId"
-                    loader = ShowcaseMaterialLoader
-                    Component = ShowcaseMaterial
-                    ErrorBoundary = ErrorPage
-                },
-                unsafeJso {
-                    path = "*"
-                    Component = ErrorPage
-                }
-            )
-        },
+                RouteObject(
+                    path = ":showcaseId",
+                    loader = ShowcaseMaterialLoader,
+                    Component = ShowcaseMaterial,
+                    ErrorBoundary = ErrorPage,
+                ),
+                RouteObject(
+                    path = "*",
+                    Component = ErrorPage,
+                ),
+            ),
+        ),
     ),
 )

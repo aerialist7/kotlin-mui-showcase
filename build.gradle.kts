@@ -5,6 +5,12 @@ plugins {
 }
 
 kotlin {
+    compilerOptions {
+        optIn.addAll(
+            "kotlin.js.ExperimentalWasmJsInterop",
+        )
+    }
+
     js {
         browser {
             commonWebpackConfig {

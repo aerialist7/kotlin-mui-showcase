@@ -27,15 +27,14 @@ val SpeedDialShowcase = FC<Props> {
         }
 
         SpeedDial {
-            // TODO: Check without dynamic after override removal in MUI wrappers
-            asDynamic().ariaLabel = "SpeedDial basic example"
             sx {
                 position = Position.absolute
                 bottom = 16.px
                 right = 16.px
             }
-            icon = SpeedDialIcon.create()
 
+            ariaLabel = "SpeedDial basic example"
+            icon = SpeedDialIcon.create()
 
             for ((name, Icon) in actions) {
                 SpeedDialAction {

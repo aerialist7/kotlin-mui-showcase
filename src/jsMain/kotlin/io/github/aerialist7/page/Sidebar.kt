@@ -3,7 +3,6 @@ package io.github.aerialist7.page
 import emotion.styled.styled
 import io.github.aerialist7.router.useShowcaseIdParam
 import io.github.aerialist7.showcase.Showcase
-import js.array.ReadonlyArray
 import js.uri.decodeURIComponent
 import js.uri.encodeURIComponent
 import mui.material.*
@@ -49,8 +48,7 @@ val Sidebar = FC<Props> {
                     left = 16.px
                 }
 
-                // TODO: Check without dynamic after override removal in MUI wrappers
-                asDynamic().ariaLabel = "Menu"
+                ariaLabel = "Menu"
 
                 icon = MenuIcon.create()
                 onClick = { isOpen = true }
@@ -97,5 +95,5 @@ private val ShowcaseList = FC {
 
 private val LinkButton = NavLink.styled {
     textDecoration = None.none
-    color = Color.currentcolor
+    color = Color.currentColor
 }
