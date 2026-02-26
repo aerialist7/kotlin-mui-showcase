@@ -30,6 +30,7 @@ kotlin {
                 implementation(kotlinWrappers.emotion.styled)
                 implementation(kotlinWrappers.mui.material)
                 implementation(kotlinWrappers.mui.iconsMaterial)
+                implementation(kotlinWrappers.mui.lab)
                 implementation(kotlinWrappers.muix.datePickers)
 
                 implementation(npm("date-fns", "2.30.0"))
