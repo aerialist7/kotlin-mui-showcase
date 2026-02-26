@@ -3,6 +3,9 @@
 !.idea/icon.png
 !.idea/codeInsightSettings.xml
 
+# Kotlin
+.kotlin
+
 # Matter
 .matter
 
