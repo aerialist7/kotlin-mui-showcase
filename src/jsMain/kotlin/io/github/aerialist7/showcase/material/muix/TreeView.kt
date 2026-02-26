@@ -1,5 +1,6 @@
 package io.github.aerialist7.showcase.material.muix
 
+import js.objects.unsafeJso
 import mui.material.Box
 import mui.material.Chip
 import mui.material.Divider
@@ -13,41 +14,25 @@ import react.Props
 import react.ReactNode
 import web.cssom.px
 
-private external interface TreeViewBaseItem {
-    var id: String
-    var label: String
-    var children: Array<TreeViewBaseItem>?
-}
-
-private fun item(id: String, label: String, vararg children: TreeViewBaseItem): TreeViewBaseItem {
-    val obj = js("{}").unsafeCast<TreeViewBaseItem>()
-    obj.id = id
-    obj.label = label
-    if (children.isNotEmpty()) {
-        obj.children = arrayOf(*children)
-    }
-    return obj
-}
-
 private val MUI_X_PRODUCTS = arrayOf(
-    item(
+    TreeViewBaseItem(
         "grid", "Data Grid",
-        item("grid-community", "@mui/x-data-grid"),
-        item("grid-pro", "@mui/x-data-grid-pro"),
-        item("grid-premium", "@mui/x-data-grid-premium"),
+        TreeViewBaseItem("grid-community", "@mui/x-data-grid"),
+        TreeViewBaseItem("grid-pro", "@mui/x-data-grid-pro"),
+        TreeViewBaseItem("grid-premium", "@mui/x-data-grid-premium"),
     ),
-    item(
+    TreeViewBaseItem(
         "pickers", "Date and Time Pickers",
-        item("pickers-community", "@mui/x-date-pickers"),
-        item("pickers-pro", "@mui/x-date-pickers-pro"),
+        TreeViewBaseItem("pickers-community", "@mui/x-date-pickers"),
+        TreeViewBaseItem("pickers-pro", "@mui/x-date-pickers-pro"),
     ),
-    item(
+    TreeViewBaseItem(
         "charts", "Charts",
-        item("charts-community", "@mui/x-charts"),
+        TreeViewBaseItem("charts-community", "@mui/x-charts"),
     ),
-    item(
+    TreeViewBaseItem(
         "tree-view", "Tree View",
-        item("tree-view-community", "@mui/x-tree-view"),
+        TreeViewBaseItem("tree-view-community", "@mui/x-tree-view"),
     ),
 )
 
@@ -137,3 +122,22 @@ val TreeViewShowcase = FC<Props> {
         }
     }
 }
+
+private external interface TreeViewBaseItem {
+    var id: String
+    var label: String
+    var children: Array<TreeViewBaseItem>?
+}
+
+private fun TreeViewBaseItem(
+    id: String,
+    label: String,
+    vararg children: TreeViewBaseItem,
+): TreeViewBaseItem =
+    unsafeJso {
+        this.id = id
+        this.label = label
+        if (children.isNotEmpty()) {
+            this.children = arrayOf(*children)
+        }
+    }
