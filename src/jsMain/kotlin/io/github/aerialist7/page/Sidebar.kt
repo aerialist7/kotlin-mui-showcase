@@ -5,7 +5,6 @@ import io.github.aerialist7.router.useShowcaseIdParam
 import io.github.aerialist7.showcase.Showcase
 import js.uri.decodeURIComponent
 import js.uri.encodeURIComponent
-import js.array.ReadonlyArray
 import mui.material.*
 import mui.system.Box
 import mui.system.sx
@@ -49,7 +48,7 @@ val Sidebar = FC<Props> {
                     left = 16.px
                 }
 
-                ariaLabel = "Menu"
+                asDynamic().ariaLabel = "Menu"
 
                 icon = MenuIcon.create()
                 onClick = { isOpen = true }
