@@ -1,5 +1,6 @@
 package io.github.aerialist7.page
 
+import js.reflect.unsafeCast
 import mui.material.BottomNavigation
 import mui.material.BottomNavigationAction
 import mui.system.sx
@@ -17,7 +18,8 @@ val Footer = FC {
     BottomNavigation {
         sx {
             gridArea = Area.Footer
-            boxShadow = "0px -2px 4px -1px rgba(0,0,0,0.2), 0px -4px 5px 0px rgba(0,0,0,0.14), 0px -1px 10px 0px rgba(0,0,0,0.12)".unsafeCast<web.cssom.BoxShadow>()
+            boxShadow =
+                unsafeCast("0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12)")
         }
 
         component = ReactHTML.footer
