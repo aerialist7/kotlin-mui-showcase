@@ -32,6 +32,7 @@ kotlin {
                 implementation(kotlinWrappers.mui.iconsMaterial)
                 implementation(kotlinWrappers.mui.lab)
                 implementation(kotlinWrappers.muix.datePickers)
+                implementation(kotlinWrappers.muix.treeView)
 
                 implementation(npm("date-fns", "2.30.0"))
                 implementation(npm("@date-io/date-fns", "2.17.0"))
