@@ -14,7 +14,7 @@ val Page = FC {
             height = 100.pct
             gridTemplateRows = array(
                 Sizes.Header.Height,
-                Auto.auto,
+                1.fr,
                 Length.maxContent,
             )
             gridTemplateColumns = array(

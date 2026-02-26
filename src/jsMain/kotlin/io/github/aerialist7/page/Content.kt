@@ -6,6 +6,7 @@ import react.FC
 import react.Props
 import react.dom.html.ReactHTML
 import react.router.Outlet
+import web.cssom.Auto
 import web.cssom.px
 
 val Content = FC<Props> {
@@ -13,6 +14,7 @@ val Content = FC<Props> {
         sx {
             gridArea = Area.Content
             padding = 30.px
+            overflowY = Auto.auto
         }
 
         component = ReactHTML.main
