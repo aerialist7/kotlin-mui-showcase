@@ -227,7 +227,7 @@ val IconsShowcase = FC<Props> {
             }
 
             for (entry in filtered) {
-                val iconFC = when (selectedStyle) {
+                val Icon = when (selectedStyle) {
                     IconStyle.Filled -> entry.filled
                     IconStyle.Outlined -> entry.outlined
                     IconStyle.Rounded -> entry.rounded
@@ -254,7 +254,7 @@ val IconsShowcase = FC<Props> {
                     Tooltip {
                         title = ReactNode(entry.name)
 
-                        +iconFC.create()
+                        Icon()
                     }
 
                     Typography {
