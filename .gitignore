@@ -3,6 +3,15 @@
 !.idea/icon.png
 !.idea/codeInsightSettings.xml
 
+# Kotlin
+.kotlin
+
+# Matter
+.matter
+
 # Gradle
 .gradle
 build/
+
+# Webpack
+webpack.config.d/dev-server.js
