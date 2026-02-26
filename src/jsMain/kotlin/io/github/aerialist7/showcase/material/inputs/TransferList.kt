@@ -10,56 +10,11 @@ import react.FC
 import react.Props
 import react.create
 import react.useState
-import web.cssom.*
+import web.cssom.AlignItems
+import web.cssom.Auto
+import web.cssom.JustifyContent
+import web.cssom.px
 import web.dom.ElementId
-
-private fun not(a: List<Int>, b: List<Int>) = a.filter { !b.contains(it) }
-private fun intersection(a: List<Int>, b: List<Int>) = a.filter { b.contains(it) }
-
-external interface TransferListProps : Props {
-    var items: List<Int>
-    var checked: List<Int>
-    var onToggle: (Int) -> Unit
-}
-
-private val TransferListPanel = FC<TransferListProps> { props ->
-    Paper {
-        sx {
-            width = 200.px
-            height = 230.px
-            overflow = Auto.auto
-        }
-
-        List {
-            dense = true
-            asDynamic().component = "div"
-            asDynamic().role = "list"
-
-            props.items.forEach { value ->
-                val labelId = "transfer-list-item-$value-label"
-
-                ListItemButton {
-                    key = value.toString()
-                    asDynamic().role = "listitem"
-                    onClick = { props.onToggle(value) }
-
-                    ListItemIcon {
-                        Checkbox {
-                            checked = props.checked.contains(value)
-                            tabIndex = -1
-                            disableRipple = true
-                        }
-                    }
-
-                    ListItemText {
-                        id = ElementId(labelId)
-                        primary = react.ReactNode("List item ${value + 1}")
-                    }
-                }
-            }
-        }
-    }
-}
 
 val TransferListShowcase = FC<Props> {
     var checked by useState(emptyList<Int>())
@@ -147,6 +102,54 @@ val TransferListShowcase = FC<Props> {
                 items = right
                 this.checked = checked
                 onToggle = handleToggle
+            }
+        }
+    }
+}
+
+private fun not(a: List<Int>, b: List<Int>) = a.filter { !b.contains(it) }
+private fun intersection(a: List<Int>, b: List<Int>) = a.filter { b.contains(it) }
+
+external interface TransferListProps : Props {
+    var items: List<Int>
+    var checked: List<Int>
+    var onToggle: (Int) -> Unit
+}
+
+private val TransferListPanel = FC<TransferListProps> { props ->
+    Paper {
+        sx {
+            width = 200.px
+            height = 230.px
+            overflow = Auto.auto
+        }
+
+        List {
+            dense = true
+            asDynamic().component = "div"
+            asDynamic().role = "list"
+
+            props.items.forEach { value ->
+                val labelId = "transfer-list-item-$value-label"
+
+                ListItemButton {
+                    key = value.toString()
+                    asDynamic().role = "listitem"
+                    onClick = { props.onToggle(value) }
+
+                    ListItemIcon {
+                        Checkbox {
+                            checked = props.checked.contains(value)
+                            tabIndex = -1
+                            disableRipple = true
+                        }
+                    }
+
+                    ListItemText {
+                        id = ElementId(labelId)
+                        primary = react.ReactNode("List item ${value + 1}")
+                    }
+                }
             }
         }
     }
