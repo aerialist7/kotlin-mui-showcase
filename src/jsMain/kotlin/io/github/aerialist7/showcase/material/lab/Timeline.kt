@@ -13,8 +13,8 @@ val TimelineShowcase = FC<Props> {
     Timeline {
         TimelineItem {
             TimelineSeparator {
-                TimelineDot {}
-                TimelineConnector {}
+                TimelineDot()
+                TimelineConnector()
             }
             TimelineContent {
                 +"Eat"
@@ -22,8 +22,8 @@ val TimelineShowcase = FC<Props> {
         }
         TimelineItem {
             TimelineSeparator {
-                TimelineDot {}
-                TimelineConnector {}
+                TimelineDot()
+                TimelineConnector()
             }
             TimelineContent {
                 +"Code"
@@ -31,7 +31,7 @@ val TimelineShowcase = FC<Props> {
         }
         TimelineItem {
             TimelineSeparator {
-                TimelineDot {}
+                TimelineDot()
             }
             TimelineContent {
                 +"Sleep"
