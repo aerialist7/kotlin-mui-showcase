@@ -6,41 +6,42 @@ import mui.material.GridDirection.Companion.column
 import mui.material.Size.Companion.small
 import mui.system.responsive
 import mui.system.sx
-import react.FC
-import react.Props
-import react.create
-import react.useState
+import react.*
+import react.dom.aria.AriaRole
+import react.dom.html.ReactHTML
 import web.cssom.AlignItems
-import web.cssom.Auto
+import web.cssom.Auto.Companion.auto
 import web.cssom.JustifyContent
 import web.cssom.px
 import web.dom.ElementId
 
 val TransferListShowcase = FC<Props> {
-    var checked by useState(emptyList<Int>())
+    var isChecked by useState(emptyList<Int>())
     var left by useState(listOf(0, 1, 2, 3))
     var right by useState(listOf(4, 5, 6, 7))
 
-    val leftChecked = intersection(checked, left)
-    val rightChecked = intersection(checked, right)
+    val leftChecked = useMemo(isChecked, left) { intersection(isChecked, left) }
+    val rightChecked = useMemo(isChecked, right) { intersection(isChecked, right) }
 
-    val handleToggle = { value: Int ->
-        checked = if (checked.contains(value)) checked - value else checked + value
+    val handleToggle = useCallback(isChecked) { value: Int ->
+        isChecked = if (isChecked.contains(value)) isChecked - value else isChecked + value
     }
 
     Grid {
-        container = true
-        spacing = responsive(2)
         sx {
             justifyContent = JustifyContent.center
             alignItems = AlignItems.center
         }
 
+        container = true
+        spacing = responsive(2)
+
         Grid {
             item = true
-            +TransferListPanel.create {
+
+            TransferListPanel {
                 items = left
-                this.checked = checked
+                checked = isChecked
                 onToggle = handleToggle
             }
         }
@@ -49,48 +50,81 @@ val TransferListShowcase = FC<Props> {
             item = true
 
             Grid {
+                sx {
+                    alignItems = AlignItems.center
+                }
+
                 container = true
                 direction = responsive(column)
-                sx { alignItems = AlignItems.center }
 
                 Button {
-                    sx { marginTop = 4.px; marginBottom = 4.px }
+                    sx {
+                        marginTop = 4.px
+                        marginBottom = 4.px
+                    }
+
+                    disabled = left.isEmpty()
                     variant = outlined
                     size = small
-                    onClick = { left.let { l -> right = right + l; left = emptyList() } }
-                    disabled = left.isEmpty()
+
+                    onClick = {
+                        right = right + left
+                        left = emptyList()
+                    }
+
                     +"\u226B"
                 }
                 Button {
-                    sx { marginTop = 4.px; marginBottom = 4.px }
+                    sx {
+                        marginTop = 4.px
+                        marginBottom = 4.px
+                    }
+
+                    disabled = leftChecked.isEmpty()
                     variant = outlined
                     size = small
+
                     onClick = {
                         right = right + leftChecked
                         left = not(left, leftChecked)
-                        checked = not(checked, leftChecked)
+                        isChecked = not(isChecked, leftChecked)
                     }
-                    disabled = leftChecked.isEmpty()
+
                     +">"
                 }
                 Button {
-                    sx { marginTop = 4.px; marginBottom = 4.px }
+                    sx {
+                        marginTop = 4.px
+                        marginBottom = 4.px
+                    }
+
+                    disabled = rightChecked.isEmpty()
                     variant = outlined
                     size = small
+
                     onClick = {
                         left = left + rightChecked
                         right = not(right, rightChecked)
-                        checked = not(checked, rightChecked)
+                        isChecked = not(isChecked, rightChecked)
                     }
-                    disabled = rightChecked.isEmpty()
+
                     +"<"
                 }
                 Button {
-                    sx { marginTop = 4.px; marginBottom = 4.px }
+                    sx {
+                        marginTop = 4.px
+                        marginBottom = 4.px
+                    }
+
+                    disabled = right.isEmpty()
                     variant = outlined
                     size = small
-                    onClick = { right.let { r -> left = left + r; right = emptyList() } }
-                    disabled = right.isEmpty()
+
+                    onClick = {
+                        left = left + right
+                        right = emptyList()
+                    }
+
                     +"\u226A"
                 }
             }
@@ -98,17 +132,21 @@ val TransferListShowcase = FC<Props> {
 
         Grid {
             item = true
-            +TransferListPanel.create {
+
+            TransferListPanel {
                 items = right
-                this.checked = checked
+                checked = isChecked
                 onToggle = handleToggle
             }
         }
     }
 }
 
-private fun not(a: List<Int>, b: List<Int>) = a.filter { !b.contains(it) }
-private fun intersection(a: List<Int>, b: List<Int>) = a.filter { b.contains(it) }
+private fun not(a: List<Int>, b: List<Int>): List<Int> =
+    a.filter { !b.contains(it) }
+
+private fun intersection(a: List<Int>, b: List<Int>): List<Int> =
+    a.filter { b.contains(it) }
 
 external interface TransferListProps : Props {
     var items: List<Int>
@@ -121,20 +159,18 @@ private val TransferListPanel = FC<TransferListProps> { props ->
         sx {
             width = 200.px
             height = 230.px
-            overflow = Auto.auto
+            overflow = auto
         }
 
         List {
+            component = ReactHTML.div
+            role = AriaRole.list
             dense = true
-            asDynamic().component = "div"
-            asDynamic().role = "list"
 
-            props.items.forEach { value ->
-                val labelId = "transfer-list-item-$value-label"
-
+            for (value in props.items) {
                 ListItemButton {
                     key = value.toString()
-                    asDynamic().role = "listitem"
+                    role = AriaRole.listitem
                     onClick = { props.onToggle(value) }
 
                     ListItemIcon {
@@ -146,8 +182,8 @@ private val TransferListPanel = FC<TransferListProps> { props ->
                     }
 
                     ListItemText {
-                        id = ElementId(labelId)
-                        primary = react.ReactNode("List item ${value + 1}")
+                        id = ElementId("transfer-list-item-$value-label")
+                        primary = ReactNode("List item ${value + 1}")
                     }
                 }
             }
