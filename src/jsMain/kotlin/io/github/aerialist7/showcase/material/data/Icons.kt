@@ -269,7 +269,6 @@ val IconsShowcase = FC<Props> {
                         variant = caption
 
                         +entry.name
-
                     }
                 }
             }
