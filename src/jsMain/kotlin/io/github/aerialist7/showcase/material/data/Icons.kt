@@ -6,13 +6,8 @@ import mui.material.Size.Companion.small
 import mui.material.styles.TypographyVariant.Companion.body2
 import mui.material.styles.TypographyVariant.Companion.caption
 import mui.system.sx
-import react.FC
-import react.Props
-import react.ReactNode
-import react.create
+import react.*
 import react.dom.events.ChangeEvent
-import react.useMemo
-import react.useState
 import web.cssom.*
 import web.cssom.AutoRepeat.Companion.autoFill
 import web.dom.ElementId
@@ -274,6 +269,7 @@ val IconsShowcase = FC<Props> {
                         variant = caption
 
                         +entry.name
+
                     }
                 }
             }
