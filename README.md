@@ -38,7 +38,7 @@ This project uses official Kotlin MUI Wrappers:
 ### Run
 
 ```sh
-./gradlew jsRun -t
+./gradlew jsBrowserDevelopmentRun -t
 ```
 
 ### Gradle Wrapper update
