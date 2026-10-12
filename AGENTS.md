@@ -31,6 +31,8 @@ The repository tracks `kotlin-js-store/package-lock.json`. If the build reports 
 
 The combined command `./gradlew kotlinUpgradePackageLock build` also works. Review the generated lockfile diff; the Kotlin Gradle Plugin may update JavaScript tooling and its transitive npm packages. Do not fix a generated-lock mismatch by hand-editing `package-lock.json`.
 
+An incremental local build may not detect a stale lock when generated Gradle/JavaScript outputs are already up to date. After Kotlin/JS dependency, npm override, or root package configuration changes, run `./gradlew kotlinUpgradePackageLock` and verify with `./gradlew clean build`.
+
 ## Kotlin Wrapper gaps
 
 When an API used by the showcase is missing from the published Kotlin Wrappers, always add a local wrapper in `src/jsMain/kotlin/io/github/aerialist7/MissedWrappers.kt` (usually a typed extension property or function). Keep call sites typed and free of ad hoc `asDynamic()` access or casts; confine any necessary interop workaround to that local wrapper. Add a short comment describing the missing upstream API and the relevant runtime/type behavior. These local wrappers are the record of generator gaps and should later guide fixes in the Kotlin Wrappers generator.
