@@ -38,7 +38,6 @@ kotlin {
                 implementation(kotlinWrappers.muix.treeView)
 
                 implementation(npm("date-fns", "4.4.0"))
-                implementation(npm("@date-io/date-fns", "3.2.1"))
             }
         }
     }
