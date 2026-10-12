@@ -48,5 +48,5 @@ tasks.withType<KotlinJsCompile>().configureEach {
 }
 
 tasks.wrapper {
-    gradleVersion = "9.2.1"
+    gradleVersion = "9.8.1"
 }
