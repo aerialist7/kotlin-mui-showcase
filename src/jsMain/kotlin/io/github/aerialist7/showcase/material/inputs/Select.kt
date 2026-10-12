@@ -28,7 +28,7 @@ val SelectShowcase = FC<Props> {
                 value = age
                 label = ReactNode("Age")
                 onChange = { event, _ ->
-                    age = event.target.value
+                    age = event.target.asDynamic().value.unsafeCast<String>()
                 }
                 MenuItem {
                     value = "10"

@@ -187,7 +187,7 @@ val IconsShowcase = FC<Props> {
                 size = small
                 value = searchQuery
 
-                asDynamic().onChange = { event: ChangeEvent<HTMLInputElement> ->
+                asDynamic().onChange = { event: ChangeEvent<HTMLInputElement, HTMLInputElement> ->
                     searchQuery = event.target.value
                 }
             }
@@ -203,7 +203,7 @@ val IconsShowcase = FC<Props> {
 
                 for (style in IconStyle.entries) {
                     ToggleButton {
-                        key = style.name
+                        key = Key(style.name)
                         value = style.name
 
                         +style.label
@@ -249,7 +249,7 @@ val IconsShowcase = FC<Props> {
                         }
                     }
 
-                    key = entry.name
+                    key = Key(entry.name)
 
                     Tooltip {
                         title = ReactNode(entry.name)

@@ -42,9 +42,7 @@ val DividerShowcase = FC<Props> {
             }
         }
 
-        Divider {
-            light = true
-        }
+        Divider()
 
         ListItem {
             button = true

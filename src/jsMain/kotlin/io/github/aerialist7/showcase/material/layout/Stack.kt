@@ -1,11 +1,13 @@
 package io.github.aerialist7.showcase.material.layout
 
 import emotion.styled.styled
+import io.github.aerialist7.body2Typography
+import io.github.aerialist7.cssSpacing
+import io.github.aerialist7.muiPalette
+import io.github.aerialist7.muiTheme
 import mui.material.Box
-import mui.material.PaletteMode
 import mui.material.Paper
 import mui.material.Stack
-import mui.material.styles.Theme
 import mui.system.responsive
 import mui.system.sx
 import react.FC
@@ -38,13 +40,13 @@ val StackShowcase = FC<Props> {
     }
 }
 
-// TODO: Cleanup after theme props improvements
 private val Item = Paper.styled { props ->
-    val theme: Theme = props.asDynamic().theme
+    val theme = props.muiTheme()
+    val palette = theme.muiPalette()
 
-    backgroundColor = Color(if (theme.palette.mode == PaletteMode.dark) "#1A2027" else "#fff")
-    +theme.typography.body2
-    padding = theme.spacing(0.5.unsafeCast<Int>())
+    backgroundColor = Color(if (palette.mode == mui.material.PaletteMode.dark) "#1A2027" else "#fff")
+    +theme.body2Typography()
+    padding = theme.cssSpacing(0.5)
     textAlign = TextAlign.center
-    color = theme.palette.text.secondary
+    color = Color(palette.text.secondary)
 }

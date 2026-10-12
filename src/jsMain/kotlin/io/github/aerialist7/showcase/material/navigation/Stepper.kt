@@ -5,6 +5,7 @@ import mui.material.MobileStepperPosition.Companion.static
 import mui.material.MobileStepperVariant.Companion.dots
 import mui.system.sx
 import react.FC
+import react.Key
 import react.Props
 import react.create
 import web.cssom.number
@@ -21,7 +22,7 @@ val StepperShowcase = FC<Props> {
 
             for (step in steps) {
                 Step {
-                    key = step
+                    key = Key(step)
                     StepLabel { +step }
                 }
             }

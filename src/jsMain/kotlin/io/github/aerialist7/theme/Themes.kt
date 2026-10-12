@@ -2,6 +2,7 @@ package io.github.aerialist7.theme
 
 import js.objects.unsafeJso
 import mui.material.PaletteMode
+import mui.material.styles.PaletteOptions
 import mui.material.styles.TypographyOptions
 import mui.material.styles.TypographyVariant
 import mui.material.styles.createTheme
@@ -25,14 +26,14 @@ private val TYPOGRAPHY_OPTIONS = TypographyOptions {
 object Themes {
     val Light = createTheme(
         unsafeJso {
-            palette = unsafeJso { mode = PaletteMode.light }
+            palette = unsafeJso<PaletteOptions> { mode = PaletteMode.light }
             typography = TYPOGRAPHY_OPTIONS
         }
     )
 
     val Dark = createTheme(
         unsafeJso {
-            palette = unsafeJso { mode = PaletteMode.dark }
+            palette = unsafeJso<PaletteOptions> { mode = PaletteMode.dark }
             typography = TYPOGRAPHY_OPTIONS
         }
     )

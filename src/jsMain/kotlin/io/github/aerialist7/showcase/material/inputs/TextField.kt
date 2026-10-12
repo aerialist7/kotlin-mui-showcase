@@ -3,6 +3,7 @@ package io.github.aerialist7.showcase.material.inputs
 import io.github.aerialist7.InputProps
 import io.github.aerialist7.autoComplete
 import io.github.aerialist7.noValidate
+import io.github.aerialist7.slotProps
 import js.objects.unsafeJso
 import mui.material.*
 import mui.material.DividerVariant.Companion.fullWidth
@@ -62,7 +63,8 @@ val TextFieldShowcase = FC<Props> {
             variant = outlined
             type = InputType.date
 
-            InputLabelProps = unsafeJso { shrink = true }
+            val labelProps = unsafeJso<InputLabelProps> { shrink = true }
+            slotProps = unsafeJso { inputLabel = labelProps }
         }
 
         Divider {

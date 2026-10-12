@@ -1,6 +1,7 @@
 package io.github.aerialist7.router
 
 import io.github.aerialist7.error.ErrorPage
+import io.github.aerialist7.error.NotFoundPage
 import io.github.aerialist7.page.Page
 import io.github.aerialist7.showcase.Showcase
 import io.github.aerialist7.showcase.ShowcaseMaterial
@@ -21,12 +22,11 @@ import io.github.aerialist7.showcase.material.surfaces.CardShowcase
 import io.github.aerialist7.showcase.material.surfaces.PaperShowcase
 import io.github.aerialist7.showcase.material.utils.*
 import js.array.ReadonlyArray
-import js.promise.PromiseResult
-import js.reflect.unsafeCast
-import react.router.RouteObject
-import react.router.dom.createHashRouter
-import remix.run.router.LoaderFunctionAsync
-import remix.run.router.Router
+import tanstack.history.createHashHistory
+import tanstack.react.router.*
+import tanstack.router.core.ParamName
+import tanstack.router.core.RouteLoaderFn
+import tanstack.router.core.RoutePath
 
 private val MATERIAL_SHOWCASES: ReadonlyArray<Showcase> = arrayOf(
     // inputs
@@ -106,34 +106,38 @@ private val MATERIAL_SHOWCASES: ReadonlyArray<Showcase> = arrayOf(
     Showcase("x/react-tree-view", "Tree View", TreeViewShowcase),
 )
 
-private val PageLoader = LoaderFunctionAsync<ReadonlyArray<Showcase>> { _, _ ->
-    PromiseResult(unsafeCast(MATERIAL_SHOWCASES))
+val SHOWCASE_ID_PARAM = ParamName("showcaseId")
+val SHOWCASE_ROUTE_PATH = RoutePath("/", SHOWCASE_ID_PARAM)
+
+private val rootRoute = createRootRoute(
+    options = RootRouteOptions(
+        loader = RouteLoaderFn {
+            MATERIAL_SHOWCASES
+        },
+        component = Page,
+    ),
+)
+
+private val showcaseRoute = createRoute(
+    options = RouteOptions(
+        getParentRoute = { rootRoute },
+        path = SHOWCASE_ROUTE_PATH,
+        loader = RouteLoaderFn { context ->
+            MATERIAL_SHOWCASES.single { it.key == context.params[SHOWCASE_ID_PARAM] }
+        },
+        component = ShowcaseMaterial,
+    ),
+)
+
+private val routeTree = rootRoute.also {
+    it.addChildren(arrayOf(showcaseRoute))
 }
 
-private val ShowcaseMaterialLoader = LoaderFunctionAsync<Showcase> { args, _ ->
-    val showcase = MATERIAL_SHOWCASES.single { it.key == args.params["showcaseId"] }
-    PromiseResult(unsafeCast(showcase))
-}
-
-val Router: Router = createHashRouter(
-    routes = arrayOf(
-        RouteObject(
-            path = "/",
-            loader = PageLoader,
-            Component = Page,
-            ErrorBoundary = ErrorPage,
-            children = arrayOf(
-                RouteObject(
-                    path = ":showcaseId",
-                    loader = ShowcaseMaterialLoader,
-                    Component = ShowcaseMaterial,
-                    ErrorBoundary = ErrorPage,
-                ),
-                RouteObject(
-                    path = "*",
-                    Component = ErrorPage,
-                ),
-            ),
-        ),
+val Router: Router = createRouter(
+    options = RouterOptions(
+        history = createHashHistory(),
+        routeTree = routeTree,
+        defaultErrorComponent = ErrorPage,
+        defaultNotFoundComponent = NotFoundPage,
     ),
 )

@@ -5,7 +5,7 @@ import mui.system.sx
 import react.FC
 import react.Props
 import react.dom.html.ReactHTML
-import react.router.Outlet
+import tanstack.react.router.Outlet
 import web.cssom.Auto
 import web.cssom.px
 

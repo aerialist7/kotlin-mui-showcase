@@ -2,8 +2,9 @@ package io.github.aerialist7.showcase.material.inputs
 
 import mui.material.*
 import mui.material.ButtonVariant.Companion.outlined
-import mui.material.GridDirection.Companion.column
 import mui.material.Size.Companion.small
+import mui.material.StackDirection.Companion.column
+import mui.material.StackDirection.Companion.row
 import mui.system.responsive
 import mui.system.sx
 import react.*
@@ -11,6 +12,7 @@ import react.dom.aria.AriaRole
 import react.dom.html.ReactHTML
 import web.cssom.AlignItems
 import web.cssom.Auto.Companion.auto
+import web.cssom.FlexWrap
 import web.cssom.JustifyContent
 import web.cssom.px
 import web.dom.ElementId
@@ -27,117 +29,105 @@ val TransferListShowcase = FC<Props> {
         isChecked = if (isChecked.contains(value)) isChecked - value else isChecked + value
     }
 
-    Grid {
+    Stack {
         sx {
             justifyContent = JustifyContent.center
             alignItems = AlignItems.center
+            flexWrap = FlexWrap.wrap
         }
 
-        container = true
+        direction = responsive(row)
         spacing = responsive(2)
 
-        Grid {
-            item = true
-
-            TransferListPanel {
-                items = left
-                checked = isChecked
-                onToggle = handleToggle
-            }
+        TransferListPanel {
+            items = left
+            checked = isChecked
+            onToggle = handleToggle
         }
 
-        Grid {
-            item = true
+        Stack {
+            sx {
+                alignItems = AlignItems.center
+            }
 
-            Grid {
+            direction = responsive(column)
+
+            Button {
                 sx {
-                    alignItems = AlignItems.center
+                    marginTop = 4.px
+                    marginBottom = 4.px
                 }
 
-                container = true
-                direction = responsive(column)
+                disabled = left.isEmpty()
+                variant = outlined
+                size = small
 
-                Button {
-                    sx {
-                        marginTop = 4.px
-                        marginBottom = 4.px
-                    }
-
-                    disabled = left.isEmpty()
-                    variant = outlined
-                    size = small
-
-                    onClick = {
-                        right = right + left
-                        left = emptyList()
-                    }
-
-                    +"\u226B"
+                onClick = {
+                    right = right + left
+                    left = emptyList()
                 }
-                Button {
-                    sx {
-                        marginTop = 4.px
-                        marginBottom = 4.px
-                    }
 
-                    disabled = leftChecked.isEmpty()
-                    variant = outlined
-                    size = small
-
-                    onClick = {
-                        right = right + leftChecked
-                        left = not(left, leftChecked)
-                        isChecked = not(isChecked, leftChecked)
-                    }
-
-                    +">"
+                +"\u226B"
+            }
+            Button {
+                sx {
+                    marginTop = 4.px
+                    marginBottom = 4.px
                 }
-                Button {
-                    sx {
-                        marginTop = 4.px
-                        marginBottom = 4.px
-                    }
 
-                    disabled = rightChecked.isEmpty()
-                    variant = outlined
-                    size = small
+                disabled = leftChecked.isEmpty()
+                variant = outlined
+                size = small
 
-                    onClick = {
-                        left = left + rightChecked
-                        right = not(right, rightChecked)
-                        isChecked = not(isChecked, rightChecked)
-                    }
-
-                    +"<"
+                onClick = {
+                    right = right + leftChecked
+                    left = not(left, leftChecked)
+                    isChecked = not(isChecked, leftChecked)
                 }
-                Button {
-                    sx {
-                        marginTop = 4.px
-                        marginBottom = 4.px
-                    }
 
-                    disabled = right.isEmpty()
-                    variant = outlined
-                    size = small
-
-                    onClick = {
-                        left = left + right
-                        right = emptyList()
-                    }
-
-                    +"\u226A"
+                +">"
+            }
+            Button {
+                sx {
+                    marginTop = 4.px
+                    marginBottom = 4.px
                 }
+
+                disabled = rightChecked.isEmpty()
+                variant = outlined
+                size = small
+
+                onClick = {
+                    left = left + rightChecked
+                    right = not(right, rightChecked)
+                    isChecked = not(isChecked, rightChecked)
+                }
+
+                +"<"
+            }
+            Button {
+                sx {
+                    marginTop = 4.px
+                    marginBottom = 4.px
+                }
+
+                disabled = right.isEmpty()
+                variant = outlined
+                size = small
+
+                onClick = {
+                    left = left + right
+                    right = emptyList()
+                }
+
+                +"\u226A"
             }
         }
 
-        Grid {
-            item = true
-
-            TransferListPanel {
-                items = right
-                checked = isChecked
-                onToggle = handleToggle
-            }
+        TransferListPanel {
+            items = right
+            checked = isChecked
+            onToggle = handleToggle
         }
     }
 }
@@ -169,7 +159,7 @@ private val TransferListPanel = FC<TransferListProps> { props ->
 
             for (value in props.items) {
                 ListItemButton {
-                    key = value.toString()
+                    key = Key(value)
                     role = AriaRole.listitem
                     onClick = { props.onToggle(value) }
 

@@ -1,6 +1,5 @@
 package io.github.aerialist7.showcase.material.surfaces
 
-import io.github.aerialist7.color
 import mui.material.*
 import mui.material.styles.TypographyVariant.Companion.h5
 import mui.system.sx

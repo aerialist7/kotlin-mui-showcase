@@ -5,6 +5,7 @@ import mui.material.*
 import mui.material.DividerVariant.Companion.fullWidth
 import mui.system.sx
 import react.FC
+import react.Key
 import react.Props
 import react.ReactNode
 import react.create
@@ -59,7 +60,7 @@ val TableShowcase = FC<Props> {
             TableBody {
                 for (row in basicTableRows) {
                     TableRow {
-                        key = row.name
+                        key = Key(row.name)
 
                         TableCell {
                             component = th
@@ -129,7 +130,7 @@ val TableShowcase = FC<Props> {
                     TableRow {
                         for (column in columnGroupingColumns) {
                             TableCell {
-                                key = column.id
+                                key = Key(column.id)
                                 align = column.align
                                 style = unsafeJso {
                                     top = 57.px
@@ -146,7 +147,7 @@ val TableShowcase = FC<Props> {
                 TableBody {
                     for (row in columnGroupingRows) {
                         TableRow {
-                            key = row.code
+                            key = Key(row.code)
                             hover = true
                             role = AriaRole.checkbox
                             tabIndex = -1
@@ -155,7 +156,7 @@ val TableShowcase = FC<Props> {
                                 val value: String = row.asDynamic()[column.id]
 
                                 TableCell {
-                                    key = column.id
+                                    key = Key(column.id)
                                     align = column.align
 
                                     +value

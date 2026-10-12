@@ -7,7 +7,7 @@ import react.Props
 
 val AvatarShowcase = FC<Props> {
     AvatarGroup {
-        max = 4
+        max = 4.0
 
         Avatar {
             alt = "Remy Sharp"

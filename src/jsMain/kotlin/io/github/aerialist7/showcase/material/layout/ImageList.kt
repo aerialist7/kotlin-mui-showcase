@@ -4,6 +4,7 @@ import mui.material.ImageList
 import mui.material.ImageListItem
 import mui.system.sx
 import react.FC
+import react.Key
 import react.Props
 import react.dom.html.ReactHTML.img
 import web.cssom.px
@@ -19,7 +20,7 @@ val ImageListShowcase = FC<Props> {
 
         for (image in imageSet) {
             ImageListItem {
-                key = image.first
+                key = Key(image.first)
                 img {
                     src = "${image.second}?w=164&h=164&fit=crop&auto=format"
                     alt = image.first

@@ -6,6 +6,7 @@ import mui.material.SpeedDialAction
 import mui.material.SpeedDialIcon
 import mui.system.sx
 import react.FC
+import react.Key
 import react.Props
 import react.ReactNode
 import react.create
@@ -38,9 +39,9 @@ val SpeedDialShowcase = FC<Props> {
 
             for ((name, Icon) in actions) {
                 SpeedDialAction {
-                    key = name
+                    key = Key(name)
                     icon = Icon.create()
-                    tooltipTitle = ReactNode(name)
+                    title = ReactNode(name)
                 }
             }
         }

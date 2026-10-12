@@ -1,8 +1,8 @@
 package io.github.aerialist7.showcase.material.utils
 
-import io.github.aerialist7.xs
 import mui.material.*
-import mui.material.GridDirection.Companion.column
+import mui.material.StackDirection.Companion.column
+import mui.material.StackDirection.Companion.row
 import mui.system.responsive
 import mui.system.sx
 import popper.core.Placement
@@ -54,110 +54,88 @@ val PopperShowcase = FC<Props> {
             }
         }
 
-        Grid {
-            container = true
+        Stack {
+            direction = responsive(row)
             sx { justifyContent = center }
 
-            Grid {
-                item = true
-                Button {
-                    onClick = { it.handleClick(topStart) }
+            Button {
+                onClick = { it.handleClick(topStart) }
 
-                    +"$topStart"
-                }
-                Button {
-                    onClick = { it.handleClick(top) }
+                +"$topStart"
+            }
+            Button {
+                onClick = { it.handleClick(top) }
 
-                    +"$top"
-                }
-                Button {
-                    onClick = { it.handleClick(topEnd) }
+                +"$top"
+            }
+            Button {
+                onClick = { it.handleClick(topEnd) }
 
-                    +"$topEnd"
-                }
+                +"$topEnd"
             }
         }
-        Grid {
-            container = true
+        Stack {
+            direction = responsive(row)
             sx { justifyContent = center }
 
-            Grid {
-                item = true
-                xs = 6
+            Stack {
+                direction = responsive(column)
+
                 Button {
                     onClick = { it.handleClick(leftStart) }
 
                     +"$leftStart"
                 }
-                br()
                 Button {
                     onClick = { it.handleClick(left) }
 
                     +"$left"
                 }
-                br()
                 Button {
                     onClick = { it.handleClick(leftEnd) }
 
                     +"$leftEnd"
                 }
             }
-            Grid {
-                sx { alignItems = flexEnd }
-                item = true
-                container = true
-                xs = 6
+            Stack {
                 direction = responsive(column)
+                sx { alignItems = flexEnd }
 
-                Grid {
-                    item = true
+                Button {
+                    onClick = { it.handleClick(rightStart) }
 
-                    Button {
-                        onClick = { it.handleClick(rightStart) }
-
-                        +"$rightStart"
-                    }
+                    +"$rightStart"
                 }
-                Grid {
-                    item = true
+                Button {
+                    onClick = { it.handleClick(right) }
 
-                    Button {
-                        onClick = { it.handleClick(right) }
-
-                        +"$right"
-                    }
+                    +"$right"
                 }
-                Grid {
-                    item = true
-                    Button {
-                        onClick = { it.handleClick(rightEnd) }
+                Button {
+                    onClick = { it.handleClick(rightEnd) }
 
-                        +"$rightEnd"
-                    }
+                    +"$rightEnd"
                 }
             }
         }
-        Grid {
-            container = true
+        Stack {
+            direction = responsive(row)
             sx { justifyContent = center }
 
-            Grid {
-                item = true
-                Button {
-                    onClick = { it.handleClick(bottomStart) }
+            Button {
+                onClick = { it.handleClick(bottomStart) }
 
-                    +"$bottomStart"
-                }
-                Button {
-                    onClick = { it.handleClick(bottom) }
+                +"$bottomStart"
+            }
+            Button {
+                onClick = { it.handleClick(bottom) }
 
-                    +"$bottom"
-                }
-                Button {
-                    onClick = { it.handleClick(bottomEnd) }
+                +"$bottom"
+            }
+            Button {
+                onClick = { it.handleClick(bottomEnd) }
 
-                    +"$bottomEnd"
-                }
+                +"$bottomEnd"
             }
         }
     }

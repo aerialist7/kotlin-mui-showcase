@@ -1,4 +1,6 @@
 import org.jetbrains.kotlin.gradle.dsl.KotlinJsCompile
+import org.jetbrains.kotlin.gradle.targets.js.nodejs.NodeJsRootPlugin
+import org.jetbrains.kotlin.gradle.targets.js.npm.NpmExtension
 
 plugins {
     kotlin("multiplatform")
@@ -25,7 +27,8 @@ kotlin {
             dependencies {
                 implementation(kotlinWrappers.react)
                 implementation(kotlinWrappers.reactDom)
-                implementation(kotlinWrappers.reactRouter)
+                implementation(kotlinWrappers.tanstack.history)
+                implementation(kotlinWrappers.tanstack.reactRouter)
 
                 implementation(kotlinWrappers.emotion.styled)
                 implementation(kotlinWrappers.mui.material)
@@ -34,10 +37,17 @@ kotlin {
                 implementation(kotlinWrappers.muix.datePickers)
                 implementation(kotlinWrappers.muix.treeView)
 
-                implementation(npm("date-fns", "2.30.0"))
-                implementation(npm("@date-io/date-fns", "2.17.0"))
+                implementation(npm("date-fns", "4.4.0"))
+                implementation(npm("@date-io/date-fns", "3.2.1"))
             }
         }
+    }
+}
+
+plugins.withType<NodeJsRootPlugin> {
+    the<NpmExtension>().apply {
+        // Keep the shared MUI X internals API aligned with the published MUI X wrappers.
+        override("@mui/x-internals", "9.14.0")
     }
 }
 

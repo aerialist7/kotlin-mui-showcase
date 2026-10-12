@@ -1,6 +1,6 @@
 package io.github.aerialist7.showcase.material.utils
 
-import mui.system.useMediaQuery
+import mui.material.useMediaQuery
 import react.FC
 import react.Props
 import react.dom.html.ReactHTML.span

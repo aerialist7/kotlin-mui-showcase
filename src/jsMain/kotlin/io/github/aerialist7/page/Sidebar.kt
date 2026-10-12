@@ -1,18 +1,20 @@
 package io.github.aerialist7.page
 
 import emotion.styled.styled
+import io.github.aerialist7.selected
 import io.github.aerialist7.router.useShowcaseIdParam
+import io.github.aerialist7.router.SHOWCASE_ID_PARAM
+import io.github.aerialist7.router.SHOWCASE_ROUTE_PATH
 import io.github.aerialist7.showcase.Showcase
-import js.uri.decodeURIComponent
-import js.uri.encodeURIComponent
 import js.array.ReadonlyArray
+import js.objects.recordOf
 import mui.material.*
 import mui.system.Box
 import mui.system.sx
 import react.*
 import react.dom.html.ReactHTML
-import react.router.dom.NavLink
-import react.router.useLoaderData
+import tanstack.react.router.Link
+import tanstack.react.router.useLoaderData
 import web.cssom.Color
 import web.cssom.None
 import web.cssom.Position
@@ -79,10 +81,11 @@ private val ShowcaseList = FC {
 
             for ((key, name) in showcases) {
                 LinkButton {
-                    to = encodeURIComponent(key)
+                    to = SHOWCASE_ROUTE_PATH
+                    params = recordOf(SHOWCASE_ID_PARAM to key)
 
                     ListItemButton {
-                        selected = decodeURIComponent(showcaseId) == key
+                        selected = showcaseId == key
 
                         ListItemText {
                             primary = ReactNode(name)
@@ -94,7 +97,7 @@ private val ShowcaseList = FC {
     }
 }
 
-private val LinkButton = NavLink.styled {
+private val LinkButton = Link.styled {
     textDecoration = None.none
     color = Color.currentColor
 }

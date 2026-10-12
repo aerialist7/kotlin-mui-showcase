@@ -7,7 +7,7 @@ import react.FC
 import react.Props
 import react.create
 import react.dom.client.createRoot
-import react.router.RouterProvider
+import tanstack.react.router.RouterProvider
 import web.cssom.pct
 import web.dom.document
 import web.html.HtmlTagName.div

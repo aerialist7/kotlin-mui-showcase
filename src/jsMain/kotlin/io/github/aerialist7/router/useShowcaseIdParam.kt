@@ -1,6 +1,8 @@
 package io.github.aerialist7.router
 
-import react.router.useLocation
+import tanstack.react.router.useParams
 
 fun useShowcaseIdParam(): String =
-    useLocation().pathname.substringAfterLast("/")
+    useParams { params ->
+        params[SHOWCASE_ID_PARAM] as? String ?: ""
+    }
