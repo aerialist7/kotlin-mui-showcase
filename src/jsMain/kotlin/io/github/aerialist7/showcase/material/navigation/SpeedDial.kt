@@ -4,6 +4,7 @@ import mui.material.Box
 import mui.material.SpeedDial
 import mui.material.SpeedDialAction
 import mui.material.SpeedDialIcon
+import io.github.aerialist7.speedDialAriaLabel
 import mui.system.sx
 import react.FC
 import react.Key
@@ -34,7 +35,7 @@ val SpeedDialShowcase = FC<Props> {
                 right = 16.px
             }
 
-            ariaLabel = "SpeedDial basic example"
+            speedDialAriaLabel = "SpeedDial basic example"
             icon = SpeedDialIcon.create()
 
             for ((name, Icon) in actions) {

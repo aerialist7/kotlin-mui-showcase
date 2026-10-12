@@ -94,3 +94,10 @@ inline var TypographyProps.display: Display
     set(value) {
         asDynamic().display = value
     }
+
+/** MUI SpeedDial expects the camelCase component prop, separate from the inherited aria-label. */
+inline var SpeedDialProps.speedDialAriaLabel: String
+    get() = TODO("Prop is write-only!")
+    set(value) {
+        asDynamic().ariaLabel = value
+    }
