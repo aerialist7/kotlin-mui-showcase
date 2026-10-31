@@ -23,7 +23,7 @@ kotlin {
     }
 
     sourceSets {
-        val jsMain by getting {
+        jsMain {
             dependencies {
                 implementation(kotlinWrappers.react)
                 implementation(kotlinWrappers.reactDom)
