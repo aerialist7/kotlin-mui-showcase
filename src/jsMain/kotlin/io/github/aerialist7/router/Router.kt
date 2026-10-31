@@ -113,8 +113,9 @@ private val MATERIAL_SHOWCASES: ReadonlyArray<Showcase> = arrayOf(
     Showcase("x/react-tree-view", "Tree View", "muix/TreeView.kt", TreeViewShowcase),
 )
 
-val SHOWCASE_ID_PARAM = ParamName("showcaseId")
-val SHOWCASE_ROUTE_PATH = RoutePath("/", SHOWCASE_ID_PARAM)
+// A splat route keeps the slash of keys like `material-ui/react-button` readable in the URL.
+val SHOWCASE_ID_PARAM = ParamName("_splat")
+val SHOWCASE_ROUTE_PATH = RoutePath("/$")
 
 private val rootRoute = createRootRoute(
     options = RootRouteOptions(
