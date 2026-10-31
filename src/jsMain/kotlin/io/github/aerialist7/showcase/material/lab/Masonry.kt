@@ -5,8 +5,10 @@ import io.github.aerialist7.body2Typography
 import io.github.aerialist7.cssSpacing
 import io.github.aerialist7.muiPalette
 import io.github.aerialist7.muiTheme
+import mui.lab.Masonry
 import mui.material.Box
 import mui.material.Paper
+import mui.system.responsive
 import mui.system.sx
 import react.FC
 import react.Key
@@ -21,23 +23,23 @@ val MasonryShowcase = FC<Props> {
             width = 500.px
             minHeight = 393.px
         }
-// TODO: Uncomment after `Masonry` support
-//        Masonry {
-//            columns = 4
-//            spacing = 2
 
-        for ((index, item) in heights.withIndex()) {
-            Item {
-                key = Key(index)
-                sx {
-                    height = item.px
+        Masonry {
+            columns = responsive(4)
+            spacing = responsive(2)
+
+            for ((index, item) in heights.withIndex()) {
+                Item {
+                    key = Key(index)
+                    sx {
+                        height = item.px
+                    }
+
+                    +"${index + 1}"
                 }
-
-                +"${index + 1}"
             }
         }
     }
-//    }
 }
 
 private val heights = arrayOf(150, 30, 90, 70, 110, 150, 130, 80, 50, 90, 100, 150, 30, 50, 80)
