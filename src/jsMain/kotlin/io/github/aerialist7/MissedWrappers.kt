@@ -9,7 +9,11 @@ import mui.material.styles.ZIndex
 import mui.system.BoxProps
 import mui.system.ResponsiveStyleValue
 import mui.system.responsive
+import muix.pickers.DatePickerProps
+import muix.pickers.DateTimePickerProps
+import muix.pickers.TimePickerProps
 import react.Props
+import react.ReactNode
 import react.dom.events.ChangeEvent
 import react.dom.events.ChangeEventHandler
 import web.cssom.BoxShadow
@@ -125,4 +129,23 @@ inline var SpeedDialProps.speedDialAriaLabel: String
     get() = TODO("Prop is write-only!")
     set(value) {
         asDynamic().ariaLabel = value
+    }
+
+// The published MUI X picker props omit the shared base picker props, including label.
+inline var DatePickerProps.label: ReactNode?
+    get() = TODO("Prop is write-only!")
+    set(value) {
+        asDynamic().label = value
+    }
+
+inline var TimePickerProps.label: ReactNode?
+    get() = TODO("Prop is write-only!")
+    set(value) {
+        asDynamic().label = value
+    }
+
+inline var DateTimePickerProps.label: ReactNode?
+    get() = TODO("Prop is write-only!")
+    set(value) {
+        asDynamic().label = value
     }
