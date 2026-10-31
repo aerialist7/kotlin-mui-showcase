@@ -90,21 +90,8 @@ val Header = FC {
                     size = Size.large
                     color = IconButtonColor.inherit
                     onClick = {
-                        var name = showcaseId
-                            .split("-")
-                            .asSequence()
-                            .map { it.replaceFirstChar(Char::titlecase) }
-                            .reduce { accumulator, word -> accumulator.plus(word) }
-
-                        if (name.isNotEmpty()) {
-                            name += ".kt"
-                        }
-
-                        // TODO: Remove it after storing selected showcase
-                        name = ""
-
                         location.href =
-                            "https://github.com/karakum-team/kotlin-mui-showcase/blob/main/src/jsMain/kotlin/team/karakum/showcase/material/$name"
+                            "https://github.com/aerialist7/kotlin-mui-showcase/tree/main/src/jsMain/kotlin/io/github/aerialist7/showcase/material"
                     }
 
                     GitHub()
