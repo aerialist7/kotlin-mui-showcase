@@ -38,6 +38,8 @@ kotlin {
                 implementation(kotlinWrappers.muix.treeView)
 
                 implementation(npm("date-fns", "4.4.0"))
+                // MUI X Data Grid is not published in Kotlin Wrappers, so it is declared locally.
+                implementation(npm("@mui/x-data-grid", "9.15.0"))
             }
         }
     }
