@@ -1,6 +1,7 @@
 package io.github.aerialist7
 
 import csstype.Properties
+import js.array.ReadonlyArray
 import mui.material.*
 import mui.material.styles.Palette
 import mui.material.styles.Theme
@@ -9,6 +10,7 @@ import mui.system.BoxProps
 import mui.system.ResponsiveStyleValue
 import mui.system.responsive
 import react.Props
+import web.cssom.BoxShadow
 import web.cssom.Display
 import web.cssom.LengthProperty
 
@@ -84,6 +86,10 @@ internal fun Theme.body2Typography(): Properties =
 
 // MUI's theme zIndex holds the component layers at runtime, but the system wrapper emits it as an empty interface.
 internal fun Theme.muiZIndex(): ZIndex = zIndex.unsafeCast<ZIndex>()
+
+// MUI's theme shadows is an array of 25 box-shadow strings at runtime, but the system wrapper exposes it as Any.
+internal fun Theme.muiShadow(elevation: Int): BoxShadow =
+    shadows.unsafeCast<ReadonlyArray<BoxShadow>>()[elevation]
 
 // MUI's spacing value is callable at runtime, but its wrapper is emitted as an empty interface.
 internal fun Theme.cssSpacing(value: Double): LengthProperty =

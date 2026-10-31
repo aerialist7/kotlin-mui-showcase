@@ -1,10 +1,13 @@
 package io.github.aerialist7.showcase.material.utils
 
+import io.github.aerialist7.muiShadow
 import mui.material.Box
 import mui.material.Button
 import mui.material.Modal
 import mui.material.Typography
+import mui.material.styles.Theme
 import mui.material.styles.TypographyVariant
+import mui.material.styles.useTheme
 import mui.system.sx
 import react.FC
 import react.Props
@@ -16,6 +19,7 @@ import web.cssom.LineStyle.Companion.solid
 import web.dom.ElementId
 
 val ModalShowcase = FC<Props> {
+    val theme = useTheme<Theme>()
     var isOpen by useState(false)
 
     div {
@@ -42,8 +46,8 @@ val ModalShowcase = FC<Props> {
                     width = 400.px
                     backgroundColor = Color("background.paper")
                     border = Border(2.px, solid, Color("#000"))
-                    boxShadow = 24.px.unsafeCast<BoxShadow>()
-                    padding = 4.px
+                    boxShadow = theme.muiShadow(24)
+                    padding = 32.px
                 }
 
                 Typography {
@@ -57,7 +61,7 @@ val ModalShowcase = FC<Props> {
                 Typography {
                     id = ElementId("keep-mounted-modal-description")
                     sx {
-                        marginTop = 2.px
+                        marginTop = 16.px
                     }
 
                     +"Duis mollis, est non commodo luctus, nisi erat porttitor ligula."
