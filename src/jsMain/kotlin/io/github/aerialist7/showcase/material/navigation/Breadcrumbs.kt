@@ -26,7 +26,7 @@ val BreadcrumbsShowcase = FC<Props> {
             +"Core"
         }
         Typography {
-            color = "text.primary"
+            color = "textPrimary"
 
             +"Breadcrumbs"
         }

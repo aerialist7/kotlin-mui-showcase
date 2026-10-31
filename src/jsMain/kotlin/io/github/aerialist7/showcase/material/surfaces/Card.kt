@@ -14,7 +14,7 @@ val CardShowcase = FC<Props> {
     Card {
         CardContent {
             Typography {
-                color = "text.secondary"
+                color = "textSecondary"
                 gutterBottom = true
                 +"Word of the Day"
             }

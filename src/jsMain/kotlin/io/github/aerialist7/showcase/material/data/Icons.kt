@@ -213,7 +213,7 @@ val IconsShowcase = FC<Props> {
 
         Typography {
             variant = body2
-            color = "text.secondary"
+            color = "textSecondary"
 
             +"${filtered.size} icons"
         }
