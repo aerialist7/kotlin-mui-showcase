@@ -4,10 +4,9 @@ import emotion.styled.styled
 import io.github.aerialist7.router.SHOWCASE_ID_PARAM
 import io.github.aerialist7.router.SHOWCASE_ROUTE_PATH
 import io.github.aerialist7.router.useShowcaseIdParam
+import io.github.aerialist7.router.useShowcases
 import io.github.aerialist7.selected
-import io.github.aerialist7.showcase.Showcase
 import io.github.aerialist7.speedDialAriaLabel
-import js.array.ReadonlyArray
 import js.objects.recordOf
 import mui.material.*
 import mui.system.Box
@@ -15,7 +14,6 @@ import mui.system.sx
 import react.*
 import react.dom.html.ReactHTML
 import tanstack.react.router.Link
-import tanstack.react.router.useLoaderData
 import web.cssom.Color
 import web.cssom.None
 import web.cssom.Position
@@ -75,7 +73,7 @@ private external interface ShowcaseListProps : Props {
 }
 
 private val ShowcaseList = FC<ShowcaseListProps> { props ->
-    val showcases = useLoaderData { it.unsafeCast<ReadonlyArray<Showcase>>() }
+    val showcases = useShowcases()
     val showcaseId = useShowcaseIdParam()
 
     Box {

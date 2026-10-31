@@ -1,6 +1,7 @@
 package io.github.aerialist7.page
 
 import io.github.aerialist7.muiZIndex
+import io.github.aerialist7.router.useShowcase
 import io.github.aerialist7.router.useShowcaseIdParam
 import io.github.aerialist7.theme.Themes
 import io.github.aerialist7.theme.useSetTheme
@@ -22,10 +23,14 @@ import web.cssom.integer
 import web.cssom.number
 import web.location.location
 
+private const val REPOSITORY_URL = "https://github.com/aerialist7/kotlin-mui-showcase"
+private const val SHOWCASES_PATH = "src/jsMain/kotlin/io/github/aerialist7/showcase/material"
+
 val Header = FC {
     val theme = useTheme()
     val setTheme = useSetTheme()
     val showcaseId = useShowcaseIdParam()
+    val showcase = useShowcase()
 
     AppBar {
         sx {
@@ -92,8 +97,10 @@ val Header = FC {
                     size = Size.large
                     color = IconButtonColor.inherit
                     onClick = {
-                        location.href =
-                            "https://github.com/aerialist7/kotlin-mui-showcase/tree/main/src/jsMain/kotlin/io/github/aerialist7/showcase/material"
+                        location.href = when (showcase) {
+                            null -> "$REPOSITORY_URL/tree/main/$SHOWCASES_PATH"
+                            else -> "$REPOSITORY_URL/blob/main/$SHOWCASES_PATH/${showcase.source}"
+                        }
                     }
 
                     GitHub()

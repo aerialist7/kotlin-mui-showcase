@@ -6,5 +6,6 @@ import react.Props
 data class Showcase(
     val key: String,
     val name: String,
+    val source: String,
     val Component: FC<Props>,
 )
