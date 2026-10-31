@@ -4,6 +4,7 @@ import io.github.aerialist7.error.ErrorPage
 import io.github.aerialist7.error.NotFoundPage
 import io.github.aerialist7.page.Page
 import io.github.aerialist7.showcase.Showcase
+import io.github.aerialist7.showcase.ShowcaseIndex
 import io.github.aerialist7.showcase.ShowcaseMaterial
 import io.github.aerialist7.showcase.material.data.*
 import io.github.aerialist7.showcase.material.feedback.*
@@ -130,6 +131,7 @@ private val indexRoute = createRoute(
     options = RouteOptions(
         getParentRoute = { rootRoute },
         path = RoutePath("/"),
+        component = ShowcaseIndex,
     ),
 )
 
