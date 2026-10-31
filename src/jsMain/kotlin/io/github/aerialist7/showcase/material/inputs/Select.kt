@@ -1,6 +1,7 @@
 package io.github.aerialist7.showcase.material.inputs
 
 import io.github.aerialist7.selectValue
+import js.objects.unsafeJso
 import mui.material.*
 import mui.system.sx
 import react.FC
@@ -21,11 +22,14 @@ val SelectShowcase = FC<Props> {
             fullWidth = true
             InputLabel {
                 id = ElementId("demo-simple-select-label")
+                htmlFor = ElementId("demo-simple-select-input")
                 +"Age"
             }
             Select {
                 labelId = "demo-simple-select-label"
                 id = ElementId("demo-simple-select")
+                // MUI passes this id to the hidden native input, so the label can be associated with it.
+                inputProps = unsafeJso { id = ElementId("demo-simple-select-input") }
                 value = age
                 label = ReactNode("Age")
                 onChange = { event, _ ->
