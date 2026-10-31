@@ -9,7 +9,7 @@ import react.dom.html.ReactHTML.legend
 import react.useState
 
 val RatingShowcase = FC<Props> {
-    var rating by useState<Number>()
+    var rating by useState<Number?>(2)
 
     Box {
         Typography {
@@ -21,36 +21,38 @@ val RatingShowcase = FC<Props> {
             name = "simple-controlled"
             value = rating
             onChange = { _, newValue -> rating = newValue }
+        }
 
-            Typography {
-                component = legend
+        Typography {
+            component = legend
 
-                +"Read only"
-            }
-            Rating {
-                name = "read-only"
-                value = rating
-                readOnly = true
-            }
-            Typography {
-                component = legend
+            +"Read only"
+        }
+        Rating {
+            name = "read-only"
+            value = rating
+            readOnly = true
+        }
 
-                +"Disabled"
-            }
-            Rating {
-                name = "disabled"
-                value = rating
-                disabled = true
-            }
-            Typography {
-                component = legend
+        Typography {
+            component = legend
 
-                +"No rating given"
-            }
-            Rating {
-                name = "no-value"
-                value = null
-            }
+            +"Disabled"
+        }
+        Rating {
+            name = "disabled"
+            value = rating
+            disabled = true
+        }
+
+        Typography {
+            component = legend
+
+            +"No rating given"
+        }
+        Rating {
+            name = "no-value"
+            value = null
         }
     }
 }
