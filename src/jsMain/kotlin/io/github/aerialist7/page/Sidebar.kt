@@ -42,7 +42,9 @@ val Sidebar = FC<Props> {
                 onOpen = { isOpen = true }
                 onClose = { isOpen = false }
 
-                ShowcaseList()
+                ShowcaseList {
+                    onSelect = { isOpen = false }
+                }
             }
 
             SpeedDial {
@@ -68,7 +70,11 @@ val Sidebar = FC<Props> {
     }
 }
 
-private val ShowcaseList = FC {
+private external interface ShowcaseListProps : Props {
+    var onSelect: (() -> Unit)?
+}
+
+private val ShowcaseList = FC<ShowcaseListProps> { props ->
     val showcases = useLoaderData { it.unsafeCast<ReadonlyArray<Showcase>>() }
     val showcaseId = useShowcaseIdParam()
 
@@ -88,6 +94,7 @@ private val ShowcaseList = FC {
 
                     ListItemButton {
                         selected = showcaseId == key
+                        onClick = { props.onSelect?.invoke() }
 
                         ListItemText {
                             primary = ReactNode(name)
