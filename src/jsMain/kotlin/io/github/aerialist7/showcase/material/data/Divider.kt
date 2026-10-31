@@ -1,9 +1,9 @@
 package io.github.aerialist7.showcase.material.data
 
-import io.github.aerialist7.button
+import io.github.aerialist7.divider
 import mui.material.Divider
 import mui.material.List
-import mui.material.ListItem
+import mui.material.ListItemButton
 import mui.material.ListItemText
 import react.FC
 import react.Props
@@ -15,9 +15,7 @@ val DividerShowcase = FC<Props> {
         component = ReactHTML.nav
         ariaLabel = "mailbox folders"
 
-        ListItem {
-            button = true
-
+        ListItemButton {
             ListItemText {
                 primary = ReactNode("Inbox")
             }
@@ -25,8 +23,7 @@ val DividerShowcase = FC<Props> {
 
         Divider()
 
-        ListItem {
-            button = true
+        ListItemButton {
             divider = true
 
             ListItemText {
@@ -34,9 +31,7 @@ val DividerShowcase = FC<Props> {
             }
         }
 
-        ListItem {
-            button = true
-
+        ListItemButton {
             ListItemText {
                 primary = ReactNode("Trash")
             }
@@ -44,9 +39,7 @@ val DividerShowcase = FC<Props> {
 
         Divider()
 
-        ListItem {
-            button = true
-
+        ListItemButton {
             ListItemText {
                 primary = ReactNode("Spam")
             }

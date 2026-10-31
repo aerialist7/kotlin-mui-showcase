@@ -118,7 +118,7 @@ val TreeViewShowcase = FC<Props> {
         }
 
         RichTreeView {
-            asDynamic().items = MUI_X_PRODUCTS
+            items = MUI_X_PRODUCTS
         }
     }
 }

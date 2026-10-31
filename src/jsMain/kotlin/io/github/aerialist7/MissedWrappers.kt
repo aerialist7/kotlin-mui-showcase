@@ -1,16 +1,15 @@
 package io.github.aerialist7
 
+import csstype.Properties
 import mui.material.*
 import mui.material.styles.Palette
 import mui.material.styles.Theme
 import mui.system.BoxProps
 import mui.system.ResponsiveStyleValue
 import mui.system.responsive
-import csstype.Properties
-import web.cssom.LengthProperty
-import web.cssom.Display
-import js.reflect.unsafeCast
 import react.Props
+import web.cssom.Display
+import web.cssom.LengthProperty
 
 // TODO: Remove when it will be implemented in MUI wrappers
 inline var GridProps.xs: Int
@@ -31,18 +30,6 @@ inline var BoxProps.autoComplete: String
         asDynamic().autoComplete = value
     }
 
-inline var TextFieldProps.InputProps: InputBaseProps
-    get() = TODO("Prop is write-only!")
-    set(value) {
-        asDynamic().InputProps = value
-    }
-
-inline var ListItemProps.button: Boolean
-    get() = TODO("Prop is write-only!")
-    set(value) {
-        asDynamic().button = value
-    }
-
 // The published wrappers omit selected from ListItemButtonProps even though MUI exposes it.
 inline var ListItemButtonProps.selected: Boolean
     get() = TODO("Prop is write-only!")
@@ -50,7 +37,16 @@ inline var ListItemButtonProps.selected: Boolean
         asDynamic().selected = value
     }
 
+// MUI supports divider as a boolean that adds a bottom border, but the published wrapper omits it.
+inline var ListItemButtonProps.divider: Boolean
+    get() = TODO("Prop is write-only!")
+    set(value) {
+        asDynamic().divider = value
+    }
+
 external interface TextFieldSlotProps : Props {
+    // MUI forwards these props to its input component, rather than the HTML input element.
+    var input: InputBaseProps?
     var inputLabel: InputLabelProps?
 }
 
@@ -69,7 +65,7 @@ internal fun gridSize(value: Int): ResponsiveStyleValue<String> =
     responsive(value.unsafeCast<String>())
 
 private external interface StyledPropsWithTheme : Props {
-    val theme: Theme
+    var theme: Theme
 }
 
 private external interface ThemeTypography {

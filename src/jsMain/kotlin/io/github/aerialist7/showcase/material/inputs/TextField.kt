@@ -1,6 +1,5 @@
 package io.github.aerialist7.showcase.material.inputs
 
-import io.github.aerialist7.InputProps
 import io.github.aerialist7.autoComplete
 import io.github.aerialist7.noValidate
 import io.github.aerialist7.slotProps
@@ -101,10 +100,12 @@ val TextFieldShowcase = FC<Props> {
         TextField {
             id = ElementId("outlined-start-adornment")
             label = ReactNode("With normal TextField")
-            InputProps = unsafeJso {
-                startAdornment = InputAdornment.create {
-                    position = InputAdornmentPosition.start
-                    +"kg"
+            slotProps = unsafeJso {
+                input = unsafeJso {
+                    startAdornment = InputAdornment.create {
+                        position = InputAdornmentPosition.start
+                        +"kg"
+                    }
                 }
             }
         }

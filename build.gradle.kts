@@ -46,7 +46,7 @@ kotlin {
 plugins.withType<NodeJsRootPlugin> {
     the<NpmExtension>().apply {
         // Keep the shared MUI X internals API aligned with the published MUI X wrappers.
-        override("@mui/x-internals", "9.14.0")
+        override("@mui/x-internals", "9.15.0")
     }
 }
 
@@ -57,5 +57,5 @@ tasks.withType<KotlinJsCompile>().configureEach {
 }
 
 tasks.wrapper {
-    gradleVersion = "9.8.1"
+    gradleVersion = "9.8.2"
 }

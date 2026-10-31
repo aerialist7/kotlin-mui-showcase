@@ -8,7 +8,6 @@ import mui.material.Typography
 import react.FC
 import react.Props
 import react.dom.events.MouseEvent
-import react.dom.events.MouseEventHandler
 import react.dom.html.ReactHTML.div
 import react.useState
 
@@ -27,7 +26,7 @@ val MenuShowcase = FC<Props> {
         }
     }
 
-    val handleClose: MouseEventHandler<*> = { point = null }
+    val handleClose = { point = null }
 
     div {
         onContextMenu = handleContextMenu
@@ -37,7 +36,7 @@ val MenuShowcase = FC<Props> {
         }
         Menu {
             open = point != null
-            onClose = handleClose
+            onClose = { _, _ -> handleClose() }
 
             anchorReference = PopoverReference.anchorPosition
             anchorPosition = if (point != null) {
@@ -50,19 +49,19 @@ val MenuShowcase = FC<Props> {
             }
 
             MenuItem {
-                onClick = handleClose
+                onClick = { handleClose() }
                 +"Copy"
             }
             MenuItem {
-                onClick = handleClose
+                onClick = { handleClose() }
                 +"Print"
             }
             MenuItem {
-                onClick = handleClose
+                onClick = { handleClose() }
                 +"Highlight"
             }
             MenuItem {
-                onClick = handleClose
+                onClick = { handleClose() }
                 +"Email"
             }
         }

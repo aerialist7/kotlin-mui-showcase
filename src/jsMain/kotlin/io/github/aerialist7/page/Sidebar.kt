@@ -1,11 +1,12 @@
 package io.github.aerialist7.page
 
 import emotion.styled.styled
-import io.github.aerialist7.selected
-import io.github.aerialist7.router.useShowcaseIdParam
 import io.github.aerialist7.router.SHOWCASE_ID_PARAM
 import io.github.aerialist7.router.SHOWCASE_ROUTE_PATH
+import io.github.aerialist7.router.useShowcaseIdParam
+import io.github.aerialist7.selected
 import io.github.aerialist7.showcase.Showcase
+import io.github.aerialist7.speedDialAriaLabel
 import js.array.ReadonlyArray
 import js.objects.recordOf
 import mui.material.*
@@ -51,7 +52,7 @@ val Sidebar = FC<Props> {
                     left = 16.px
                 }
 
-                asDynamic().ariaLabel = "Menu"
+                speedDialAriaLabel = "Menu"
 
                 icon = MenuIcon.create()
                 onClick = { isOpen = true }
