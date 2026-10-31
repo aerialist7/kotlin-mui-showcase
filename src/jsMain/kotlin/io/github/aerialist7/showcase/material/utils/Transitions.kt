@@ -21,21 +21,20 @@ val TransitionsShowcase = FC<Props> {
         FormControlLabel {
             control = Switch.create {
                 checked = isChecked
-                onChange = { _, _ -> isChecked = !isChecked }
+                onChange = { _, checked -> isChecked = checked }
             }
             label = ReactNode("Show")
+        }
 
-            Box {
-                sx {
-                    display = Display.flex
-                }
+        Box {
+            sx {
+                display = Display.flex
+            }
 
-                Fade {
-                    `in` = isChecked
+            Fade {
+                `in` = isChecked
 
-                    // TODO: Check why don't shows
-                    WarningAmberIcon()
-                }
+                WarningAmberIcon()
             }
         }
     }
