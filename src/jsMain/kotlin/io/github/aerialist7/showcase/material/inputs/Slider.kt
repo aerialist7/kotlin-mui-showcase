@@ -18,7 +18,7 @@ val SliderShowcase = FC<Props> {
 
     Stack {
         sx {
-            marginBottom = 1.px
+            marginBottom = 8.px
             alignItems = center
         }
         spacing = responsive(2)

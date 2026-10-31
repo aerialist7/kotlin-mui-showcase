@@ -19,7 +19,7 @@ val AppBarShowcase = FC<Props> {
 
             Toolbar {
                 IconButton {
-                    sx { marginRight = 2.px }
+                    sx { marginRight = 16.px }
                     edge = IconButtonEdge.start
                     size = Size.large
                     color = IconButtonColor.inherit

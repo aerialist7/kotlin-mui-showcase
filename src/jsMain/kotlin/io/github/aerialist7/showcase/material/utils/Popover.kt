@@ -39,7 +39,7 @@ val PopoverShowcase = FC<Props> {
         }
 
         Typography {
-            sx { padding = 2.px }
+            sx { padding = 16.px }
 
             +"The content of the Popover."
         }
