@@ -1,5 +1,6 @@
 package io.github.aerialist7.page
 
+import io.github.aerialist7.muiZIndex
 import io.github.aerialist7.router.useShowcaseIdParam
 import io.github.aerialist7.theme.Themes
 import io.github.aerialist7.theme.useSetTheme
@@ -29,7 +30,7 @@ val Header = FC {
     AppBar {
         sx {
             gridArea = Area.Header
-            zIndex = integer(1_500)
+            zIndex = integer(theme.muiZIndex().drawer.toInt() + 1)
         }
 
         position = AppBarPosition.fixed

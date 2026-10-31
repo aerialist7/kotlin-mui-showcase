@@ -4,6 +4,7 @@ import csstype.Properties
 import mui.material.*
 import mui.material.styles.Palette
 import mui.material.styles.Theme
+import mui.material.styles.ZIndex
 import mui.system.BoxProps
 import mui.system.ResponsiveStyleValue
 import mui.system.responsive
@@ -80,6 +81,9 @@ internal fun Theme.muiPalette(): Palette = palette.unsafeCast<Palette>()
 
 internal fun Theme.body2Typography(): Properties =
     typography.unsafeCast<ThemeTypography>().body2
+
+// MUI's theme zIndex holds the component layers at runtime, but the system wrapper emits it as an empty interface.
+internal fun Theme.muiZIndex(): ZIndex = zIndex.unsafeCast<ZIndex>()
 
 // MUI's spacing value is callable at runtime, but its wrapper is emitted as an empty interface.
 internal fun Theme.cssSpacing(value: Double): LengthProperty =
