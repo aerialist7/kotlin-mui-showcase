@@ -28,15 +28,15 @@ val DialogShowcase = FC<Props> {
                 DialogContentText {
                     +"To subscribe to this website, please click on 'subscribe' button"
                 }
-                DialogActions {
-                    Button {
-                        onClick = { isOpen = false }
-                        +"Cancel"
-                    }
-                    Button {
-                        onClick = { isOpen = false }
-                        +"Subscribe"
-                    }
+            }
+            DialogActions {
+                Button {
+                    onClick = { isOpen = false }
+                    +"Cancel"
+                }
+                Button {
+                    onClick = { isOpen = false }
+                    +"Subscribe"
                 }
             }
         }
