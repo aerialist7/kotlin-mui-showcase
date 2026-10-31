@@ -47,10 +47,12 @@ val PopperShowcase = FC<Props> {
             anchorEl = anchor
             placement = place
 
-            Typography {
-                sx { padding = 2.px }
+            Paper {
+                Typography {
+                    sx { padding = 16.px }
 
-                +"The content of the Popper."
+                    +"The content of the Popper."
+                }
             }
         }
 
