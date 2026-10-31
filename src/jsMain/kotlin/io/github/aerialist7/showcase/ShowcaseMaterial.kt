@@ -5,8 +5,7 @@ import react.Props
 import tanstack.react.router.useLoaderData
 
 val ShowcaseMaterial = FC<Props> {
-    val ShowcaseComponent = useLoaderData()
-        .unsafeCast<Showcase>()
+    val ShowcaseComponent = useLoaderData { it.unsafeCast<Showcase>() }
         .Component
 
     ShowcaseComponent()

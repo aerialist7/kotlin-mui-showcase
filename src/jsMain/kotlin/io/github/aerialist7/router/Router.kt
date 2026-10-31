@@ -27,6 +27,7 @@ import tanstack.react.router.*
 import tanstack.router.core.ParamName
 import tanstack.router.core.RouteLoaderFn
 import tanstack.router.core.RoutePath
+import tanstack.router.core.notFound
 
 private val MATERIAL_SHOWCASES: ReadonlyArray<Showcase> = arrayOf(
     // inputs
@@ -118,19 +119,27 @@ private val rootRoute = createRootRoute(
     ),
 )
 
+private val indexRoute = createRoute(
+    options = RouteOptions(
+        getParentRoute = { rootRoute },
+        path = RoutePath("/"),
+    ),
+)
+
 private val showcaseRoute = createRoute(
     options = RouteOptions(
         getParentRoute = { rootRoute },
         path = SHOWCASE_ROUTE_PATH,
         loader = RouteLoaderFn { context ->
-            MATERIAL_SHOWCASES.single { it.key == context.params[SHOWCASE_ID_PARAM] }
+            val showcaseId = context.params[SHOWCASE_ID_PARAM]
+            MATERIAL_SHOWCASES.singleOrNull { it.key == showcaseId } ?: notFound()
         },
         component = ShowcaseMaterial,
     ),
 )
 
 private val routeTree = rootRoute.also {
-    it.addChildren(arrayOf(showcaseRoute))
+    it.addChildren(arrayOf(indexRoute, showcaseRoute))
 }
 
 val Router: Router = createRouter(

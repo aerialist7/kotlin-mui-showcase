@@ -68,7 +68,7 @@ val Sidebar = FC<Props> {
 }
 
 private val ShowcaseList = FC {
-    val showcases = useLoaderData().unsafeCast<ReadonlyArray<Showcase>>()
+    val showcases = useLoaderData { it.unsafeCast<ReadonlyArray<Showcase>>() }
     val showcaseId = useShowcaseIdParam()
 
     Box {
@@ -81,6 +81,7 @@ private val ShowcaseList = FC {
 
             for ((key, name) in showcases) {
                 LinkButton {
+                    this.key = Key(key)
                     to = SHOWCASE_ROUTE_PATH
                     params = recordOf(SHOWCASE_ID_PARAM to key)
 
