@@ -6,7 +6,6 @@ import io.github.aerialist7.router.SHOWCASE_ROUTE_PATH
 import io.github.aerialist7.router.useShowcaseIdParam
 import io.github.aerialist7.router.useShowcases
 import io.github.aerialist7.selected
-import io.github.aerialist7.speedDialAriaLabel
 import js.objects.recordOf
 import mui.material.*
 import mui.system.Box
@@ -47,17 +46,19 @@ val Sidebar = FC<Props> {
                 }
             }
 
-            SpeedDial {
+            Fab {
                 sx {
                     position = Position.absolute
                     bottom = 80.px
                     left = 16.px
                 }
 
-                speedDialAriaLabel = "Menu"
+                color = FabColor.primary
+                ariaLabel = "Open navigation"
 
-                icon = MenuIcon.create()
                 onClick = { isOpen = true }
+
+                MenuIcon()
             }
         } else {
             Drawer {
