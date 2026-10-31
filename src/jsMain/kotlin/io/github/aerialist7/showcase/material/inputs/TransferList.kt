@@ -1,5 +1,6 @@
 package io.github.aerialist7.showcase.material.inputs
 
+import js.objects.unsafeJso
 import mui.material.*
 import mui.material.ButtonVariant.Companion.outlined
 import mui.material.Size.Companion.small
@@ -158,6 +159,8 @@ private val TransferListPanel = FC<TransferListProps> { props ->
             dense = true
 
             for (value in props.items) {
+                val labelId = ElementId("transfer-list-item-$value-label")
+
                 ListItemButton {
                     key = Key(value)
                     role = AriaRole.listitem
@@ -168,11 +171,14 @@ private val TransferListPanel = FC<TransferListProps> { props ->
                             checked = props.checked.contains(value)
                             tabIndex = -1
                             disableRipple = true
+                            slotProps = unsafeJso {
+                                input = unsafeJso { ariaLabelledBy = labelId }
+                            }
                         }
                     }
 
                     ListItemText {
-                        id = ElementId("transfer-list-item-$value-label")
+                        id = labelId
                         primary = ReactNode("List item ${value + 1}")
                     }
                 }

@@ -6,6 +6,7 @@ import io.github.aerialist7.router.useShowcaseIdParam
 import io.github.aerialist7.theme.Themes
 import io.github.aerialist7.theme.useSetTheme
 import io.github.aerialist7.theme.useTheme
+import js.objects.unsafeJso
 import js.uri.decodeURIComponent
 import mui.icons.material.Brightness4
 import mui.icons.material.Brightness7
@@ -57,7 +58,10 @@ val Header = FC {
                 title = ReactNode("Theme")
 
                 Switch {
-                    ariaLabel = "theme"
+                    name = "theme"
+                    slotProps = unsafeJso {
+                        input = unsafeJso { ariaLabel = "Dark theme" }
+                    }
 
                     icon = Brightness7.create()
                     checkedIcon = Brightness4.create()

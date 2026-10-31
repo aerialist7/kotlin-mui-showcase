@@ -22,6 +22,8 @@ import web.dom.ElementId
 import web.html.InputType
 import web.html.date
 
+private val INPUT_LABEL: InputBaseComponentProps = unsafeJso { ariaLabel = "description" }
+
 val TextFieldShowcase = FC<Props> {
     Box {
         sx {
@@ -75,17 +77,25 @@ val TextFieldShowcase = FC<Props> {
         }
 
         Input {
+            id = ElementId("input-default")
             defaultValue = "Hello World"
+            inputProps = INPUT_LABEL
         }
         Input {
+            id = ElementId("input-placeholder")
             placeholder = "Placeholder"
+            inputProps = INPUT_LABEL
         }
         Input {
+            id = ElementId("input-disabled")
             defaultValue = "Disabled"
+            inputProps = INPUT_LABEL
             disabled = true
         }
         Input {
+            id = ElementId("input-error")
             defaultValue = "Error"
+            inputProps = INPUT_LABEL
             error = true
         }
 
