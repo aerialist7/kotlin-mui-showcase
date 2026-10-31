@@ -1,5 +1,6 @@
 package io.github.aerialist7.showcase.material.inputs
 
+import io.github.aerialist7.selectValue
 import mui.material.*
 import mui.system.sx
 import react.FC
@@ -28,7 +29,7 @@ val SelectShowcase = FC<Props> {
                 value = age
                 label = ReactNode("Age")
                 onChange = { event, _ ->
-                    age = event.target.asDynamic().value.unsafeCast<String>()
+                    age = event.selectValue
                 }
                 MenuItem {
                     value = "10"

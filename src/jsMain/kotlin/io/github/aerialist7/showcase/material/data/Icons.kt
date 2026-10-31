@@ -1,5 +1,6 @@
 package io.github.aerialist7.showcase.material.data
 
+import io.github.aerialist7.onChange
 import mui.icons.material.*
 import mui.material.*
 import mui.material.Size.Companion.small
@@ -7,12 +8,10 @@ import mui.material.styles.TypographyVariant.Companion.body2
 import mui.material.styles.TypographyVariant.Companion.caption
 import mui.system.sx
 import react.*
-import react.dom.events.ChangeEvent
 import web.cssom.*
 import web.cssom.AutoRepeat.Companion.autoFill
 import web.dom.ElementId
 import web.html.HTMLElement
-import web.html.HTMLInputElement
 import mui.icons.material.Badge as BadgeIcon
 import mui.icons.material.BadgeOutlined as BadgeIconOutlined
 import mui.icons.material.BadgeRounded as BadgeIconRounded
@@ -187,7 +186,7 @@ val IconsShowcase = FC<Props> {
                 size = small
                 value = searchQuery
 
-                asDynamic().onChange = { event: ChangeEvent<HTMLInputElement, HTMLInputElement> ->
+                onChange = { event ->
                     searchQuery = event.target.value
                 }
             }
@@ -214,7 +213,7 @@ val IconsShowcase = FC<Props> {
 
         Typography {
             variant = body2
-            asDynamic().color = "text.secondary"
+            color = "text.secondary"
 
             +"${filtered.size} icons"
         }

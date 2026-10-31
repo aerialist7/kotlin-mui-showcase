@@ -10,9 +10,12 @@ import mui.system.BoxProps
 import mui.system.ResponsiveStyleValue
 import mui.system.responsive
 import react.Props
+import react.dom.events.ChangeEvent
+import react.dom.events.ChangeEventHandler
 import web.cssom.BoxShadow
 import web.cssom.Display
 import web.cssom.LengthProperty
+import web.html.HTMLInputElement
 
 // TODO: Remove when it will be implemented in MUI wrappers
 inline var GridProps.xs: Int
@@ -59,6 +62,22 @@ inline var BaseTextFieldProps.slotProps: TextFieldSlotProps?
     set(value) {
         asDynamic().slotProps = value
     }
+
+// TextFieldProps is flattened to BaseTextFieldProps, which drops the onChange declared by every TextField variant.
+// MUI calls it with the underlying input element as the event target.
+inline var BaseTextFieldProps.onChange: ChangeEventHandler<HTMLInputElement, HTMLInputElement>?
+    get() = TODO("Prop is write-only!")
+    set(value) {
+        asDynamic().onChange = value
+    }
+
+private external interface SelectChangeEventTarget {
+    val value: String
+}
+
+// MUI Select replaces the change event target with `{ value, name }`, but the wrapper types the target as Element.
+internal val ChangeEvent<HTMLInputElement, *>.selectValue: String
+    get() = target.unsafeCast<SelectChangeEventTarget>().value
 
 /**
  * The published Grid wrapper models MUI's `'auto' | 'grow' | number | false` union

@@ -153,13 +153,11 @@ val TableShowcase = FC<Props> {
                             tabIndex = -1
 
                             for (column in columnGroupingColumns) {
-                                val value: String = row.asDynamic()[column.id]
-
                                 TableCell {
                                     key = Key(column.id)
                                     align = column.align
 
-                                    +value
+                                    +column.value(row)
                                 }
                             }
                         }
@@ -187,11 +185,11 @@ private val basicTableRows = setOf(
 )
 
 private val columnGroupingColumns = setOf(
-    ColumnGroupingColumn("name", "Name", 170.px, TableCellAlign.left),
-    ColumnGroupingColumn("code", "ISO Code", 100.px, TableCellAlign.left),
-    ColumnGroupingColumn("population", "Population", 170.px, TableCellAlign.right),
-    ColumnGroupingColumn("size", "Size (km²)", 170.px, TableCellAlign.right),
-    ColumnGroupingColumn("density", "Density", 170.px, TableCellAlign.right),
+    ColumnGroupingColumn("name", "Name", 170.px, TableCellAlign.left, ColumnGroupingRow::name),
+    ColumnGroupingColumn("code", "ISO Code", 100.px, TableCellAlign.left, ColumnGroupingRow::code),
+    ColumnGroupingColumn("population", "Population", 170.px, TableCellAlign.right, ColumnGroupingRow::population),
+    ColumnGroupingColumn("size", "Size (km²)", 170.px, TableCellAlign.right, ColumnGroupingRow::size),
+    ColumnGroupingColumn("density", "Density", 170.px, TableCellAlign.right, ColumnGroupingRow::density),
 )
 
 private val columnGroupingRows = setOf(
@@ -212,43 +210,18 @@ private val columnGroupingRows = setOf(
     ColumnGroupingRow("Brazil", "BR", "210,147,125", "8,515,767", "24.68"),
 )
 
-private external interface ColumnGroupingColumn {
-    var id: String
-    var label: String
-    var minWidth: Length
-    var align: TableCellAlign
-}
+private data class ColumnGroupingColumn(
+    val id: String,
+    val label: String,
+    val minWidth: Length,
+    val align: TableCellAlign,
+    val value: (ColumnGroupingRow) -> String,
+)
 
-private external interface ColumnGroupingRow {
-    var name: String
-    var code: String
-    var population: String
-    var size: String
-    var density: String
-}
-
-private fun ColumnGroupingColumn(
-    id: String,
-    label: String,
-    minWidth: Length,
-    align: TableCellAlign,
-): ColumnGroupingColumn = unsafeJso {
-    this.id = id
-    this.label = label
-    this.minWidth = minWidth
-    this.align = align
-}
-
-private fun ColumnGroupingRow(
-    name: String,
-    code: String,
-    population: String,
-    size: String,
-    density: String,
-): ColumnGroupingRow = unsafeJso {
-    this.name = name
-    this.code = code
-    this.population = population
-    this.size = size
-    this.density = density
-}
+private data class ColumnGroupingRow(
+    val name: String,
+    val code: String,
+    val population: String,
+    val size: String,
+    val density: String,
+)
