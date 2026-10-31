@@ -35,7 +35,9 @@ val ThemeModule = FC<PropsWithChildren> { props ->
         ThemeProvider {
             this.theme = theme
 
-            CssBaseline()
+            CssBaseline {
+                enableColorScheme = true
+            }
             +props.children
         }
     }
