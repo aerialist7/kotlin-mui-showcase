@@ -6,15 +6,19 @@ Kotlin MUI Showcase is a Kotlin/JS browser application built with Kotlin Multipl
 
 ## Local build environment
 
-Use JDK 21 for Gradle tasks. On the maintainer's macOS workstation, the installed Homebrew JDK is at:
+Use JDK 21 for Gradle tasks. On the maintainer's macOS workstation, `java_home` finds the installed JDK 21:
 
 ```sh
-export JAVA_HOME=/opt/homebrew/opt/openjdk@21/libexec/openjdk.jdk/Contents/Home
+export JAVA_HOME=$(/usr/libexec/java_home -v 21)
 export PATH="$JAVA_HOME/bin:$PATH"
 ./gradlew build
 ```
 
-Setting `JAVA_HOME` explicitly worked when `java_home -v 21` did not find the installed JDK. On other machines, use the local JDK 21 path. Run Gradle through the checked-in `./gradlew` wrapper.
+On other machines, use the local JDK 21 path. Run Gradle through the checked-in `./gradlew` wrapper.
+
+A continuous `./gradlew jsBrowserDevelopmentRun -t` (for example, started from the IDE) keeps writing to `build/`, so `./gradlew clean` fails with "Unable to delete directory" while it runs. Stop it before cleaning, or run an incremental `./gradlew build` instead.
+
+Run production and development Kotlin/JS tasks in separate Gradle invocations. Both sync into `build/js/packages/kotlin-mui-showcase/kotlin`, and Gradle rejects a combined `./gradlew build jsBrowserDevelopmentExecutableDistribution` with an implicit dependency validation error.
 
 ## Gradle Wrapper updates
 
@@ -41,4 +45,4 @@ When the missing API is a component or function imported from a JS module, decla
 
 ## Previous build notes
 
-The Kotlin and Gradle Wrapper upgrade built successfully with JDK 21 after refreshing the Kotlin/JS package lock. The build emitted a Kotlin DSL deprecation warning for `jsMain by getting` and a webpack bundle-size advisory; neither prevented the build from succeeding.
+The Kotlin and Gradle Wrapper upgrade built successfully with JDK 21 after refreshing the Kotlin/JS package lock. The build emits a webpack bundle-size advisory; it does not prevent the build from succeeding.
