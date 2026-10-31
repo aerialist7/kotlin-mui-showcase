@@ -79,7 +79,7 @@ private val MATERIAL_SHOWCASES: ReadonlyArray<Showcase> = arrayOf(
     Showcase("material-ui/react-pagination", "Pagination", PaginationShowcase),
     Showcase("material-ui/react-speed-dial", "Speed Dial", SpeedDialShowcase),
     Showcase("material-ui/react-stepper", "Stepper", StepperShowcase),
-    Showcase("material-ui/react-tabs", "Tab", TabsShowcase),
+    Showcase("material-ui/react-tabs", "Tabs", TabsShowcase),
 
     // layout
     Showcase("material-ui/react-box", "Box", BoxShowcase),

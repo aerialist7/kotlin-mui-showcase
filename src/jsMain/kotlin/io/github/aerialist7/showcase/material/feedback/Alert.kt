@@ -23,7 +23,7 @@ val AlertShowcase = FC<Props> {
         AlertTitle {
             +"Warning"
         }
-        +"This is an warning alert — check it out!"
+        +"This is a warning alert — check it out!"
     }
     Alert {
         color = AlertColor.info
@@ -41,6 +41,6 @@ val AlertShowcase = FC<Props> {
         AlertTitle {
             +"Success"
         }
-        +"This is an success alert — check it out!"
+        +"This is a success alert — check it out!"
     }
 }
