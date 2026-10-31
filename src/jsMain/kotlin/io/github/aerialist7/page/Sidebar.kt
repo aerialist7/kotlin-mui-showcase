@@ -12,11 +12,13 @@ import mui.material.*
 import mui.system.Box
 import mui.system.sx
 import react.*
+import react.dom.aria.AriaRole
 import react.dom.html.ReactHTML
 import tanstack.react.router.Link
 import web.cssom.Color
 import web.cssom.None
 import web.cssom.Position
+import web.cssom.pct
 import web.cssom.px
 import mui.icons.material.Menu as MenuIcon
 
@@ -85,17 +87,24 @@ private val ShowcaseList = FC<ShowcaseListProps> { props ->
             }
 
             for ((key, name) in showcases) {
-                LinkButton {
+                ListItem {
                     this.key = Key(key)
-                    to = SHOWCASE_ROUTE_PATH
-                    params = recordOf(SHOWCASE_ID_PARAM to key)
+                    disablePadding = true
 
-                    ListItemButton {
-                        selected = showcaseId == key
+                    LinkButton {
+                        to = SHOWCASE_ROUTE_PATH
+                        params = recordOf(SHOWCASE_ID_PARAM to key)
                         onClick = { props.onSelect?.invoke() }
 
-                        ListItemText {
-                            primary = ReactNode(name)
+                        // The link is the interactive element, so the button only provides list item styles.
+                        ListItemButton {
+                            role = AriaRole.presentation
+                            tabIndex = -1
+                            selected = showcaseId == key
+
+                            ListItemText {
+                                primary = ReactNode(name)
+                            }
                         }
                     }
                 }
@@ -105,6 +114,7 @@ private val ShowcaseList = FC<ShowcaseListProps> { props ->
 }
 
 private val LinkButton = Link.styled {
+    width = 100.pct
     textDecoration = None.none
     color = Color.currentColor
 }
