@@ -37,6 +37,8 @@ An incremental local build may not detect a stale lock when generated Gradle/Jav
 
 When an API used by the showcase is missing from the published Kotlin Wrappers, always add a local wrapper in `src/jsMain/kotlin/io/github/aerialist7/MissedWrappers.kt` (usually a typed extension property or function). Keep call sites typed and free of ad hoc `asDynamic()` access or casts; confine any necessary interop workaround to that local wrapper. Add a short comment describing the missing upstream API and the relevant runtime/type behavior. These local wrappers are the record of generator gaps and should later guide fixes in the Kotlin Wrappers generator.
 
+When the missing API is a component or function imported from a JS module, declare it in a sibling `MissedWrappers.<Name>.kt` file with `@file:JsModule(...)` (for example, `MissedWrappers.Timeline.kt`). Kotlin applies JS module imports per file, so these external declarations cannot live in `MissedWrappers.kt` itself.
+
 ## Previous build notes
 
 The Kotlin and Gradle Wrapper upgrade built successfully with JDK 21 after refreshing the Kotlin/JS package lock. The build emitted a Kotlin DSL deprecation warning for `jsMain by getting` and a webpack bundle-size advisory; neither prevented the build from succeeding.
