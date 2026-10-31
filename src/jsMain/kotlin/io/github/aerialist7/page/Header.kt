@@ -73,7 +73,8 @@ val Header = FC {
                     size = Size.large
                     color = IconButtonColor.inherit
                     onClick = {
-                        location.href = "https://mui.com/${decodeURIComponent(showcaseId)}/"
+                        val path = decodeURIComponent(showcaseId).ifEmpty { "material-ui" }
+                        location.href = "https://mui.com/$path/"
                     }
 
                     MenuBook()
