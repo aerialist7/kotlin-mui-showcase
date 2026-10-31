@@ -13,16 +13,12 @@ val CssBaselineShowcase = FC<Props> {
         +"CssBaseline"
     }
 
-    Fragment {
-        ScopedCssBaseline()
-
+    ScopedCssBaseline {
         +"ScopedCssBaseline"
     }
 
-    Fragment {
-        ScopedCssBaseline {
-            enableColorScheme = true
-        }
+    ScopedCssBaseline {
+        enableColorScheme = true
 
         +"ScopedCssBaseline with enabled color scheme"
     }
