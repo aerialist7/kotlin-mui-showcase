@@ -4,5 +4,5 @@ import tanstack.react.router.useParams
 
 fun useShowcaseIdParam(): String =
     useParams { params ->
-        params[SHOWCASE_ID_PARAM] as? String ?: ""
+        params[SHOWCASE_ID_PARAM] ?: ""
     }
